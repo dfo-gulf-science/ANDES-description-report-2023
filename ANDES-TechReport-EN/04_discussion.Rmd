@@ -1,0 +1,8 @@
+# Discussion
+
+The current capabilities of ANDES have evolved over the last three years where the system has been used to support field activities in the Gulf Region. The software has also been used by the Maritimes and Quebec regions of DFO. 
+
+Versioning details and why the backup process is so awesome.
+
+Things will change.
+

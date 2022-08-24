@@ -1,0 +1,27 @@
+# Methods
+
+The ESE was the starting point in the development of ANDES. The data entry software had to first replicate the capabilities of the ESE.
+
+
+## Design principles
+
+
+## Technical implementation
+
+### Data model
+
+Full ERD on Figure \@ref(fig:erd)
+
+
+
+### Version control software
+
+### Backup infrastructure
+
+
+
+## Intended use of the software
+
+
+## Integration of ANDES with existing data repositories
+

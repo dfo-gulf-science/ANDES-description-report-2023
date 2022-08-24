@@ -1,0 +1,21 @@
+# Results
+
+## User definitions and permissions
+
+## Ecosystem survey app
+
+### Forecasting tool
+
+### Progress map
+
+
+## Shrimp ecosystem survey app
+
+## Oceanography app
+
+## Port sampling app
+
+
+### Tasks for administrative user
+Strata, species list, length-weight parameters, sampling requirements, ...
+
