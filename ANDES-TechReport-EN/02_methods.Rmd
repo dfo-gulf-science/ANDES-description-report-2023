@@ -1,27 +1,25 @@
 # Methods
-
 The ESE was the starting point in the development of ANDES. The data entry software had to first replicate the capabilities of the ESE.
 
+## Intended use of the software
+The ANDES system is designed to be deployed as the main data entry platform during ecosystem surveys. 
+
+Another use of the software is to support data collection during sampling of commerical port sampling activities. [@Benoit-Daigle-2004]
 
 ## Design principles
-
+The interface is user-friendly and is multilingual. 
 
 ## Technical implementation
+The software is written in the Python programming language using the Django development environment.
 
 ### Data model
 
-Full ERD on Figure \@ref(fig:erd)
-
-
+Full ERD on Figure \@ref(fig:ERD)
 
 ### Version control software
+All source code is under version control software.
 
 ### Backup infrastructure
-
-
-
-## Intended use of the software
-
 
 ## Integration of ANDES with existing data repositories
 

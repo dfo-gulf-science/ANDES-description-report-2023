@@ -4,7 +4,18 @@
 
 ## Ecosystem survey app
 
+### App used in the laboratory
+The app running on computers in the wet laboratory of the vessel is used for all entry of data related to measurements and observations of marine organisms.
+
+### App used in the bridge
+The console to be used by navigation officers is meant to run on a tablet in the bridge of the vessel conducting the survey.
+
+This console contains two separate sections: 1) the Set Card section and 2) the Fishing section.
+
+Additionally, a number of events that take place during fishing can be captured in the console.
+
 ### Forecasting tool
+
 
 ### Progress map
 
@@ -13,9 +24,16 @@
 
 ## Oceanography app
 
+## Cruise dashboard
+
 ## Port sampling app
 
 
-### Tasks for administrative user
-Strata, species list, length-weight parameters, sampling requirements, ...
+## Tasks for administrative user
+Prior to a survey, a number of configurations must be done for Andes to function as intended.
 
+\begin{description}
+\item[Survey strata]{}
+\item[Species list]{}
+\item[Sampling protocols]{}
+\end{description}
