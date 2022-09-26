@@ -14,10 +14,13 @@ This console contains two separate sections: 1) the Set Card section and 2) the 
 
 Additionally, a number of events that take place during fishing can be captured in the console.
 
+Information coming from Scanmar sensors are captured and stored by ANDES.
+
 ### Forecasting tool
 
-
 ### Progress map
+
+### Reporting capabilities
 
 
 ## Shrimp ecosystem survey app
