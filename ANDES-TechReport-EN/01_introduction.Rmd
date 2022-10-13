@@ -1,15 +1,15 @@
 # Introduction {#sec:introduction}
 Scientific activities conducted by Fisheries and Oceans Gulf Region include ecosystem surveys and port sampling activities. These monitoring programs require the collection of a variety of information about marine ecosystems and about commercial fishery activities.
 
-To support the data collection during ecosystem surveys, a paper-based system was initially used on board research vessels. With the advent of computing capabilities, the paper data sheets were digitized and the information was stored for subsequent analyses. In the 1980s, a data entry system was created by DFO to allow for the direct entry of data in digital format. The Groundfish Survey Entry (GSE) system was used during research cruises from the mid 1980s until the deployment of its successor system, the Ecosystem Entry System (ESE) in the early 2000s. Both systems were Microsoft Access applications.
+To support the data collection during ecosystem surveys, a paper-based system was initially used on board research vessels. With the advent of computing capabilities, the paper data sheets were digitized and the information was stored for subsequent analyses. In the 1980s, a data entry system was created by DFO to allow for the direct entry of data in digital format. The Groundfish Survey Entry (GSE) system was used during research cruises from the mid 1980s until the deployment of its successor system, the Ecosystem Survey Entry (ESE) system in the early 2000s. Both systems were Microsoft Access applications.
 
 The ESE, while highly functional has some important limitations:
 
 - Despite the use over a local area network (LAN), it is not ideal for a networked configuration.
 - There is no support for multiple locales, i.e., it is a unilingual tool
-- Visual Basic for Applications (VBA) is a deprecated programming language and no longer supported by Microsoft (REF NEEDED)
-- MS Access applications do not allow for the use of version control, thus precluding opportunities for collaboration.
+- Visual Basic for Applications (VBA) is a deprecated programming language and no longer supported by Microsoft (REF NEEDED). Finding modern libraries and APIs in VBA will become increasingly difficult over time.
+- The use of a version control system (VCS) is incompatible with MS Access. The absence of a VCS presents serious challenges for managing, disseminating and troubleshooting versions of an application across multiple platforms and is a major impediment for a collaborative approach to development.
 
-Furthermore, the lack of a true server-side application (e.g., web application) meant agile development was effectively impossible; especially in the context of a mission that was underway. While the status quo was adequate for in the present, a proactive stance towards addressing the above issued spurred the development of **AN**other **D**ata **E**ntry **S**ystem (ANDES). This project began during the summer of 2018 and was piloted a year later in parallel to the ESE on board the Gulf Region Ecosystem Survey.
+Furthermore, the lack of a true server-side application (e.g., web application) meant agile development was effectively impossible; especially in the context of a mission that was underway. While the status quo was meeting the immediate needs of clients, a proactive stance towards addressing the above spurred the development of **AN**other **D**ata **E**ntry **S**ystem (ANDES). This project began during the summer of 2018 and was piloted a year later in parallel to the ESE on board the Gulf Region Ecosystem Survey.
 
 This report documents the design principles that guided the development of ANDES, provides technical details about its implementation and details the usage cases where the software has been used so far. We also provide a roadmap to facilitate the deployment of ANDES to support other field activities and discuss the ways in which the system could gain further adoption within DFO.
