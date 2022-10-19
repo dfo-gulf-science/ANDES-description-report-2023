@@ -23,11 +23,13 @@ Collection and Coordination of oceanographic data collection with fishing data.
 
 The following section will outline the design principles that played a role in decision-making and provide a description of how they were implemented in the project.
 
-### Versatility and Scalability
+### Versatility and Scalability and Reliability
 
 Within the context of DFO Science, there is a high number of use-cases under which this application will be deployed. For example, the number of users might range from a single user to several dozen. Similarly, the application might sometimes be used in a networked setting while other times used in the field on a stand-alone tablet. Accordingly, the application has to accommodate a wide range of practical scenarios.
 
 The [Django Web Framework](https://www.djangoproject.com/) was selected for the backend of this application due to its modularize nature; virtually all aspects of the framework can be decoupled. Furthermore, the Django framework is written in pure Python; an open-sourced, generalized object-orientated programming language popular in data-heavy applications. While web applications are most often used over a network, the django library comes with a development web-server that permits users to serve the application locally. In this scenario, a computer is acting both as a server and a client. While there are important limitations to the use of the django development web-server in a full-scale production environment, this configuration is adequate for the stand-alone use-cases referred to above.
+
+
 
 
 ### Reactivity
@@ -43,18 +45,16 @@ By ensuring the application has a modern and intuitive interface, the barriers r
 
 The above was achieved by building the frontend of the application in HTML 5, javascript and CSS. Most users will be familiar with the flow and functionality of a web browser and will be comfortable navigating and entering data into a website. Facilitated by the Django model and form classes, all controls (i.e., fields) on the website will contain verbose descriptions and help text. The [Bootstap v5.0](https://getbootstrap.com/docs/5.0/getting-started/introduction/) css and javascript libraries were utilized in order to give the application a sleek, modern look and to ensure compatibility with different types of devices (e.g., personal computers vs. tablets vs. mobile devices). The Bootstrap libray also provides palatable styles for displaying help text in the form of popovers and tooltips.
 
-
-### Use of Open Source Technologies
-
 ### Version Control / Source Control
 
-### Unit testing
+...
 
-### Transparency
+The GitHub Website is also used to manage feature requests, bugs and project milestones
+
 
 ### Multilingual
 
-### Backup Regime and infrastructure
+
 
 ### GPS Integration
 
