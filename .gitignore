@@ -14,8 +14,10 @@ reference-materials
 models*
 
 techreport.Rmd
-techreport.tex
+tmp-*
+tmp_*
 
+*.tex
 *.aux
 *.jpg
 *.html

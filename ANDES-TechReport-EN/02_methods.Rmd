@@ -2,24 +2,86 @@
 The ESE was the starting point in the development of ANDES. The data entry software had to first replicate the capabilities of the ESE.
 
 ## Intended use of the software
+
+This section will outline the intended uses of the Andes application.
+
+### Ecosystem Survey Data Entry
+
+### Commercial Port Sampling
+
+### Oceanographic Metadata Collection
+
+
 The ANDES system is designed to be deployed as the main data entry platform during ecosystem surveys. 
 
-Another use of the software is to support data collection during sampling of commerical port sampling activities. [@Benoit-Daigle-2004]
+Another use of the software is to support data collection during sampling of commercial port sampling activities. [@Benoit-Daigle-2004]
 
-## Design principles
-The interface is user-friendly and is multilingual. 
+Collection and Coordination of oceanographic data collection with fishing data.
 
-## Technical implementation
+
+## Technical Implementation of Design principles
+
+The following section will outline the design principles that played a role in decision-making and provide a description of how they were implemented in the project.
+
+### Versatility and Scalability and Reliability
+
+Within the context of DFO Science, there is a high number of use-cases under which this application will be deployed. For example, the number of users might range from a single user to several dozen. Similarly, the application might sometimes be used in a networked setting while other times used in the field on a stand-alone tablet. Accordingly, the application has to accommodate a wide range of practical scenarios.
+
+The [Django Web Framework](https://www.djangoproject.com/) was selected for the backend of this application due to its modularize nature; virtually all aspects of the framework can be decoupled. Furthermore, the Django framework is written in pure Python; an open-sourced, generalized object-orientated programming language popular in data-heavy applications. While web applications are most often used over a network, the django library comes with a development web-server that permits users to serve the application locally. In this scenario, a computer is acting both as a server and a client. While there are important limitations to the use of the django development web-server in a full-scale production environment, this configuration is adequate for the stand-alone use-cases referred to above.
+
+
+
+
+### Reactivity
+
+In the context of being on a research vessel survey, data entry happens at a very fast rate; often with multiple transactions per second. Accordingly, it is imperative that the application does not create a bottleneck for data entry and is able to keep pace with experienced technicians. The usage of a reactive javascript library in conjunction with an api would allow data entry to occur without webpages having to constantly refresh.
+
+The [Django REST framework](https://www.django-rest-framework.org/) was used to construct the WebAPI component of the application. The project took a hybrid approach, combining the use of standard Django views and [Vue.js](https://vuejs.org/) frontend applications embedded in the templates. The latter were built to avoid the need for constantly reloading webpages and to keep optimize the flow of traffic across the network. Reactive javascript frontend applications also provide a better experience from the point of view of an end-user.
+
+
+### Intuitive User Interface
+
+By ensuring the application has a modern and intuitive interface, the barriers related to onboarding new users are significantly reduced. Furthermore, an intuitive interface will reduce the need for extensive help documentation. Wherever extra annotation is required, documentation will be inserted directly in the application in the form of tool tips and help bubbles. By appealing to the end users' intuitions and by providing in-situ help documentation, we reduce the likelihood fields and features being used incorrectly.
+
+The above was achieved by building the frontend of the application in HTML 5, javascript and CSS. Most users will be familiar with the flow and functionality of a web browser and will be comfortable navigating and entering data into a website. Facilitated by the Django model and form classes, all controls (i.e., fields) on the website will contain verbose descriptions and help text. The [Bootstap v5.0](https://getbootstrap.com/docs/5.0/getting-started/introduction/) css and javascript libraries were utilized in order to give the application a sleek, modern look and to ensure compatibility with different types of devices (e.g., personal computers vs. tablets vs. mobile devices). The Bootstrap libray also provides palatable styles for displaying help text in the form of popovers and tooltips.
+
+### Version Control / Source Control
+
+...
+
+The GitHub Website is also used to manage feature requests, bugs and project milestones
+
+
+### Multilingual
+
+
+
+### GPS Integration
+
+
+##
 The software is written in the Python programming language using the Django development environment.
 
-### Data model
 
-Full ERD on Figure \@ref(fig:ERD)
+### Friendly and Intuitive User Interface
 
-### Version control software
-All source code is under version control software.
 
-### Backup infrastructure
+### Versatility and Scalability
 
-## Integration of ANDES with existing data repositories
+ - Modularized approach
+ - Many iteration of user configuration... stand alone vs. networked.
+
+### Use of Open Source Technologies
+
+### Version Control / Source Control
+
+### Transparency
+
+### Multilingual
+
+
+
+### Backup Regime and infrastructure
+- Backup are automatically created when sets are closed
+- All backup files reference the version of the application which produced them. Even old backups can be loaded by locally re-instantiating the version of the application under which it was produced
 

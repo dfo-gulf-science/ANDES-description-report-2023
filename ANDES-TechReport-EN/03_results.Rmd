@@ -35,6 +35,15 @@ Information coming from Scanmar sensors are captured and stored by ANDES.
 ## Tasks for administrative user
 Prior to a survey, a number of configurations must be done for Andes to function as intended.
 
+
+
+## Backup Regime and infrastructure
+
+### Data model
+
+Full ERD on Figure \@ref(fig:ERD)
+
+
 \begin{description}
 \item[Survey strata]{}
 \item[Species list]{}
