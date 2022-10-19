@@ -65,6 +65,8 @@ Full ERD on Figure \@ref(fig:ERD)
 - translations were done in house
 - they must be up-kept along with development
 
+- at the time of writing this document, the project has a total of 6 contributor to the code.
+
 \begin{description}
 \item[Survey strata]{}
 \item[Species list]{}

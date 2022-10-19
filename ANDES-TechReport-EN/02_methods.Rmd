@@ -38,15 +38,14 @@ Using the built-in Python / Django testing framework, this project will seek to 
 
 ##### User-defined protocols
 
-It is important for users to be able to define their own protocols without the intervention of a developer.
-
+The flexibility of project leads to design, modify and report on their sampling protocol without depending on developers is very important.
 
 
 ### Version Control / Source Control
 
-The utilization of a version control system (VCS) is an indispensable component of a modern day development workflow. Version management is especially important in the context of having concurrent instances of the application in production at a given time. Knowing the version of a production instance is necessary to resolve any issues that might arise. Similarly, the application databases and backup files are intimately linked to the version number. In order to successfully re-instantiate a backup file, the version under which it was produced must be known precisely.
+The utilization of a version control system (VCS) is an indispensable component of a modern day development workflow. Version management is especially important in the context of having concurrent instances of the application in production at a given time. Knowing the version of a production instance is necessary to resolve any issues that might arise. Similarly, the application databases and backup files are intimately linked to the version number. In order to successfully re-instantiate a backup file, the version under which it was produced must be known precisely. The VCS will also provide an indispensable framework for the coordination, facilitation and examination of contributions from collaborators.
 
-It was decided to use Git as the VCS for this project and to host the remote repository on the [Gulf Science organizational GitHub account](https://github.com/dfo-gulf-science).  Website is also used to manage feature requests, bugs and project milestones
+It was decided to use [Git](https://git-scm.com/) as the VCS for this project due to the fact that it is both widespread in use and open-sourced. The remote repository for this project is currently hosted on the [Gulf Science organizational GitHub account](https://github.com/dfo-gulf-science). The project is additionally making use of GitHub infrastructure including, pull requests, issue management (e.g., bugs, feature requests and general enhancement requests) and security alerts.
 
 
 ### Transparency
