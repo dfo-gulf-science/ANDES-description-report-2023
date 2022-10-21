@@ -7,14 +7,13 @@ This section will outline the intended uses of the Andes application.
 
 ### Ecosystem Survey Data Entry
 
-### Commercial Port Sampling
-
-### Oceanographic Metadata Collection
-
-
 The ANDES system is designed to be deployed as the main data entry platform during ecosystem surveys.
 
+### Commercial Port Sampling
+
 Another use of the software is to support data collection during sampling of commercial port sampling activities. [@Benoit-Daigle-2004]
+
+### Oceanographic Metadata Collection
 
 Collection and Coordination of oceanographic data collection with fishing data.
 
@@ -48,10 +47,10 @@ The utilization of a version control system (VCS) is an indispensable component 
 It was decided to use [Git](https://git-scm.com/) as the VCS for this project due to the fact that it is both widespread in use and open-sourced. The remote repository for this project is currently hosted on the [Gulf Science organizational GitHub account](https://github.com/dfo-gulf-science). The project is additionally making use of GitHub infrastructure including, pull requests, issue management (e.g., bugs, feature requests and general enhancement requests) and security alerts.
 
 
-### Transparency
-
-- models
-- assumptions and calculations
+[//]: # (### Transparency)
+[//]: # ()
+[//]: # (- models)
+[//]: # (- assumptions and calculations)
 
 
 ### User Interface
