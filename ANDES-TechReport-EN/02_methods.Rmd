@@ -4,7 +4,7 @@ The ESE was the starting point in the development of ANDES. The data entry softw
 ## Intended use of the software
 The ANDES system is designed to be deployed as the main data entry platform during ecosystem surveys. 
 
-Another use of the software is to support data collection during sampling of commerical port sampling activities. [@Benoit-Daigle-2004]
+Another use of the software is to support data collection during sampling of commerical port sampling activities. [@Benoit-Daigle-2007]
 
 ## Design principles
 The interface is user-friendly and is multilingual. 
