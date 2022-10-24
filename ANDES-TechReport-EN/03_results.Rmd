@@ -39,10 +39,33 @@ Prior to a survey, a number of configurations must be done for Andes to function
 
 ## Backup Regime and infrastructure
 
-### Data model
+### Unit Tests
+
+X number of unit tests have been created for the application.
+
+## Data models
+
+show simplified ERDs of the following things:
+
+### Sampling Protocols
+### Ecosystem Survey
+### Port Sampling
+### Oceanography
+
+
+### Integration with Navigation System
+
+
+
 
 Full ERD on Figure \@ref(fig:ERD)
 
+
+
+- translations were done in house
+- they must be up-kept along with development
+
+- at the time of writing this document, the project has a total of 6 contributor to the code.
 
 \begin{description}
 \item[Survey strata]{}
