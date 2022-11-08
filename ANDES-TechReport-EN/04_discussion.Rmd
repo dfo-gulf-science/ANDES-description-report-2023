@@ -1,19 +1,30 @@
 # Discussion
 
-The current capabilities of ANDES have evolved over the last three years where the system has been used to support field activities in the Gulf Region. The software has also been used by the Maritimes and Quebec regions of DFO. 
+The current capabilities of Andes have evolved over the last three years where the system has been used to support field activities in the Gulf Region. The software has also been used by the Maritimes and Quebec regions of DFO. 
 
 Versioning details and why the backup process is so awesome.
 
 Things will change.
 
-## Creation and Maintenance of Unit tests
+
+## Creation and maintenance of unit tests
 
 
 
-## Integration of ANDES with existing data repositories
+## Integration of Andes with existing data repositories
+
+Discuss the steps required to go from data collected in Andes to transferring them to existing databases.
 
 
 ## Future Directions
 
+
 - AZMP / Oceanographic Surveys
--
+- use for ecosystem surveys by multiple DFO regions
+- use of barcodes and/or QR codes for identifying and tracking down samples (e.g. otoliths, tissue samples, ...)
+
+\newpage
+
+
+# Acknowledgments
+

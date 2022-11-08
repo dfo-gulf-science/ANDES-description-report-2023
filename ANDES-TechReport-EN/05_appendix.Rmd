@@ -7,11 +7,7 @@ After that, all subsequent sections will be turned into appendices. -->
 
 \clearpage
 
-# THE FIRST APPENDIX {#app:first-appendix}
-
-\clearpage
-
-# THE SECOND APPENDIX, FOR FUN {#app:second-appendix}
+# Placeholder for materials that would appear in an Appendix {#app:first-appendix}
 
 
 <!-- At the end of your appendices add: -->

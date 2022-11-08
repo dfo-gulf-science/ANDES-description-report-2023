@@ -1,8 +1,10 @@
 # Results
 
 ## User definitions and permissions
+Andes provides access to its different components differently based on the credentials of users. While the chief scientist can change sampling requirements for the mission, other users won't.
 
 ## Ecosystem survey app
+This component of Andes replicates the capabilities of the ESE for capturing detailed information on length, weight, ageing material, maturity, etc. about fish and invertebrate specimens. 
 
 ### App used in the laboratory
 The app running on computers in the wet laboratory of the vessel is used for all entry of data related to measurements and observations of marine organisms.
@@ -17,35 +19,49 @@ Additionally, a number of events that take place during fishing can be captured 
 Information coming from Scanmar sensors are captured and stored by ANDES.
 
 ### Forecasting tool
+Part of the task-specific suite of utilities is a forecasting tool that provides real-time prognostics of survey completion targets based on assumed transit speeds and time spent fishing and processing the trawl catches. 
 
 ### Progress map
+Another task-specific utility is the completion map which shows what strata have been completed based on target and minimum number of sets per stratum.
 
 ### Reporting capabilities
-
+Two types of reports are available for Andes: 1) reports meant to be used during field activities and 2) reports meant to be used after field activites are completed.
 
 ## Shrimp ecosystem survey app
+Quebec: Denis and Brian could contribute here?
 
 ## Oceanography app
+The oceanography data collection is handled by a separate app that is used in the deployment of the rosette and the processing of water samples obtained at different depths.
 
 ## Cruise dashboard
+This utility is meant to obtain a summary of the cruise, it includes the current position and speed of the vessel, the list of the most recent catches in the wet laboratory, as well as running totals of specimens captured.
+
 
 ## Port sampling app
+Andes was adapted to support port sampling activities where technicians obtain length frequency samples from commercial fishing activities. To facilitate deployment, the port sampling app of Andes is deployed on field tablets with a custom interface that is suitable for use on boats, outdoor and in inclement weather conditions (Figure \@ref(fig:portsampling1)).
 
 
 ## Tasks for administrative user
-Prior to a survey, a number of configurations must be done for Andes to function as intended.
+Prior to a survey, a number of configurations must be done for Andes to function as intended. At a minimum, the following information must be ingested by Andes in order for a mission to take place:
+
+\begin{enumerate}
+\item{Strata polygons}
+\item{List of stations}
+\item{Species list}
+\item{Sampling requirements}
+\end{enumerate}
 
 
+## Backup regime and infrastructure
 
-## Backup Regime and infrastructure
 
 ### Unit Tests
 
-X number of unit tests have been created for the application.
+A number of unit tests have been created for the application.
 
 ## Data models
 
-show simplified ERDs of the following things:
+Simplified Entity Relationship Diagrams (ERD) of the following components:
 
 ### Sampling Protocols
 ### Ecosystem Survey
@@ -53,22 +69,15 @@ show simplified ERDs of the following things:
 ### Oceanography
 
 
-### Integration with Navigation System
-
-
-
+### Integration with navigation system and trawl sensors
 
 Full ERD on Figure \@ref(fig:ERD)
 
-
+### Collaborative development 
 
 - translations were done in house
 - they must be up-kept along with development
 
 - at the time of writing this document, the project has a total of 6 contributor to the code.
 
-\begin{description}
-\item[Survey strata]{}
-\item[Species list]{}
-\item[Sampling protocols]{}
-\end{description}
+\newpage

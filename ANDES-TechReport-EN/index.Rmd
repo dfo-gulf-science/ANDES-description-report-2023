@@ -1,14 +1,19 @@
 ---
-title: "Design goals, technical implementation and pratical use of ANother Data Entry System (ANDES)"
-french_title: "Design goals, technical implementation and pratical use of ANother Data Entry System (ANDES)"
+title: "Design goals, technical implementation and pratical use of Another data entry system (Andes)"
+french_title: "Design goals, technical implementation and pratical use of Another data entry system (Andes)"
 year: 2022
 report_number: nnn
 author: |
   Daniel Ricard,
   David Fishman,
-  Nicolas Rolland and
-  Jenni McDermid
-author_list: "Ricard, D., Fishman, D., Rolland, N. and McDermid, J."
+  Beazley, Lindsay,
+  Denis Bernier,
+  Brian Boivin,
+  Jamie Emberley,
+  Ryan Martin,
+  Jenni McDermid and
+  Nicolas Rolland
+author_list: "Ricard, D., Fishman, D., Beazley, L., Bernier, D., Boivin, B., Emberley, J., Martin, R., McDermid, J. and Rolland, N."
 region: Gulf Region
 french_region: Région du Golfe
 isbn: "ISBN GOES HERE"
@@ -25,9 +30,9 @@ french_address: |
 phone: "(555) 555-5555"
 author_footnote: "Email: Daniel.Ricard@dfo-mpo.gc.ca | telephone: (506) "
 abstract: |
-  Here is the abstract text. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  A data entry system to facilitate the capture of information collected during scientific activities conducted by DFO Gulf Region was developed. Aother data entry system (Andes) was implemented as a browser-based environment that facilitates its deployment in a variety of data capture scenarios. The design goals and implementation details of Andes are described, and a number of usage cases are presented. To promote endorsment of Andes by other scientific groups and to ensure the pereniality of the project, the application relies on Open Source software and uses a shared code development platform. 
 french_abstract: |
-  Voici le résumé. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  Un système d'entrée de données pour faciliter la saisie des informations recueillies lors des activités scientifiques menées par la Région du Golfe du MPO a été développé. Another data entry system (Andes) a été mis en œuvre en tant qu'environnement basé sur un navigateur qui facilite son déploiement dans une variété de scénarios de saisie de données. Les objectifs de conception et les détails de mise en œuvre d'Andes sont décrits, et un certain nombre de cas d'utilisation sont présentés. Pour promouvoir l'utilisation d'Andes par d'autres groupes scientifiques et assurer la pérennité du projet, l'application s'appuie sur des logiciels Open Source et utilise une plate-forme de développement de code partagé.
 output:
  csasdown::techreport_pdf:
    french: false
@@ -36,7 +41,7 @@ output:
    # will remain between compilations. If true, your changes will be lost when you compile
    copy_sty: true
    # line_nums is a toggle to show line numbers on the left side of the page. 
-   line_nums: true
+   line_nums: false
    # line_nums_mod represents showing every Nth line if line_nums is true
    line_nums_mod: 1
    # lot_lof is a toggle to show/not show the lists of tables and figures at the
