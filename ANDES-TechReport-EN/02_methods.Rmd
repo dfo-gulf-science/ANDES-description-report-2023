@@ -1,46 +1,31 @@
 # Methods
-The ESE was the starting point in the development of ANDES. The data entry software had to first replicate the capabilities of the ESE.
-
-## Intended use of the software
-
-This section will outline the intended uses of the Andes application.
-
-Another use of the software is to support data collection during sampling of commerical port sampling activities. [@Benoit-Daigle-2007]
+The ESE was the starting point in the development of Andes. The data entry software had to first replicate the capabilities of the ESE. Early version of Andes achieved those goals and the system was further developed over its usage by scientists in the Gulf Region.
 
 
-### Ecosystem Survey Data Entry
+## Usage cases
 
-The ANDES system is designed to be deployed as the main data entry platform during ecosystem surveys.
+### Ecosystem survey data entry
 
-### Commercial Port Sampling
+The Andes system is designed to be deployed as the main data entry platform during ecosystem surveys. The application's data entry interface for usage in a wet laboratory (Figure \@ref(fig:andes-wetlab1)) allows the capture of all the information required by the sampling protocols used for the survey
 
-Another use of the software is to support data collection during sampling of commercial port sampling activities. [@Benoit-Daigle-2004]
+### Oceanographic metadata collection
 
-### Oceanographic Metadata Collection
+Collection and coordination of oceanographic data collection with fishing data.
 
-Collection and Coordination of oceanographic data collection with fishing data.
+### Commercial sort sampling
+
+Another use of the software is to support data collection during sampling of commercial port sampling activities. [@Benoit-Daigle-2007]
 
 
-## Technical Implementation of Design principles
+## Technical implementation of design principles
 
-The following section will outline the design principles that played a role in decision-making and provide a description of how they were implemented in the project.
+The following section outlines the design principles that played a role in decision-making and provide a description of how they were implemented in the project.
 
-### Flexibility and Scalability and Reliability
+### Flexibility, scalability and reliability
 
 Within the context of DFO Science, there is a high number of use-cases under which this application will be deployed. For example, the number of users might range from a single user to several dozen. Similarly, the application might sometimes be used in a networked setting while other times used in the field on a stand-alone tablet. Accordingly, the application has to accommodate a wide range of practical scenarios.
 
 The [Django Web Framework](https://www.djangoproject.com/) was selected for the backend of this application due to its modularize nature; virtually all aspects of the framework can be decoupled. Furthermore, the Django framework is written in pure Python; an open-sourced, generalized object-orientated programming language popular in data-heavy applications. While web applications are most often used over a network, the django library comes with a development web-server that permits users to serve the application locally. In this scenario, a computer is acting both as a server and a client. While there are important limitations to the use of the django development web-server in a full-scale production environment, this configuration is adequate for the stand-alone use-cases referred to above. Unit tests will be
-
-##### Unit testing
-
-The application also needs to be reliable especially considering its use in the field setting. The implementation of unit tests is a practical way to ensure the maintenance of functionality over time. On one extreme, the addition of any code can be preceded by the creation of unit tests (i.e., test-driven development). This approach will maximize the stability of an application but can hinder the momentum of a project, especially in its early stages. On the other extreme, application development in the complete absence of unit testing occurs at a relatively fast pace but will result in a project that is vulnerable to breaking in unexpected ways and one that is difficult to maintain and pass on to other developers.
-
-Using the built-in Python / Django testing framework, this project will seek to employ a middle ground between the above two approached. While the goal is not to implement test-driven development, the use of unit tests are highly encourages, especially to back up the core functionality of the application.
-
-
-##### User-defined protocols
-
-The flexibility of project leads to design, modify and report on their sampling protocol without depending on developers is very important.
 
 
 ### Version Control / Source Control
@@ -50,11 +35,24 @@ The utilization of a version control system (VCS) is an indispensable component 
 It was decided to use [Git](https://git-scm.com/) as the VCS for this project due to the fact that it is both widespread in use and open-sourced. The remote repository for this project is currently hosted on the [Gulf Science organizational GitHub account](https://github.com/dfo-gulf-science). The project is additionally making use of GitHub infrastructure including, pull requests, issue management (e.g., bugs, feature requests and general enhancement requests) and security alerts.
 
 
+### Unit testing
+
+The application also needs to be reliable especially considering its use in the field setting. The implementation of unit tests is a practical way to ensure the maintenance of functionality over time. On one extreme, the addition of any code can be preceded by the creation of unit tests (i.e., test-driven development). This approach will maximize the stability of an application but can hinder the momentum of a project, especially in its early stages. On the other extreme, application development in the complete absence of unit testing occurs at a relatively fast pace but will result in a project that is vulnerable to breaking in unexpected ways and one that is difficult to maintain and pass on to other developers.
+
+Using the built-in Python / Django testing framework, this project will seek to employ a middle ground between the above two approached. While the goal is not to implement test-driven development, the use of unit tests are highly encourages, especially to back up the core functionality of the application.
+
+
+### User-defined protocols
+
+The flexibility of project leads to design, modify and report on their sampling protocol without depending on developers is very important.
+
+
+<!--
 [//]: # (### Transparency)
 [//]: # ()
 [//]: # (- models)
 [//]: # (- assumptions and calculations)
-
+ -->
 
 ### User Interface
 
@@ -62,20 +60,20 @@ By ensuring the application has a modern and intuitive interface, the barriers r
 
 The above was achieved by building the frontend of the application in HTML 5, javascript and CSS. Most users will be familiar with the flow and functionality of a web browser and will be comfortable navigating and entering data into a website. Facilitated by the Django model and form classes, all controls (i.e., fields) on the website will contain verbose descriptions and help text. The [Bootstap v5.0](https://getbootstrap.com/docs/5.0/getting-started/introduction/) css and javascript libraries were utilized in order to give the application a sleek, modern look and to ensure compatibility with different types of devices (e.g., personal computers vs. tablets vs. mobile devices). The Bootstrap libray also provides palatable styles for displaying help text in the form of popovers and tooltips.
 
-##### Reactivity
+### Reactivity
 
 In the context of being on a research vessel survey, data entry happens at a very fast rate; often with multiple transactions per second. Accordingly, it is imperative that the application does not create a bottleneck for data entry and is able to keep pace with experienced technicians. The usage of a reactive javascript library in conjunction with an API would allow data entry to occur without webpages having to constantly refresh.
 
 The [Django REST framework](https://www.django-rest-framework.org/) was used to construct the WebAPI component of the application. The project took a hybrid approach, combining the use of standard Django views and [Vue.js](https://vuejs.org/) frontend applications embedded in the templates. The latter were built to avoid the need for constantly reloading webpages and to keep optimize the flow of traffic across the network. Reactive javascript frontend applications also provide a better experience from the point of view of an end-user.
 
-##### Multilingualism
+### Multilingualism
 
 Allowing users to utilize the application in the language of their choice is of considerable importance to this project. Previous tools that have been used were unilingual and this by itself would have limited the scope of their use in a national context. The Django framework has excellent support for internationalization and localization, including the translation of text and the formatting of dates, times and numbers. It achieves this using a system of "hooks" used by developers to indicate which parts of the code should be localized. See [Django - Internationalization and localization](https://docs.djangoproject.com/en/4.1/topics/i18n/) for more details on this process. In our application, an end-user can toggle between English and French by simply clicking on a button. In this way, each client can view the application in the language of their choice.
 
 
-
-
 ### Backup Regime and infrastructure
+
 - Backup are automatically created when sets are closed
 - All backup files reference the version of the application which produced them. Even old backups can be loaded by locally re-instantiating the version of the application under which it was produced
 
+\newpage
