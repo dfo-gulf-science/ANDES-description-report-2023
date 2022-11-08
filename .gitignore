@@ -24,7 +24,6 @@ tmp_*
 *.knit.md
 *.log
 *.pdf
-*.png
 *.rda
 *.rds
 *.Rproj
