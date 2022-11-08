@@ -1,19 +1,20 @@
 ---
-title: "Design goals, technical implementation and pratical use of Another data entry system (Andes)"
-french_title: "Design goals, technical implementation and pratical use of Another data entry system (Andes)"
+title: "Design goals, technical implementation and practical use of Another data entry system (Andes)"
+french_title: "Design goals, technical implementation and practical use of Another data entry system (Andes)"
 year: 2022
 report_number: nnn
 author: |
   Daniel Ricard,
   David Fishman,
-  Beazley, Lindsay,
+  Lindsay Beazley,
+  Kevin Pauley,
   Denis Bernier,
   Brian Boivin,
   Jamie Emberley,
   Ryan Martin,
   Jenni McDermid and
   Nicolas Rolland
-author_list: "Ricard, D., Fishman, D., Beazley, L., Bernier, D., Boivin, B., Emberley, J., Martin, R., McDermid, J. and Rolland, N."
+author_list: "Ricard, D., Fishman, D., Beazley, L., Pauley, K., Bernier, D., Boivin, B., Emberley, J., Martin, R., McDermid, J. and Rolland, N."
 region: Gulf Region
 french_region: Région du Golfe
 isbn: "ISBN GOES HERE"
@@ -30,7 +31,7 @@ french_address: |
 phone: "(555) 555-5555"
 author_footnote: "Email: Daniel.Ricard@dfo-mpo.gc.ca | telephone: (506) "
 abstract: |
-  A data entry system to facilitate the capture of information collected during scientific activities conducted by DFO Gulf Region was developed. Aother data entry system (Andes) was implemented as a browser-based environment that facilitates its deployment in a variety of data capture scenarios. The design goals and implementation details of Andes are described, and a number of usage cases are presented. To promote endorsment of Andes by other scientific groups and to ensure the pereniality of the project, the application relies on Open Source software and uses a shared code development platform. 
+  A data entry system to facilitate the capture of information collected during scientific activities conducted by DFO Gulf Region was developed. Another data entry system (Andes) was implemented as a browser-based environment that facilitates its deployment in a variety of data capture scenarios. The design goals and implementation details of Andes are described, and a number of usage cases are presented. To promote endorsement of Andes by other scientific groups and to ensure the perenniality of the project, the application relies on Open Source software and uses a shared code development platform.
 french_abstract: |
   Un système d'entrée de données pour faciliter la saisie des informations recueillies lors des activités scientifiques menées par la Région du Golfe du MPO a été développé. Another data entry system (Andes) a été mis en œuvre en tant qu'environnement basé sur un navigateur qui facilite son déploiement dans une variété de scénarios de saisie de données. Les objectifs de conception et les détails de mise en œuvre d'Andes sont décrits, et un certain nombre de cas d'utilisation sont présentés. Pour promouvoir l'utilisation d'Andes par d'autres groupes scientifiques et assurer la pérennité du projet, l'application s'appuie sur des logiciels Open Source et utilise une plate-forme de développement de code partagé.
 output:
