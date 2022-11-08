@@ -1,19 +1,20 @@
 ---
-title: "Design goals, technical implementation and pratical use of Another data entry system (Andes)"
-french_title: "Design goals, technical implementation and pratical use of Another data entry system (Andes)"
+title: "Design goals, technical implementation and practical use of Another data entry system (Andes)"
+french_title: "Design goals, technical implementation and practical use of Another data entry system (Andes)"
 year: 2022
 report_number: nnn
 author: |
   Daniel Ricard,
   David Fishman,
-  Beazley, Lindsay,
+  Lindsay Beazley,
+  Kevin Pauley,
   Denis Bernier,
   Brian Boivin,
   Jamie Emberley,
   Ryan Martin,
   Jenni McDermid and
   Nicolas Rolland
-author_list: "Ricard, D., Fishman, D., Beazley, L., Bernier, D., Boivin, B., Emberley, J., Martin, R., McDermid, J. and Rolland, N."
+author_list: "Ricard, D., Fishman, D., Beazley, L., Pauley, K., Bernier, D., Boivin, B., Emberley, J., Martin, R., McDermid, J. and Rolland, N."
 region: Gulf Region
 french_region: Région du Golfe
 isbn: "ISBN GOES HERE"
