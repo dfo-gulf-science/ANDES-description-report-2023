@@ -7,7 +7,11 @@ After that, all subsequent sections will be turned into appendices. -->
 
 \clearpage
 
-# Placeholder for materials that would appear in an Appendix {#app:first-appendix}
+# Lexicon {#lexicon}
+<!-- see glossary.tex for glossary entries (I will try to bring them into Rmd land eventually) -->
+```{=latex}
+\printnoidxglossary[sort=word]
+```
 
 
 <!-- At the end of your appendices add: -->
