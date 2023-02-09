@@ -36,6 +36,8 @@ french_abstract: |
   Un système d'entrée de données pour faciliter la saisie des informations recueillies lors des activités scientifiques menées par la Région du Golfe du MPO a été développé. Another data entry system (Andes) a été mis en œuvre en tant qu'environnement basé sur un navigateur qui facilite son déploiement dans une variété de scénarios de saisie de données. Les objectifs de conception et les détails de mise en œuvre d'Andes sont décrits, et un certain nombre de cas d'utilisation sont présentés. Pour promouvoir l'utilisation d'Andes par d'autres groupes scientifiques et assurer la pérennité du projet, l'application s'appuie sur des logiciels Open Source et utilise une plate-forme de développement de code partagé.
 output:
  csasdown::techreport_pdf:
+   includes:
+     in_header: "glossary.tex"
    french: false
    # copy_sty is a toggle to copy the style file from the csasdown package every time you compile
    # the document. If false, any changes you have made to the style file in your project
