@@ -2,49 +2,151 @@
 
 \makenoidxglossaries
 
+\newglossaryentry{Andes Lead} {
+  name = Andes Lead,
+  description = {A person with a functional understanding of the inner workings of Andes.
+   This person has the knowledge and user-rights that permit them to configure a \gls{Mission}, define a \gls{Protocol}, \gls{Sampling Req}, etc.}
+}
+
+\newglossaryentry{Bridge} {
+  name = Bridge,
+  description = {
+    The Bridge app is meant to be used by a winch operator (normaly a crewmember).
+    The operator inputs winch operations (eg.,net/warp deployed/recovered) or actions (eg., net on/off bottom) directly to Andes via the Bridge app. 
+  }
+}
+
+\newglossaryentry{Catch} {
+  name = Catch,
+  description = {
+    A table of the Ecosystem Surveys app. A Catch table contains a link to \gls{Set} and \gls{Species} entries, as well as an optional: speciment count, unweighted baskets, relative abundance category and an invertabrate catch ratio. 
+    Catches can be subdivided into sub-catches having a parent-children relationship.
+  }
+}
+
+    
 \newglossaryentry{Catch Card} {
   name=Catch Card,
-  description={Not sure yet, I think it's related to species and how they are measured/detailed}
+  description= {
+    Not sure yet, I think it's related to species and how they are measured/detailed
   }
+}
 
 \newglossaryentry{Cruise} {
   name=Cruise,
   description={Same as \gls{Mission}},
-  }
+}
 
 \newglossaryentry{Current Set} {
   name=Current Set,
-  description={The \gls{Set} that is currently occuring in time. It has begun and is not finished. There can only be one \gls{Current Set} at a time.},
+  description= {
+    The \gls{Set} that is currently occuring in time. 
+    It has begun and is not finished. 
+    There can only be one \gls{Current Set} at a time.
+  },
   see={Set}
-  }
+}
 
 \newglossaryentry{Closed Set} {
   name=Closed Set,
-  description={An \gls{Open Set} Can be closed if the data it contains (eg, from \gls{Catch Card}) does not trigger a \gls{Set Flag}.},
+  description= {
+    An \gls{Open Set} Can be closed if the data it contains (eg, from \gls{Catch Card}) does not trigger a \gls{Set Flag}.
+  },
   see={Set}
-  }
+}
 
+ \newglossaryentry{Configuration Preset} {
+  name=Configuration Preset,
+  description = {
+    Configuration for a particular deployment scenario. Configuration presets include details on the backup locations, and peripherals like GPS, sonars, label printers, etc.
+  }
+}
+
+\newglossaryentry{Ecosystem Survey} {
+  name=Ecosystem Survey,
+  description = {
+    The Ecosystem Survey app is used to as the main data input interface.
+    }
+}
+
+\newglossaryentry{Fishing Event} {
+  name=Fishing Event,
+  description = {
+    An event related to fishing activty of \gls{Set}.
+    Metadata such as GPS coordinates and time to are associated with the folllowing event types:
+    \emph{net deployed},
+    \emph{doors deployed},
+    \emph{warp deployed},
+    \emph{net on bottom},
+    \emph{haul back},
+    \emph{net off bottom},
+    \emph{door recovered},
+    \emph{net recovered},
+    and \emph{aborted}.
+    A \gls{Set} may contain a list of such event types.
+    The Fishing Events are added to the \gls{Set} by a crewmember using the \gls{Bridge} application.
+  }
+}
+  
 
 \newglossaryentry{Mission} {
   name=Mission,
-  description={Same as \gls{Cruise}}
+  description={
+    Same as \gls{Cruise}
   }
+}
 
 \newglossaryentry{Open Set} {
   name=Open Set,
-  description={A \gls{Set} that has not been closed. All new Sets will start in an open state and will remain so untill closed. Sets that are activated will automatically be opened. The \gls{Current Set} is always open.},
+  description = {
+    A \gls{Set} that has not been closed. All new Sets will start in an open state and will remain so untill closed. 
+    Sets that are activated will automatically be opened. 
+    The \gls{Current Set} is always open.
+  },
   see={Set}
-  }
+}
 
+\newglossaryentry{Port Sampling} {
+  name=Port Sampling,
+  description={TODO}
+}
+
+\newglossaryentry{Protocol} {
+  name=Protocol,
+  description={TODO}
+}
+
+\newglossaryentry{Sampling Req} {
+  name=Sampling Requirements,
+  description={TODO}
+}
+    
 \newglossaryentry{Set} {
   name=Set,
-  description={A \gls{Set} contains fishing activity}
+  description = {
+    A Set contains all fishing activity and sampling results for a particular \gls{Station}.
   }
-  
+}
+
+
 \newglossaryentry{Set Flag} {
   name=Set Flag,
-  description={A flag used to indicate that the data contained within the set has failed to pass a specific validation tests. CLosing an \gls{Open Set} with active flags can be done by overriding the }
+  description={A flag used to indicate that the data contained within the set has failed to pass a specific validation tests. 
+  Closing an \gls{Open Set} with active flags can be done by overriding the validation mechanism},
+  see=\gls{Set}
   }
+
+\newglossaryentry{Station} {
+  name=Station,
+  description = {
+    A target coordinate where
+  }
+}
   
+\newglossaryentry{Species} {
+  name=Species,
+  description={TODO}
+}
+
 \glsaddall
 \glsaddallunused

@@ -1,12 +1,46 @@
 # Methods
 The ESE was the starting point in the development of Andes. The data entry software had to first replicate the capabilities of the ESE. Early version of Andes achieved those goals and the system was further developed over its usage by scientists in the Gulf Region.
 
+## 
 
+Andes is meant to log activity on a \gls{Mission} basis, i.e., it is configured and deployed for a particular mission.
+The requirements for that mission are configured by an \gls{Andes lead} prior to deployment.
+The Mission 
 ## Usage cases
+
+### Deployement
+### Andes preparation
+A user, such as an \gls{Andes Lead} must set the stage before Andes is deployed for a \gls{Mission}.
+Typically this will require defining 
+i) a \gls{Configuration Preset} for Andes (configuration for a particular deployment); 
+ii) the \gls{Mission} parameters (name, vessel, institute, date, personnel, sampling protocol, etc); 
+and/or iii) a \gls{Sampling Protocol} to use when there is no mission (i.e., for \gls{Port Sampling]).
+
+
+
+Configuration preset
+Mission
+Set management
 
 ### Ecosystem survey data entry
 
-The Andes system is designed to be deployed as the main data entry platform during ecosystem surveys. The application's data entry interface for usage in a wet laboratory (Figure \@ref(fig:andes-wetlab1)) allows the capture of all the information required by the sampling protocols used for the survey
+The Andes system is designed to be deployed as the main data entry platform for survey operations.
+The \gls{Ecosystem Survey} application is the main entrypoint that technicians will use to input survey data.
+
+This application is meant for usage in a wet laboratory (Figure \@ref(fig:andes-wetlab1)).
+It allows the capture of all the information required by the sampling protocols of the survey.
+
+This is a command
+
+Catch table,
+Basket
+Specimen
+Observation
+Flag
+Complete Specimen
+Fishing event
+
+
 
 ### Oceanographic metadata collection
 

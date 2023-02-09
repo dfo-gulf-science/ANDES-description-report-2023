@@ -8,7 +8,7 @@ After that, all subsequent sections will be turned into appendices. -->
 \clearpage
 
 # Lexicon {#lexicon}
-<!-- see glossary.tex for glossary entries (I will try to bring them into Rmd land eventually) -->
+<!-- see glossary.tex for glossary entries -->
 ```{=latex}
 \printnoidxglossary[sort=word]
 ```
