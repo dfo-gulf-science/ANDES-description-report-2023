@@ -1,6 +1,7 @@
 # Introduction {#sec:introduction}
-Scientific activities conducted by Fisheries and Oceans Gulf Region include ecosystem surveys and port sampling activities. These monitoring programs require the collection of a variety of information about marine ecosystems and about commercial fishery activities.
 
+
+Scientific activities conducted by Fisheries and Oceans Gulf Region include ecosystem surveys and port sampling activities. These monitoring programs require the collection of a variety of information about marine ecosystems and about commercial fishery activities.
 To support the data collection during ecosystem surveys, a paper-based system was initially used on board research vessels. With the advent of computing capabilities, the paper data sheets were digitized and the information was stored for subsequent analyses. In the 1980s, a data entry system was created by DFO to allow for the direct entry of data in digital format. The Groundfish Survey Entry (GSE) system was used during research cruises from the mid 1980s until the deployment of its successor, the Ecosystem Survey Entry (ESE) system in the early 2000s. Both systems were Microsoft Access applications.
 
 While the ESE is a highly functional system, it also poses some limitations:
@@ -12,6 +13,13 @@ While the ESE is a highly functional system, it also poses some limitations:
 
 Furthermore, the lack of a true server-side application (e.g., web application) meant agile development was effectively impossible; especially in the context of a mission that was underway. While the status quo was meeting the immediate data capture needs of scientists, a proactive stance towards addressing the above spurred the development of **An**other **d**ata **e**ntry **s**ystem (Andes). This project began during the summer of 2018, the first field deployment on Andes took place in the fall of 2019 during the southern Gulf of St. Lawrence September survey, where it was piloted in parallel to the ESE on board *CCGS Teleost*.
 
-This report documents the design principles that guided the development of Andes, provides technical details about its implementation and details the usage cases encountered thus far. Finally, we provide guidelines for assessing the suitability of Andes for noval applications (e.g., other field activities and sampling programs) and discuss the ways in which this system could gain further adoption within DFO.
+<!-- Québec situation -->
+The Québec region follows a similar timeline. The coastal scallop surveys use a deprecated Visual Basic Application that connects to a mission-specific Microsoft Access database. The technicians often resort to pen and paper to perform activities unsupported by the application. In some cases such as the sea cucumber surveys, everything is performed by hand. The use of multiple entry methods such as Microsoft Excel, paper, and a legacy application have been reported by these teams. These data later have to be manually consolidated which is time consuming and error prone. These stock assessment teams have expressed interest in modernizing their tooling and workflow. This imminent need, together with the successful proof-of-concept demonstration of Andes in the Gulf region, presents a rare opportunity for this type of inter-regional sharing of tooling.
+
+<!-- Shrimp -->
+One successful case-study for this is the Shrimp Ecosystem Survey application. Early adopters of Andes
+
+This report documents the design principles that guided the development of Andes, provides technical details about its implementation and details the usage cases encountered thus far. Finally, we provide guidelines for assessing the suitability of Andes for novel applications (e.g., other field activities and sampling programs) and discuss the ways in which this system could gain further adoption within DFO.
+
 
 \newpage
