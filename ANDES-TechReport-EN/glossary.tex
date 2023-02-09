@@ -1,0 +1,50 @@
+\usepackage[nonumberlist]{glossaries}
+
+\makenoidxglossaries
+
+\newglossaryentry{Catch Card} {
+  name=Catch Card,
+  description={Not sure yet, I think it's related to species and how they are measured/detailed}
+  }
+
+\newglossaryentry{Cruise} {
+  name=Cruise,
+  description={Same as \gls{Mission}},
+  }
+
+\newglossaryentry{Current Set} {
+  name=Current Set,
+  description={The \gls{Set} that is currently occuring in time. It has begun and is not finished. There can only be one \gls{Current Set} at a time.},
+  see={Set}
+  }
+
+\newglossaryentry{Closed Set} {
+  name=Closed Set,
+  description={An \gls{Open Set} Can be closed if the data it contains (eg, from \gls{Catch Card}) does not trigger a \gls{Set Flag}.},
+  see={Set}
+  }
+
+
+\newglossaryentry{Mission} {
+  name=Mission,
+  description={Same as \gls{Cruise}}
+  }
+
+\newglossaryentry{Open Set} {
+  name=Open Set,
+  description={A \gls{Set} that has not been closed. All new Sets will start in an open state and will remain so untill closed. Sets that are activated will automatically be opened. The \gls{Current Set} is always open.},
+  see={Set}
+  }
+
+\newglossaryentry{Set} {
+  name=Set,
+  description={A \gls{Set} contains fishing activity}
+  }
+  
+\newglossaryentry{Set Flag} {
+  name=Set Flag,
+  description={A flag used to indicate that the data contained within the set has failed to pass a specific validation tests. CLosing an \gls{Open Set} with active flags can be done by overriding the }
+  }
+  
+\glsaddall
+\glsaddallunused
