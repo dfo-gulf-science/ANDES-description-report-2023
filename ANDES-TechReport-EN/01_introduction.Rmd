@@ -1,25 +1,59 @@
 # Introduction {#sec:introduction}
 
+Scientific activities conducted by Fisheries and Oceans Gulf Region include ecosystem surveys and port sampling activities.
+These monitoring programs require the collection of a variety of information about marine ecosystems and about commercial fishery activities.
+To support the data collection during ecosystem surveys, a paper-based system was initially used on board research vessels. With the advent of computing capabilities, the paper data sheets were digitized and the information was stored for subsequent analyses.
+In the 1980s, a data entry system was created by DFO to allow for the direct entry of data in digital format.
+The \gls{GSE} system was used during research cruises from the mid 1980s until the deployment of its successor, the \gls{ESE} system in the early 2000s.
+Both systems were Microsoft Access applications.
 
-Scientific activities conducted by Fisheries and Oceans Gulf Region include ecosystem surveys and port sampling activities. These monitoring programs require the collection of a variety of information about marine ecosystems and about commercial fishery activities.
-To support the data collection during ecosystem surveys, a paper-based system was initially used on board research vessels. With the advent of computing capabilities, the paper data sheets were digitized and the information was stored for subsequent analyses. In the 1980s, a data entry system was created by DFO to allow for the direct entry of data in digital format. The Groundfish Survey Entry (GSE) system was used during research cruises from the mid 1980s until the deployment of its successor, the Ecosystem Survey Entry (ESE) system in the early 2000s. Both systems were Microsoft Access applications.
+While the \gls{ESE} is a highly functional system, it also poses some limitations:
 
-While the ESE is a highly functional system, it also poses some limitations:
-
-- Despite being used over a local area network (LAN), the system is not designed to work in a networked configuration.
+- Despite being used over a \gls{LAN}, the system is not designed to work in a networked configuration.
 - The interface of the system currently does not support for multiple locales, meaning that it is a unilingual tool.
-- Visual Basic for Applications (VBA), the main development framework used to build the application, is a deprecated programming language and is no longer supported by Microsoft (REF NEEDED). To adapt the software using modern libraries and Application Programming Interfaces (API) in VBA will become increasingly difficult over time.
+- \gls{VBA}, the main development framework used to build the application, is a deprecated programming language and is no longer supported by Microsoft (REF NEEDED). To adapt the software using modern libraries and Application Programming Interfaces (API) in \gls{VBA} will become increasingly difficult over time.
 - The use of a version control system (VCS) is incompatible with MS Access. The absence of a VCS presents serious challenges for managing, disseminating and troubleshooting versions of an application across multiple platforms and is a major impediment for a collaborative approach to development.
 
-Furthermore, the lack of a true server-side application (e.g., web application) meant agile development was effectively impossible; especially in the context of a mission that was underway. While the status quo was meeting the immediate data capture needs of scientists, a proactive stance towards addressing the above spurred the development of **An**other **d**ata **e**ntry **s**ystem (Andes). This project began during the summer of 2018, the first field deployment on Andes took place in the fall of 2019 during the southern Gulf of St. Lawrence September survey, where it was piloted in parallel to the ESE on board *CCGS Teleost*.
+Furthermore, the lack of a true server-side application (e.g., web application) meant agile development was effectively impossible; especially in the context of a mission that was underway.
+While the status quo was meeting the immediate data capture needs of scientists, a proactive stance towards addressing the above spurred the development of **An**other **d**ata **e**ntry **s**ystem (Andes). 
+This project began during the summer of 2018, the first field deployment on Andes took place in the fall of 2019 during the southern Gulf of St. Lawrence September survey, where it was piloted in parallel to the \gls{ESE} on board the *CCGS Teleost*.
 
 <!-- Québec situation -->
-The Québec region follows a similar timeline. The coastal scallop surveys use a deprecated Visual Basic Application that connects to a mission-specific Microsoft Access database. The technicians often resort to pen and paper to perform activities unsupported by the application. In some cases such as the sea cucumber surveys, everything is performed by hand. The use of multiple entry methods such as Microsoft Excel, paper, and a legacy application have been reported by these teams. These data later have to be manually consolidated which is time consuming and error prone. These stock assessment teams have expressed interest in modernizing their tooling and workflow. This imminent need, together with the successful proof-of-concept demonstration of Andes in the Gulf region, presents a rare opportunity for this type of inter-regional sharing of tooling.
+The Québec region follows a similar timeline.
+Many survey teams use a deprecated Visual Basic Application that connects to a mission-specific Microsoft Access database.
+Their technicians often have to resort to pen and paper to perform activities unsupported by the application.
+In some cases, the complete surveys are performed in this manner.
+The use of various entry methods such as Microsoft Excel, paper, and a legacy application have been reported by these teams.
+These data later have to be manually consolidated which is time consuming and error prone.
+Interest in modernizing the tooling and workflow has been expressed.
+This imminent need, together with the successful proof-of-concept demonstration of Andes in the Gulf region, presents an opportunity for inter-regional collaboration.
 
-<!-- Shrimp -->
-One successful case-study for this is the Shrimp Ecosystem Survey application. Early adopters of Andes
+<!-- Quebec participation: Shrimp and others-->
+The Shrimp Ecosystem Survey application resulted from the early adoption of Andes in the Québec region.
+The niche workflow requirements of shrimp survey operations justified the creation of the its own Andes application.
+After two test years, the pilot project recently made its successful debut as the main input tool of a survey mission.
+Onboarding efforts for coastal surveys (scallop, sea-cucumber, whelk) has already begun.
+The proof of concept deployment of Andes on board the *CCGS Leim* is staged for 2023.
+This has lead to close interregional collaboration and presents new challenges: meeting niche regional requirements in Andes (eg., novel nomenclature and workflows).
 
-This report documents the design principles that guided the development of Andes, provides technical details about its implementation and details the usage cases encountered thus far. Finally, we provide guidelines for assessing the suitability of Andes for novel applications (e.g., other field activities and sampling programs) and discuss the ways in which this system could gain further adoption within DFO.
+<!-- Andes suffers from this -->
+A growing user-base that wish to add functional requirements can lead to a bad system design.
+This is especially true when affecting software components having different maturity levels.
+Development patterns such as contractual work specifically focused on adding a niche feature can easily lead to the accumulation of technical dept.
 
+<!-- governance -->
+Andes does not currently have a well-defined governing body.
+This makes it, as well as any project without governance, vulnerable. 
+To alleviate this situation, we ask that this technical document as well as the developer's guide be considered when outsourcing development efforts towards Andes.
+This will ensure that the core vision is maintained and that software sustainability principles are upheld.
+
+<!-- it has boundaries -->
+Andes reached a critical point in its lifecycle.
+It has been used as the main data entry strategy in numerous missions over the span of a few years.
+Although new features can always be added, its core functional requirements can now be locked-in.
+The boundaries can are now well-defined and will be described in this report.
+
+This report documents the design principles that guided the development of Andes, provides technical details about its implementation and details the usage cases encountered thus far.
+It provide guidelines for assessing the suitability of Andes for novel applications (e.g., other field activities and sampling programs) and discuss the ways in which this system could gain further adoption within DFO.
 
 \newpage
