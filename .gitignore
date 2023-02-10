@@ -23,11 +23,13 @@ tmp_*
 *.html
 *.knit.md
 *.log
+*.out
 *.pdf
 *.rda
 *.rds
 *.Rproj
 *.sty
+*.toc
 *.upa
 *.utf8.md
 /.idea/
