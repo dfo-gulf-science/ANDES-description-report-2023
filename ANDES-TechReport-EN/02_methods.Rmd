@@ -1,16 +1,72 @@
 # Methods
-The ESE was the starting point in the development of Andes. The data entry software had to first replicate the capabilities of the ESE. Early version of Andes achieved those goals and the system was further developed over its usage by scientists in the Gulf Region.
+The \gls{ESE} was the starting point in the development of Andes.
+The replacement data entry software had to first replicate the functional capabilities of \gls{ESE}.
+Early version of Andes achieved those goals and the system was further developed over its usage by scientists in the Gulf Region.
+
+## Architecture
+
+<!-- server-client -->
+Andes system architecture differs from the legacy entry systems that it succeeds.
+Andes offers a centralised data entry *service* that is accessed with client devices.
+Thus, one does not install the Andes software on input stations (eg., Toughbook, Surface Pro), rather Andes is installed on a server and is accessed via a web browser.
+This means any device that supports modern web browsers (Chrome, Safari, Firefox, Edge, etc) can potentially be used as input stations.
+This also means multiple stations can simultaneously enter data into the same Andes instance.
+
+<!-- web framework -->
+Figure \@ref(fig:arch) shows the basic system architecture of Andes.
+Andes itself is a Django web framework project.
+It hosts multiple applications that are explored in this document.
+The web framework comprises mainly of a backend \gls{REST-API} and frontend.
+Django uses an \gls{ORM} to handle the data layer, there exists drivers for a variety of modern relational database flavours (i.e., PostgreSQL, MariaDB, MySQL, Oracle, SQLite, etc).
+Django's web frontend can contain reactive components implemented in VUEjs.
+
+<!-- API access means crazy expandable -->
+This separation lends itself nicely to be adaptable to new requirements.
+One can potentially expand upon the *system* with minimal changes to Andes by interacting directly with its exposed \gls{REST-API}.
+For example, an imaging system can be aware of current GPS coordinates or current \gls{Set} / \gls{Station}.
+Photos or videos acquired by such an imaging system could automatically append these as metadata, or even add media identifiers directly to the database as they are captured.
+
+
+### Networking
+<!-- network environment -->
+This architecture creates networking requirements that were not previously present.
+The server and the client devices must be connected to the same network.
+The network does not need to have access to the wide area network (i.e., internet) connection.
+As long as they are connected to the same \gls{LAN}, they can be configured for work together.
+This suits the networking environment on board remote vessels that can have sporadic connection failures with the wide area network.
+Most modern vessels will already provide the minimum necessary networking infrastructure.
+In the case where it doesn't, this requirement can be met relatively easily using inexpensive consumer-grade networking equipment (wireless router, switch, etc).
+However, installing as ad-hoc network for scientific needs in a vessel may lead to code violations.
+Collaboration with vessel management body like the \gls{CCG} or chartering authority is essential.
+
+### Deployment
+<!-- deployment -->
+Andes roughly follows two distinct deployment patterns: i) in a \gls{Mission} context or ii) outside a \gls{Mission} context.
+
+<!-- in mission -->
+data entry mode
+<!-- out mission -->
+data navigation / edit mode
+
 
 ## 
 
+
 Andes is meant to log activity on a \gls{Mission} basis, i.e., it is configured and deployed for a particular mission.
+
+When Andes is used to capture data of a \gls{Mission}, it is deployed in in an enclosed environment.
+
+the data it captures 
+
+is encapsulated within it. 
+
 The requirements for that mission are configured by an \gls{Andes lead} prior to deployment.
 The Mission 
 ## Usage cases
 
-### Deployement
+### Deployment
 ### Andes preparation
-A user, such as an \gls{Andes Lead} must set the stage before Andes is deployed for a \gls{Mission}.
+A user, such as an \gls{Andes lead} must set the stage before Andes is deployed for a \gls{Mission}.
 Typically this will require defining 
 i) a \gls{Configuration Preset} for Andes (configuration for a particular deployment); 
 ii) the \gls{Mission} parameters (name, vessel, institute, date, personnel, sampling protocol, etc); 
