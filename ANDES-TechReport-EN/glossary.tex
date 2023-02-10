@@ -1,35 +1,42 @@
-\usepackage[nonumberlist]{glossaries}
+\usepackage[nonumberlist,acronym,numberedsection]{glossaries}
 
 \makenoidxglossaries
 
-\newglossaryentry{Andes Lead} {
-  name = Andes Lead,
-  description = {A person with a functional understanding of the inner workings of Andes.
+\newglossaryentry{Andes lead} {
+  name=Andes lead,
+  description={A person with a functional understanding of the inner workings of Andes.
    This person has the knowledge and user-rights that permit them to configure a \gls{Mission}, define a \gls{Protocol}, \gls{Sampling Req}, etc.}
 }
 
 \newglossaryentry{Bridge} {
-  name = Bridge,
-  description = {
+  name=Bridge,
+  description={
     The Bridge app is meant to be used by a winch operator (normaly a crewmember).
     The operator inputs winch operations (eg.,net/warp deployed/recovered) or actions (eg., net on/off bottom) directly to Andes via the Bridge app. 
   }
 }
 
 \newglossaryentry{Catch} {
-  name = Catch,
-  description = {
+  name=Catch,
+  description={
     A table of the Ecosystem Surveys app. A Catch table contains a link to \gls{Set} and \gls{Species} entries, as well as an optional: speciment count, unweighted baskets, relative abundance category and an invertabrate catch ratio. 
     Catches can be subdivided into sub-catches having a parent-children relationship.
   }
 }
-
     
 \newglossaryentry{Catch Card} {
   name=Catch Card,
-  description= {
+  description={
     Not sure yet, I think it's related to species and how they are measured/detailed
   }
+}
+
+\newglossaryentry{CCG} {
+  % type=\acronymtype,
+  name=CCG,
+  description={The Canadian Coast Guard.},
+  text={CCG},
+  first={Canadian Coast Guard (CCG)}
 }
 
 \newglossaryentry{Cruise} {
@@ -39,7 +46,7 @@
 
 \newglossaryentry{Current Set} {
   name=Current Set,
-  description= {
+  description={
     The \gls{Set} that is currently occuring in time. 
     It has begun and is not finished. 
     There can only be one \gls{Current Set} at a time.
@@ -49,7 +56,7 @@
 
 \newglossaryentry{Closed Set} {
   name=Closed Set,
-  description= {
+  description={
     An \gls{Open Set} Can be closed if the data it contains (eg, from \gls{Catch Card}) does not trigger a \gls{Set Flag}.
   },
   see={Set}
@@ -57,21 +64,29 @@
 
  \newglossaryentry{Configuration Preset} {
   name=Configuration Preset,
-  description = {
+  description={
     Configuration for a particular deployment scenario. Configuration presets include details on the backup locations, and peripherals like GPS, sonars, label printers, etc.
   }
 }
 
 \newglossaryentry{Ecosystem Survey} {
   name=Ecosystem Survey,
-  description = {
+  description={
     The Ecosystem Survey app is used to as the main data input interface.
     }
 }
 
+\newglossaryentry{ESE} {
+  % type=\acronymtype,
+  name=ESE,
+  description={Ecosystem Survey Entry. The ESE replaced \gls{GSE} in the early 2000's.},
+  text={ESE},
+  first={Ecosystem Survey Entry (ESE)}
+}
+
 \newglossaryentry{Fishing Event} {
   name=Fishing Event,
-  description = {
+  description={
     An event related to fishing activty of \gls{Set}.
     Metadata such as GPS coordinates and time to are associated with the folllowing event types:
     \emph{net deployed},
@@ -87,7 +102,22 @@
     The Fishing Events are added to the \gls{Set} by a crewmember using the \gls{Bridge} application.
   }
 }
-  
+
+\newglossaryentry{GSE} {
+  % type=\acronymtype,
+  name=GSE,
+  description={Groundfish Survey Entry. The GSE is a data entry tool developed in the 1980's.},
+  text={GSE},
+  first={Groundfish Survey Entry (GSE)}
+}
+
+\newglossaryentry{LAN} {
+  % type=\acronymtype,
+  name=LAN,
+  description={Local Area Network},
+  text={LAN},
+  first={local area network (LAN)}
+}
 
 \newglossaryentry{Mission} {
   name=Mission,
@@ -98,12 +128,20 @@
 
 \newglossaryentry{Open Set} {
   name=Open Set,
-  description = {
+  description={
     A \gls{Set} that has not been closed. All new Sets will start in an open state and will remain so untill closed. 
     Sets that are activated will automatically be opened. 
     The \gls{Current Set} is always open.
   },
   see={Set}
+}
+
+\newglossaryentry{ORM} {
+  % type=\acronymtype,
+  name=ORM,
+  description={Object Relational Mapping are an abstraction of relational entities (database tables) as objects.},
+  text={ORM},
+  first={Object Relational Model (ORM)}
 }
 
 \newglossaryentry{Port Sampling} {
@@ -116,6 +154,16 @@
   description={TODO}
 }
 
+\newglossaryentry{REST-API} {
+  name=REST-API,
+  description={TODO, just an API over the web yo}
+}
+
+\newglossaryentry{Sampling Protocol} {
+  name=Sampling Protocol,
+  description={TODO}
+}
+
 \newglossaryentry{Sampling Req} {
   name=Sampling Requirements,
   description={TODO}
@@ -123,11 +171,10 @@
     
 \newglossaryentry{Set} {
   name=Set,
-  description = {
+  description={
     A Set contains all fishing activity and sampling results for a particular \gls{Station}.
   }
 }
-
 
 \newglossaryentry{Set Flag} {
   name=Set Flag,
@@ -138,7 +185,7 @@
 
 \newglossaryentry{Station} {
   name=Station,
-  description = {
+  description={
     A target coordinate where
   }
 }
@@ -146,6 +193,14 @@
 \newglossaryentry{Species} {
   name=Species,
   description={TODO}
+}
+
+\newglossaryentry{VBA} {
+  % type=\acronymtype,
+  name=VBA,
+  description={Visual Basic for Applications},
+  text={VBA},
+  first={Visual Basic for Applications (VBA)}
 }
 
 \glsaddall
