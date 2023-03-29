@@ -4,7 +4,7 @@
 
 <!-- You shouldn't need to edit this file -->
 
-\clearpage
+<div id="refs"></div>
 
 # References
 
@@ -14,3 +14,5 @@
 \setlength{\parindent}{-0.2in}
 \setlength{\leftskip}{0.2in}
 \setlength{\parskip}{8pt}
+
+\clearpage

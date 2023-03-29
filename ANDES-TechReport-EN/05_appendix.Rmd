@@ -16,3 +16,5 @@ After that, all subsequent sections will be turned into appendices. -->
 
 <!-- At the end of your appendices add: -->
 `r if(knitr:::is_latex_output()) '% end csasdown appendix'`
+
+\clearpage
