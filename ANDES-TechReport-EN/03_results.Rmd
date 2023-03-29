@@ -60,18 +60,21 @@ Prior to a survey, a number of configurations must be done for Andes to function
 A number of unit tests have been created for the application.
 
 ## Data models
+Full ERD on Figure \@ref(fig:ERD)
 
 Simplified Entity Relationship Diagrams (ERD) of the following components:
 
 ### Sampling Protocols
+
 ### Ecosystem Survey
+
 ### Port Sampling
+
 ### Oceanography
 
 
 ### Integration with navigation system and trawl sensors
 
-Full ERD on Figure \@ref(fig:ERD)
 
 ### Collaborative development 
 
@@ -81,7 +84,6 @@ Full ERD on Figure \@ref(fig:ERD)
 - at the time of writing this document, the project has a total of 6 contributor to the code.
 
 \newpage
-
 
 ## Deployment Checklist
 

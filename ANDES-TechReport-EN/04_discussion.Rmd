@@ -18,7 +18,6 @@ Discuss the steps required to go from data collected in Andes to transferring th
 
 ## Future Directions
 
-
 - AZMP / Oceanographic Surveys
 - use for ecosystem surveys by multiple DFO regions
 - use of barcodes and/or QR codes for identifying and tracking down samples (e.g. otoliths, tissue samples, ...)
@@ -27,4 +26,6 @@ Discuss the steps required to go from data collected in Andes to transferring th
 
 
 # Acknowledgments
+We thank all DFO personnel who were involved in the early testing and deployment of Andes during the annual southern Gulf of St. Lawrence trawl survey.
 
+\clearpage
