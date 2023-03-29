@@ -51,7 +51,6 @@ data navigation / edit mode
 
 ## 
 
-
 Andes is meant to log activity on a \gls{Mission} basis, i.e., it is configured and deployed for a particular mission.
 
 When Andes is used to capture data of a \gls{Mission}, it is deployed in in an enclosed environment.
@@ -117,20 +116,17 @@ Within the context of DFO Science, there is a high number of use-cases under whi
 
 The [Django Web Framework](https://www.djangoproject.com/) was selected for the backend of this application due to its modularize nature; virtually all aspects of the framework can be decoupled. Furthermore, the Django framework is written in pure Python; an open-sourced, generalized object-orientated programming language that is popular for use in data-heavy applications. While web applications are most often used over a network, the django library comes with a development web-server that permits users to serve and use the application locally. In this scenario, a single computer acts simultaneously as server and client. While there are important limitations to the use of the django development web-server in a full-scale production environment, this configuration is adequate for the stand-alone use-cases referred to above. <!-- Unit tests will be used to ensure reliability over the short and long term. -->
 
-
 ### Version Control / Source Control
 
 The utilization of a version control system (VCS) is an indispensable component of a modern day development workflow. Version management is especially important in the context of having concurrent instances of the application in production at a given time. Knowing the version of a production instance is necessary to resolve any issues that might arise. Similarly, databases and backup files are intimately linked to an application's version number. In order to successfully re-instantiate a backup file, the precise version under which it was produced must be known. The VCS will also provide an indispensable framework for the coordination, examination and integration of contributions from collaborators.
 
 It was decided to use [Git](https://git-scm.com/) as the VCS for this project due to the fact that it is both widespread in use and open-sourced. The remote repository for this project is currently hosted on the [Gulf Science organizational GitHub account](https://github.com/dfo-gulf-science). The project is additionally making use of GitHub infrastructure including, pull requests, issue management (e.g., bugs, feature requests and general enhancement requests) and security alerts.
 
-
 ### Unit testing
 
 The application also needs to be reliable especially considering its use in the field setting. The implementation of unit tests is a practical way to ensure the maintenance of functionality over time. On one extreme, the addition of any code can be preceded by the creation of unit tests (i.e., test-driven development). This approach will maximize the stability of an application but can hinder the momentum of a project, especially in its early stages. On the other extreme, application development in the complete absence of unit testing occurs at a relatively fast pace but will result in a project that is vulnerable to breaking in unexpected ways and one that is difficult to maintain and pass on to other developers.
 
 Using the built-in Python / Django testing framework, this project will seek to employ a middle ground between the above two approached. While the goal is not to implement test-driven development, the use of unit tests are highly encourages, especially to back up the core functionality of the application.
-
 
 ### User-defined protocols
 
@@ -159,7 +155,6 @@ The [Django REST framework](https://www.django-rest-framework.org/) was used to 
 ### Multilingualism
 
 Allowing users to utilize the application in the language of their choice is of considerable importance to this project. Previous tools that have been used were uni-lingual and this by itself would have limited the scope of their use in a national context. The Django framework has excellent support for internationalization and localization, including the translation of text and the formatting of dates, times and numbers. It achieves this using a system of "hooks" used by developers to indicate which parts of the code should be localized. See [Django - Internationalization and localization](https://docs.djangoproject.com/en/4.1/topics/i18n/) for more details on this process. In our application, an end-user can toggle between English and French by simply clicking on a button. In this way, each client can view the application in the language of their choice.
-
 
 ### Backup Regime and infrastructure
 

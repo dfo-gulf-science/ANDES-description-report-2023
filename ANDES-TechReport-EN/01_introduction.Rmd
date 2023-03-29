@@ -55,5 +55,4 @@ The boundaries can are now well-defined and will be described in this report.
 
 This report documents the design principles that guided the development of Andes, provides technical details about its implementation and details the usage cases encountered thus far.
 It provide guidelines for assessing the suitability of Andes for novel applications (e.g., other field activities and sampling programs) and discuss the ways in which this system could gain further adoption within DFO.
-
-\newpage
+[@nyman2013; @sethanandha2010; @ossModels2021]
