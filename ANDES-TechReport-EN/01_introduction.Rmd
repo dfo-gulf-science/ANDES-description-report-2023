@@ -1,21 +1,26 @@
 # Introduction {#sec:introduction}
 
-Scientific activities conducted by Fisheries and Oceans Gulf Region include ecosystem surveys and port sampling activities.
-These monitoring programs require the collection of a variety of information about marine ecosystems and about commercial fishery activities.
-To support the data collection during ecosystem surveys, a paper-based system was initially used on board research vessels. With the advent of computing capabilities, the paper data sheets were digitized and the information was stored for subsequent analyses.
-In the 1980s, a data entry system was created by DFO to allow for the direct entry of data in digital format.
-The \gls{GSE} system was used during research cruises from the mid 1980s until the deployment of its successor, the \gls{ESE} system in the early 2000s.
-Both systems were Microsoft Access applications.
+The scientific activities conducted by the Atlantic regions of the Department of Fisheries and Oceans (DFO) include ecosystem surveys, sentinel fisheries programs,
+coastal surveys, port sampling activities and others.
+These monitoring programs require the collection of a wide variety of information about marine ecosystems and commercial fishery activities.
+To support the data collection those surveys, a paper-based system was initially used on board research vessels. With the advent of computing capabilities,
+the paper data sheets were digitized and the information was stored for subsequent analyses. In the 1980s and early 2000s, several data entry systems
+such as the were Groundfish Survey Entry (GSE), the Ecosystem Survey Entry (ESE) and the Module des Relevés de Recherche (MRR) were created by DFO
+to allow the direct entry of data in digital format.
 
-While the \gls{ESE} is a highly functional system, it also poses some limitations:
+The later versions of those data entry systems were built with Visual Basic for Applications (VBA) and rely on Microsoft Access databases. While highly functional,
+they nonetheless have important limitations:
 
 - Despite being used over a \gls{LAN}, the system is not designed to work in a networked configuration.
-- The interface of the system currently does not support for multiple locales, meaning that it is a unilingual tool.
+- All these tools are unilingual (French or English depending on the region)
 - \gls{VBA}, the main development framework used to build the application, is a deprecated programming language and is no longer supported by Microsoft (REF NEEDED). To adapt the software using modern libraries and Application Programming Interfaces (API) in \gls{VBA} will become increasingly difficult over time.
 - The use of a version control system (VCS) is incompatible with MS Access. The absence of a VCS presents serious challenges for managing, disseminating and troubleshooting versions of an application across multiple platforms and is a major impediment for a collaborative approach to development.
+- While these applications were built by DFO, multiple attempts to obtain support by IMTS were unsuccessful.
+- This lack of support means that technicians often resort to either Excel or pen and paper to perform activities unsupported by the application.
+  Using multiple entry methods means that the data has to be manually consolidated at a later date which is time consuming and error prone.
+- Furthermore, the lack of a true server-side application (e.g., web application) meant agile development was effectively impossible; especially in the context of a mission that was underway.
 
-Furthermore, the lack of a true server-side application (e.g., web application) meant agile development was effectively impossible; especially in the context of a mission that was underway.
-While the status quo was meeting the immediate data capture needs of scientists, a proactive stance towards addressing the above spurred the development of **An**other **d**ata **e**ntry **s**ystem (Andes). 
+While the status quo was meeting the immediate data capture needs of scientists, a proactive stance towards addressing the above spurred the development of **An**other **d**ata **e**ntry **s**ystem (Andes).
 This project began during the summer of 2018, the first field deployment on Andes took place in the fall of 2019 during the southern Gulf of St. Lawrence September survey, where it was piloted in parallel to the \gls{ESE} on board the *CCGS Teleost*.
 
 <!-- Québec situation -->
