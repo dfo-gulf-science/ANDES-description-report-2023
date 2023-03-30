@@ -1,8 +1,7 @@
 # Introduction {#sec:introduction}
 
 The scientific activities conducted by the Atlantic regions of the Department of Fisheries and Oceans (DFO) include ecosystem surveys, sentinel fisheries programs,
-coastal surveys, port sampling activities and others.
-These monitoring programs require the collection of a wide variety of information about marine ecosystems and commercial fishery activities.
+coastal surveys, port sampling activities and others. These monitoring programs require the collection of a wide variety of information about marine ecosystems and commercial fishery activities.
 To support the data collection those surveys, a paper-based system was initially used on board research vessels. With the advent of computing capabilities,
 the paper data sheets were digitized and the information was stored for subsequent analyses. In the 1980s and early 2000s, several data entry systems
 such as the were Groundfish Survey Entry (GSE), the Ecosystem Survey Entry (ESE) and the Module des Relevés de Recherche (MRR) were created by DFO
@@ -11,12 +10,12 @@ to allow the direct entry of data in digital format.
 The later versions of those data entry systems were built with Visual Basic for Applications (VBA) and rely on Microsoft Access databases. While highly functional,
 they nonetheless have important limitations:
 
-- Despite being used over a \gls{LAN}, the system is not designed to work in a networked configuration.
+- Despite being used over a \gls{LAN}, the systems are not designed to work in a networked configuration.
 - All these tools are unilingual (French or English depending on the region)
-- \gls{VBA}, the main development framework used to build the application, is a deprecated programming language and is no longer supported by Microsoft (REF NEEDED). To adapt the software using modern libraries and Application Programming Interfaces (API) in \gls{VBA} will become increasingly difficult over time.
+- \gls{VBA}, the main development framework used to build the applications, is a deprecated programming language and is no longer supported by Microsoft (REF NEEDED). To adapt the software using modern libraries and Application Programming Interfaces (API) in \gls{VBA} will become increasingly difficult over time.
 - The use of a version control system (VCS) is incompatible with MS Access. The absence of a VCS presents serious challenges for managing, disseminating and troubleshooting versions of an application across multiple platforms and is a major impediment for a collaborative approach to development.
 - While these applications were built by DFO, multiple attempts to obtain support by IMTS were unsuccessful.
-- This lack of support means that technicians often resort to either Excel or pen and paper to perform activities unsupported by the application.
+- This lack of support means that technicians often resort to either Excel or pen and paper to perform activities unsupported by the applications.
   Using multiple entry methods means that the data has to be manually consolidated at a later date which is time consuming and error prone.
 - Furthermore, the lack of a true server-side application (e.g., web application) meant agile development was effectively impossible; especially in the context of a mission that was underway.
 
