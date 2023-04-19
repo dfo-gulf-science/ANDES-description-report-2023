@@ -42,29 +42,29 @@ Collaboration with vessel management body like the \gls{CCG} or chartering autho
 ### Deployment
 <!-- deployment -->
 Andes roughly follows two distinct deployment patterns: i) in a \gls{Mission} context or ii) outside a \gls{Mission} context.
+The two situations will be explored separately in detail below.
+In both cases Andes is remains a web-application that can serve multiple clients, it needs to be supported by web-server and connects to a database to store the data.
 
 <!-- in mission -->
-data entry mode
+In the \gls{Mission} context, the web-server serves clients (input stations) connected over the vessel's \gls{LAN}.
+A database service that specifically serves the Andes web-application is needed.
+Since only a limited number of web-server and database connections are expected, the demands are such that the same hardware can be used to support the full application stack.
+
+The database instance will typically be as lightweight as permitted to strictly support the ongoing mission.
+We will discuss how to initialize the database state for the in section [deployment preparation] (#deploy_prep) below.
+
+A GPS feed is expected, either by a RS-232 serial connection to the vessel \gls{NMEA} network or by a data stream over \gls{LAN}.
+This will allow for the automatic acquisition of positional data for specific activities.
+Optional data connections to other vessel sensors (e.g., Sonar, Scanmar) can also be configured.
+
 <!-- out mission -->
 data navigation / edit mode
 
-
 ## 
 
-Andes is meant to log activity on a \gls{Mission} basis, i.e., it is configured and deployed for a particular mission.
-
-When Andes is used to capture data of a \gls{Mission}, it is deployed in in an enclosed environment.
-
-the data it captures 
-
-is encapsulated within it. 
-
-The requirements for that mission are configured by an \gls{Andes lead} prior to deployment.
-The Mission 
 ## Usage cases
 
-### Deployment
-### Andes preparation
+### Deployment preparation {# deploy_prep}
 A user, such as an \gls{Andes lead} must set the stage before Andes is deployed for a \gls{Mission}.
 Typically this will require defining 
 i) a \gls{Configuration Preset} for Andes (configuration for a particular deployment); 
