@@ -28,7 +28,8 @@ Another task-specific utility is the completion map which shows what strata have
 Two types of reports are available for Andes: 1) reports meant to be used during field activities and 2) reports meant to be used after field activites are completed.
 
 ## Shrimp ecosystem survey app
-Quebec: Denis and Brian could contribute here?
+Shrimp data is collected by the Quebec region in the course of its yearly ecosystem survey in the estuary and northern gulf of the Saint-Lawrence as well as during other surveys such as the winter surveys of 2022 and 2023. These data are collected for the stock assessment of the northern shrimp (Pandalus borealis) as well as to assess the biodiversity and abundance of shrimp species. In the case of the Quebec region the biological measures related to shrimps are done onboard where in other regions shrimps subsamples are frozen and done in the laboratory at the end of the mission. The shrimps application was developed to allow the entry of shrimps data as it follows a different workflow compared to the ecosystem survey application. At every set, a subsample of between 2 and 3 kilograms is first collected from the total catch. This sample is then separated by species, then by maturity stage and only then are the biological data (cephalothorax length for all species and occasionally weight for Pandalus borealis) taken.
+The shrimp application is integrated into Andes at several levels: the main page of the shrimps application can be accessed via the ecosystem survey application when a shrimp catch is declared, it uses a subset of species flagged as shrimp, a shrimp report can be produced on the Reports page and in the case of Pandalus borealis, the lengths and weights can be visualized in the Charts application.
 
 ## Oceanography app
 The oceanography data collection is handled by a separate app that is used in the deployment of the rosette and the processing of water samples obtained at different depths.
