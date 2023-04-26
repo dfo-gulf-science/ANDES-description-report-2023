@@ -4,13 +4,13 @@
 Andes provides access to its different components differently based on the credentials of users. While the chief scientist can change sampling requirements for the mission, other users won't.
 
 ## Ecosystem survey app
-This component of Andes replicates the capabilities of the ESE for capturing detailed information on length, weight, ageing material, maturity, etc. about fish and invertebrate specimens. 
+This component of Andes replicates the capabilities of the \gls{ese} for capturing detailed information on length, weight, ageing material, maturity, etc. about fish and invertebrate specimens. 
 
 ### App used in the laboratory
 The app running on computers in the wet laboratory of the vessel is used for all entry of data related to measurements and observations of marine organisms.
 
 ### App used in the bridge
-The console to be used by navigation officers is meant to run on a tablet in the bridge of the vessel conducting the survey.
+The console to be used by navigation officers is meant to run on a tablet in the bridge of the vessel conducting the survey ((Figure \@ref(fig:bridge))).
 
 This console contains two separate sections: 1) the Set Card section and 2) the Fishing section.
 
@@ -25,17 +25,27 @@ Part of the task-specific suite of utilities is a forecasting tool that provides
 Another task-specific utility is the completion map which shows what strata have been completed based on target and minimum number of sets per stratum.
 
 ### Reporting capabilities
-Two types of reports are available for Andes: 1) reports meant to be used during field activities and 2) reports meant to be used after field activites are completed.
+Two types of reports are available for Andes: 1) reports meant to be used during field activities and 2) reports meant to be used after field activities are completed.
 
 ## Shrimp ecosystem survey app
-Shrimp data is collected by the Quebec region in the course of its yearly ecosystem survey in the estuary and northern gulf of the Saint-Lawrence as well as during other surveys such as the winter surveys of 2022 and 2023. These data are collected for the stock assessment of the northern shrimp (Pandalus borealis) as well as to assess the biodiversity and abundance of shrimp species. In the case of the Quebec region the biological measures related to shrimps are done onboard where in other regions shrimps subsamples are frozen and done in the laboratory at the end of the mission. The shrimps application was developed to allow the entry of shrimps data as it follows a different workflow compared to the ecosystem survey application. At every set, a subsample of between 2 and 3 kilograms is first collected from the total catch. This sample is then separated by species, then by maturity stage and only then are the biological data (cephalothorax length for all species and occasionally weight for Pandalus borealis) taken.
+Shrimp data is collected by the Quebec region in the course of its yearly ecosystem survey in the estuary and northern gulf of the Saint-Lawrence as well as during other surveys such as the winter surveys of 2022 and 2023. These data are collected for the stock assessment of the northern shrimp (*Pandalus borealis*) as well as to assess the biodiversity and abundance of shrimp species. In the case of the Quebec region the biological measures related to shrimps are done onboard where in other regions shrimps subsamples are frozen and done in the laboratory at the end of the mission. The shrimps application was developed to allow the entry of shrimps data as it follows a different workflow compared to the ecosystem survey application. At every set, a subsample of between 2 and 3 kilograms is first collected from the total catch. This sample is then separated by species, then by maturity stage and only then are the biological data (cephalothorax length for all species and occasionally weight for *Pandalus borealis*) taken.
+
 The shrimp application is integrated into Andes at several levels: the main page of the shrimps application can be accessed via the ecosystem survey application when a shrimp catch is declared, it uses a subset of species flagged as shrimp, a shrimp report can be produced on the Reports page and in the case of Pandalus borealis, the lengths and weights can be visualized in the Charts application.
 
+<!-- Quebec participation: Shrimp and others-->
+The Shrimp Ecosystem Survey application resulted from the early adoption of Andes in the Québec region.
+The niche workflow requirements of shrimp survey operations justified the creation of the its own Andes application.
+After two test years, the pilot project recently made its successful debut as the main input tool of a survey mission.
+Onboarding efforts for coastal surveys (scallop, sea-cucumber, whelk) has already begun.
+The proof of concept deployment of Andes on board the *CCGS Leim* is staged for 2023.
+This has lead to close interregional collaboration and presents new challenges: meeting niche regional requirements in Andes (eg., novel nomenclature and workflows).
+
+
 ## Oceanography app
-The oceanography data collection is handled by a separate app that is used in the deployment of the rosette and the processing of water samples obtained at different depths.
+The oceanography data collection is handled by a separate app that is used in the deployment of the rosette and the processing of water samples obtained at different depths  (Figure \@ref(fig:oceanography)).
 
 ## Cruise dashboard
-This utility is meant to obtain a summary of the cruise, it includes the current position and speed of the vessel, the list of the most recent catches in the wet laboratory, as well as running totals of specimens captured.
+This utility is meant to obtain a summary of the cruise, it includes the current position and speed of the vessel, the list of the most recent catches in the wet laboratory, as well as running totals of specimens captured (Figure \@ref(fig:dashboard)).
 
 
 ## Port sampling app
@@ -60,18 +70,23 @@ Prior to a survey, a number of configurations must be done for Andes to function
 
 A number of unit tests have been created for the application.
 
+
 ## Data models
-Full ERD on Figure \@ref(fig:ERD)
+Full ERD on Figure \@ref(fig:ERD).
 
 Simplified Entity Relationship Diagrams (ERD) of the following components:
 
 ### Sampling Protocols
 
+
 ### Ecosystem Survey
+
 
 ### Port Sampling
 
+
 ### Oceanography
+
 
 
 ### Integration with navigation system and trawl sensors
@@ -86,23 +101,3 @@ Simplified Entity Relationship Diagrams (ERD) of the following components:
 
 \newpage
 
-## Deployment Checklist
-
-Here is a deployment checklist for deploying an instance of the Andes application in a production environment:
-
-[//]: # (This list is taken straigh out of the code repo. It will have to be beefed up with more explanations and context)
-
-- [ ] It is always a good practice to set the `DEBUG` setting to `False`.
-   Using DEBUG in production can result in memory leakage.
-   The debug setting is set via the project's .env file, located in the andes root directory (e.g. `/opt/andes_root/andes/.env`)
-- [ ] Set Andes Leads and Chief Scientists to Admin users.
-- [ ] Make sure GPS is working on site
-- [ ] Make sure printer is working on site
-- [ ] Make sure the backup works
-- [ ] Make sure custom maps are working (if applicable)
-- [ ] Check everything again after a reboot of the server
-- [ ] Make sure you can run shell scripts from the front end (optional)
-- [ ] Alderbarren setup
-- [ ] Reset the Specimen table autoincrement (see [basic_setup](/setup_basic.md))
-- [ ] If using cradlepoint, has web filtering been turned on?
-- [ ] Check to make sure that the time/date on any clients (especially Bridge clients) are in sync with server time

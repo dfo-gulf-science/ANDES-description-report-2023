@@ -1,6 +1,6 @@
 # Methods
-The \gls{ESE} was the starting point in the development of Andes.
-The replacement data entry software had to first replicate the functional capabilities of \gls{ESE}.
+The \gls{ese} was the starting point in the development of Andes.
+The replacement data entry software had to first replicate the functional capabilities of \gls{ese}.
 Early version of Andes achieved those goals and the system was further developed over its usage by scientists in the Gulf Region.
 
 ## Architecture
@@ -32,7 +32,7 @@ Photos or videos acquired by such an imaging system could automatically append t
 This architecture creates networking requirements that were not previously present.
 The server and the client devices must be connected to the same network.
 The network does not need to have access to the wide area network (i.e., internet) connection.
-As long as they are connected to the same \gls{LAN}, they can be configured for work together.
+As long as they are connected to the same \gls{lan}, they can be configured for work together.
 This suits the networking environment on board remote vessels that can have sporadic connection failures with the wide area network.
 Most modern vessels will already provide the minimum necessary networking infrastructure.
 In the case where it doesn't, this requirement can be met relatively easily using inexpensive consumer-grade networking equipment (wireless router, switch, etc).
@@ -94,6 +94,7 @@ Observation
 Flag
 Complete Specimen
 Fishing event
+
 
 
 

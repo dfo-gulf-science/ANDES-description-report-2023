@@ -4,9 +4,9 @@
 
 <!-- You shouldn't need to edit this file -->
 
-<div id="refs"></div>
-
 # References
+
+<div id="refs"></div>
 
 <!-- The following sets the appropriate indentation for the references -->
 \noindent

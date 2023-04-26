@@ -13,19 +13,32 @@ Things will change.
 
 ## Integration of Andes with existing data repositories
 
-Discuss the steps required to go from data collected in Andes to transferring them to existing databases.
+Discuss the steps required to go from data collected in Andes to transferring them to existing databases. 
 
 
 ## Future Directions
 
-- AZMP / Oceanographic Surveys
+- \gls{azmp} / oceanographic surveys
 - use for ecosystem surveys by multiple DFO regions
 - use of barcodes and/or QR codes for identifying and tracking down samples (e.g. otoliths, tissue samples, ...)
+
+
+<!-- governance -->
+Andes does not currently have a well-defined governing body.
+This makes it, as well as any project without governance, vulnerable. 
+To alleviate this situation, we ask that this technical document as well as the developer's guide be considered when outsourcing development efforts towards Andes.
+This will ensure that the core vision is maintained and that software sustainability principles are upheld.
+
+<!-- it has boundaries -->
+Andes reached a critical point in its lifecycle.
+It has been used as the main data entry strategy in numerous missions over the span of a few years.
+Although new features can always be added, its core functional requirements can now be locked-in.
+The boundaries are now well-defined and described in this report.
 
 \newpage
 
 
 # Acknowledgments
-We thank all DFO personnel who were involved in the early testing and deployment of Andes during the annual southern Gulf of St. Lawrence trawl survey.
+We thank all DFO personnel who were involved in the early testing and deployment of Andes during the annual southern Gulf of St. Lawrence trawl survey. We thank the Gulf Region publications coordinator, Dr. Jeffery Clements, for his assistance with getting this document published.
 
 \clearpage

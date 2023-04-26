@@ -8,22 +8,43 @@
    This person has the knowledge and user-rights that permit them to configure a \gls{Mission}, define a \gls{Protocol}, \gls{Sampling Req}, etc.}
 }
 
+%%% The glossary entry the acronym links to
+\newglossaryentry{apig}{name={API},
+    description={An Application Programming Interface (API) is a particular set
+of rules and specifications that a software program can follow to access and
+make use of the services and resources provided by another particular software
+program that implements that API}}
+
+%%% define the acronym and use the see= option
+\newglossaryentry{api}{type=\acronymtype, name={API}, description={Application
+Programming Interface}, first={Application
+Programming Interface (API)\glsadd{apig}}, see=[Glossary:]{apig}}
+
+
+%%% The glossary entry the acronym links to
+\newglossaryentry{azmpg}{name={AZMP},
+    description={The Atlantic Zone Monitoring Program collects and analyses the biological, chemical and physical oceanographic field data in the four Altantic regions of Fisheries and Oceans Canada}}
+
+%%% define the acronym and use the see= option
+\newglossaryentry{azmp}{type=\acronymtype, name={AZMP}, description={Atlantic Zone Monitoring Program}, first={Atlantic Zone Monitoring Program (AZMP)\glsadd{azmpg}}, see=[Glossary:]{azmpg}}
+
+
 \newglossaryentry{Bridge} {
   name=Bridge,
   description={
     The Bridge app is meant to be used by a winch operator (normaly a crewmember).
-    The operator inputs winch operations (eg.,net/warp deployed/recovered) or actions (eg., net on/off bottom) directly to Andes via the Bridge app. 
+    The operator inputs winch operations (eg.,net/warp deployed/recovered) or actions (eg., net on/off bottom) directly to Andes via the Bridge app.
   }
 }
 
 \newglossaryentry{Catch} {
   name=Catch,
   description={
-    A table of the Ecosystem Surveys app. A Catch table contains a link to \gls{Set} and \gls{Species} entries, as well as an optional: speciment count, unweighted baskets, relative abundance category and an invertabrate catch ratio. 
+    A table of the Ecosystem Surveys app. A Catch table contains a link to \gls{Set} and \gls{Species} entries, as well as an optional: speciment count, unweighted baskets, relative abundance category and an invertabrate catch ratio.
     Catches can be subdivided into sub-catches having a parent-children relationship.
   }
 }
-    
+
 \newglossaryentry{Catch Card} {
   name=Catch Card,
   description={
@@ -47,8 +68,8 @@
 \newglossaryentry{Current Set} {
   name=Current Set,
   description={
-    The \gls{Set} that is currently occuring in time. 
-    It has begun and is not finished. 
+    The \gls{Set} that is currently occuring in time.
+    It has begun and is not finished.
     There can only be one \gls{Current Set} at a time.
   },
   see={Set}
@@ -69,6 +90,16 @@
   }
 }
 
+
+%%% The glossary entry the acronym links to
+\newglossaryentry{dfog}{name={DFO},
+    description={Fisheries and Oceans Canada}}
+
+%%% define the acronym and use the see= option
+\newglossaryentry{dfo}{type=\acronymtype, name={DFO}, description={Fisheries and Oceans Canada, formerly the Department of Fisheries and Oceans}, first={Fisheries and Oceans Canada (DFO)\glsadd{dfog}}, see=[Glossary:]{dfog}}
+
+
+
 \newglossaryentry{Ecosystem Survey} {
   name=Ecosystem Survey,
   description={
@@ -76,13 +107,13 @@
     }
 }
 
-\newglossaryentry{ESE} {
-  % type=\acronymtype,
-  name=ESE,
-  description={Ecosystem Survey Entry. The ESE replaced \gls{GSE} in the early 2000's.},
-  text={ESE},
-  first={Ecosystem Survey Entry (ESE)}
-}
+%%% The glossary entry the acronym links to
+\newglossaryentry{eseg}{name={ESE},
+    description={The Ecosystem Survey Entry replaced the \gls{gse} in the early 2000s}}
+
+%%% define the acronym and use the see= option
+\newglossaryentry{ese}{type=\acronymtype, name={ESE}, description={Ecosystem Survey Entry}, first={Ecosystem Survey Entry (ESE)\glsadd{eseg}}, see=[Glossary:]{eseg}}
+
 
 \newglossaryentry{Fishing Event} {
   name=Fishing Event,
@@ -103,21 +134,29 @@
   }
 }
 
-\newglossaryentry{GSE} {
-  % type=\acronymtype,
-  name=GSE,
-  description={Groundfish Survey Entry. The GSE is a data entry tool developed in the 1980's.},
-  text={GSE},
-  first={Groundfish Survey Entry (GSE)}
-}
+%%% The glossary entry the acronym links to
+\newglossaryentry{gseg}{name={GSE},
+    description={Fisheries and Oceans Canada}}
 
-\newglossaryentry{LAN} {
-  % type=\acronymtype,
-  name=LAN,
-  description={Local Area Network},
-  text={LAN},
-  first={local area network (LAN)}
-}
+%%% define the acronym and use the see= option
+\newglossaryentry{gse}{type=\acronymtype, name={GSE}, description={Groundfish Survey Entry. The GSE is a data entry tool developed in the 1980s}, first={Groundfish Survey Entry (GSE)\glsadd{gseg}}, see=[Glossary:]{gseg}}
+
+
+%%% The glossary entry the acronym links to
+\newglossaryentry{imtsg}{name={IMTS},
+    description={Information Management and Technology Services}}
+
+%%% define the acronym and use the see= option
+\newglossaryentry{imts}{type=\acronymtype, name={IMTS}, description={Fisheries and Oceans Canada, formerly the Department of Fisheries and Oceans}, first={Information Management and Technology Services (IMTS)\glsadd{imtsg}}, see=[Glossary:]{imtsg}}
+
+
+%%% The glossary entry the acronym links to
+\newglossaryentry{lang}{name={LAN},
+    description={A series of connected computers that share a physical location}}
+
+%%% define the acronym and use the see= option
+\newglossaryentry{lan}{type=\acronymtype, name={LAN}, description={Fisheries and Oceans Canada, formerly the Department of Fisheries and Oceans}, first={local area network (LAN)\glsadd{lang}}, see=[Glossary:]{lang}}
+
 
 \newglossaryentry{Mission} {
   name=Mission,
@@ -129,9 +168,9 @@
 \newglossaryentry{Open Set} {
   name=Open Set,
   description={
-    A \gls{Set} that has not been closed. All new Sets will start in an open state and will remain so untill closed. 
-    Sets that are activated will automatically be opened. 
-    The \gls{Current Set} is always open.
+    A \gls{Set} that has not been closed. All new Sets will start in an open state and will remain so untill closed.
+    Sets that are activated will automatically be opened.
+    The \gls{Current Set} is always open
   },
   see={Set}
 }
@@ -139,14 +178,14 @@
 \newglossaryentry{ORM} {
   % type=\acronymtype,
   name=ORM,
-  description={Object Relational Mapping are an abstraction of relational entities (database tables) as objects.},
+  description={Object Relational Mapping are an abstraction of relational entities (database tables) as objects},
   text={ORM},
   first={Object Relational Model (ORM)}
 }
 
 \newglossaryentry{Port Sampling} {
   name=Port Sampling,
-  description={TODO}
+  description={Scientific program collecting samples from commercial fishing activities}
 }
 
 \newglossaryentry{Protocol} {
@@ -161,47 +200,63 @@
 
 \newglossaryentry{Sampling Protocol} {
   name=Sampling Protocol,
-  description={TODO}
+  description={The detailed dexcription of what data is to be collected during a scientfic cruise}
 }
 
 \newglossaryentry{Sampling Req} {
   name=Sampling Requirements,
-  description={TODO}
+  description={The species-specific requirements for samples to be collected during a scientific cruise}
 }
-    
+
 \newglossaryentry{Set} {
   name=Set,
   description={
-    A Set contains all fishing activity and sampling results for a particular \gls{Station}.
+    A Set contains all fishing activity and sampling results for a particular \gls{Station}
   }
 }
 
 \newglossaryentry{Set Flag} {
   name=Set Flag,
-  description={A flag used to indicate that the data contained within the set has failed to pass a specific validation tests. 
+  description={A flag used to indicate that the data contained within the set has failed to pass a specific validation tests.
   Closing an \gls{Open Set} with active flags can be done by overriding the validation mechanism},
   see=\gls{Set}
   }
 
 \newglossaryentry{Station} {
   name=Station,
-  description={
-    A target coordinate where
-  }
-}
-  
-\newglossaryentry{Species} {
-  name=Species,
-  description={TODO}
+  description={A target location specificied by coordinates where a scientific activity is to take place}
 }
 
-\newglossaryentry{VBA} {
+\newglossaryentry{Species} {
+  name=Species,
+  description={An identifiable taxon that can be assigned to a species code}
+}
+
+\newglossaryentry{vb} {
+  % type=\acronymtype,
+  name=VB,
+  description={Pre-.NET Visual Basic for Applications is the early version of Microsoft VBA and is no longer supported or updated by Microsoft},
+  text={VB},
+  first={Pre-.NET Visual Basic (VB)}
+}
+
+\newglossaryentry{vba} {
   % type=\acronymtype,
   name=VBA,
-  description={Visual Basic for Applications},
+  description={Visual Basic for Applications is a programming language built into most desktop Microsoft Office applications. More details can be found on the Wikipedia page for this programming language and from Microsoft},
   text={VBA},
   first={Visual Basic for Applications (VBA)}
 }
+
+\newglossaryentry{vcs} {
+  % type=\acronymtype,
+  name=VCS,
+  description={For example, git. },
+  text={VCS},
+  first={Version Control System (VCS)}
+}
+
+
 
 \glsaddall
 \glsaddallunused
