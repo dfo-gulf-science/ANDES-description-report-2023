@@ -9,35 +9,27 @@ author: |
   Lindsay Beazley^2^,
   Denis Bernier^3^,
   Brian Boivin^3^,
-  David Sean-Fortin^3^,
   Jamie Emberley^4^,
   Ryan Martin^4^,
-  Jenni McDermid^1^ and
-  Nicolas Rolland^1^
-author_list: "Ricard, D., Fishman, D., Beazley, L., Bernier, D., Boivin, B., Sean-Fortin, D., Emberley, J., Martin, R., McDermid, J. and Rolland, N."
+  Jenni McDermid^1^
+  Nicolas Rolland^1^ and 
+  David Sean-Fortin^3^,
+author_list: "Ricard, D., Fishman, D., Beazley, L., Bernier, D., Boivin, B., Emberley, J., Martin, R., McDermid, J., Rolland, N. and Sean-Fortin, D."
 region: Gulf Region
 french_region: Région du Golfe
 isbn: "ISBN GOES HERE"
 address: |
-  ^1^Gulf Fisheries Centre\
-     Fisheries and Oceans Canada, 343 Université Avenue\
-     Moncton, New Brunswick, E1C 5K4, Canada\
-  ^2^Bedford Institute of Oceanography\
-     Fisheries and Oceans Canada, 1 Challenger Dr.\
-     Dartmouth, Nova Scotia, B2Y 4A2, Canada\
-  ^3^Institut Maurice Lamontagne\
-     Fisheries and Oceans Canada, 850 Rte de la Mer\
-     Mont-Joli, Québec, QC G5H 3Z4, Canada\
-  ^4^Saint Andrews Biological Station\
-     Fisheries and Oceans Canada, 125 Marine Science Dr.\
-     St. Andrews, New Brunswick, E5B 0E4, Canada\
+  ^1^Gulf Fisheries Centre, Fisheries and Oceans Canada, 343 Université Avenue, Moncton, New Brunswick, E1C 9B6\
+  ^2^Bedford Institute of Oceanography, Fisheries and Oceans Canada, 1 Challenger Dr., Dartmouth, Nova Scotia, B2Y 4A2\
+  ^3^Institut Maurice Lamontagne, Fisheries and Oceans Canada, 850 Rte de la Mer, Mont-Joli, Québec, QC G5H 3Z4\
+  ^4^Saint Andrews Biological Station, Fisheries and Oceans Canada, 125 Marine Science Dr., St. Andrews, New Brunswick, E5B 0E4\
 french_address: |
      Direction des Sciences\
      Région du Golfe\
      Pêches et Océans Canada\
      Moncton, Nouveau-Brunswick, E1C 5K4, Canada\
 phone: "(555) 555-5555"
-author_footnote: "Email: Daniel.Ricard@dfo-mpo.gc.ca | telephone: (506) "
+author_footnote: "Email: Daniel.Ricard@dfo-mpo.gc.ca | telephone: (506) 377-9527"
 abstract: |
   A data entry system to facilitate the capture of information collected during scientific activities conducted by DFO Gulf Region was developed. Another data entry system (Andes) was implemented as a browser-based environment that facilitates its deployment in a variety of data capture scenarios. The design goals and implementation details of Andes are described, and a number of usage cases are presented. To promote endorsement of Andes by other scientific groups and to ensure the pereniality of the project, the application relies on Open Source software and uses a shared code development platform.
 french_abstract: |

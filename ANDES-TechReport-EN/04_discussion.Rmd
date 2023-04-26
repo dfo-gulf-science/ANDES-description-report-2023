@@ -26,6 +26,6 @@ Discuss the steps required to go from data collected in Andes to transferring th
 
 
 # Acknowledgments
-We thank all DFO personnel who were involved in the early testing and deployment of Andes during the annual southern Gulf of St. Lawrence trawl survey.
+We thank all DFO personnel who were involved in the early testing and deployment of Andes during the annual southern Gulf of St. Lawrence trawl survey. We thank the Gulf Region publication coordinator, Dr. Jeffery Clements, for his assistance with getting this document published.
 
 \clearpage
