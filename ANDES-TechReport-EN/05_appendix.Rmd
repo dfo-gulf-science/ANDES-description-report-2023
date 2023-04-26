@@ -5,12 +5,36 @@ After that, all subsequent sections will be turned into appendices. -->
 `r if(knitr:::is_latex_output()) '% begin csasdown appendix'`
 `r if(!knitr:::is_latex_output()) '# (APPENDIX) Appendix {-}'`
 
+# Andes deployment Checklist
+
+Here is a deployment checklist for deploying an instance of the Andes application in a production environment:
+
+[//]: # (This list is taken straight out of the code repo. It will have to be beefed up with more explanations and context)
+
+- [ ] It is always a good practice to set the `DEBUG` setting to `False`.
+   Using DEBUG in production can result in memory leakage.
+   The debug setting is set via the project's .env file, located in the andes root directory (e.g. `/opt/andes_root/andes/.env`)
+- [ ] Set Andes Leads and Chief Scientists to Admin users.
+- [ ] Make sure GPS is working on site
+- [ ] Make sure printer is working on site
+- [ ] Make sure the backup works
+- [ ] Make sure custom maps are working (if applicable)
+- [ ] Check everything again after a reboot of the server
+- [ ] Make sure you can run shell scripts from the front end (optional)
+- [ ] Alderbarren setup
+- [ ] Reset the Specimen table autoincrement (see [basic_setup](/setup_basic.md))
+- [ ] If using cradlepoint, has web filtering been turned on?
+- [ ] Check to make sure that the time/date on any clients (especially Bridge clients) are in sync with server time
+
+
 <!-- No need to create a section header, it is done by \printnoidxglossary -->
 <!-- see glossary.tex for glossary entries -->
 \clearpage
 
 ```{=latex}
+\printnoidxglossary[type=\acronymtype]
 \printnoidxglossary[sort=word,type=main,]
+
 ```
 
 

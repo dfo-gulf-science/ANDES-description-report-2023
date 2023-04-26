@@ -23,12 +23,34 @@ knitr::include_graphics("./figures/andes-splash.png")
 \clearpage
 
 
+(ref:dashboard-caption) Dashboard.
+
+```{r dashboard, fig.cap="(ref:dashboard-caption)", out.width='1.0\\linewidth'}
+knitr::include_graphics("./figures/temp.png")
+```
+\clearpage
+
+(ref:bridge-caption) Bridge console.
+
+```{r bridge, fig.cap="(ref:bridge-caption)", out.width='1.0\\linewidth'}
+knitr::include_graphics("./figures/temp.png")
+```
+\clearpage
+
 (ref:andes-wetlab1-caption) User interface of the Ecosystem Survey component of Andes when in use for processing samples in the wet laboratory. The screen capture presented here shows sampling of capelin lengths on an active set being processed in the lab.
 
 ```{r andes-wetlab1, fig.cap="(ref:andes-wetlab1-caption)", out.width='1.0\\linewidth'}
 knitr::include_graphics("./figures/andes-wetlab1.png")
 ```
 \clearpage
+
+(ref:oceanography-caption) Oceanography app.
+
+```{r oceanography, fig.cap="(ref:oceanography-caption)", out.width='1.0\\linewidth'}
+knitr::include_graphics("./figures/temp.png")
+```
+\clearpage
+
 
 (ref:portsampling1-caption) User interface of the Port sampling component of Andes when in use for processing samples in the field.
 

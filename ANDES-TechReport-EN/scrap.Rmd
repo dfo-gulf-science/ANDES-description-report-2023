@@ -1,0 +1,8 @@
+<!-- Québec situation -->
+The Québec Region follows a similar timeline. Many survey teams use a deprecated Visual Basic Application that connects to a mission-specific Microsoft Access database.
+Their technicians often have to resort to pen and paper to perform activities unsupported by the application.
+In some cases, all data entry activities completed during surveys are performed in this manner.
+The use of various entry methods such as Microsoft Excel, paper, and a legacy application have been reported by these teams.
+These data later have to be manually consolidated which is time consuming and error prone.
+Interest in modernizing the tooling and workflow has been expressed.
+This imminent need, together with the successful proof-of-concept demonstration of Andes in the Gulf region, presents an opportunity for inter-regional collaboration.
