@@ -5,6 +5,18 @@ After that, all subsequent sections will be turned into appendices. -->
 `r if(knitr:::is_latex_output()) '% begin csasdown appendix'`
 `r if(!knitr:::is_latex_output()) '# (APPENDIX) Appendix {-}'`
 
+# Tasks for administrative user
+Prior to a survey, a number of configurations must be done for Andes to function as intended. At a minimum, the following information must be ingested by Andes in order for a mission to take place:
+
+\begin{enumerate}
+\item{Strata polygons}
+\item{List of stations}
+\item{Species list}
+\item{Sampling requirements}
+\end{enumerate}
+
+
+
 # Andes deployment Checklist
 
 Here is a deployment checklist for deploying an instance of the Andes application in a production environment:
@@ -42,3 +54,5 @@ Here is a deployment checklist for deploying an instance of the Andes applicatio
 `r if(knitr:::is_latex_output()) '% end csasdown appendix'`
 
 \clearpage
+
+
