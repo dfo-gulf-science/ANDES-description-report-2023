@@ -3,78 +3,18 @@
 ## User definitions and permissions
 Andes provides access to its different components differently based on the credentials of users. While the chief scientist can change sampling requirements for the mission, other users won't.
 
-## Ecosystem survey app
-This component of Andes replicates the capabilities of the \gls{ese} for capturing detailed information on length, weight, ageing material, maturity, etc. about fish and invertebrate specimens. 
-
-### App used in the laboratory
-The app running on computers in the wet laboratory of the vessel is used for all entry of data related to measurements and observations of marine organisms.
-
-### App used in the bridge
-The console to be used by navigation officers is meant to run on a tablet in the bridge of the vessel conducting the survey ((Figure \@ref(fig:bridge))).
-
-This console contains two separate sections: 1) the Set Card section and 2) the Fishing section.
-
-Additionally, a number of events that take place during fishing can be captured in the console.
-
-Information coming from Scanmar sensors are captured and stored by ANDES.
-
-### Forecasting tool
-Part of the task-specific suite of utilities is a forecasting tool that provides real-time prognostics of survey completion targets based on assumed transit speeds and time spent fishing and processing the trawl catches. 
-
-### Progress map
-Another task-specific utility is the completion map which shows what strata have been completed based on target and minimum number of sets per stratum.
-
-### Reporting capabilities
-Two types of reports are available for Andes: 1) reports meant to be used during field activities and 2) reports meant to be used after field activities are completed.
-
-## Shrimp ecosystem survey app
-Shrimp data is collected by the Quebec region in the course of its yearly ecosystem survey in the estuary and northern gulf of the Saint-Lawrence as well as during other surveys such as the winter surveys of 2022 and 2023. These data are collected for the stock assessment of the northern shrimp (*Pandalus borealis*) as well as to assess the biodiversity and abundance of shrimp species. In the case of the Quebec region the biological measures related to shrimps are done onboard where in other regions shrimps subsamples are frozen and done in the laboratory at the end of the mission. The shrimps application was developed to allow the entry of shrimps data as it follows a different workflow compared to the ecosystem survey application. At every set, a subsample of between 2 and 3 kilograms is first collected from the total catch. This sample is then separated by species, then by maturity stage and only then are the biological data (cephalothorax length for all species and occasionally weight for *Pandalus borealis*) taken.
-
-The shrimp application is integrated into Andes at several levels: the main page of the shrimps application can be accessed via the ecosystem survey application when a shrimp catch is declared, it uses a subset of species flagged as shrimp, a shrimp report can be produced on the Reports page and in the case of Pandalus borealis, the lengths and weights can be visualized in the Charts application.
-
-<!-- Quebec participation: Shrimp and others-->
-The Shrimp Ecosystem Survey application resulted from the early adoption of Andes in the Québec region.
-The niche workflow requirements of shrimp survey operations justified the creation of the its own Andes application.
-After two test years, the pilot project recently made its successful debut as the main input tool of a survey mission.
-Onboarding efforts for coastal surveys (scallop, sea-cucumber, whelk) has already begun.
-The proof of concept deployment of Andes on board the *CCGS Leim* is staged for 2023.
-This has lead to close interregional collaboration and presents new challenges: meeting niche regional requirements in Andes (eg., novel nomenclature and workflows).
-
-
-## Oceanography app
-The oceanography data collection is handled by a separate app that is used in the deployment of the rosette and the processing of water samples obtained at different depths  (Figure \@ref(fig:oceanography)).
-
-## Cruise dashboard
-This utility is meant to obtain a summary of the cruise, it includes the current position and speed of the vessel, the list of the most recent catches in the wet laboratory, as well as running totals of specimens captured (Figure \@ref(fig:dashboard)).
-
-
-## Port sampling app
-Andes was adapted to support port sampling activities where technicians obtain length frequency samples from commercial fishing activities. To facilitate deployment, the port sampling app of Andes is deployed on field tablets with a custom interface that is suitable for use on boats, outdoor and in inclement weather conditions (Figure \@ref(fig:portsampling1)).
-
-
-## Tasks for administrative user
-Prior to a survey, a number of configurations must be done for Andes to function as intended. At a minimum, the following information must be ingested by Andes in order for a mission to take place:
-
-\begin{enumerate}
-\item{Strata polygons}
-\item{List of stations}
-\item{Species list}
-\item{Sampling requirements}
-\end{enumerate}
-
-
 ## Backup regime and infrastructure
-
 
 ### Unit Tests
 
-A number of unit tests have been created for the application.
+A number of unit tests have been created for the application. The unit tests are executed when code changes take place in the development tree. This allows for the continuous integration of software development.
 
 
 ## Data models
 Full ERD on Figure \@ref(fig:ERD).
 
 Simplified Entity Relationship Diagrams (ERD) of the following components:
+
 
 ### Sampling Protocols
 
@@ -88,7 +28,6 @@ Simplified Entity Relationship Diagrams (ERD) of the following components:
 ### Oceanography
 
 
-
 ### Integration with navigation system and trawl sensors
 
 
@@ -98,6 +37,48 @@ Simplified Entity Relationship Diagrams (ERD) of the following components:
 - they must be up-kept along with development
 
 - at the time of writing this document, the project has a total of 6 contributor to the code.
+
+
+## Ecosystem survey app
+This component of Andes replicates the capabilities of the \gls{ese} for capturing detailed information on length, weight, ageing material, maturity, etc. about fish and invertebrate specimens. 
+
+### App used in the wet laboratory
+The app running on computers in the wet laboratory of the vessel is used for all entry of data related to measurements and observations of marine organisms (Figure \@ref(fig:andes-wetlab1)). This app is the main interface through which data entry takes place.
+
+### Shrimp ecosystem survey app
+Shrimp data is collected by the Quebec region in the course of its yearly ecosystem survey in the estuary and northern gulf of the Saint-Lawrence as well as during other surveys such as the winter surveys of 2022 and 2023. These data are collected for the stock assessment of the northern shrimp (*Pandalus borealis*) as well as to assess the biodiversity and abundance of shrimp species. In the case of the Quebec region the biological measures related to shrimps are done onboard where in other regions shrimps subsamples are frozen and done in the laboratory at the end of the mission. The shrimps application was developed to allow the entry of shrimps data as it follows a different workflow compared to the ecosystem survey application. At every set, a subsample of between 2 and 3 kilograms is first collected from the total catch. This sample is then separated by species, then by maturity stage and only then are the biological data (cephalothorax length for all species and occasionally weight for *Pandalus borealis*) taken.
+
+The shrimp application is integrated into Andes at several levels: the main page of the shrimps application can be accessed via the ecosystem survey application when a shrimp catch is declared, it uses a subset of species flagged as shrimp, a shrimp report can be produced on the Reports page and in the case of Pandalus borealis, the lengths and weights can be visualized in the Charts application.
+
+<!-- Quebec participation: Shrimp and others-->
+The Shrimp Ecosystem Survey application resulted from the early adoption of Andes in the Québec region. The niche workflow requirements of shrimp survey operations justified the creation of the its own Andes application. After two test years, the pilot project recently made its successful debut as the main input tool of a survey mission. Onboarding efforts for coastal surveys (scallop, sea-cucumber, whelk) has already begun. The proof of concept deployment of Andes on board the *CCGS Leim* is staged for 2023. This has lead to close inter-regional collaboration and presents new challenges: meeting niche regional requirements in Andes (eg., novel nomenclature and workflows).
+
+### App used in the bridge
+The console to be used by navigation officers is meant to run on a tablet in the bridge of the vessel conducting the survey (Figure \@ref(fig:bridge)).
+
+This console contains two separate sections: 1) the Set Card section and 2) the Fishing section.
+
+Additionally, a number of events that take place during fishing can be captured in the console.
+
+Information coming from the trawl mensuration system sensors (Scanmar) are captured and stored by Andes.
+
+### Forecasting tool
+Part of the task-specific suite of utilities is a forecasting tool that provides real-time prognostics of survey completion targets based on assumed transit speeds and time spent fishing and processing the trawl catches (Figure \@ref(fig:forecast)). This tool provides a useful tool for the chief scientist to evaluate different sampling objectives and survey route. As the conditions change regularly during a survey, this tool links with the set manager to provide an estimate of the amount of time required to complete planned stations. This tool can be used for short-term planning (i.e. a day's worth of sampling) or longer-term planning (i.e. a mission's worth of sampling). 
+
+### Progress map
+Another task-specific utility is the completion map which shows what strata have been completed based on target and minimum number of sets per stratum. This map provides the chief scientist with a clear visual depiction of what has been accomplished, and what remains to be accomnplished, during the survey. The number of sets conducted in each sratum is compared to the minimum and target number of sets per stratum to determine the colour that each stratum will appear in the progress map.
+
+### Reporting capabilities
+Two types of reports are available for Andes: 1) reports meant to be used during field activities and 2) reports meant to be used after field activities are completed. 
+
+## Oceanography app
+The oceanography data collection is handled by a separate app that is used in the deployment of the rosette and the processing of water samples obtained at different depths  (Figure \@ref(fig:oceanography)).
+
+## Cruise dashboard
+This utility is meant to obtain a summary of the cruise, it includes the current position and speed of the vessel, the list of the most recent catches in the wet laboratory, as well as running totals of specimens captured (Figure \@ref(fig:dashboard)).
+
+## Port sampling app
+Andes was adapted to support port sampling activities where technicians obtain length frequency samples from commercial fishing activities. To facilitate deployment, the port sampling app of Andes is deployed on field tablets with a custom interface that is suitable for use on boats, outdoor and in inclement weather conditions (Figure \@ref(fig:portsampling1)).
 
 \newpage
 

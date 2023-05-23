@@ -1,6 +1,6 @@
 # Methods
 The \gls{ese} was the starting point in the development of Andes.
-The replacement data entry software had to first replicate the functional capabilities of \gls{ese}.
+The replacement data entry software had to first replicate the proven functional capabilities of \gls{ese}.
 Early version of Andes achieved those goals and the system was further developed over its usage by scientists in the Gulf Region.
 
 ## Architecture
@@ -8,16 +8,16 @@ Early version of Andes achieved those goals and the system was further developed
 <!-- server-client -->
 Andes system architecture differs from the legacy entry systems that it succeeds.
 Andes offers a centralised data entry *service* that is accessed with client devices.
-Thus, one does not install the Andes software on input stations (eg., Toughbook, Surface Pro), rather Andes is installed on a server and is accessed via a web browser.
-This means any device that supports modern web browsers (Chrome, Safari, Firefox, Edge, etc) can potentially be used as input stations.
+Thus, one does not install the Andes software on input stations (e.g., Toughbook, Surface Pro, ...), rather Andes is installed on a server and is accessed via a web browser.
+This means any device that supports modern web browsers (Chrome, Safari, Firefox, Edge, etc.) can potentially be used as input stations.
 This also means multiple stations can simultaneously enter data into the same Andes instance.
 
 <!-- web framework -->
 Figure \@ref(fig:arch) shows the basic system architecture of Andes.
 Andes itself is a Django web framework project.
 It hosts multiple applications that are explored in this document.
-The web framework comprises mainly of a backend \gls{REST-API} and frontend.
-Django uses an \gls{ORM} to handle the data layer, there exists drivers for a variety of modern relational database flavours (i.e., PostgreSQL, MariaDB, MySQL, Oracle, SQLite, etc).
+The web framework is composed of a backend \gls{REST-API} and a frontend.
+Django uses an \gls{ORM} to handle the data layer, and drivers exist for a variety of modern relational database management systems (i.e., PostgreSQL, MariaDB, MySQL, Oracle, SQLite, etc.).
 Django's web frontend can contain reactive components implemented in VUEjs.
 
 <!-- API access means crazy expandable -->
@@ -26,30 +26,25 @@ One can potentially expand upon the *system* with minimal changes to Andes by in
 For example, an imaging system can be aware of current GPS coordinates or current \gls{Set} / \gls{Station}.
 Photos or videos acquired by such an imaging system could automatically append these as metadata, or even add media identifiers directly to the database as they are captured.
 
-
 ### Networking
 <!-- network environment -->
-This architecture creates networking requirements that were not previously present.
+The architecture used by Andes creates networking requirements that were not previously present in the ESE and MRR.
 The server and the client devices must be connected to the same network.
 The network does not need to have access to the wide area network (i.e., internet) connection.
 As long as they are connected to the same \gls{lan}, they can be configured for work together.
 This suits the networking environment on board remote vessels that can have sporadic connection failures with the wide area network.
-Most modern vessels will already provide the minimum necessary networking infrastructure.
-In the case where it doesn't, this requirement can be met relatively easily using inexpensive consumer-grade networking equipment (wireless router, switch, etc).
-However, installing as ad-hoc network for scientific needs in a vessel may lead to code violations.
-Collaboration with vessel management body like the \gls{CCG} or chartering authority is essential.
+Most modern vessels will already provide the minimum necessary networking infrastructure necessary for system deployment where connectivity between a dry laboratory, a wet laboratory and the ship's wheelhouse are necessary.
+In the case where it doesn't, this requirement can be met relatively easily using inexpensive consumer-grade networking equipment (wireless router, switch, etc.).
+However, installing as ad-hoc network for scientific needs in a vessel may lead to code violations and we urge Andes users to collaborate with vessel management body like the \gls{CCG} or chartering authority.
 
 ### Deployment
 <!-- deployment -->
-Andes roughly follows two distinct deployment patterns: i) in a \gls{Mission} context or ii) outside a \gls{Mission} context.
+Andes follows two distinct deployment patterns: i) in a \gls{Mission} context or ii) outside a \gls{Mission} context.
 
 <!-- in mission -->
 data entry mode
 <!-- out mission -->
 data navigation / edit mode
-
-
-## 
 
 Andes is meant to log activity on a \gls{Mission} basis, i.e., it is configured and deployed for a particular mission.
 
@@ -61,9 +56,7 @@ is encapsulated within it.
 
 The requirements for that mission are configured by an \gls{Andes lead} prior to deployment.
 The Mission 
-## Usage cases
 
-### Deployment
 ### Andes preparation
 A user, such as an \gls{Andes lead} must set the stage before Andes is deployed for a \gls{Mission}.
 Typically this will require defining 
@@ -77,35 +70,6 @@ Configuration preset
 Mission
 Set management
 
-### Ecosystem survey data entry
-
-The Andes system is designed to be deployed as the main data entry platform for survey operations.
-The \gls{Ecosystem Survey} application is the main entrypoint that technicians will use to input survey data.
-
-This application is meant for usage in a wet laboratory (Figure \@ref(fig:andes-wetlab1)).
-It allows the capture of all the information required by the sampling protocols of the survey.
-
-This is a command
-
-Catch table,
-Basket
-Specimen
-Observation
-Flag
-Complete Specimen
-Fishing event
-
-
-
-
-### Oceanographic metadata collection
-
-Biological surveys often collect complementary oceanographic data. Coordinating these data with the associated biological data is a burdensome logistical challenge. Historically, the different types of data were captured and recorded using separate systems that operated in complete isolation from one another. The original intent of the Oceanographic module of Andes was to streamline the capture of oceanographic data and to simplify its association with the corresponding biological data. The Oceanographic module has since been evolving into a stand-alone component of the application that is capable of being deployed independently of the Ecosystem Survey module.
-
-### Commercial sort sampling
-
-Another use of the software is to support data collection during sampling of commercial port sampling activities. [@Benoit-Daigle-2007]
-
 
 ## Technical implementation of design principles
 
@@ -115,13 +79,13 @@ The following section outlines the design principles that played a role in decis
 
 Within the context of DFO Science, there is a high number of use-cases under which this application will be deployed. For example, the number of users might range from a single user to several dozen. Similarly, the application might sometimes be used in a networked setting while other times used in the field on a stand-alone tablet. Accordingly, the application has to accommodate a wide range of practical scenarios.
 
-The [Django Web Framework](https://www.djangoproject.com/) was selected for the backend of this application due to its modularize nature; virtually all aspects of the framework can be decoupled. Furthermore, the Django framework is written in pure Python; an open-sourced, generalized object-orientated programming language that is popular for use in data-heavy applications. While web applications are most often used over a network, the django library comes with a development web-server that permits users to serve and use the application locally. In this scenario, a single computer acts simultaneously as server and client. While there are important limitations to the use of the django development web-server in a full-scale production environment, this configuration is adequate for the stand-alone use-cases referred to above. <!-- Unit tests will be used to ensure reliability over the short and long term. -->
+The [Django Web Framework](https://www.djangoproject.com/) was selected for the backend of this application due to its modularize nature; virtually all aspects of the framework can be decoupled. Furthermore, the Django framework is written in pure Python; an open-sourced, generalized object-orientated programming language that is popular for use in data-heavy applications. While web applications are most often used over a network, the Django library comes with a development web-server that permits users to serve and use the application locally. In this scenario, a single computer acts simultaneously as server and client. While there are important limitations to the use of the django development web-server in a full-scale production environment, this configuration is adequate for the stand-alone use-cases referred to above. <!-- Unit tests will be used to ensure reliability over the short and long term. -->
 
 ### Version Control / Source Control
 
-The utilization of a version control system (VCS) is an indispensable component of a modern day development workflow. Version management is especially important in the context of having concurrent instances of the application in production at a given time. Knowing the version of a production instance is necessary to resolve any issues that might arise. Similarly, databases and backup files are intimately linked to an application's version number. In order to successfully re-instantiate a backup file, the precise version under which it was produced must be known. The VCS will also provide an indispensable framework for the coordination, examination and integration of contributions from collaborators.
+The utilization of a \gls{vcs} is an indispensable component of a modern day development workflow. Version management is especially important in the context of having concurrent instances of the application in production at a given time. Knowing the version of a production instance is necessary to resolve any issues that might arise. Similarly, databases and backup files are intimately linked to an application's version number. In order to successfully re-instantiate a backup file, the precise version under which it was produced must be known. The VCS will also provide an indispensable framework for the coordination, examination and integration of contributions from collaborators.
 
-It was decided to use [Git](https://git-scm.com/) as the VCS for this project due to the fact that it is both widespread in use and open-sourced. The remote repository for this project is currently hosted on the [Gulf Science organizational GitHub account](https://github.com/dfo-gulf-science). The project is additionally making use of GitHub infrastructure including, pull requests, issue management (e.g., bugs, feature requests and general enhancement requests) and security alerts.
+It was decided to use [Git](https://git-scm.com/) as the \gls{vcs} for this project due to the fact that it is both widespread in use and open-sourced. The remote repository for this project is currently hosted on the [Gulf Science organizational GitHub account](https://github.com/dfo-gulf-science). The project is additionally making use of GitHub infrastructure including, pull requests, issue management (e.g., bugs, feature requests and general enhancement requests) and security alerts.
 
 ### Unit testing
 
@@ -161,5 +125,36 @@ Allowing users to utilize the application in the language of their choice is of 
 
 - Backup are automatically created when sets are closed
 - All backup files reference the version of the application which produced them. Even old backups can be loaded by locally re-instantiating the version of the application under which it was produced
+
+
+## Usage cases
+
+
+### Ecosystem survey data entry
+
+The Andes system is designed to be deployed as the main data entry platform for survey operations.
+The \gls{Ecosystem Survey} application is the main entrypoint that technicians will use to input survey data.
+
+This application is meant for usage in a wet laboratory (Figure \@ref(fig:andes-wetlab1)).
+It allows the capture of all the information required by the sampling protocols of the survey.
+
+This is a command
+
+Catch table,
+Basket
+Specimen
+Observation
+Flag
+Complete Specimen
+Fishing event
+
+
+### Oceanographic metadata collection
+
+Biological surveys often collect complementary oceanographic data. Coordinating these data with the associated biological data is often a burdensome logistical challenge. Historically, the different types of data were captured and recorded using separate systems that operated in complete isolation from one another. The original intent of the Oceanographic module of Andes was to streamline the capture of oceanographic data and to simplify its association with the corresponding biological data. The Oceanographic module has since been evolving into a stand-alone component of the application that is capable of being deployed independently of the Ecosystem Survey module.
+
+### Commercial sort sampling
+
+Another use of the software is to support data collection during sampling of commercial port sampling activities [@Benoit-Daigle-2007]. This module is meant to be deployed on field tablets for scientific staff that collect data related to commercial fishing activities. A typical usage case is to obtain length frequency samples from commercial landings, and to also obtain length-stratified hard parts used for age estimation, and also the collection of whole individuals for later processing in the laboratory.
 
 \newpage
