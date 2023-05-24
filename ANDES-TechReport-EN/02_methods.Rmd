@@ -1,160 +1,57 @@
 # Methods
-The \gls{ese} was the starting point in the development of Andes.
+The \gls{ese} was the starting point in the development of \gls{andes}.
 The replacement data entry software had to first replicate the proven functional capabilities of \gls{ese}.
-Early version of Andes achieved those goals and the system was further developed over its usage by scientists in the Gulf Region.
+Early version of \gls{andes} achieved those goals and the system was further developed over its usage by scientists in the Gulf Region. Additionally, the \gls{mrr}
+Other opportunistic design goals also existed, including the use of a contemporary software development environment, the ability to support multiple languages, flexibility in deployment and using a shared code development environment.
 
-## Architecture
+## Technical implementation of design goals
 
-<!-- server-client -->
-Andes system architecture differs from the legacy entry systems that it succeeds.
-Andes offers a centralised data entry *service* that is accessed with client devices.
-Thus, one does not install the Andes software on input stations (e.g., Toughbook, Surface Pro, ...), rather Andes is installed on a server and is accessed via a web browser.
-This means any device that supports modern web browsers (Chrome, Safari, Firefox, Edge, etc.) can potentially be used as input stations.
-This also means multiple stations can simultaneously enter data into the same Andes instance.
-
-<!-- web framework -->
-Figure \@ref(fig:arch) shows the basic system architecture of Andes.
-Andes itself is a Django web framework project.
-It hosts multiple applications that are explored in this document.
-The web framework is composed of a backend \gls{REST-API} and a frontend.
-Django uses an \gls{ORM} to handle the data layer, and drivers exist for a variety of modern relational database management systems (i.e., PostgreSQL, MariaDB, MySQL, Oracle, SQLite, etc.).
-Django's web frontend can contain reactive components implemented in VUEjs.
-
-<!-- API access means crazy expandable -->
-This separation lends itself nicely to be adaptable to new requirements.
-One can potentially expand upon the *system* with minimal changes to Andes by interacting directly with its exposed \gls{REST-API}.
-For example, an imaging system can be aware of current GPS coordinates or current \gls{Set} / \gls{Station}.
-Photos or videos acquired by such an imaging system could automatically append these as metadata, or even add media identifiers directly to the database as they are captured.
-
-### Networking
-<!-- network environment -->
-The architecture used by Andes creates networking requirements that were not previously present in the ESE and MRR.
-The server and the client devices must be connected to the same network.
-The network does not need to have access to the wide area network (i.e., internet) connection.
-As long as they are connected to the same \gls{lan}, they can be configured for work together.
-This suits the networking environment on board remote vessels that can have sporadic connection failures with the wide area network.
-Most modern vessels will already provide the minimum necessary networking infrastructure necessary for system deployment where connectivity between a dry laboratory, a wet laboratory and the ship's wheelhouse are necessary.
-In the case where it doesn't, this requirement can be met relatively easily using inexpensive consumer-grade networking equipment (wireless router, switch, etc.).
-However, installing as ad-hoc network for scientific needs in a vessel may lead to code violations and we urge Andes users to collaborate with vessel management body like the \gls{CCG} or chartering authority.
-
-### Deployment
-<!-- deployment -->
-Andes follows two distinct deployment patterns: i) in a \gls{Mission} context or ii) outside a \gls{Mission} context.
-
-<!-- in mission -->
-data entry mode
-<!-- out mission -->
-data navigation / edit mode
-
-Andes is meant to log activity on a \gls{Mission} basis, i.e., it is configured and deployed for a particular mission.
-
-When Andes is used to capture data of a \gls{Mission}, it is deployed in in an enclosed environment.
-
-the data it captures 
-
-is encapsulated within it. 
-
-The requirements for that mission are configured by an \gls{Andes lead} prior to deployment.
-The Mission 
-
-### Andes preparation
-A user, such as an \gls{Andes lead} must set the stage before Andes is deployed for a \gls{Mission}.
-Typically this will require defining 
-i) a \gls{Configuration Preset} for Andes (configuration for a particular deployment); 
-ii) the \gls{Mission} parameters (name, vessel, institute, date, personnel, sampling protocol, etc); 
-and/or iii) a \gls{Sampling Protocol} to use when there is no mission (i.e., for \gls{Port Sampling]).
-
-
-
-Configuration preset
-Mission
-Set management
-
-
-## Technical implementation of design principles
-
-The following section outlines the design principles that played a role in decision-making and provide a description of how they were implemented in the project.
+The following section outlines the design principles that played a role in decision-making during the development of Andes and provide a description of how they were implemented.
 
 ### Flexibility, scalability and reliability
 
-Within the context of DFO Science, there is a high number of use-cases under which this application will be deployed. For example, the number of users might range from a single user to several dozen. Similarly, the application might sometimes be used in a networked setting while other times used in the field on a stand-alone tablet. Accordingly, the application has to accommodate a wide range of practical scenarios.
+Within the context of DFO Science, there is a high number of use-cases under which this application can be deployed. For example, the number of users might range from a single user with a tablet, to several dozen scientists participating in a research cruise. Similarly, the application might sometimes be used in a networked setting while other times used in the field on a stand-alone tablet. Accordingly, the application has to accommodate a wide range of practical scenarios.
 
-The [Django Web Framework](https://www.djangoproject.com/) was selected for the backend of this application due to its modularize nature; virtually all aspects of the framework can be decoupled. Furthermore, the Django framework is written in pure Python; an open-sourced, generalized object-orientated programming language that is popular for use in data-heavy applications. While web applications are most often used over a network, the Django library comes with a development web-server that permits users to serve and use the application locally. In this scenario, a single computer acts simultaneously as server and client. While there are important limitations to the use of the django development web-server in a full-scale production environment, this configuration is adequate for the stand-alone use-cases referred to above. <!-- Unit tests will be used to ensure reliability over the short and long term. -->
+The development environment used for the application must be a contemporary programming language with a proven track record for performance, usability and adaptability.  
 
 ### Version Control / Source Control
 
-The utilization of a \gls{vcs} is an indispensable component of a modern day development workflow. Version management is especially important in the context of having concurrent instances of the application in production at a given time. Knowing the version of a production instance is necessary to resolve any issues that might arise. Similarly, databases and backup files are intimately linked to an application's version number. In order to successfully re-instantiate a backup file, the precise version under which it was produced must be known. The VCS will also provide an indispensable framework for the coordination, examination and integration of contributions from collaborators.
-
-It was decided to use [Git](https://git-scm.com/) as the \gls{vcs} for this project due to the fact that it is both widespread in use and open-sourced. The remote repository for this project is currently hosted on the [Gulf Science organizational GitHub account](https://github.com/dfo-gulf-science). The project is additionally making use of GitHub infrastructure including, pull requests, issue management (e.g., bugs, feature requests and general enhancement requests) and security alerts.
+The utilization of a \gls{vcs} is an indispensable component of a sustainable development workflow. Version management is especially important in the context of having concurrent instances of the application in production at any given time. Knowing the version of a production instance is necessary to resolve any issues that might arise. Similarly, databases and backup files are intimately linked to an application's version number. In order to successfully re-instantiate a backup file, the precise version under which it was produced must be known. The VCS will also provide an indispensable framework for the coordination, examination and integration of contributions from collaborators.
 
 ### Unit testing
 
-The application also needs to be reliable especially considering its use in the field setting. The implementation of unit tests is a practical way to ensure the maintenance of functionality over time. On one extreme, the addition of any code can be preceded by the creation of unit tests (i.e., test-driven development). This approach will maximize the stability of an application but can hinder the momentum of a project, especially in its early stages. On the other extreme, application development in the complete absence of unit testing occurs at a relatively fast pace but will result in a project that is vulnerable to breaking in unexpected ways and one that is difficult to maintain and pass on to other developers.
-
-Using the built-in Python / Django testing framework, this project will seek to employ a middle ground between the above two approached. While the goal is not to implement test-driven development, the use of unit tests are highly encourages, especially to back up the core functionality of the application.
+The application also needs to be reliable especially considering its use in a field setting. The implementation of unit tests is a practical way to ensure the maintenance of functionality over time. At one extreme, the addition of any code can be preceded by the creation of unit tests (i.e., test-driven development). This approach will maximize the stability of an application, but can hinder the momentum of a project, especially in its early stages. At the other extreme, application development in the complete absence of unit testing occurs at a relatively fast pace but will result in a project that is vulnerable to breaking in unexpected ways and one that is difficult to maintain and pass on to other developers. 
 
 ### User-defined protocols
 
-The flexibility of project leads to design, modify and report on their sampling protocol without depending on developers is very important.
-
-
-<!--
-[//]: # (### Transparency)
-[//]: # ()
-[//]: # (- models)
-[//]: # (- assumptions and calculations)
- -->
+The flexibility of project leads to design, modify and report on their sampling protocol without depending on developers is very important. The application should allow users to provide a variety of detailed information based on their particular sampling protocols, without the need to change the application source code.
 
 ### User Interface
 
-By ensuring the application has a modern and intuitive interface, the barriers related to onboarding new users are significantly reduced. Furthermore, an intuitive interface will reduce the need for extensive help documentation. Wherever extra annotation is required, documentation will be inserted directly in the application in the form of tool tips and help bubbles. By appealing to the end users' intuitions and by providing in-situ help documentation, we reduce the likelihood fields and features being used incorrectly.
-
-The above was achieved by building the frontend of the application in HTML 5, javascript and CSS. Most users will be familiar with the flow and functionality of a web browser and will be comfortable navigating and entering data into a website. Facilitated by the Django model and form classes, all controls (i.e., fields) on the website will contain verbose descriptions and help text. The [Bootstap v5.0](https://getbootstrap.com/docs/5.0/getting-started/introduction/) css and javascript libraries were utilized in order to give the application a sleek, modern look and to ensure compatibility with different types of devices (e.g., personal computers vs. tablets vs. mobile devices). The Bootstrap libray also provides palatable styles for displaying help text in the form of popovers and tooltips.
+By ensuring the application has a modern and intuitive interface, the barriers related to onboarding new users are significantly reduced. Furthermore, an intuitive interface will reduce the need for extensive help documentation. Wherever extra annotation is required, documentation should be inserted directly in the application in the form of tool tips and help bubbles. By appealing to the end users' intuitions and by providing in-situ help documentation, we reduce the likelihood fields and features being used incorrectly. 
 
 ### Reactivity
 
-In the context of being on a research vessel survey, data entry happens at a very fast rate; often with multiple transactions per second. Accordingly, it is imperative that the application does not create a bottleneck for data entry and is able to keep pace with experienced technicians. The usage of a reactive javascript library in conjunction with an API would allow data entry to occur without webpages having to constantly refresh.
-
-The [Django REST framework](https://www.django-rest-framework.org/) was used to construct the WebAPI component of the application. The project took a hybrid approach, combining the use of standard Django views and [Vue.js](https://vuejs.org/) frontend applications embedded in the templates. The latter were built to avoid the need for constantly reloading webpages and to keep optimize the flow of traffic across the network. Reactive javascript frontend applications also provide a better experience from the point of view of an end-user.
+In the context of being on a research vessel survey, data entry happens at a very fast rate and on numerous devices; often with multiple transactions per second. Accordingly, it is imperative that the application does not create a bottleneck for data entry and is able to keep pace with experienced technicians. The usage of a reactive javascript library in conjunction with an \gls{api} would allow data entry to occur without webpages having to constantly refresh.
 
 ### Multilingualism
 
-Allowing users to utilize the application in the language of their choice is of considerable importance to this project. Previous tools that have been used were uni-lingual and this by itself would have limited the scope of their use in a national context. The Django framework has excellent support for internationalization and localization, including the translation of text and the formatting of dates, times and numbers. It achieves this using a system of "hooks" used by developers to indicate which parts of the code should be localized. See [Django - Internationalization and localization](https://docs.djangoproject.com/en/4.1/topics/i18n/) for more details on this process. In our application, an end-user can toggle between English and French by simply clicking on a button. In this way, each client can view the application in the language of their choice.
+The ability for users to choose the language of their choice in the application is of considerable importance to this project. Previous tools that have been used were unilingual, and this by itself would have limited the scope of their use in a national context. 
 
 ### Backup Regime and infrastructure
-
-- Backup are automatically created when sets are closed
-- All backup files reference the version of the application which produced them. Even old backups can be loaded by locally re-instantiating the version of the application under which it was produced
 
 
 ## Usage cases
 
-
 ### Ecosystem survey data entry
 
-The Andes system is designed to be deployed as the main data entry platform for survey operations.
-The \gls{Ecosystem Survey} application is the main entrypoint that technicians will use to input survey data.
-
-This application is meant for usage in a wet laboratory (Figure \@ref(fig:andes-wetlab1)).
-It allows the capture of all the information required by the sampling protocols of the survey.
-
-This is a command
-
-Catch table,
-Basket
-Specimen
-Observation
-Flag
-Complete Specimen
-Fishing event
-
+The  system is designed to be deployed as the main data entry platform for ecosystem survey operations. It should allow the capture of all the information required by the sampling protocols of the survey (e.g. @hurlbut-clay-1990). This entails the capture of all information related to fishing activities, including ancillary variables such as weather, sea state, water temperature. Catch contents are sorted and identified during scientific surveys, so the data capture application needs to support users in obtaining catch weights and abundance by taxon, individual observation of a specimen's length, weight, maturity status, etc. The application should also flag to the users when specimens are to be collected, or when additional sampling requirements are present (e.g. collecting fish otoliths).
 
 ### Oceanographic metadata collection
 
-Biological surveys often collect complementary oceanographic data. Coordinating these data with the associated biological data is often a burdensome logistical challenge. Historically, the different types of data were captured and recorded using separate systems that operated in complete isolation from one another. The original intent of the Oceanographic module of Andes was to streamline the capture of oceanographic data and to simplify its association with the corresponding biological data. The Oceanographic module has since been evolving into a stand-alone component of the application that is capable of being deployed independently of the Ecosystem Survey module.
+Biological surveys often collect complementary oceanographic data. Coordinating these data with the associated biological data is often a burdensome logistical challenge. Historically, the different types of data were captured and recorded using separate systems that operated in complete isolation from one another. Ideally, a data entry tool could streamline the capture of oceanographic data and simplify its association with the corresponding biological data. 
 
-### Commercial sort sampling
+
+### Commercial port sampling
 
 Another use of the software is to support data collection during sampling of commercial port sampling activities [@Benoit-Daigle-2007]. This module is meant to be deployed on field tablets for scientific staff that collect data related to commercial fishing activities. A typical usage case is to obtain length frequency samples from commercial landings, and to also obtain length-stratified hard parts used for age estimation, and also the collection of whole individuals for later processing in the laboratory.
-
-\newpage
