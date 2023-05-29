@@ -6,19 +6,14 @@ Early version of Andes achieved those goals and the system was further developed
 ## Architecture
 
 <!-- server-client -->
-Andes system architecture differs from the legacy entry systems that it succeeds.
-Andes offers a centralised data entry *service* that is accessed with client devices.
-Thus, one does not install the Andes software on input stations (e.g., Toughbook, Surface Pro, ...), rather Andes is installed on a server and is accessed via a web browser.
-This means any device that supports modern web browsers (Chrome, Safari, Firefox, Edge, etc.) can potentially be used as input stations.
-This also means multiple stations can simultaneously enter data into the same Andes instance.
+The architecture of the Andes data entry system differs from that of its predecessor. The Andes application and its associated services are centralised on one or several servers. The main services include: 1) a web-service for service handling HTTP requests and responses; 2) a database service for storing data associated with the application; 3) a file-sharing service for handling the storage of backups and related files; 4) a printing service used for printing out specimen labels; and 5) a message-brokering service for handling asynchronous tasks. Client devices, such as data-entry workstations, no longer require the installation of anything more than a modern web browser; i.e., one that is capable of supporting HTML5 and ECMAScript (Javascript) 2016. Accordingly, this increases the range of devices and operating systems that may be used for accessing the application. For instance, the switch to using Andes has allowed the integration of mobile phones, tablets and linux workstations into the data entry workflow. Finally, the new architecture simplifies and further enables simultaneous data entry and acquisition across multiple clients.
 
 <!-- web framework -->
 Figure \@ref(fig:arch) shows the basic system architecture of Andes.
-Andes itself is a Django web framework project.
-It hosts multiple applications that are explored in this document.
-The web framework is composed of a backend \gls{REST-API} and a frontend.
-Django uses an \gls{ORM} to handle the data layer, and drivers exist for a variety of modern relational database management systems (i.e., PostgreSQL, MariaDB, MySQL, Oracle, SQLite, etc.).
-Django's web frontend can contain reactive components implemented in VUEjs.
+The Andes application itself is a Django web framework project.
+It contains multiple Django apps (i.e., sub-components) that are explored in this document.
+In addition to the standard templates which are used to render HTML webpages to end-users, the web framework also contains an elaborate \gls{REST-API} component.
+Django uses an \gls{ORM} to handle the data layer, and drivers exist for a variety of modern relational database management systems (i.e., PostgreSQL, MariaDB, MySQL, Oracle, SQLite, etc.). Django's web frontend can contain reactive components implemented in VUEjs.
 
 <!-- API access means crazy expandable -->
 This separation lends itself nicely to be adaptable to new requirements.
@@ -50,18 +45,18 @@ Andes is meant to log activity on a \gls{Mission} basis, i.e., it is configured 
 
 When Andes is used to capture data of a \gls{Mission}, it is deployed in in an enclosed environment.
 
-the data it captures 
+the data it captures
 
-is encapsulated within it. 
+is encapsulated within it.
 
 The requirements for that mission are configured by an \gls{Andes lead} prior to deployment.
-The Mission 
+The Mission
 
 ### Andes preparation
 A user, such as an \gls{Andes lead} must set the stage before Andes is deployed for a \gls{Mission}.
-Typically this will require defining 
-i) a \gls{Configuration Preset} for Andes (configuration for a particular deployment); 
-ii) the \gls{Mission} parameters (name, vessel, institute, date, personnel, sampling protocol, etc); 
+Typically this will require defining
+i) a \gls{Configuration Preset} for Andes (configuration for a particular deployment);
+ii) the \gls{Mission} parameters (name, vessel, institute, date, personnel, sampling protocol, etc);
 and/or iii) a \gls{Sampling Protocol} to use when there is no mission (i.e., for \gls{Port Sampling]).
 
 
