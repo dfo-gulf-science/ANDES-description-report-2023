@@ -45,6 +45,13 @@ knitr::include_graphics("./figures/temp.png")
 ```
 \clearpage
 
+(ref:progress-caption) Progress map.
+
+```{r progress, fig.cap="(ref:progress-caption)", out.width='1.0\\linewidth'}
+knitr::include_graphics("./figures/temp.png")
+```
+\clearpage
+
 
 
 (ref:andes-wetlab1-caption) User interface of the Ecosystem Survey component of Andes when in use for processing samples in the wet laboratory. The screen capture presented here shows sampling of capelin lengths on an active set being processed in the lab.
