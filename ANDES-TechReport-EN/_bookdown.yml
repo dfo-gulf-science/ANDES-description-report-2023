@@ -6,5 +6,6 @@ rmd_files: ["index.Rmd",
             "04_discussion.Rmd",
             "06_bibliography.Rmd",
             "Figures.Rmd",
+            "Acronyms-Glossary.Rmd",
             "05_appendix.Rmd"]
 delete_merged_file: true

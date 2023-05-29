@@ -7,14 +7,14 @@ author: |
   Daniel Ricard^1^,
   David Fishman^1^,
   Lindsay Beazley^2^,
-  Denis Bernier^3^,
   Brian Boivin^3^,
   Jamie Emberley^4^,
   Ryan Martin^4^,
   Jenni McDermid^1^
-  Nicolas Rolland^1^ and 
-  David Sean-Fortin^3^,
-author_list: "Ricard, D., Fishman, D., Beazley, L., Bernier, D., Boivin, B., Emberley, J., Martin, R., McDermid, J., Rolland, N. and Sean-Fortin, D."
+  Nicolas Rolland^1^
+  David Sean-Fortin^3^ and 
+  Pablo Vergara^1^,
+author_list: "Ricard, D., Fishman, D., Beazley, L., Boivin, B., Emberley, J., Martin, R., McDermid, J., Rolland, N., Sean-Fortin, D.  and Vergara, P."
 region: Gulf Region
 french_region: Région du Golfe
 isbn: "ISBN GOES HERE"
