@@ -87,7 +87,7 @@ The oceanography data collection is handled by a separate app that is used in th
 
 ### Commercial port sampling
 
-The simplified \gls{ERD} of the relevant \gls{andes} components is on Figure \@ref(fig:ERD).
+The simplified \gls{ERD} of the relevant \gls{andes} components is on Figure \@ref(fig:ERD_ES).
 
 \gls{andes} was adapted to support port sampling activities where technicians obtain length frequency samples from commercial fishing activities. To facilitate deployment, the port sampling app of \gls{andes} is deployed on field tablets with a custom interface that is suitable for use on boats, outdoor and in inclement weather conditions (Figure \@ref(fig:portsampling1)).
 

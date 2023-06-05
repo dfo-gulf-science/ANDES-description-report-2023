@@ -8,9 +8,9 @@ knitr::include_graphics("./figures/architecture.png")
 \clearpage
 
 
-(ref:ERD-caption) A simplified entity relationship diagram of the data model used by the Ecosystem Survey app of \gls{andes}.
+(ref:ERD_ES-caption) A simplified entity relationship diagram of the data model used by the Ecosystem Survey app of \gls{andes}.
 
-```{r ERD, fig.cap="(ref:ERD-caption)", out.width='1.0\\linewidth'}
+```{r ERD_ES, fig.cap="(ref:ERD_ES-caption)", out.width='1.0\\linewidth'}
 knitr::include_graphics("./figures/erd_ecosystem_survey.png")
 ```
 \clearpage
