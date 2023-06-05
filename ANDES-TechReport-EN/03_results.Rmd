@@ -2,7 +2,7 @@
 
 ## Technical Implementation of Design Goals
 
-The architecture of \gls{andes} differs significantly from that of its predecessor. The basic system architecture of \gls{andes} is depicted in Figure \@ref(fig:arch). The application and its associated services are centralised on one or several servers and include: 1) a web-service for service handling HTTP requests and responses; 2) a database service for storing data associated with the application; 3) a file-sharing service for handling the storage of backups and related files; 4) a printing service used for printing out specimen labels; and 5) a message-brokering service for handling asynchronous tasks. Client devices, such as data-entry workstations, no longer require the installation of anything more than a modern web browser; i.e., one that is capable of supporting HTML5 and ECMAScript (Javascript) 2016. Accordingly, this increases the range of devices and operating systems that may be used for accessing the application. For instance, the switch to using \gls{andes} has allowed the integration of mobile phones, tablets and linux workstations into the data entry workflow. Finally, the new configuration means multiple stations can simultaneously receive and enter data into the same \gls{andes} instance. The simplified \gls{ERD} of the relevant \gls{andes} components is on Figure \@ref(fig:ERD).
+The architecture of \gls{andes} differs significantly from that of its predecessor. The basic system architecture of \gls{andes} is depicted in Figure \@ref(fig:arch). The application and its associated services are centralised on one or several servers and include: 1) a web-service for service handling HTTP requests and responses; 2) a database service for storing data associated with the application; 3) a file-sharing service for handling the storage of backups and related files; 4) a printing service used for printing out specimen labels; and 5) a message-brokering service for handling asynchronous tasks. Client devices, such as data-entry workstations, no longer require the installation of anything more than a modern web browser; i.e., one that is capable of supporting HTML5 and ECMAScript (Javascript) 2016. Accordingly, this increases the range of devices and operating systems that may be used for accessing the application. For instance, the switch to using \gls{andes} has allowed the integration of mobile phones, tablets and linux workstations into the data entry workflow. Finally, the new configuration means multiple stations can simultaneously receive and enter data into the same \gls{andes} instance.
 
 ### Flexibility, Scalability and Reliability
 
@@ -63,6 +63,8 @@ The Django framework has excellent support for internationalization and localiza
 
 ### Ecosystem survey data entry
 
+The simplified \gls{ERD} of the relevant \gls{andes} components is on Figure \@ref(fig:ERD).
+
 This component of \gls{andes} replicates the capabilities of the \gls{ese} for capturing detailed information on length, weight, ageing material, maturity, etc. about fish and invertebrate specimens. The app running on computers in the wet laboratory of the vessel is used for all entry of data related to measurements and observations of marine organisms (Figure \@ref(fig:andes-wetlab1)). The \gls{Ecosystem Survey} application is the main entrypoint that technicians will use to input survey data.
 
 The Shrimp Ecosystem Survey application resulted from the early adoption of \gls{andes} in the Québec region. The niche workflow requirements of shrimp survey operations justified the creation of its own \gls{andes} module. 
@@ -77,11 +79,15 @@ The dashboard utility is meant to obtain a summary of the cruise, it includes th
 
 ### Oceanographic metadata collection
 
+The simplified \gls{ERD} of the relevant \gls{andes} components is on Figure \@ref(fig:ERD).
+
 The Oceanographic module is a stand-alone component of the application that is capable of being deployed independently of the Ecosystem Survey module.
 
 The oceanography data collection is handled by a separate app that is used in the deployment of the rosette and the processing of water samples obtained at different depths  (Figure \@ref(fig:oceanography)).
 
 ### Commercial port sampling
+
+The simplified \gls{ERD} of the relevant \gls{andes} components is on Figure \@ref(fig:ERD).
 
 \gls{andes} was adapted to support port sampling activities where technicians obtain length frequency samples from commercial fishing activities. To facilitate deployment, the port sampling app of \gls{andes} is deployed on field tablets with a custom interface that is suitable for use on boats, outdoor and in inclement weather conditions (Figure \@ref(fig:portsampling1)).
 
