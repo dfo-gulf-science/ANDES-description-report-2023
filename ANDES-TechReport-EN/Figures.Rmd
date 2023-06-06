@@ -1,17 +1,17 @@
 # Figures
 
-(ref:arch-caption) Entity relationship diagram of the data model used by ANDES.
+(ref:arch-caption) The generalized system architecture diagram of the Andes application and its associated services.
 
 ```{r arch, fig.cap="(ref:arch-caption)", out.width='1.0\\linewidth'}
-knitr::include_graphics("./figures/architecture.pdf")
+knitr::include_graphics("./figures/architecture.png")
 ```
 \clearpage
 
 
-(ref:ERD-caption) Entity relationship diagram of the data model used by ANDES.
+(ref:ERD_ES-caption) A simplified entity relationship diagram of the data model used by the Ecosystem Survey app of \gls{andes}.
 
-```{r ERD, fig.cap="(ref:ERD-caption)", out.width='1.0\\linewidth'}
-knitr::include_graphics("./figures/ERD1.png")
+```{r ERD_ES, fig.cap="(ref:ERD_ES-caption)", out.width='1.0\\linewidth'}
+knitr::include_graphics("./figures/erd_ecosystem_survey.png")
 ```
 \clearpage
 

@@ -35,3 +35,9 @@ The boundaries are now well-defined and described in this report.
 We thank all DFO personnel who were involved in the early testing and deployment of \gls{andes} prior to and during the 2020 southern Gulf of St. Lawrence ecosystem survey. We thank the Gulf Region publications coordinator, Dr. Jeffery Clements, for his assistance with getting this document published.
 
 \clearpage
+
+
+DOCS:
+https://dfo-gulf-science.github.io/andes/basic.html
+
+IT security
