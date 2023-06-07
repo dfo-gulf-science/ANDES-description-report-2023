@@ -15,6 +15,16 @@ knitr::include_graphics("./figures/erd_ecosystem_survey.png")
 ```
 \clearpage
 
+
+(ref:ERD_OCEAN-caption) A simplified entity relationship diagram of the data model used by the Oceanography app of \gls{andes}.
+
+```{r ERD_OCEAN, fig.cap="(ref:ERD_OCEAN-caption)", out.width='1.0\\linewidth'}
+knitr::include_graphics("./figures/erd_oceanography.png")
+```
+\clearpage
+
+
+
 (ref:andes-splashpage-caption) User interface of Another data entry system (Andes) showing the eight principal components of the application.
 
 ```{r andes-splashpage, fig.cap="(ref:andes-splashpage-caption)", out.width='1.0\\linewidth'}
