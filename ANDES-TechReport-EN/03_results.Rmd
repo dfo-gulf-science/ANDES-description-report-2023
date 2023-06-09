@@ -129,19 +129,3 @@ The simplified \gls{ERD} of the relevant \gls{andes} components is on Figure \@r
 
 
 
-<!-- SCRATCH!! -->
-
-
-
-
-
-
-### Full list of QC implemented by Andes
-
-| Scope    | Description of Quality Control Item                                                  |
-|----------|--------------------------------------------------------------------------------------|
-| Set      | Ensure the start and end coordinates are within the sampling stratum (if applicable) |
-| Specimen | The calculated specimen weight                                                       |
-| Catch    |                                                                                      |
-
-- while fishing bridge console alarm is triggered if leave stratum
