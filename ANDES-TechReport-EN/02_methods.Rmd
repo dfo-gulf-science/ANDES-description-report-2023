@@ -13,10 +13,6 @@ The following section outlines the user-requirements and design principles that 
 The development environment used for the application must be a contemporary programming language with a proven track record for performance, usability and adaptability.
 Within the context of DFO Science, there is a high number of use-cases under which this application can be deployed. For example, the number of users might range from a single employee alone in the field to several dozen scientists, technicians and vessel personnel participating in a research cruise. Similarly, the application might need to be deployed on a stand-alone device or accessed from within a \gls{lan} or even over a \gls{wan}. The application must be able to accommodate a wide range of practical scenarios.
 
-### Backup Strategy
-
-In all deployment scenarios, data of high business value will be captured and there is little to no tolerance for data loss. Accordingly, the application must have a way to facilitate the implementation of a robust data-backup strategy. Capturing numerous snapshots of the application (and database) is ideal since doing so provides redundancy as well as the ability to revert to a specific point in time. If possible, The backup files and snapshots should be stored on a volumes with some form of redundancy.
-
 ### Version Control / Source Control
 
 The utilization of a \gls{vcs} is an indispensable component of a sustainable development workflow. Version management is especially important in the context of having concurrent instances of the application in production at any given time. Knowing the version of a production instance is necessary to resolve any issues that might arise. Similarly, databases and backup files are intimately linked to an application's version number. In order to successfully re-instantiate a backup file, the precise version under which it was produced must be known. The VCS will also provide an indispensable framework for the coordination, examination and integration of contributions from collaborators.
@@ -24,6 +20,10 @@ The utilization of a \gls{vcs} is an indispensable component of a sustainable de
 ### Unit Testing
 
 The application performance needs to be reliable, especially considering its potential to be deployed in remote field environments. The implementation of unit tests is a practical way to ensure the maintenance of core functionality over time. At one extreme, the addition of any code can be preceded by the creation of unit tests (i.e., test-driven development). This approach will maximize the stability of an application, but can hinder the momentum of a project, especially in its early stages. At the other extreme, application development in the complete absence of unit testing occurs at a relatively fast pace but will result in a project that is vulnerable to breaking in unexpected ways and one that is difficult to maintain and pass on to other developers.
+
+### Backup Strategy
+
+In all deployment scenarios, data of high business value will be captured and there is little to no tolerance for data loss. Accordingly, the application must have a way to facilitate the implementation of a robust data-backup strategy. Capturing numerous snapshots of the application (and database) is ideal since doing so provides redundancy as well as the ability to revert to a specific point in time. If possible, The backup files and snapshots should be stored on a volumes with some form of redundancy.
 
 ### Customizable Protocols
 

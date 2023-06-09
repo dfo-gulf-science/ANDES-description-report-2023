@@ -14,22 +14,17 @@ The architecture used by \gls{andes} creates networking requirements that were n
 
 The \gls{andes} application provides access to its various components based on an internal system of authentication and authorization. The credentials of a given user will affect what action they are able to do. For example, while the chief scientist are able to modify sampling requirements for the mission, other users are not.
 
-
-### Backup Strategy
-
-************* WORK NEEDED
-In all deployment scenarios, data of high business value will be captured and there is little to no tolerance for data loss. Accordingly, the application must have a way to facilitate the implementation of a robust data-backup strategy. Capturing numerous snapshots of the application (and database) is ideal since doing so provides redundancy as well as the ability to revert to a specific point in time. If possible, The backup files and snapshots should be stored on a volumes with some form of redundancy.
-
-
 ### Version Control / Source Control
 
 It was decided to use [Git](https://git-scm.com/) as the \gls{vcs} for this project due to the fact that it is both widespread in use and open-sourced. The remote repository for this project is currently hosted as a private project on the [Gulf Science organizational GitHub account](https://github.com/dfo-gulf-science). The project is additionally making use of GitHub infrastructure including, pull requests, issue management (e.g., bugs, feature requests and general enhancement requests), security alerts and version releases. The \gls{andes} documentation is also being served using GitHub Pages and can be access [here](https://dfo-gulf-science.github.io/andes/)
-
 
 ### Unit testing
 
 For \gls{andes} development, we use a mixture of test-driven development for critical components of the application, and are also continually adding unit tests for more user-specific components. Using the built-in Python / Django testing framework, this strikes a middle ground between the two approaches described in the above section. While the goal is not to implement test-driven development for the application, the use of unit tests is highly encouraged, especially to back up the core functionality of the application.
 
+### Backup Strategy
+
+The \gls{andes} application has the capability to perform manual and automatic backups. These backups consist of two parts: a gls\{json} export of the entire database and the recording of the current version of the application (i.e., the git hash). The structure of the application models will change over time and thus, so will the structure of the data. Accordingly, in order to re-instantiate a particular data snapshot, it is critical to know the precise version from which it was exported. This combination of data export and git version number, gives users the perpetual ability to recreate the exact application environment from the time of the snapshot; no matter how much the application has change in the interim. In the application, backups are automatically created upon closing sets. However, users also have the ability to manually trigger a backup at anytime.
 
 ### Customizable protocols
 
