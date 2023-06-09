@@ -46,7 +46,7 @@ We thank all DFO personnel who were involved in the early testing and deployment
 \clearpage
 
 
-DOCS:
-https://dfo-gulf-science.github.io/andes/basic.html
+(DOCS)[https://dfo-gulf-science.github.io/andes/basic.html]
 
 IT security
+
