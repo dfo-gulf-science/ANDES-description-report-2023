@@ -111,3 +111,11 @@ knitr::include_graphics("./figures/mature_length_form.png")
 ```
 \clearpage
 
+
+(ref:screenshot_bridge_console-caption) Andes Bridge Console.
+
+```{r screenshot_bridge_console, fig.cap="(ref:screenshot_bridge_console-caption)", out.width='1.0\\linewidth'}
+knitr::include_graphics("./figures/screenshot_bridge_console.png")
+```
+\clearpage
+
