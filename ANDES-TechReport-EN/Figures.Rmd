@@ -94,3 +94,20 @@ knitr::include_graphics("./figures/portsampling1.png")
 ```
 \clearpage
 
+
+
+(ref:ab_form-caption) Andes offers the option to specify regression coefficients for males, females or unspecified individuals to be used in quality control.
+
+```{r ab_form, fig.cap="(ref:ab_form-caption)", out.width='1.0\\linewidth'}
+knitr::include_graphics("./figures/ab_form.png")
+```
+\clearpage
+
+
+(ref:mature_length_form-caption) Andes offers the option to specify mature length thresholds for males, females or unspecified individuals to be used in quality control.
+
+```{r mature_length_form, fig.cap="(ref:mature_length_form-caption)", out.width='1.0\\linewidth'}
+knitr::include_graphics("./figures/mature_length_form.png")
+```
+\clearpage
+

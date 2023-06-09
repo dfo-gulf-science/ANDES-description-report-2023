@@ -28,26 +28,49 @@ The \gls{andes} application has the capability to perform manual and automatic b
 
 ### Customizable protocols
 
-************* WORK NEEDED
-The flexibility of project leads to design, modify and report on their sampling protocol without depending on developers is very important. The application should allow users to provide a variety of detailed information based on their particular sampling protocols, without the need to change the application source code. Similarly, different protocols utilize different code conventions for the identification of biological catches. The application should offer the flexibility of users to utilize their preferred system of catch codes.
+\gls{andes} provides projects leads the ability to create and modify sampling protocol through the user interface. By doing so, project leads are able to shape the flow and control the behaviour of the application during data entry. This including deciding which fields to display in a form (e.g., set cards), importing stations and other geographical features (e.g., sampling strata, NAFO areas, gls\{mpa}s, etc.) and the quotas and observation fields associated with different catch items. Here are some examples of catch-specific sampling requirements that can be programmed by project leads:
+
+| Catch            | Example Sampling Requirement                                                                                                                                                                                                                                                                                                        |
+|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Winter Skate     | Collect length, sex, weight, maturity, disk width and tail description from every specimen.                                                                                                                                                                                                                                         |
+| Atlantic Herring | Collect length from every specimen; preserve 2 specimens per every 5 mm length bin per set.                                                                                                                                                                                                                                         |
+| Atlantic Halibut | Collect length, sex, weight, maturity, stomach weight and otoliths from every specimen. Collect 300 fin clips per mission. Collect 25 female gonads per mission.                                                                                                                                                                    |
+| American Lobster | Length and sex from one specimen per sex per 3 mm per set. If female, check for lobster eggs. If female size is greater than 70 mm, check molt stage and shell disease index. If female size is greater than 70 mm AND has eggs, check abdominal width, egg stage and clutch fullness rate.                                         |
+| Atlantic Cod     | Collect length, sex, weight, maturity, and otoliths from: one specimen per cm per set for specimens 25 cm and under; two specimens per cm per set for specimens between 26-45 cm; and three specimens per cm per set for specimens 46 cm and over. Collect 10 specimens from the Banc des Americains MPA that are between 40-70 cm. |
+
+\gls{andes} also allows users to specify a preferred system of catch codes by attaching the code collection to a sampling protocol. When a given protocol is active, all catch item are reference by their corresponding entry in the attached catch collection list.
 
 
 ### Quality Control
 
-************* WORK NEEDED
-The implementation of quality control checks in a data entry application is of paramount importance. At a minimum, the following quality control checks should be leveraged:
+\gls{andes} successfully implements a suite of quality control checks. In addition to those listed in the section above, here are some additional checks that are performed. All quality control flags that are raising during data entry are appended to a report and require sign off before a set can be closed.
 
-| Scope       | Description of Quality Control Item                                                                                                             |
-|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| Set         | Ensure all the required fields on a given set card have been filled in.                                                                         |
-| Set         | Ensure the start and end coordinates fall within the expected sampling stratum (if applicable).                                                 |
-| Catch       | Ensure catches have a minimum level of data entry associated with them (e.g., should at least contain a basket entry)                           |
-| Specimen    | For a given catch, ensure that length measurements do not exceed a maximum value.                                                               |
-| Specimen    | For a given catch, ensure the length-to-weight ratio of a specimen falls within an expected range.                                              |
-| Observation | The value of a given observation should never be null.                                                                                          |
-| Observation | The value of a given observation should respect the data type (integer, float, string) of its observation type.                                 |
-| Observation | Ensure that if an observation type (e.g., sex) has a set of defined categories (e.g., male, female) that any entered values are within this set |
+#### Sets
 
+\gls{andes} will flag when the tow distance as calculated by the cruise track, differs from the tow distance as calculated by a straight line between the start and end coordinates by more than 5%. \gls{andes} will flag when the start or stop corrdinates of a set are not within the expected NAFO area (if applicable).
+
+#### Catches
+
+\gls{andes} will flag when the weights entered for baskets in kilograms are unreasonable. This is determined by either the default maximum basket weight listed for that mission, or the maximum basket weight for a given species, if available via the sampling requirement. \gls{andes} will also flag when the difference of total weight of *sampled* basket differs by more than 25% from the total calculated specimen weight. The total calculated specimen weight is combination of actual weights (when collected) and those which were estimated from length measurements. The latter is achieved by plugging in the observed length and regression coefficients fitted from historical data into the following equation:
+
+**** DAN DO YOUR MAGIC WITH A NICE FORMULA HERE AND CHECK MY PONTIFICATED PHRASES ABOVE PLEASE.
+
+        _weight_hat = a * _length_ ** b
+
+**** Maybe some reference for why this is a valid approach would be good here?
+
+\gls{andes} offers the option to specify regression coefficients for males, females or unspecified individuals (as shown in Figure \@ref(fig:ab_form)).
+
+A recent version of \gls{andes} implemented a new optional layer of quality control. This feature allows project leads to assign allow-lists and restrict-lists, commonly known as whitelists and blacklists, to a mission or to a specific geographic feature (e.g., a stratum). In this way, the validity of each catch entered into a set can be assessed. For example, if a catch being recorded is *not* on the that set's associated allow-lists, the end user will be notified that this is an unusual observation and will be prompted to collect documentation. Similarly, if a project lead adds a catch to the mission's restrict-list, users who enter this catch will receive a warning message, asking them to double-check the assignment. This is useful when project leads want to limit the usage of certain taxa during data entry, e.g., *Alosa sp* is preferred over the use of *Alosa pseudoharengus*.
+
+#### Specimens
+
+In addition to the meeting the requirements outlined in the section above, \gls{andes} will flag when there is a mismatch between fish maturity and somatic length.
+Project leads can specify mature length thresholds for males, females or unspecified individuals in the sampling requirement of a given species (as shown in Figure \@ref(fig:mature_length_form)).
+
+#### Observations
+
+When entering an observation for an observation type that has categories, Andes will display the list of options to the end user and inhibit users from entering invalid selections. Andes will also ensure observation types are not left blank, however NaN entries are permitted when a particular observation is meant to be skipped. Certain observation types are meant to be unique, e.g., unique tag number. If this is flagged at the level of the observation type, end users will be notified if there is a violation of this structure.
 
 ### User Interface
 
@@ -55,16 +78,12 @@ The frontend of the application is built in \gls{html5}, \gls{javascript} and \g
 
 ### Reactivity
 
-The [Django REST framework](https://www.django-rest-framework.org/) was used to construct the WebAPI component of the application. The project takes a hybrid approach, combining the use of standard Django views and \gls{vuejs} frontend applications embedded in the templates. The latter were built to avoid the need for constantly reloading webpages and to optimize the flow of traffic across the network. Reactive javascript frontend applications also provide a better experience from the point of view of an end-user.
+The [Django REST framework](https://www.django-rest-framework.org/) was used to construct the WebAPI component of the application. The project takes a hybrid approach, combining the use of standard Django views and \gls{vuejs} frontend applications embedded in the templates. The latter were used to avoid the need for constantly reloading webpages and to optimize the flow of traffic across the network. Reactive javascript frontend applications also provide a better experience from the point of view of an end-user.
 
 ### Multilingualism
 
 The Django framework has excellent support for internationalization and localization, including the translation of text and the formatting of dates, times and numbers. It achieves this using a system of "hooks" used by developers to indicate which parts of the code should be localized. See [Django - Internationalization and localization](https://docs.djangoproject.com/en/4.1/topics/i18n/) for more details on this process. In our application, an end-user can toggle between English and French by simply clicking on a button. In this way, each client can view the application in the language of their choice.
 
-### Backup Regime and infrastructure
-
-
-### Regionalization
 
 
 ## Usage cases

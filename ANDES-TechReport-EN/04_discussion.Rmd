@@ -16,6 +16,9 @@ When present, the client-server separation lends itself nicely to be adaptable t
 Most modern vessels will already provide the minimum necessary networking infrastructure necessary for system deployment where connectivity between a dry laboratory, a wet laboratory and the ship's wheelhouse are necessary. In the case where it doesn't, this requirement can be met relatively easily using inexpensive consumer-grade networking equipment (wireless router, switch, etc.). However, installing as ad-hoc network for scientific needs in a vessel may lead to code violations there we urge \gls{andes} users to collaborate with vessel management body like the \gls{CCG} or chartering authority.
 
 
+
+Sampling programs should explicitly discuss the use of allow-lists and restrict-lists.
+
 ## Integration of Andes with existing data repositories
 
 \gls{andes} is a standalone application with an underlying relational database management system, and the data collected during research activities must be extracted from the application and integrated into existing databases. 
