@@ -112,9 +112,7 @@ Another task-specific utility is the completion map which shows what strata have
 
 ### Oceanographic metadata collection
 
-The simplified \gls{ERD} of the relevant \gls{andes} components is presented in Figure \@ref(fig:ERD). The Oceanographic module is a stand-alone component of the application that is capable of being deployed independently of the Ecosystem Survey module.
-
-The oceanography data collection is handled by a separate app that is used in the deployment of the rosette and the processing of water samples obtained at different depths  (Figure \@ref(fig:oceanography)).
+The simplified \gls{ERD} of the Oceanographic module of \gls{andes} is presented in Figure \@ref(fig:erd-oceanography). The Oceanography app is a stand-alone component of the application that is capable of being deployed independently of the Ecosystem Survey module. This module is used to track and record the deployment of CTDs, plankton nets, Argo floats and other oceanographic equipment (Figure \@ref(fig:screenshot-oceanography-sample). Basic metadata, such as the location and timestamp of deployment and recovery can be collected for each activity. Certain oceanographic activities allow deeper layers of metadata collection such as the tracking of water samples from CTDs ((Figure \@ref(fig:screenshot-oceanography-activity)).
 
 ### Commercial port sampling
 

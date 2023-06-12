@@ -86,6 +86,24 @@ knitr::include_graphics("./figures/erd_oceanography.png")
 ```
 \clearpage
 
+(ref:screenshot-oceanography-sample-caption) A screenshot of the Oceanographic Sample detail page from the Andes Oceanography App.
+```{r screenshot-oceanography-sample, fig.cap="(ref:screenshot-oceanography-sample-caption)", out.width='1.0\\linewidth'}
+knitr::include_graphics("./figures/screenshot_oceanography_sample.png")
+```
+\clearpage
+
+(ref:screenshot-oceanography-activity-caption) A screenshot of the Oceanographic Activity detail page from the Andes Oceanography App.
+```{r screenshot-oceanography-activity, fig.cap="(ref:screenshot-oceanography-activity-caption)", out.width='1.0\\linewidth'}
+knitr::include_graphics("./figures/screenshot_oceanography_activity.png.png")
+```
+\clearpage
+
+
+
+
+
+
+
 
 (ref:ERD-PORT-caption) A simplified entity relationship diagram of the data model used by the Port Sampling app of \gls{andes}.
 
