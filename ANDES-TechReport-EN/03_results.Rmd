@@ -47,7 +47,7 @@ The \gls{andes} application has the capability to perform manual and automatic b
 
 #### Sets
 
-The Andes provides very clear feedback regarding the completeness status of a given set. Flags are raised if a set's start and/or end coordinates are outside the expected sampling stratum; additionally, an alarm is sounded in the bridge console app when deviating from the desired stratum in real-time. The bridge console also provides personnel with fishing timers and tow distance displays (Figure \@ref(fig:screenshot_bridge_console)).
+The Andes provides very clear feedback regarding the completeness status of a given set. Flags are raised if a set's start and/or end coordinates are outside the expected sampling stratum; additionally, an alarm is sounded in the bridge console app when deviating from the desired stratum in real-time. The bridge console also provides personnel with fishing timers and tow distance displays (see Figure \@ref(fig:screenshot-fishing-console)).
 
 
 
@@ -63,13 +63,13 @@ Flags are generated for catches that do not have any data entry associated with 
 
 **** Maybe some reference for why this is a valid approach would be good here?
 
-\gls{andes} offers the option to specify regression coefficients for males, females or unspecified individuals (as shown in Figure \@ref(fig:ab_form)).
+\gls{andes} offers the option to specify regression coefficients for males, females or unspecified individuals (as shown in Figure \@ref(fig:screenshot-ab-form)).
 
 A recent version of \gls{andes} implemented a new optional layer of quality control. This feature allows project leads to assign allow-lists and restrict-lists, commonly known as whitelists and blacklists, to a mission or to a specific geographic feature (e.g., a stratum). In this way, the validity of each catch entered into a set can be assessed. For example, if a catch being recorded is *not* on the that set's associated allow-lists, the end user will be notified that this is an unusual observation and will be prompted to collect documentation. Similarly, if a project lead adds a catch to the mission's restrict-list, users who enter this catch will receive a warning message, asking them to double-check the assignment. This is useful when project leads want to limit the usage of certain taxa during data entry, e.g., *Alosa sp* is preferred over the use of *Alosa pseudoharengus*.
 
 #### Specimens
 
-Specimen lengths and length-to-weight ratios are validated against the parameters entered in the sampling requirements for that catch. Acceptable length-to-weight are assessed by comparing the actual weight to the estimated weight, as described in the section above. Additionally, \gls{andes} will flag when there is a mismatch between fish maturity and somatic length. Project leads can specify mature length thresholds for males, females or unspecified individuals in the sampling requirement of a given species (as shown in Figure \@ref(fig:mature_length_form)).
+Specimen lengths and length-to-weight ratios are validated against the parameters entered in the sampling requirements for that catch. Acceptable length-to-weight are assessed by comparing the actual weight to the estimated weight, as described in the section above. Additionally, \gls{andes} will flag when there is a mismatch between fish maturity and somatic length. Project leads can specify mature length thresholds for males, females or unspecified individuals in the sampling requirement of a given species (as shown in Figure \@ref(fig:screenshot-mature-length-form)).
 
 #### Observations
 
@@ -90,13 +90,18 @@ The Django framework has excellent support for internationalization and localiza
 
 ## Usage cases
 
-The Andes Django project contains multiple apps that loosely correspond to the different use cases defined in the above section.
+The Andes Django project contains multiple apps that loosely correspond to the different use cases defined in the above methods section. The different modules can be clearly observed in the index page of the site (Figure \@ref(fig:screenshot-index). As noted above, the access to different apps is determined by a system of authentication and authorization. Accordingly, the index page will appear different to users depending on the permissions they have been granted.
+
+While Andes has been implemented using a modular design, there is a core set of components that are used across modules. This true at the level of the database, where in addition to a number of shared tables, submodules will have tables that are specific its specific use case. For example, the Mission table is used across several modules however the Specimen module is specific to the Ecosystem Survey application.
+
+Similarly, the Andes has apps that are used across multiple user scenarios; in particular, the Bridge app (Figure \@ref(fig:screenshot-bridge-console)) and the Cruise Dashboard app (Figure \@ref(fig:screenshot-dashboard)). These apps display high-level information to end users such as queued stations, vessel speed, position and heading and various summaries of Science activities that are underway or that have already taken place. All core pages of the application can be toggled to night mode, as desired.
 
 
-### Ecosystem survey data entry   DAVID IS HERE!!!
+### Ecosystem survey data entry
 
-A depiction of the main tables involved in the Ecosystem data entry application, and their relationships are displayed Figure \@ref(fig:ERD_ES). This component of \gls{andes} replicates the capabilities of the \gls{ese} for capturing detailed information on length, weight, ageing material, maturity, etc. about fish and invertebrate specimens. The app running on computers in the wet laboratory of the vessel is used for all entry of data related to measurements and observations of marine organisms (Figure \@ref(fig:andes-wetlab1)). The \gls{Ecosystem Survey} application is the main entrypoint that technicians will use to input survey data.
+A depiction of the main tables involved in the Ecosystem data entry application, and their relationships are displayed in Figure \@ref(fig:erd-ecosystem-survey). This component of \gls{andes} replicates the capabilities of the \gls{ese} for capturing detailed information on length, weight, ageing material, maturity, etc. about fish and invertebrate specimens. The app, when accessed on computers in the wet laboratory of the vessel, is used for all entry of data related to measurements and observations of marine organisms. New catches are first entered into the Active Set page, as portrayed in Figure \@ref(fig:screenshot-wetlab-active-set). The Active Set page accepts regional catch codes as a way to input new catches into a set. If a code is not known, a search feature is available. Next, baskets and their corresponding weights and statuses are then entered into the Catch Card page (Figure \@ref(fig:screenshot-wetlab-catch-card).
 
+The \gls{Ecosystem Survey} application is the main entrypoint that technicians will use to input survey data.
 
 
 The Shrimp Ecosystem Survey application resulted from the early adoption of \gls{andes} in the Québec region. The niche workflow requirements of shrimp survey operations justified the creation of its own \gls{andes} module.
