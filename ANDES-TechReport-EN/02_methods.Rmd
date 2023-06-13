@@ -1,12 +1,16 @@
 # Methods
 The \gls{ese} was the starting point in the development of \gls{andes}.
 The replacement data entry software had to first replicate the proven functional capabilities of \gls{ese}.
-Early version of \gls{andes} achieved those goals and the system was further developed over its usage by scientists in the Gulf Region. Additionally, the \gls{mrr}
+Early versions of \gls{andes} achieved those goals and the system was further developed over its usage by scientists in the Gulf Region. 
 Other opportunistic design goals also existed, including the use of a contemporary software development environment, the ability to support multiple languages, flexibility in deployment and using a shared code development environment.
+
+<!-- 
+Additionally, the \gls{mrr}
+-->
 
 ## Technical Implementation of Design Goals
 
-The following section outlines the user-requirements and design principles that played a role in decision-making during the development of Andes.
+The following section outlines the user-requirements and design principles that played a role in decision-making during the development of \gls{andes}.
 
 ### Flexibility, Scalability and Reliability
 
@@ -49,7 +53,6 @@ The application should flag specimens whose length falls outside an acceptable r
 
 Individual observations are characterized by an observation type. Observation types should have predefined data types such as interger, float, string or categorical.
 The application should ensure that inputted observation values should never be left null and that they respect the data type of the corresponding observation type. In the case where an observation type (e.g., sex) has a set of defined categories (e.g., male, female, unknown), the application should ensure that any entered values fall within the set of available options.
-
 
 ### User Interface
 

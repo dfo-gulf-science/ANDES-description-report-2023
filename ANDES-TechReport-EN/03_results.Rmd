@@ -28,18 +28,9 @@ The \gls{andes} application has the capability to perform manual and automatic b
 
 ### Customizable protocols
 
-\gls{andes} provides projects leads the ability to create and modify sampling protocol through the user interface. By doing so, project leads are able to shape the flow and control the behaviour of the application during data entry. This including deciding which fields to display in a form (e.g., set cards), importing stations and other geographical features (e.g., sampling strata, NAFO areas, gls\{mpa}s, etc.) and the quotas and observation fields associated with different catch items. Here are some examples of catch-specific sampling requirements that can be programmed by project leads:
-
-| Catch            | Example Sampling Requirement                                                                                                                                                                                                                                                                                                        |
-|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Winter Skate     | Collect length, sex, weight, maturity, disk width and tail description from every specimen.                                                                                                                                                                                                                                         |
-| Atlantic Herring | Collect length from every specimen; preserve 2 specimens per every 5 mm length bin per set.                                                                                                                                                                                                                                         |
-| Atlantic Halibut | Collect length, sex, weight, maturity, stomach weight and otoliths from every specimen. Collect 300 fin clips per mission. Collect 25 female gonads per mission.                                                                                                                                                                    |
-| American Lobster | Length and sex from one specimen per sex per 3 mm per set. If female, check for lobster eggs. If female size is greater than 70 mm, check molt stage and shell disease index. If female size is greater than 70 mm AND has eggs, check abdominal width, egg stage and clutch fullness rate.                                         |
-| Atlantic Cod     | Collect length, sex, weight, maturity, and otoliths from: one specimen per cm per set for specimens 25 cm and under; two specimens per cm per set for specimens between 26-45 cm; and three specimens per cm per set for specimens 46 cm and over. Collect 10 specimens from the Banc des Americains MPA that are between 40-70 cm. |
+\gls{andes} provides projects leads the ability to create and modify sampling protocol through the user interface. By doing so, project leads are able to shape the flow and control the behaviour of the application during data entry. This including deciding which fields to display in a form (e.g., set cards), importing stations and other geographical features (e.g., sampling strata, NAFO areas, gls\{mpa}s, etc.) and the quotas and observation fields associated with different catch items. Examples of catch-specific sampling requirements that can be programmed by project leads can be foundin Table \ref{tab:sampling}.
 
 \gls{andes} also allows users to specify a preferred system of catch codes by attaching the code collection to a sampling protocol. When a given protocol is active, all catch item are reference by their corresponding entry in the attached catch collection list.
-
 
 ### Quality Control
 
@@ -47,23 +38,19 @@ The \gls{andes} application has the capability to perform manual and automatic b
 
 #### Sets
 
-The Andes provides very clear feedback regarding the completeness status of a given set. Flags are raised if a set's start and/or end coordinates are outside the expected sampling stratum; additionally, an alarm is sounded in the bridge console app when deviating from the desired stratum in real-time. The bridge console also provides personnel with fishing timers and tow distance displays (see Figure \@ref(fig:screenshot-fishing-console)).
-
-
+The \gls{andes} provides very clear feedback regarding the completeness status of a given set. Flags are raised if a set's start and/or end coordinates are outside the expected sampling stratum; additionally, an alarm is sounded in the bridge console app when deviating from the desired stratum in real-time. The bridge console also provides personnel with fishing timers and tow distance displays (see Figure \@ref(fig:screenshot-fishing-console)).
 
 \gls{andes} will flag when the tow distance as calculated by the cruise track, differs from the tow distance as calculated by a straight line between the start and end coordinates by more than 5%. \gls{andes} will flag when the start or stop corrdinates of a set are not within the expected NAFO area (if applicable).
 
 #### Catches
 
-Flags are generated for catches that do not have any data entry associated with them. In addition to this, \gls{andes} will flag when the weights entered for baskets are considered suspect. This is determined by either the default maximum basket weight (mission level), or the maximum basket weight for a given species. \gls{andes} will also flag when the difference of total weight of *sampled* basket differs by more than 25% from the total calculated specimen weight. The total calculated specimen weight is combination of actual weights (when collected) and those which were estimated from length measurements. The latter is achieved by plugging in the observed length and regression coefficients fitted from historical data into the following equation:
+Flags are generated for catches that do not have any data entry associated with them. In addition to this, \gls{andes} will flag when the weights entered for baskets that are considered suspect. This is determined by either the default maximum basket weight (mission level), or the maximum basket weight for a given species. \gls{andes} will also flag when the difference of total weight of *sampled* basket differs by more than 25% from the total calculated specimen weight. The total calculated specimen weight is a combination of actual weights (when collected) and those which were estimated from length measurements. The latter is achieved by using length and regression coefficients estimated from historical data using the following equation:
 
-**** DAN DO YOUR MAGIC WITH A NICE FORMULA HERE AND CHECK MY PONTIFICATED PHRASES ABOVE PLEASE.
+\begin{equation}
+\hat{W} = a L ^{b}
+\end{equation}
 
-        _weight_hat = a * _length_ ** b
-
-**** Maybe some reference for why this is a valid approach would be good here?
-
-\gls{andes} offers the option to specify regression coefficients for males, females or unspecified individuals (as shown in Figure \@ref(fig:screenshot-ab-form)).
+\gls{andes} offers the option to specify separate regression coefficients for males, females or unspecified individuals (as shown in Figure \@ref(fig:screenshot-ab-form)).
 
 A recent version of \gls{andes} implemented a new optional layer of quality control. This feature allows project leads to assign allow-lists and restrict-lists, commonly known as whitelists and blacklists, to a mission or to a specific geographic feature (e.g., a stratum). In this way, the validity of each catch entered into a set can be assessed. For example, if a catch being recorded is *not* on the that set's associated allow-lists, the end user will be notified that this is an unusual observation and will be prompted to collect documentation. Similarly, if a project lead adds a catch to the mission's restrict-list, users who enter this catch will receive a warning message, asking them to double-check the assignment. This is useful when project leads want to limit the usage of certain taxa during data entry, e.g., *Alosa sp* is preferred over the use of *Alosa pseudoharengus*.
 
@@ -73,7 +60,7 @@ Specimen lengths and length-to-weight ratios are validated against the parameter
 
 #### Observations
 
-When entering observations, Andes enforces the data type of the corresponding observation type; invalid entries are not accepted. When entering an observation for an observation type that has categories, Andes will display the list of options to the end user and inhibit users from entering invalid selections. Andes will also ensure observation types are not left blank, however NaN entries are permitted when a particular observation is meant to be skipped. Certain observation types are meant to be unique, e.g., unique tag number. If this is flagged at the level of the observation type, end users will be notified if there is a violation of this structure.
+When entering observations, \gls{andes} enforces the data type of the corresponding observation type; invalid entries are not accepted. When entering an observation for an observation type that has categories, \gls{andes} will display the list of options to the end user and inhibit users from entering invalid selections. \gls{andes} will also ensure observation types are not left blank, however NaN entries are permitted when a particular observation is meant to be skipped. Certain observation types are meant to be unique, e.g., unique tag number. If this is flagged at the level of the observation type, end users will be notified if there is a violation of this structure.
 
 ### User Interface
 
@@ -87,15 +74,13 @@ The [Django REST framework](https://www.django-rest-framework.org/) was used to 
 
 The Django framework has excellent support for internationalization and localization, including the translation of text and the formatting of dates, times and numbers. It achieves this using a system of "hooks" used by developers to indicate which parts of the code should be localized. See [Django - Internationalization and localization](https://docs.djangoproject.com/en/4.1/topics/i18n/) for more details on this process. In our application, an end-user can toggle between English and French by simply clicking on a button. In this way, each client can view the application in the language of their choice.
 
-
 ## Usage cases
 
 The Andes Django project contains multiple apps that loosely correspond to the different use cases defined in the above methods section. The different modules can be clearly observed in the index page of the site (Figure \@ref(fig:screenshot-index). As noted above, the access to different apps is determined by a system of authentication and authorization. Accordingly, the index page will appear different to users depending on the permissions they have been granted.
 
-While Andes has been implemented using a modular design, there is a core set of components that are used across modules. This true at the level of the database, where in addition to a number of shared tables, submodules will have tables that are specific its specific use case. For example, the Mission table is used across several modules however the Specimen module is specific to the Ecosystem Survey application.
+While \gls{andes} has been implemented using a modular design, there is a core set of components that are used across modules. This true at the level of the database, where in addition to a number of shared tables, submodules will have tables that are specific its specific use case. For example, the Mission table is used across several modules however the Specimen module is specific to the Ecosystem Survey application.
 
-Similarly, the Andes has apps that are used across multiple user scenarios; in particular, the Bridge Console (Figure \@ref(fig:screenshot-bridge-console)) and the Cruise Dashboard (Figure \@ref(fig:screenshot-dashboard)). These apps display high-level information to end users such as queued stations, vessel speed, position and heading and various summaries of Science activities that are underway or that have already taken place. All core pages of the application can be toggled to night mode, as desired.
-
+Similarly, \gls{andes} has apps that are used across multiple user scenarios; in particular, the Bridge Console (Figure \@ref(fig:screenshot-bridge-console)) and the Cruise Dashboard (Figure \@ref(fig:screenshot-dashboard)). These apps display high-level information to end users such as queued stations, vessel speed, position and heading and various summaries of Science activities that are underway or that have already taken place. All core pages of the application can be toggled to night mode, as desired.
 
 ### Ecosystem survey data entry
 
@@ -116,10 +101,4 @@ The Oceanography app is a stand-alone component of the application that is capab
 
 ### Commercial port sampling
 
-\gls{andes} was adapted to support port sampling activities where technicians obtain length frequency samples from commercial fishing activities. The protocols used in the Port Sampling app are much simpler than those belonging to the Ecosystem Survey app. Through the protocols, user are able to control collection quotas (e.g., "keep two specimens per bin"), the flow of data entry (e.g., which field should be displayed in the sample form) and the layout of the data entry page (e.g., should the length bins be organized in a vertical or horizontal configuration) (see Figure \@ref(fig:screenshot-port-protocol)). Typically, production instances of this app are deployed on ruggedized field tablets that are suitable for use in wet environments. The design of the user interface is simple and intuitive; where each length bin is a large button on the display. As specimens are tallied, the corresponding buttons on the touchscreen are pushed. A screenshot of the data entry page is presented in Figure \@ref(fig:screenshot-port-data-entry). The various tables of the Port Sampling application and how they relate to one another is shown in Figure \@ref(fig:ERD_ES).
-
-
-
-
-
-
+\gls{andes} was adapted to support port sampling activities where technicians obtain length frequency samples from commercial fishing activities. The protocols used in the Port Sampling app are much simpler than those belonging to the Ecosystem Survey app. Through the protocols, user are able to control collection quotas (e.g., "keep two specimens per bin"), the flow of data entry (e.g., which field should be displayed in the sample form) and the layout of the data entry page (e.g., should the length bins be organized in a vertical or horizontal configuration) (see Figure \@ref(fig:screenshot-port-data-entry)). Typically, production instances of this app are deployed on ruggedized field tablets that are suitable for use in wet environments. The design of the user interface is simple and intuitive; where each length bin is a large button on the display. As specimens are tallied, the corresponding buttons on the touchscreen are pushed. A screenshot of the data entry page is presented in Figure \@ref(fig:screenshot-port-data-entry). The various tables of the Port Sampling application and how they relate to one another is shown in Figure \@ref(fig:erd-port).

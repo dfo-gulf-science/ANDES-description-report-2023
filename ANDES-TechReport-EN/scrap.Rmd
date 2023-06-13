@@ -8,12 +8,6 @@ Interest in modernizing the tooling and workflow has been expressed.
 This imminent need, together with the successful proof-of-concept demonstration of Andes in the Gulf region, presents an opportunity for inter-regional collaboration.
 
 
-
-
-
-
-
-
 - Backup are automatically created when sets are closed
 - All backup files reference the version of the application which produced them. Even old backups can be loaded by locally re-instantiating the version of the application under which it was produced
 
