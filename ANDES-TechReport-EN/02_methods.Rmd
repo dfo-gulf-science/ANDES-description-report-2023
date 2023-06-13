@@ -13,10 +13,6 @@ The following section outlines the user-requirements and design principles that 
 The development environment used for the application must be a contemporary programming language with a proven track record for performance, usability and adaptability.
 Within the context of DFO Science, there is a high number of use-cases under which this application can be deployed. For example, the number of users might range from a single employee alone in the field to several dozen scientists, technicians and vessel personnel participating in a research cruise. Similarly, the application might need to be deployed on a stand-alone device or accessed from within a \gls{lan} or even over a \gls{wan}. The application must be able to accommodate a wide range of practical scenarios.
 
-### Backup Strategy
-
-In all deployment scenarios, data of high business value will be captured and there is little to no tolerance for data loss. Accordingly, the application must have a way to facilitate the implementation of a robust data-backup strategy. Capturing numerous snapshots of the application (and database) is ideal since doing so provides redundancy as well as the ability to revert to a specific point in time. If possible, The backup files and snapshots should be stored on a volumes with some form of redundancy.
-
 ### Version Control / Source Control
 
 The utilization of a \gls{vcs} is an indispensable component of a sustainable development workflow. Version management is especially important in the context of having concurrent instances of the application in production at any given time. Knowing the version of a production instance is necessary to resolve any issues that might arise. Similarly, databases and backup files are intimately linked to an application's version number. In order to successfully re-instantiate a backup file, the precise version under which it was produced must be known. The VCS will also provide an indispensable framework for the coordination, examination and integration of contributions from collaborators.
@@ -24,6 +20,10 @@ The utilization of a \gls{vcs} is an indispensable component of a sustainable de
 ### Unit Testing
 
 The application performance needs to be reliable, especially considering its potential to be deployed in remote field environments. The implementation of unit tests is a practical way to ensure the maintenance of core functionality over time. At one extreme, the addition of any code can be preceded by the creation of unit tests (i.e., test-driven development). This approach will maximize the stability of an application, but can hinder the momentum of a project, especially in its early stages. At the other extreme, application development in the complete absence of unit testing occurs at a relatively fast pace but will result in a project that is vulnerable to breaking in unexpected ways and one that is difficult to maintain and pass on to other developers.
+
+### Backup Strategy
+
+In all deployment scenarios, data of high business value will be captured and there is little to no tolerance for data loss. Accordingly, the application must have a way to facilitate the implementation of a robust data-backup strategy. Capturing numerous snapshots of the application (and database) is ideal since doing so provides redundancy as well as the ability to revert to a specific point in time. If possible, The backup files and snapshots should be stored on a volumes with some form of redundancy.
 
 ### Customizable Protocols
 
@@ -33,16 +33,22 @@ The flexibility of project leads to design, modify and report on their sampling 
 
 The implementation of quality control checks in a data entry application is of paramount importance. At a minimum, the following quality control checks should be leveraged:
 
-| Scope       | Description of Quality Control Item                                                                                                             |
-|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| Set         | Ensure all the required fields on a given set card have been filled in.                                                                         |
-| Set         | Ensure the start and end coordinates fall within the expected sampling stratum (if applicable).                                                 |
-| Catch       | Ensure catches have a minimum level of data entry associated with them (e.g., should at least contain a basket entry)                           |
-| Specimen    | For a given catch, ensure that length measurements do not exceed a maximum value.                                                               |
-| Specimen    | For a given catch, ensure the length-to-weight ratio of a specimen falls within an expected range.                                              |
-| Observation | The value of a given observation should never be null.                                                                                          |
-| Observation | The value of a given observation should respect the data type (integer, float, string) of its observation type.                                 |
-| Observation | Ensure that if an observation type (e.g., sex) has a set of defined categories (e.g., male, female) that any entered values are within this set |
+#### Sets
+
+The application should ensure all the required fields on a given set card have been filled in. Users should also be warned if the set's start and/or end coordinates fall outside the expected sampling stratum (if applicable).
+
+#### Catches
+
+The application should verify the validity of catches that do not have any data entry associated with them. This validation is important to help identify catches that might have been entered accidentally.
+
+#### Specimens
+
+The application should flag specimens whose length falls outside an acceptable range. Similarly, a validation of the specimen's length-to-weight ratio should be performed.
+
+#### Observations
+
+Individual observations are characterized by an observation type. Observation types should have predefined data types such as interger, float, string or categorical.
+The application should ensure that inputted observation values should never be left null and that they respect the data type of the corresponding observation type. In the case where an observation type (e.g., sex) has a set of defined categories (e.g., male, female, unknown), the application should ensure that any entered values fall within the set of available options.
 
 
 ### User Interface

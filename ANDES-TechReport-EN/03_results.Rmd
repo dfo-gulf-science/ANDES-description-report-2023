@@ -2,44 +2,78 @@
 
 ## Technical Implementation of Design Goals
 
-The architecture of \gls{andes} differs significantly from that of its predecessor. The basic system architecture of \gls{andes} is depicted in Figure \@ref(fig:arch). The application and its associated services are centralised on one or several servers and include: 1) a web-service for service handling HTTP requests and responses; 2) a database service for storing data associated with the application; 3) a file-sharing service for handling the storage of backups and related files; 4) a printing service used for printing out specimen labels; and 5) a message-brokering service for handling asynchronous tasks. Client devices, such as data-entry workstations, no longer require the installation of anything more than a modern web browser; i.e., one that is capable of supporting HTML5 and ECMAScript (Javascript) 2016. Accordingly, this increases the range of devices and operating systems that may be used for accessing the application. For instance, the switch to using \gls{andes} has allowed the integration of mobile phones, tablets and linux workstations into the data entry workflow. Finally, the new configuration means multiple stations can simultaneously receive and enter data into the same \gls{andes} instance.
+The architecture of \gls{andes} differs significantly from that of its predecessor. The basic system architecture of \gls{andes} is depicted in Figure \@ref(fig:arch). The application and its associated services are centralised on one or several servers and include: 1) a web-service for handling HTTP requests and responses; 2) a database service for storing data associated with the application; 3) a file-sharing service for handling the storage of backups and related files; 4) a printing service used for printing out specimen labels; and 5) a message-brokering service for handling asynchronous tasks. Client devices, such as data-entry workstations, no longer require the installation of anything more than a modern web browser; i.e., one that is capable of supporting HTML5 and ECMAScript (Javascript) 2016. Accordingly, this increases the range of devices and operating systems that may be used for accessing the application. For instance, the switch to using \gls{andes} has allowed the integration of mobile phones, tablets and linux workstations into the data entry workflow. Finally, the new configuration means multiple stations can simultaneously receive and enter data into the same \gls{andes} instance.
 
 ### Flexibility, Scalability and Reliability
 
+The [Django Web Framework](https://www.djangoproject.com/) was selected for the backend of this application due to its modularized nature; virtually all aspects of the programming framework can be decoupled. Furthermore, the Django framework is written in pure Python language; an open-source, generalized object-orientated programming language that is popular for use in data-heavy applications. In addition to standard django templates, used to render HTML webpages to end-users, the web framework also contains an elaborate \gls{REST-API} component. Django uses an \gls{ORM} to handle the data layer, and includes \gls{api}s for a variety of modern relational database management systems (i.e., PostgreSQL, MariaDB, MySQL, Oracle, SQLite, etc.). Several of the application's frontend templates contain reactive components implemented in \gls{vuejs}.
 
-
-
-The [Django Web Framework](https://www.djangoproject.com/) was selected for the backend of this application due to its modularized nature; virtually all aspects of the programming framework can be decoupled. Furthermore, the Django framework is written in pure Python language; an open-source, generalized object-orientated programming language that is popular for use in data-heavy applications. While web applications are most often used over a network, the Django library comes with a development web-server that permits users to serve and use the application locally. In this scenario, a single computer acts simultaneously as server and client. While there are important limitations to the use of the Django development web-server in a full-scale production environment, this configuration is adequate for stand-alone use-cases.
-
-The Andes application itself is a Django web framework project. It contains multiple Django apps that loosely correspond to the different use cases defined above. In addition to the standard templates which are used to render HTML webpages to end-users, the web framework also contains an elaborate \gls{REST-API} component. Django uses an \gls{ORM} to handle the data layer, and drivers exist for a variety of modern relational database management systems (i.e., PostgreSQL, MariaDB, MySQL, Oracle, SQLite, etc.). Django's web frontend can contain reactive components implemented in VUEjs.
-
-
-
-This client-server separation lends itself nicely to be adaptable to new requirements. One can potentially expand upon the *system* with minimal changes to \gls{andes} by interacting directly with its exposed \gls{REST-API}. For example, an imaging system can be aware of current GPS coordinates or current \gls{Set} / \gls{Station}. Photos or videos acquired by such an imaging system could automatically append these as metadata, or even add media identifiers directly to the database as they are captured.
-
+While web applications are most often used over a network, the Django library comes with a development web-server that permits users to serve and use the application locally. In this scenario, a single computer acts simultaneously as server and client. While there are important limitations to the use of the Django development web-server in a full-scale production environment, this configuration is adequate for stand-alone use-cases.
 
 The architecture used by \gls{andes} creates networking requirements that were not previously present in the \gls{ese} and \gls{mrr}. The server and the client devices must be connected to the same network. The network does not need to have access to the wide area network (i.e., internet) connection. As long as they are connected to the same \gls{lan}, they can be configured for work together. This suits the networking environment on board remote vessels that can have sporadic connection failures with the wide area network.
 
-Most modern vessels will already provide the minimum necessary networking infrastructure necessary for system deployment where connectivity between a dry laboratory, a wet laboratory and the ship's wheelhouse are necessary. In the case where it doesn't, this requirement can be met relatively easily using inexpensive consumer-grade networking equipment (wireless router, switch, etc.). However, installing as ad-hoc network for scientific needs in a vessel may lead to code violations and we urge \gls{andes} users to collaborate with vessel management body like the \gls{CCG} or chartering authority.
-
-\gls{andes} provides access to its different components differently based on the credentials of users. While the chief scientist can change sampling requirements for the mission, other users won't.
-
+The \gls{andes} application provides access to its various components based on an internal system of authentication and authorization. The credentials of a given user will affect what action they are able to do. For example, while the chief scientist are able to modify sampling requirements for the mission, other users are not.
 
 ### Version Control / Source Control
 
-It was decided to use [Git](https://git-scm.com/) as the \gls{vcs} for this project due to the fact that it is both widespread in use and open-sourced. The remote repository for this project is currently hosted on the [Gulf Science organizational GitHub account](https://github.com/dfo-gulf-science). The project is additionally making use of GitHub infrastructure including, pull requests, issue management (e.g., bugs, feature requests and general enhancement requests), security alerts and a user-driven Wiki.
+It was decided to use [Git](https://git-scm.com/) as the \gls{vcs} for this project due to the fact that it is both widespread in use and open-sourced. The remote repository for this project is currently hosted as a private project on the [Gulf Science organizational GitHub account](https://github.com/dfo-gulf-science). The project is additionally making use of GitHub infrastructure including, pull requests, issue management (e.g., bugs, feature requests and general enhancement requests), security alerts and version releases. The \gls{andes} documentation is also being served using GitHub Pages and can be access [here](https://dfo-gulf-science.github.io/andes/)
 
 ### Unit testing
 
-For \gls{andes} development, we use a mixture of test-driven development for critical components of the application, and are also continually adding unit tests for more user-specific components. Using the built-in Python / Django testing framework, this strikes a middle ground between the above two approaches. While the goal is not to implement test-driven development for the application, the use of unit tests is highly encouraged, especially to back up the core functionality of the application.
+For \gls{andes} development, we use a mixture of test-driven development for critical components of the application, and are also continually adding unit tests for more user-specific components. Using the built-in Python / Django testing framework, this strikes a middle ground between the two approaches described in the above section. While the goal is not to implement test-driven development for the application, the use of unit tests is highly encouraged, especially to back up the core functionality of the application.
 
-### Backups Capability and Redundancy
+### Backup Strategy
 
+The \gls{andes} application has the capability to perform manual and automatic backups. These backups consist of two parts: a gls\{json} export of the entire database and the recording of the current version of the application (i.e., the git hash). The structure of the application models will change over time and thus, so will the structure of the data. Accordingly, in order to re-instantiate a particular data snapshot, it is critical to know the precise version from which it was exported. This combination of data export and git version number, gives users the perpetual ability to recreate the exact application environment from the time of the snapshot; no matter how much the application has change in the interim. In the application, backups are automatically created upon closing sets. However, users also have the ability to manually trigger a backup at anytime.
 
 ### Customizable protocols
 
-### Regionalization
+\gls{andes} provides projects leads the ability to create and modify sampling protocol through the user interface. By doing so, project leads are able to shape the flow and control the behaviour of the application during data entry. This including deciding which fields to display in a form (e.g., set cards), importing stations and other geographical features (e.g., sampling strata, NAFO areas, gls\{mpa}s, etc.) and the quotas and observation fields associated with different catch items. Here are some examples of catch-specific sampling requirements that can be programmed by project leads:
 
+| Catch            | Example Sampling Requirement                                                                                                                                                                                                                                                                                                        |
+|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Winter Skate     | Collect length, sex, weight, maturity, disk width and tail description from every specimen.                                                                                                                                                                                                                                         |
+| Atlantic Herring | Collect length from every specimen; preserve 2 specimens per every 5 mm length bin per set.                                                                                                                                                                                                                                         |
+| Atlantic Halibut | Collect length, sex, weight, maturity, stomach weight and otoliths from every specimen. Collect 300 fin clips per mission. Collect 25 female gonads per mission.                                                                                                                                                                    |
+| American Lobster | Length and sex from one specimen per sex per 3 mm per set. If female, check for lobster eggs. If female size is greater than 70 mm, check molt stage and shell disease index. If female size is greater than 70 mm AND has eggs, check abdominal width, egg stage and clutch fullness rate.                                         |
+| Atlantic Cod     | Collect length, sex, weight, maturity, and otoliths from: one specimen per cm per set for specimens 25 cm and under; two specimens per cm per set for specimens between 26-45 cm; and three specimens per cm per set for specimens 46 cm and over. Collect 10 specimens from the Banc des Americains MPA that are between 40-70 cm. |
+
+\gls{andes} also allows users to specify a preferred system of catch codes by attaching the code collection to a sampling protocol. When a given protocol is active, all catch item are reference by their corresponding entry in the attached catch collection list.
+
+
+### Quality Control
+
+\gls{andes} successfully implements a suite of quality control checks. All quality control flags that are raising during data entry are appended to a report and require sign off before a set can be closed.
+
+#### Sets
+
+The Andes provides very clear feedback regarding the completeness status of a given set. Flags are raised if a set's start and/or end coordinates are outside the expected sampling stratum; additionally, an alarm is sounded in the bridge console app when deviating from the desired stratum in real-time. The bridge console also provides personnel with fishing timers and tow distance displays (see Figure \@ref(fig:screenshot-fishing-console)).
+
+
+
+\gls{andes} will flag when the tow distance as calculated by the cruise track, differs from the tow distance as calculated by a straight line between the start and end coordinates by more than 5%. \gls{andes} will flag when the start or stop corrdinates of a set are not within the expected NAFO area (if applicable).
+
+#### Catches
+
+Flags are generated for catches that do not have any data entry associated with them. In addition to this, \gls{andes} will flag when the weights entered for baskets are considered suspect. This is determined by either the default maximum basket weight (mission level), or the maximum basket weight for a given species. \gls{andes} will also flag when the difference of total weight of *sampled* basket differs by more than 25% from the total calculated specimen weight. The total calculated specimen weight is combination of actual weights (when collected) and those which were estimated from length measurements. The latter is achieved by plugging in the observed length and regression coefficients fitted from historical data into the following equation:
+
+**** DAN DO YOUR MAGIC WITH A NICE FORMULA HERE AND CHECK MY PONTIFICATED PHRASES ABOVE PLEASE.
+
+        _weight_hat = a * _length_ ** b
+
+**** Maybe some reference for why this is a valid approach would be good here?
+
+\gls{andes} offers the option to specify regression coefficients for males, females or unspecified individuals (as shown in Figure \@ref(fig:screenshot-ab-form)).
+
+A recent version of \gls{andes} implemented a new optional layer of quality control. This feature allows project leads to assign allow-lists and restrict-lists, commonly known as whitelists and blacklists, to a mission or to a specific geographic feature (e.g., a stratum). In this way, the validity of each catch entered into a set can be assessed. For example, if a catch being recorded is *not* on the that set's associated allow-lists, the end user will be notified that this is an unusual observation and will be prompted to collect documentation. Similarly, if a project lead adds a catch to the mission's restrict-list, users who enter this catch will receive a warning message, asking them to double-check the assignment. This is useful when project leads want to limit the usage of certain taxa during data entry, e.g., *Alosa sp* is preferred over the use of *Alosa pseudoharengus*.
+
+#### Specimens
+
+Specimen lengths and length-to-weight ratios are validated against the parameters entered in the sampling requirements for that catch. Acceptable length-to-weight are assessed by comparing the actual weight to the estimated weight, as described in the section above. Additionally, \gls{andes} will flag when there is a mismatch between fish maturity and somatic length. Project leads can specify mature length thresholds for males, females or unspecified individuals in the sampling requirement of a given species (as shown in Figure \@ref(fig:screenshot-mature-length-form)).
+
+#### Observations
+
+When entering observations, Andes enforces the data type of the corresponding observation type; invalid entries are not accepted. When entering an observation for an observation type that has categories, Andes will display the list of options to the end user and inhibit users from entering invalid selections. Andes will also ensure observation types are not left blank, however NaN entries are permitted when a particular observation is meant to be skipped. Certain observation types are meant to be unique, e.g., unique tag number. If this is flagged at the level of the observation type, end users will be notified if there is a violation of this structure.
 
 ### User Interface
 
@@ -47,69 +81,45 @@ The frontend of the application is built in \gls{html5}, \gls{javascript} and \g
 
 ### Reactivity
 
-The [Django REST framework](https://www.django-rest-framework.org/) was used to construct the WebAPI component of the application. The project takes a hybrid approach, combining the use of standard Django views and [Vue.js](https://vuejs.org/) frontend applications embedded in the templates. The latter were built to avoid the need for constantly reloading webpages and to optimize the flow of traffic across the network. Reactive javascript frontend applications also provide a better experience from the point of view of an end-user.
+The [Django REST framework](https://www.django-rest-framework.org/) was used to construct the WebAPI component of the application. The project takes a hybrid approach, combining the use of standard Django views and \gls{vuejs} frontend applications embedded in the templates. The latter were used to avoid the need for constantly reloading webpages and to optimize the flow of traffic across the network. Reactive javascript frontend applications also provide a better experience from the point of view of an end-user.
 
 ### Multilingualism
 
 The Django framework has excellent support for internationalization and localization, including the translation of text and the formatting of dates, times and numbers. It achieves this using a system of "hooks" used by developers to indicate which parts of the code should be localized. See [Django - Internationalization and localization](https://docs.djangoproject.com/en/4.1/topics/i18n/) for more details on this process. In our application, an end-user can toggle between English and French by simply clicking on a button. In this way, each client can view the application in the language of their choice.
 
-### Backup Regime and infrastructure
-
-
-### Regionalization
-
 
 ## Usage cases
 
+The Andes Django project contains multiple apps that loosely correspond to the different use cases defined in the above methods section. The different modules can be clearly observed in the index page of the site (Figure \@ref(fig:screenshot-index). As noted above, the access to different apps is determined by a system of authentication and authorization. Accordingly, the index page will appear different to users depending on the permissions they have been granted.
+
+While Andes has been implemented using a modular design, there is a core set of components that are used across modules. This true at the level of the database, where in addition to a number of shared tables, submodules will have tables that are specific its specific use case. For example, the Mission table is used across several modules however the Specimen module is specific to the Ecosystem Survey application.
+
+Similarly, the Andes has apps that are used across multiple user scenarios; in particular, the Bridge Console (Figure \@ref(fig:screenshot-bridge-console)) and the Cruise Dashboard (Figure \@ref(fig:screenshot-dashboard)). These apps display high-level information to end users such as queued stations, vessel speed, position and heading and various summaries of Science activities that are underway or that have already taken place. All core pages of the application can be toggled to night mode, as desired.
+
+
 ### Ecosystem survey data entry
 
-The simplified \gls{ERD} of the relevant \gls{andes} components is on Figure \@ref(fig:ERD).
+The \gls{Ecosystem Survey} app is the main entrypoint that technicians will use to input survey data. A depiction of the main tables involved in the Ecosystem data entry application, and their relationships are displayed in Figure \@ref(fig:erd-ecosystem-survey). This component of \gls{andes} replicates the capabilities of the \gls{ese} for capturing detailed information on length, weight, ageing material, maturity, etc. about fish and invertebrate specimens. This app, typically accessed from the wet laboratory of a survey vessel, is used for all entry of data related to measurements and observations of marine organisms. New catches are first entered into the Active Set page, as portrayed in Figure \@ref(fig:screenshot-wetlab-active-set). The Active Set page accepts regional catch codes as a way to input new catches into a set. If a code is not known, a search feature is available. Next, baskets and their corresponding weights and statuses (e.g., sampled vs. not sampled) are then entered into the Catch Card page (Figure \@ref(fig:screenshot-wetlab-catch-card)). Finally, specimens are entered into the Data Entry page (Figure \@ref(fig:screenshot-wetlab-data-entry)). As the data entry progresses, users are dynamically prompted with observation fields that follow the catch-specific sampling protocol. An overview of the sampling protocol is displayed on the right-hand side of the Data Entry page.
 
-This component of \gls{andes} replicates the capabilities of the \gls{ese} for capturing detailed information on length, weight, ageing material, maturity, etc. about fish and invertebrate specimens. The app running on computers in the wet laboratory of the vessel is used for all entry of data related to measurements and observations of marine organisms (Figure \@ref(fig:andes-wetlab1)). The \gls{Ecosystem Survey} application is the main entrypoint that technicians will use to input survey data.
+<!-- I think this can be built out bit more. For example, what is the niche workflow that this is addressing (DJF) -->
+The Shrimp Ecosystem Survey application resulted from the early adoption of \gls{andes} in the Québec region. The niche workflow requirements of shrimp survey operations justified the creation of its own \gls{andes} module.
 
-The Shrimp Ecosystem Survey application resulted from the early adoption of \gls{andes} in the Québec region. The niche workflow requirements of shrimp survey operations justified the creation of its own \gls{andes} module. 
+As noted above, the Bridge console is used by navigation officers in the wheelhouse (usually set up on a tablet) is used to input fishing set metadata. The data entry occurs in two ways: 1) by directly editing the set form (aka the set card); and/or 2) via the Fishing Console, which is displayed in Figure \@ref(fig:screenshot-bridge-console). The Fishing Console can capture a number of different events that take place during fishing as well as  information coming from sonar and trawl mensuration system sensors (e.g., Scanmar system).
 
-The console to be used by navigation officers is meant to run on a tablet in the bridge of the vessel conducting the survey (Figure \@ref(fig:bridge)). This console contains two separate sections: 1) the Set Card section and 2) the Fishing section. Additionally, a number of events that take place during fishing can be captured in the console. The bridge console also shows the information coming from the trawl mensuration system sensors (Scanmar), which is captured and stored by \gls{andes}.
+Part of the task-specific suite of utilities is a forecasting tool that provides real-time prognostics of survey completion targets based on assumed transit speeds and time spent fishing and processing the trawl catches (Figure \@ref(fig:screenshot-forecast)). This feature provides a useful tool for the chief scientist to evaluate different sampling objectives and survey route. As the conditions change regularly during a survey, this tool links with the set manager to provide an estimate of the amount of time required to complete planned stations. This tool can be used for short-term planning (i.e. a day's worth of sampling) or longer-term planning (i.e. a mission's worth of sampling).
 
-Part of the task-specific suite of utilities is a forecasting tool that provides real-time prognostics of survey completion targets based on assumed transit speeds and time spent fishing and processing the trawl catches (Figure \@ref(fig:forecast)). This tool provides a useful tool for the chief scientist to evaluate different sampling objectives and survey route. As the conditions change regularly during a survey, this tool links with the set manager to provide an estimate of the amount of time required to complete planned stations. This tool can be used for short-term planning (i.e. a day's worth of sampling) or longer-term planning (i.e. a mission's worth of sampling). 
-
-Another task-specific utility is the completion map which shows what strata have been completed based on target and minimum number of sets per stratum. This map provides the chief scientist with a clear visual depiction of what has been accomplished, and what remains to be accomplished, during the survey. The number of sets conducted in each stratum is compared to the minimum and target number of sets per stratum to determine the colour that each stratum will appear in the progress map (Figure \@ref(fig:progress)).
-
-The dashboard utility is meant to obtain a summary of the cruise, it includes the current position and speed of the vessel, the list of the most recent catches in the wet laboratory, as well as running totals of specimens captured (Figure \@ref(fig:dashboard)).
+Another task-specific utility is the completion map which shows what strata have been completed based on target and minimum number of sets per stratum. This map provides the chief scientist with a clear visual depiction of what has been accomplished, and what remains to be accomplished, during the survey. The number of sets conducted in each stratum is compared to the minimum and target number of sets per stratum to determine the colour that each stratum will appear in the progress map (Figure \@ref(fig:screenshot-progress)).
 
 ### Oceanographic metadata collection
 
-The simplified \gls{ERD} of the relevant \gls{andes} components is on Figure \@ref(fig:ERD).
-
-The Oceanographic module is a stand-alone component of the application that is capable of being deployed independently of the Ecosystem Survey module.
-
-The oceanography data collection is handled by a separate app that is used in the deployment of the rosette and the processing of water samples obtained at different depths  (Figure \@ref(fig:oceanography)).
+The Oceanography app is a stand-alone component of the application that is capable of being deployed independently of the Ecosystem Survey module. This module is used to track and record the deployment of CTDs, plankton nets, Argo floats and other oceanographic equipment (Figure \@ref(fig:screenshot-oceanography-sample). Basic metadata, such as the location and date/time of deployment and recovery events, can be collected for each activity. Certain oceanographic activities allow deeper layers of metadata collection, such as the tracking of water samples from CTDs ((Figure \@ref(fig:screenshot-oceanography-activity)). The simplified \gls{ERD} of the Oceanographic module of \gls{andes} is presented in Figure \@ref(fig:erd-oceanography).
 
 ### Commercial port sampling
 
-The simplified \gls{ERD} of the relevant \gls{andes} components is on Figure \@ref(fig:ERD_ES).
-
-\gls{andes} was adapted to support port sampling activities where technicians obtain length frequency samples from commercial fishing activities. To facilitate deployment, the port sampling app of \gls{andes} is deployed on field tablets with a custom interface that is suitable for use on boats, outdoor and in inclement weather conditions (Figure \@ref(fig:portsampling1)).
+\gls{andes} was adapted to support port sampling activities where technicians obtain length frequency samples from commercial fishing activities. The protocols used in the Port Sampling app are much simpler than those belonging to the Ecosystem Survey app. Through the protocols, user are able to control collection quotas (e.g., "keep two specimens per bin"), the flow of data entry (e.g., which field should be displayed in the sample form) and the layout of the data entry page (e.g., should the length bins be organized in a vertical or horizontal configuration) (see Figure \@ref(fig:screenshot-port-protocol)). Typically, production instances of this app are deployed on ruggedized field tablets that are suitable for use in wet environments. The design of the user interface is simple and intuitive; where each length bin is a large button on the display. As specimens are tallied, the corresponding buttons on the touchscreen are pushed. A screenshot of the data entry page is presented in Figure \@ref(fig:screenshot-port-data-entry). The various tables of the Port Sampling application and how they relate to one another is shown in Figure \@ref(fig:ERD_ES).
 
 
 
 
 
 
-
-<!-- SCRATCH!! -->
-
-
-
-
-
-
-### Full list of QC implemented by Andes
-
-| Scope    | Description of Quality Control Item                                                  |
-|----------|--------------------------------------------------------------------------------------|
-| Set      | Ensure the start and end coordinates are within the sampling stratum (if applicable) |
-| Specimen | The calculated specimen weight                                                       |
-| Catch    |                                                                                      |
-
-- while fishing bridge console alarm is triggered if leave stratum

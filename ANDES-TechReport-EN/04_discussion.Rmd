@@ -6,9 +6,20 @@ Since its initial deployment during the 2020 September survey in the southern Gu
 
 The reporting facilities provided by \gls{andes} were developed to support the many users of the data collected during scientific activities. Two types of reports are available for \gls{andes}: 1) reports meant to be used during field activities and 2) reports meant to be used after field activities are completed. 
 
-If a vessel is located within range of cellular phone signals, it is possible to make \gls{andes} accessible via the internet. 
+If a vessel is located within range of cellular phone signals, it is possible to make \gls{andes} accessible via the internet. This has some important advantages however exposing an IP to the internet always come with security risks that have to be mitigated.
 
 Versioning details and why the backup process is so awesome.
+
+When present, the client-server separation lends itself nicely to be adaptable to new requirements. One can potentially expand upon the *system* with minimal changes to \gls{andes} by interacting directly with its exposed \gls{REST-API}. For example, an imaging system can be aware of current GPS coordinates or current \gls{Set} / \gls{Station}. Photos or videos acquired by such an imaging system could automatically append these as metadata, or even add media identifiers directly to the database as they are captured.
+
+
+Most modern vessels will already provide the minimum necessary networking infrastructure necessary for system deployment where connectivity between a dry laboratory, a wet laboratory and the ship's wheelhouse are necessary. In the case where it doesn't, this requirement can be met relatively easily using inexpensive consumer-grade networking equipment (wireless router, switch, etc.). However, installing as ad-hoc network for scientific needs in a vessel may lead to code violations there we urge \gls{andes} users to collaborate with vessel management body like the \gls{CCG} or chartering authority.
+
+
+The addition of allow-lists and restrict-lists was an important addition to Andes that came out of a Regionalization workshop that took place in DEC? 2022 at the Gulf Fisheries Center. While these feature will help improve the quality of data collected, it is important that if implemented, they should be detailed explicitly in the survey sampling programme. For example, if project leads add certain catch items to the restrict-list, this should be mirrored in the survey sampling programme.
+
+
+While there is always an effort to make the user interface intuitive and self-explanatory, there is still the need to maintain documentation for the project. The Andes docs are maintained through GitHub Pages and are publicly available here: [https://dfo-gulf-science.github.io/andes/](https://dfo-gulf-science.github.io/andes/)
 
 ## Integration of Andes with existing data repositories
 
@@ -37,7 +48,7 @@ We thank all DFO personnel who were involved in the early testing and deployment
 \clearpage
 
 
-(DOCS)[https://dfo-gulf-science.github.io/andes/basic.html]
 
-IT security
+
+
 
