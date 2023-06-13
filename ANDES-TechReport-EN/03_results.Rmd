@@ -112,14 +112,11 @@ Another task-specific utility is the completion map which shows what strata have
 
 ### Oceanographic metadata collection
 
-The simplified \gls{ERD} of the Oceanographic module of \gls{andes} is presented in Figure \@ref(fig:erd-oceanography). The Oceanography app is a stand-alone component of the application that is capable of being deployed independently of the Ecosystem Survey module. This module is used to track and record the deployment of CTDs, plankton nets, Argo floats and other oceanographic equipment (Figure \@ref(fig:screenshot-oceanography-sample). Basic metadata, such as the location and timestamp of deployment and recovery can be collected for each activity. Certain oceanographic activities allow deeper layers of metadata collection such as the tracking of water samples from CTDs ((Figure \@ref(fig:screenshot-oceanography-activity)).
+The Oceanography app is a stand-alone component of the application that is capable of being deployed independently of the Ecosystem Survey module. This module is used to track and record the deployment of CTDs, plankton nets, Argo floats and other oceanographic equipment (Figure \@ref(fig:screenshot-oceanography-sample). Basic metadata, such as the location and date/time of deployment and recovery events, can be collected for each activity. Certain oceanographic activities allow deeper layers of metadata collection, such as the tracking of water samples from CTDs ((Figure \@ref(fig:screenshot-oceanography-activity)). The simplified \gls{ERD} of the Oceanographic module of \gls{andes} is presented in Figure \@ref(fig:erd-oceanography).
 
 ### Commercial port sampling
 
-The simplified \gls{ERD} of the relevant \gls{andes} components is on Figure \@ref(fig:ERD_ES).
-
-\gls{andes} was adapted to support port sampling activities where technicians obtain length frequency samples from commercial fishing activities. To facilitate deployment, the port sampling app of \gls{andes} is deployed on field tablets with a custom interface that is suitable for use on boats, outdoor and in inclement weather conditions (Figure \@ref(fig:portsampling1)).
-
+\gls{andes} was adapted to support port sampling activities where technicians obtain length frequency samples from commercial fishing activities. The protocols used in the Port Sampling app are much simpler than those belonging to the Ecosystem Survey app. Through the protocols, user are able to control collection quotas (e.g., "keep two specimens per bin"), the flow of data entry (e.g., which field should be displayed in the sample form) and the layout of the data entry page (e.g., should the length bins be organized in a vertical or horizontal configuration) (see Figure \@ref(fig:screenshot-port-protocol)). Typically, production instances of this app are deployed on ruggedized field tablets that are suitable for use in wet environments. The design of the user interface is simple and intuitive; where each length bin is a large button on the display. As specimens are tallied, the corresponding buttons on the touchscreen are pushed. A screenshot of the data entry page is presented in Figure \@ref(fig:screenshot-port-data-entry). The various tables of the Port Sampling application and how they relate to one another is shown in Figure \@ref(fig:ERD_ES).
 
 
 

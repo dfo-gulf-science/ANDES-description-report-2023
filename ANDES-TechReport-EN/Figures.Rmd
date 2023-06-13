@@ -98,35 +98,17 @@ knitr::include_graphics("./figures/screenshot_oceanography_activity.png.png")
 ```
 \clearpage
 
+(ref:screenshot-port-data-entry-caption) A screenshot displaying the Port Sampling app protocol form. The selections made in this form will affect the behaviour of the app during data entry.
+```{r screenshot-port-data-entry, fig.cap="(ref:screenshot-port-data-entry-caption)", out.width='1.0\\linewidth'}
+knitr::include_graphics("./figures/screenshot_port_data_entry.png.png")
+```
+\clearpage
 
-
-
-
-
-
-
-(ref:ERD-PORT-caption) A simplified entity relationship diagram of the data model used by the Port Sampling app of \gls{andes}.
-
-```{r ERD-PORT, fig.cap="(ref:ERD-PORT-caption)", out.width='1.0\\linewidth'}
+(ref:erd-port-caption) A simplified entity relationship diagram of the data model used by the Port Sampling app of \gls{andes}.
+```{r erd-port, fig.cap="(ref:erd-port-caption)", out.width='1.0\\linewidth'}
 knitr::include_graphics("./figures/erd_port.png")
 ```
 \clearpage
 
-
-
-(ref:oceanography-caption) Oceanography app.
-
-```{r oceanography, fig.cap="(ref:oceanography-caption)", out.width='1.0\\linewidth'}
-knitr::include_graphics("./figures/temp.png")
-```
-\clearpage
-
-
-(ref:portsampling1-caption) User interface of the Port sampling component of Andes when in use for processing samples in the field.
-
-```{r portsampling1, fig.cap="(ref:portsampling1-caption)", out.width='1.0\\linewidth'}
-knitr::include_graphics("./figures/screenshot_port.png")
-```
-\clearpage
 
 
