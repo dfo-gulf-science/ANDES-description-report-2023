@@ -2,7 +2,7 @@
 
 ## Technical Implementation of Design Goals
 
-The architecture of \gls{andes} differs significantly from that of its predecessor. The basic system architecture of \gls{andes} is depicted in Figure \@ref(fig:arch). The application and its associated services are centralised on one or several servers and include: 1) a web-service for handling HTTP requests and responses; 2) a database service for storing data associated with the application; 3) a file-sharing service for handling the storage of backups and related files; 4) a printing service used for printing out specimen labels; and 5) a message-brokering service for handling asynchronous tasks. Client devices, such as data-entry workstations, no longer require the installation of anything more than a modern web browser; i.e., one that is capable of supporting HTML5 and ECMAScript (Javascript) 2016. Accordingly, this increases the range of devices and operating systems that may be used for accessing the application. For instance, the switch to using \gls{andes} has allowed the integration of mobile phones, tablets and linux workstations into the data entry workflow. Finally, the new configuration means multiple stations can simultaneously receive and enter data into the same \gls{andes} instance.
+The architecture of \gls{andes} differs significantly from that of its predecessor. The basic system architecture of \gls{andes} is depicted in Figure \@ref(fig:arch). The application and its associated services are centralised on one or several servers and include: 1) a web-service for handling HTTP requests and responses; 2) a database service for storing data associated with the application; 3) a file-sharing service for handling the storage of backups and related files; 4) a printing service used for printing out specimen labels; and 5) a message-brokering service for handling asynchronous tasks. Client devices, such as data-entry workstations, no longer require the installation of anything more than a modern web browser; i.e., one that is capable of supporting HTML5 and ECMAScript 2016  (Javascript). Accordingly, this increases the range of devices and operating systems that may be used for accessing the application. For instance, the switch to using \gls{andes} has allowed the integration of mobile phones, tablets and linux workstations into the data entry workflow. Finally, the new configuration means multiple stations can simultaneously receive and enter data into the same \gls{andes} instance.
 
 ### Flexibility, Scalability and Reliability
 
@@ -28,7 +28,7 @@ The \gls{andes} application has the capability to perform manual and automatic b
 
 ### Customizable protocols
 
-\gls{andes} provides projects leads the ability to create and modify sampling protocol through the user interface. By doing so, project leads are able to shape the flow and control the behaviour of the application during data entry. This including deciding which fields to display in a form (e.g., set cards), importing stations and other geographical features (e.g., sampling strata, NAFO areas, gls\{mpa}s, etc.) and the quotas and observation fields associated with different catch items. Examples of catch-specific sampling requirements that can be programmed by project leads can be foundin Table \ref{tab:sampling}.
+\gls{andes} provides projects leads the ability to create and modify sampling protocol through the user interface. By doing so, project leads are able to shape the flow and control the behaviour of the application during data entry. This including deciding which fields to display in a form (e.g., set cards), importing stations and other geographical features (e.g., sampling strata, NAFO areas, \gls{mpa}s, etc.) and the quotas and observation fields associated with different catch items. Examples of catch-specific sampling requirements that can be programmed by project leads can be found in Table \ref{tab:sampling}.
 
 \gls{andes} also allows users to specify a preferred system of catch codes by attaching the code collection to a sampling protocol. When a given protocol is active, all catch item are reference by their corresponding entry in the attached catch collection list.
 
@@ -36,29 +36,29 @@ The \gls{andes} application has the capability to perform manual and automatic b
 
 \gls{andes} successfully implements a suite of quality control checks. All quality control flags that are raising during data entry are appended to a report and require sign off before a set can be closed.
 
-#### Sets
+**Sets**
 
 The \gls{andes} provides very clear feedback regarding the completeness status of a given set. Flags are raised if a set's start and/or end coordinates are outside the expected sampling stratum; additionally, an alarm is sounded in the bridge console app when deviating from the desired stratum in real-time. The bridge console also provides personnel with fishing timers and tow distance displays (see Figure \@ref(fig:screenshot-fishing-console)).
 
 \gls{andes} will flag when the tow distance as calculated by the cruise track, differs from the tow distance as calculated by a straight line between the start and end coordinates by more than 5%. \gls{andes} will flag when the start or stop corrdinates of a set are not within the expected NAFO area (if applicable).
 
-#### Catches
+**Catches**
 
-Flags are generated for catches that do not have any data entry associated with them. In addition to this, \gls{andes} will flag when the weights entered for baskets that are considered suspect. This is determined by either the default maximum basket weight (mission level), or the maximum basket weight for a given species. \gls{andes} will also flag when the difference of total weight of *sampled* basket differs by more than 25% from the total calculated specimen weight. The total calculated specimen weight is a combination of actual weights (when collected) and those which were estimated from length measurements. The latter is achieved by using length and regression coefficients estimated from historical data using the following equation:
+Flags are generated for catches that do not have any data entry associated with them. In addition to this, \gls{andes} will flag when the weights entered for baskets that are considered suspect. This is determined by either the default maximum basket weight (mission level), or the maximum basket weight for a given species. \gls{andes} will also flag when the difference of total weight of *sampled* basket differs by more than 25% from the total calculated specimen weight. The total calculated specimen weight is a combination of actual weights (when collected) and those which were estimated from length measurements. The latter is achieved by using regression coefficients estimated from historical length ($L$ in centimeters) and weight ($W$ in grams) observations using the following equation:
 
 \begin{equation}
-\hat{W} = a L ^{b}
+W = aL^{b}
 \end{equation}
 
-\gls{andes} offers the option to specify separate regression coefficients for males, females or unspecified individuals (as shown in Figure \@ref(fig:screenshot-ab-form)).
+\gls{andes} offers the option to specify separate regression coefficients ($a$ and $b$) for males, females or unspecified individuals (as shown in Figure \@ref(fig:screenshot-ab-form)).
 
-A recent version of \gls{andes} implemented a new optional layer of quality control. This feature allows project leads to assign allow-lists and restrict-lists, commonly known as whitelists and blacklists, to a mission or to a specific geographic feature (e.g., a stratum). In this way, the validity of each catch entered into a set can be assessed. For example, if a catch being recorded is *not* on the that set's associated allow-lists, the end user will be notified that this is an unusual observation and will be prompted to collect documentation. Similarly, if a project lead adds a catch to the mission's restrict-list, users who enter this catch will receive a warning message, asking them to double-check the assignment. This is useful when project leads want to limit the usage of certain taxa during data entry, e.g., *Alosa sp* is preferred over the use of *Alosa pseudoharengus*.
+A recent version of \gls{andes} implemented a new optional layer of quality control. This feature allows project leads to assign allow-lists and restrict-lists, commonly known as "whitelists" and "blacklists", to a mission or to a specific geographic feature (e.g., a stratum). In this way, the validity of each catch entered into a set can be assessed. For example, if a catch being recorded is *not* on the that set's associated allow-lists, the end user will be notified that this is an unusual observation and will be prompted to collect documentation. Similarly, if a project lead adds a catch to the mission's restrict-list, users who enter this catch will receive a warning message, asking them to double-check the assignment. This is useful when project leads want to limit the usage of certain taxa during data entry, e.g., *Alosa sp* is preferred over the use of *Alosa pseudoharengus*.
 
-#### Specimens
+**Specimens**
 
 Specimen lengths and length-to-weight ratios are validated against the parameters entered in the sampling requirements for that catch. Acceptable length-to-weight are assessed by comparing the actual weight to the estimated weight, as described in the section above. Additionally, \gls{andes} will flag when there is a mismatch between fish maturity and somatic length. Project leads can specify mature length thresholds for males, females or unspecified individuals in the sampling requirement of a given species (as shown in Figure \@ref(fig:screenshot-mature-length-form)).
 
-#### Observations
+**Observations**
 
 When entering observations, \gls{andes} enforces the data type of the corresponding observation type; invalid entries are not accepted. When entering an observation for an observation type that has categories, \gls{andes} will display the list of options to the end user and inhibit users from entering invalid selections. \gls{andes} will also ensure observation types are not left blank, however NaN entries are permitted when a particular observation is meant to be skipped. Certain observation types are meant to be unique, e.g., unique tag number. If this is flagged at the level of the observation type, end users will be notified if there is a violation of this structure.
 
@@ -76,9 +76,9 @@ The Django framework has excellent support for internationalization and localiza
 
 ## Usage cases
 
-The Andes Django project contains multiple apps that loosely correspond to the different use cases defined in the above methods section. The different modules can be clearly observed in the index page of the site (Figure \@ref(fig:screenshot-index). As noted above, the access to different apps is determined by a system of authentication and authorization. Accordingly, the index page will appear different to users depending on the permissions they have been granted.
+The \gls{andes} Django project contains multiple apps that loosely correspond to the different use cases defined in the above methods section. The different modules can be clearly observed in the index page of the site (Figure \@ref(fig:screenshot-index). As noted above, the access to different apps is determined by a system of authentication and authorization. Accordingly, the index page will appear different to users depending on the permissions they have been granted.
 
-While \gls{andes} has been implemented using a modular design, there is a core set of components that are used across modules. This true at the level of the database, where in addition to a number of shared tables, submodules will have tables that are specific its specific use case. For example, the Mission table is used across several modules however the Specimen module is specific to the Ecosystem Survey application.
+While \gls{andes} has been implemented using a modular design, there is a core set of components that are used across modules. This true at the level of the database, where in addition to a number of shared tables, sub-modules will have tables that are specific its specific use case. For example, the Mission table is used across several modules however the Specimen module is specific to the Ecosystem Survey application.
 
 Similarly, \gls{andes} has apps that are used across multiple user scenarios; in particular, the Bridge Console (Figure \@ref(fig:screenshot-bridge-console)) and the Cruise Dashboard (Figure \@ref(fig:screenshot-dashboard)). These apps display high-level information to end users such as queued stations, vessel speed, position and heading and various summaries of Science activities that are underway or that have already taken place. All core pages of the application can be toggled to night mode, as desired.
 
@@ -89,7 +89,7 @@ The \gls{Ecosystem Survey} app is the main entrypoint that technicians will use 
 <!-- I think this can be built out bit more. For example, what is the niche workflow that this is addressing (DJF) -->
 The Shrimp Ecosystem Survey application resulted from the early adoption of \gls{andes} in the Québec region. The niche workflow requirements of shrimp survey operations justified the creation of its own \gls{andes} module.
 
-As noted above, the Bridge console is used by navigation officers in the wheelhouse (usually set up on a tablet) is used to input fishing set metadata. The data entry occurs in two ways: 1) by directly editing the set form (aka the set card); and/or 2) via the Fishing Console, which is displayed in Figure \@ref(fig:screenshot-bridge-console). The Fishing Console can capture a number of different events that take place during fishing as well as  information coming from sonar and trawl mensuration system sensors (e.g., Scanmar system).
+As noted above, the Bridge console is used by navigation officers in the wheelhouse (usually set up on a tablet) is used to input fishing set metadata. The data entry occurs in two ways: 1) by directly editing the set form (a.k.a. the set card); and/or 2) via the Fishing Console, which is displayed in Figure \@ref(fig:screenshot-bridge-console). The Fishing Console can capture a number of different events that take place during fishing as well as  information coming from sonar and trawl mensuration system sensors (e.g., Scanmar system).
 
 Part of the task-specific suite of utilities is a forecasting tool that provides real-time prognostics of survey completion targets based on assumed transit speeds and time spent fishing and processing the trawl catches (Figure \@ref(fig:screenshot-forecast)). This feature provides a useful tool for the chief scientist to evaluate different sampling objectives and survey route. As the conditions change regularly during a survey, this tool links with the set manager to provide an estimate of the amount of time required to complete planned stations. This tool can be used for short-term planning (i.e. a day's worth of sampling) or longer-term planning (i.e. a mission's worth of sampling).
 

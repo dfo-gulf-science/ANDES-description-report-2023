@@ -35,15 +35,13 @@ Programming Interface}, first={Application Programming Interface (API)\glsadd{ap
 \newglossaryentry{Catch} {
     name=Catch,
     description={
-        A table of the Ecosystem Surveys app. A Catch table contains a link to \gls{Set} and \gls{Species} entries, as well as an optional: speciment count, unweighted baskets, relative abundance category and an invertabrate catch ratio. Catches can be subdivided into sub-catches having a parent-children relationship
-    }
+        A table of the Ecosystem Surveys app. A Catch table contains a link to \gls{Set} and \gls{Species} entries, as well as an optional: speciment count, unweighted baskets, relative abundance category and an invertabrate catch ratio. Catches can be subdivided into sub-catches having a parent-children relationship}
 }
 
 \newglossaryentry{Catch Card} {
     name=Catch Card,
     description={
-        Catch details recorded prior to detailed sampling
-    }
+        Catch details recorded prior to detailed sampling}
 }
 
 \newglossaryentry{CCG} {
@@ -246,7 +244,7 @@ Programming Interface}, first={Application Programming Interface (API)\glsadd{ap
 }
 
 \newglossaryentry{mrr} {
-% type=\acronymtype,
+    type=\acronymtype,
     name=MRR,
     description={Module des Relevés de Recherche},
     text={MRR},
@@ -262,12 +260,8 @@ Programming Interface}, first={Application Programming Interface (API)\glsadd{ap
 \newglossaryentry{andes}{type=\acronymtype, name={Andes}, description={Another data entry system}, first={\emph{An}other \emph{d}ata \emph{e}ntry \emph{s}ystem (Andes)\glsadd{andesg}}, see=[Glossary:]{andesg}}
 
 
-%%% The glossary entry the acronym links to
-\newglossaryentry{ERDg}{name={ERD},
-    description={An entity relationship diagram}}
-
-%%% define the acronym and use the see= option
-\newglossaryentry{ERD}{type=\acronymtype, name={ERD}, description={Entity Relationship Diagram}, first={Entity Relationship Diagram\glsadd{ERDg}}, see=[Glossary:]{ERDg}}
+%%% define the acronym
+\newglossaryentry{ERD}{type=\acronymtype, name={ERD}, description={Entity Relationship Diagram}, first={Entity Relationship Diagram}}
 
 
 %%% The glossary entry the acronym links to
@@ -291,15 +285,22 @@ Programming Interface}, first={Application Programming Interface (API)\glsadd{ap
 \newglossaryentry{html5}{type=\acronymtype, name={html5}, description={Hypertext Markup Language}, first={HTML5\glsadd{html5}}, see=[Glossary:]{html5g}}
 
 %%%
-\newglossaryentry{REST-APIg}{name=REST,
-    description={Representational state transfer (REST) Application programming interface (API)},
+\newglossaryentry{REST} {
+    type=\acronymtype,
+    name={REST},
+    description={Representational state transfer (REST)},
+    first={Representational state transfer (REST)}
+}
+
+\newglossaryentry{REST-APIg}{name=REST-API,
+    description={Representational state transfer (REST) Application programming interface (API) is an API that follows the REST software architectural style, created to guide the design and development of the architecture for the World Wide Web},
     first={REST-API}
 }
 
 \newglossaryentry{REST-API} {
     type=\acronymtype,
     name={REST-API},
-    description={Representational state transfer (REST) is a software architectural style that was created to guide the design and development of the architecture for the World Wide Web},
+    description={Representational state transfer (REST) Application programming interface (API)},
     first={REST-API},
     see=[Glossary:]{REST-APIg}
 }
@@ -310,7 +311,7 @@ Programming Interface}, first={Application Programming Interface (API)\glsadd{ap
     description={A series of computers connected to each other and capable of communicating with each other over wired or wireless connections}}
 
 %%% define the acronym and use the see= option
-\newglossaryentry{lan}{type=\acronymtype, name={LAN}, description={A Local Area Network}, first={local area network (LAN)\glsadd{lang}}, see=[Glossary:]{lang}}
+\newglossaryentry{lan}{type=\acronymtype, name={LAN}, description={Local Area Network}, first={local area network (LAN)\glsadd{lang}}, see=[Glossary:]{lang}}
 
 \newglossaryentry{wan}{name={WAN},
     description={wide-area network, such as the internet}}
@@ -325,8 +326,8 @@ Programming Interface}, first={Application Programming Interface (API)\glsadd{ap
     description={JavaScript Object Notation. The JSON format is a popular way to serialize data and is an alternative to the CSV (comma-separated values) and XML (eXtensible Markup Language) formats }}
 
 
-\newglossaryentry{mpa}{name={MPA},
-    description={Marine Protected Area }}
+\newglossaryentry{mpa}{type=\acronymtype, name={MPA},
+    description={Marine Protected Area }, first={Marine Protected Area (MPA)}}
 
 
 \glsaddall
