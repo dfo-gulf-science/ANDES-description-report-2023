@@ -8,10 +8,9 @@ The reporting facilities provided by \gls{andes} were developed to support the m
 
 If a vessel is located within range of cellular phone signals, it is possible to make \gls{andes} accessible via the internet. This has some important advantages however exposing an IP to the internet always come with security risks that have to be mitigated.
 
-Versioning details and why the backup process is so awesome.
+\gls{andes} is designed so that data backups are immune to the potential pitfalls of relying on earlier versions of required packages. Having backups that are associated with a specific git version, which includes a comprehensive list of all dependencies and an exact match of the application data model, allows users to readily bring back \gls{andes} to where it was at the time of the backup. Users can then access the reporting features that will allow them to create a version of the required data that suits their needs and facilitates inclusion in existing relational database management systems or other types of data solution.
 
 When present, the client-server separation lends itself nicely to be adaptable to new requirements. One can potentially expand upon the *system* with minimal changes to \gls{andes} by interacting directly with its exposed \gls{REST-API}. For example, an imaging system can be aware of current GPS coordinates or current \gls{Set} / \gls{Station}. Photos or videos acquired by such an imaging system could automatically append these as metadata, or even add media identifiers directly to the database as they are captured.
-
 
 Most modern vessels will already provide the minimum necessary networking infrastructure necessary for system deployment where connectivity between a dry laboratory, a wet laboratory and the ship's wheelhouse are necessary. In the case where it doesn't, this requirement can be met relatively easily using inexpensive consumer-grade networking equipment (wireless router, switch, etc.). However, installing as ad-hoc network for scientific needs in a vessel may lead to code violations there we urge \gls{andes} users to collaborate with vessel management body like the \gls{CCG} or chartering authority.
 
@@ -23,16 +22,16 @@ While there is always an effort to make the user interface intuitive and self-ex
 
 ## Integration of Andes with existing data repositories
 
-\gls{andes} is a standalone application with an underlying relational database management system, and the data collected during research activities must be extracted from the application and integrated into existing databases. 
+\gls{andes} is a standalone application with an underlying relational database management system, and the data collected during research activities must be extracted from the application and integrated into existing databases. This step has proven to be challenging but has also led to close inter-regional collaboration since the challenges associated with integration were shared by the different groups involved.
 
 ## Future Directions
 
 Onboarding efforts for coastal surveys (scallop, sea-cucumber, whelk) is underway. 
-The development of \gls{andes} has led to close inter-regional collaboration and presented a number of challenges.
 
 - \gls{azmp} / oceanographic surveys
 - use for ecosystem surveys by multiple DFO regions
 - use of barcodes and/or QR codes for identifying and tracking down samples (e.g. otoliths, tissue samples, ...)
+- imaging system (as per proposal from Curtis Dinn)
 
 ## Governance
 

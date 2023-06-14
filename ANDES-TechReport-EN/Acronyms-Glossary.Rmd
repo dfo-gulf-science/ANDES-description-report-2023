@@ -6,7 +6,6 @@
 ```{=latex}
 \printnoidxglossary[type=\acronymtype]
 \printnoidxglossary[sort=word,type=main,]
-
 ```
 
 \clearpage

@@ -37,22 +37,12 @@ The flexibility of project leads to design, modify and report on their sampling 
 
 The implementation of quality control checks in a data entry application is of paramount importance. At a minimum, the following quality control checks should be leveraged:
 
-#### Sets
-
-The application should ensure all the required fields on a given set card have been filled in. Users should also be warned if the set's start and/or end coordinates fall outside the expected sampling stratum (if applicable).
-
-#### Catches
-
-The application should verify the validity of catches that do not have any data entry associated with them. This validation is important to help identify catches that might have been entered accidentally.
-
-#### Specimens
-
-The application should flag specimens whose length falls outside an acceptable range. Similarly, a validation of the specimen's length-to-weight ratio should be performed.
-
-#### Observations
-
-Individual observations are characterized by an observation type. Observation types should have predefined data types such as interger, float, string or categorical.
-The application should ensure that inputted observation values should never be left null and that they respect the data type of the corresponding observation type. In the case where an observation type (e.g., sex) has a set of defined categories (e.g., male, female, unknown), the application should ensure that any entered values fall within the set of available options.
+\begin{description}
+\item[Sets]{The application should ensure all the required fields on a given set card have been filled in. Users should also be warned if the set's start and/or end coordinates fall outside the expected sampling stratum (if applicable).}
+\item[Catches]{The application should verify the validity of catches that do not have any data entry associated with them. This validation is important to help identify catches that might have been entered accidentally.}
+\item[Specimens]{The application should flag specimens whose length falls outside an acceptable range. Similarly, a validation of the specimen's length-to-weight ratio should be performed.}
+\item[Observations]{Individual observations are characterized by an observation type. Observation types should have predefined data types such as interger, float, string or categorical. The application should ensure that inputted observation values should never be left null and that they respect the data type of the corresponding observation type. In the case where an observation type (e.g., sex) has a set of defined categories (e.g., male, female, unknown), the application should ensure that any entered values fall within the set of available options.}
+\end{description}
 
 ### User Interface
 
