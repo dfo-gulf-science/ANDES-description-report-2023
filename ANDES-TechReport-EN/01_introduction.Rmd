@@ -14,7 +14,7 @@ Les activités scientifiques menées par les régions atlantiques du \gls{mpo} c
 ```
 -->
 
-The scientific activities conducted by the Atlantic regions of \gls{dfo} include ecosystem surveys, sentinel fisheries programs, coastal surveys, port sampling activities and many others. 
+The scientific activities conducted by the Atlantic regions of \gls{dfo} include ecosystem surveys, sentinel fisheries programs, coastal surveys, port sampling and many others where filed data is collected. 
 These monitoring programs require the collection of a wide variety of information about marine ecosystems and commercial fishery activities.
 To support the data collection during those surveys, paper-based systems were initially used during field work on research vessels, fishing vessels or at commercial ports. 
 With the advent of computing capabilities, paper data sheets were digitized and the resulting data was stored for subsequent analyses. In the 1980s and early 2000s, a number of computer-based data entry systems were developed, in particular to support the activities of scientific ecosystem cruises where a variety of instruments are used to collect data. For trawl surveys, this meant a tool that could support the activities associated with processing the catches from the net, and that could also be used to manage survey activities while at sea. In the Maritimes and Gulf regions, the \gls{gse} and later the \gls{ese} were deployed on workstations in the wet laboratory of research ships. These applications supported the capture of data about individual specimens, including the collection of length frequencies and more detailed sampling based on the survey goals and associated protocols. In the Québec Region, a similar tool called the \gls{mrr} was developed and used to directly enter data in digital format on the research vessel.
@@ -29,7 +29,7 @@ The later versions of those data entry systems were built with \gls{vba} and rel
 - The lack of a true server-side application (e.g. web application) meant that agile development was effectively impossible; especially in the context of a mission that was underway.
 
 While the status quo was meeting the immediate data capture needs of scientists, a proactive stance towards addressing the above spurred the development of \gls{andes}.
-This project effectively began in the summer of 2018 and the first field deployment of \gls{andes} took place in the fall of 2019 during the southern Gulf of St. Lawrence September survey. In its pilot year, \gls{andes} was used in parallel to the \gls{ese} on board *CCGS Teleost*.
+This project effectively began in the summer of 2018 as an application to be deployed on field tablets to support port sampling data collection, and later evolved into an application with a wider range of uses. The first field deployment of \gls{andes} took place in the fall of 2019 during the southern Gulf of St. Lawrence September survey. In its pilot year, \gls{andes} was used in parallel to the \gls{ese} on board *CCGS Teleost*.
 
 <!-- Andes suffers from this -->
 A growing user-base that wish to add functional requirements can lead to a bad system design.

@@ -31,7 +31,7 @@ Onboarding efforts for coastal surveys (scallop, sea-cucumber, whelk) is underwa
 - \gls{azmp} / oceanographic surveys
 - use for ecosystem surveys by multiple DFO regions
 - use of barcodes and/or QR codes for identifying and tracking down samples (e.g. otoliths, tissue samples, ...)
-- imaging system (as per proposal from Curtis Dinn)
+- imaging system 
 
 ## Governance
 
@@ -42,6 +42,6 @@ Onboarding efforts for coastal surveys (scallop, sea-cucumber, whelk) is underwa
 The boundaries are now well-defined and described in this report.
 
 # Acknowledgments
-We thank all DFO personnel who were involved in the early testing and deployment of \gls{andes} prior to and during the 2020 southern Gulf of St. Lawrence ecosystem survey. We thank the Gulf Region publications coordinator, Dr. Jeffery Clements, for his assistance with getting this document published.
+We thank all DFO personnel who were involved in the early testing and deployment of \gls{andes} prior to and during the 2020 southern Gulf of St. Lawrence ecosystem survey. We thank the Gulf Region publications coordinator for his/her assistance with getting this document published.
 
 \clearpage
