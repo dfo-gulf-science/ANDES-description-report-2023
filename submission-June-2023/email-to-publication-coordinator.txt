@@ -1,0 +1,17 @@
+Dear Dr. Clements,
+We are glad to submit a report titled "Design goals, technical implementation and practical use of Another data entry system (Andes)" for publication as a Technical Report of Fisheries and Aquatic Sciences. 
+
+This document provides an overview of the design goals behind the data entry system that we have been developing for the last 3 years in the Gulf Region. The data entry system is increasingly used by other DFO regions and we are happy to have colleagues from the Maritimes and Quebec regions as co-authors. The report also details some usage cases that the software has supported. We hope to publish this report as an authoritative and citable source for our data entry system.
+
+Suggested reviewers:
+1) Hugo Bourdages, DFO Quebec Region
+2) Kevin Hedges, DFO Arctic Region
+3) Shelee Hamilton, DFO Pacific Region
+4) Peter Upward, DFO Newfoundland and Labrador
+
+All co-authors have participated in developing this document and have agreed to submit it for review.
+
+We look forward to hearing from you about the submission.
+
+
+Daniel Ricard and co-authors

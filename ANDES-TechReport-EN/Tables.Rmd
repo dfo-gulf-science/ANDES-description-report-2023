@@ -1,0 +1,31 @@
+# Tables
+
+\begin{table}
+\caption{Example of sampling requirements for five species that are regularly captured in the annual southern Gulf of St. Lawrence September survey.}\label{tab:sampling}
+\begin{tabular}{p{3.5cm}p{12cm}}
+Species & Example of sampling requirement\\
+\toprule
+\multirow[t]{6}{3.5cm}{Atlantic Cod (\emph{Gadus morhua})}  & Collect length, sex, weight, maturity. \\
+ & Collect otoliths from: \\
+ & - one specimen per cm per set for specimens 25 cm and under; \\
+ & - two specimens per cm per set for specimens between 26-45 cm; \\
+ & - and three specimens per cm per set for specimens 46 cm and over. \\
+ & Collect 10 specimens from the Banc des Américains \gls{mpa} that are between 40-70 cm. \\
+\midrule
+Atlantic Herring (\emph{Clupea harengus}) & Collect length from every specimen; preserve 2 specimens per every 5 mm length bin per set.\\
+\midrule
+\multirow[t]{3}{3.5cm}{Atlantic Halibut  (\emph{Hippoglossus hippoglossus})} & Collect length, sex, weight, maturity, stomach weight and otoliths from every specimen. \\
+ & Collect 300 fin clips per mission. \\
+ & Collect 25 female gonads per mission. \\
+\midrule
+\multirow[t]{4}{3.5cm}{American Lobster (\emph{Homarus americanus})} & Length and sex from one specimen per sex per 3 mm per set. \\
+ & If female, check for lobster eggs. \\
+ & If female size is greater than 70 mm, check molt stage and shell disease index. \\
+ & If female size is greater than 70 mm AND has eggs, check abdominal width, egg stage and clutch fullness rate.\\
+\midrule
+Winter Skate (\emph{Leucoraja ocellata}) & Collect length, sex, weight, maturity, disk width and tail description from every specimen.\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\clearpage

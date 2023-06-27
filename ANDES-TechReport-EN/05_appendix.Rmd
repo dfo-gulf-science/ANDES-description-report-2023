@@ -5,16 +5,26 @@ After that, all subsequent sections will be turned into appendices. -->
 `r if(knitr:::is_latex_output()) '% begin csasdown appendix'`
 `r if(!knitr:::is_latex_output()) '# (APPENDIX) Appendix {-}'`
 
-<!-- No need to create a section header, it is done by \printnoidxglossary -->
-<!-- see glossary.tex for glossary entries -->
-\clearpage
+# Tasks for administrative user
+Prior to a survey, a number of configurations must be done for Andes to function as intended. At a minimum, the following information must be ingested by Andes in order for a mission to take place:
 
-```{=latex}
-\printnoidxglossary[sort=word,type=main,]
-```
+\begin{enumerate}
+\item{Strata polygons}
+\item{List of stations}
+\item{Species list}
+\item{Sampling requirements}
+\end{enumerate}
 
+
+# Further resources about Andes
+
+The main git repository supporting the development of the application is hosted by \gls{imts}. The following resources can be found there:
+
+- deployment checklist
+- species lists for Gulf, Maritimes and Quebec
+- strata polygons 
+- sampling requirements from previous surveys
 
 <!-- At the end of your appendices add: -->
 `r if(knitr:::is_latex_output()) '% end csasdown appendix'`
 
-\clearpage

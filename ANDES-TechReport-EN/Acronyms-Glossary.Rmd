@@ -1,0 +1,11 @@
+
+<!-- No need to create a section header, it is done by \printnoidxglossary -->
+<!-- see glossary.tex for glossary entries -->
+\clearpage
+
+```{=latex}
+\printnoidxglossary[type=\acronymtype]
+\printnoidxglossary[sort=word,type=main,]
+```
+
+\clearpage
