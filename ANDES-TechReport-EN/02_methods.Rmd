@@ -1,39 +1,40 @@
 # Methods
-The \gls{ese} was the starting point in the development of \gls{andes}.
-The replacement data entry software had to first replicate the proven functional capabilities of \gls{ese}.
-Early versions of \gls{andes} achieved those goals and the system was further developed over its usage by scientists in the Gulf Region. 
-Other opportunistic design goals also existed, including the use of a contemporary software development environment, the ability to support multiple languages, flexibility in deployment and using a shared code development environment.
 
-<!-- 
-Additionally, the \gls{mrr}
--->
+The overall goals for the redevelopment of the data logging system used in the Gulf Region were to utilize a contemporary software development environment, facilitate transparency through use of a shared code development environment, have the ability to support multiple languages, and to support flexible deployments. The new application would be modularized into different consoles to allow for a diverse range of uses, all while leveraging the same core features and infrastructure that the main application was built on. As the starting point of \gls{andes} was the \gls{ese}, the replacement data entry software had to first replicate the proven functional capabilities of \gls{ese}. Early versions of \gls{andes} achieved those goals and the system was further developed over its usage by scientists in the Gulf Region. 
 
-## Technical Implementation of Design Goals
+Initially, \gls{andes} was designed with 3 main usages in mind: A) as the main data entry system for ecosystem survey observations B) to track and capture data and metadata from oceanographic observations, and C) for commercial port sampling activities. For use on the ecosystem surveys, the application must allow for the capture of all information and parameters detailed in the sampling protocols of the survey (e.g. @hurlbut-clay-1990). This entails the capture of all information related to fishing activities, plus ancillary variables such as weather, sea state, and water temperature. As catch contents are sorted and identified during the ecosystem surveys, the data capture application must support users in obtaining catch weights and abundance by taxon, individual observations of a specimen's length, weight, maturity status, etc. The application should also be designed to flag users when specimens are to be collected, or when additional sampling requirements were present (e.g. collecting fish otoliths).
 
-The following section outlines the user-requirements and design principles that played a role in decision-making during the development of \gls{andes}.
+A large component of the ecosystem surveys conducted by the Gulf, Quebec, Maritimes, and Newfoundland and Labrador Regions includes the collection of physical, chemical, and biological oceanographic data in support of the Atlantic Zone Monitoring Program (AZMP) [@Therriault-1998]. A CTD/Rosette system is deployed at a subset of fishing stations where vertical profiles of temperature, conductivity (salinity), dissolved oxygen, chlorophyll and other parameters are collected. Water samples (e.g., nutrients, dissolved oxygen, salinity) are collected at predetermined depths using the Rosette system and attached Niskin bottles, and plankton samples are also collected via vertical ring net tows. These data support annual state of the ocean reporting conducted by the [AZMP](https://www.dfo-mpo.gc.ca/science/data-donnees/azmp-pmza/index-eng.html), but are also used for catch interpretation and in various stock assessment processes. 
 
-### Flexibility, Scalability and Reliability
+Historically, the event metadata associated with the deployment of oceanographic equipment on the ecosystem surveys was recorded using the Electronic Logbook ([ELOG](https://elog.psi.ch/elog/)) system, a URL-based logging system developed by the Paul Scherrer Institute, Switzerland. However, ELOG was installed and operated completely separately from logging systems used for the biological data, making it difficult to merge the two datasets upon completion of a survey. Ideally, the new application would streamline the capture of oceanographic data and simplify its association with the corresponding biological data.
+
+In order to support data collection during commercial port sampling activities [@Benoit-Daigle-2007], the application would be deployed on field tablets for scientific staff that collect data related to commercial fishing activities. A typical usage case is to obtain length-frequency samples from commercial landings, and to also obtain length-stratified hard parts used for age estimation, and also the collection of whole individuals for later processing in the laboratory. It is not expected that there would be any interaction between this module and the ones listed above.
+
+The following section outlines additional user requirements and design principles that also played a role in decision-making during the development of \gls{andes}. 
+
+
+## Flexibility, scalability and reliability
 
 The development environment used for the application must be a contemporary programming language with a proven track record for performance, usability and adaptability.
-Within the context of DFO Science, there is a high number of use-cases under which this application can be deployed. For example, the number of users might range from a single employee alone in the field to several dozen scientists, technicians and vessel personnel participating in a research cruise. Similarly, the application might need to be deployed on a stand-alone device or accessed from within a \gls{lan} or even over a \gls{wan}. The application must be able to accommodate a wide range of practical scenarios.
+Within the context of DFO Science, there are a high number of use-cases under which this application can be deployed. For example, the number of users might range from a single employee alone in the field to several dozen scientists, technicians and vessel personnel participating in a research cruise. Similarly, the application might need to be deployed on a stand-alone device or accessed from within a \gls{lan} or even over a \gls{wan}. The application must be able to accommodate a wide range of practical scenarios.
 
-### Version Control / Source Control
+## Version control/source control
 
 The utilization of a \gls{vcs} is an indispensable component of a sustainable development workflow. Version management is especially important in the context of having concurrent instances of the application in production at any given time. Knowing the version of a production instance is necessary to resolve any issues that might arise. Similarly, databases and backup files are intimately linked to an application's version number. In order to successfully re-instantiate a backup file, the precise version under which it was produced must be known. The VCS will also provide an indispensable framework for the coordination, examination and integration of contributions from collaborators.
 
-### Unit Testing
+## Unit Testing
 
 The application performance needs to be reliable, especially considering its potential to be deployed in remote field environments. The implementation of unit tests is a practical way to ensure the maintenance of core functionality over time. At one extreme, the addition of any code can be preceded by the creation of unit tests (i.e., test-driven development). This approach will maximize the stability of an application, but can hinder the momentum of a project, especially in its early stages. At the other extreme, application development in the complete absence of unit testing occurs at a relatively fast pace but will result in a project that is vulnerable to breaking in unexpected ways and one that is difficult to maintain and pass on to other developers.
 
-### Backup Strategy
+## Backup strategy
 
-In all deployment scenarios, data of high business value will be captured and there is little to no tolerance for data loss. Accordingly, the application must have a way to facilitate the implementation of a robust data-backup strategy. Capturing numerous snapshots of the application (and database) is ideal since doing so provides redundancy as well as the ability to revert to a specific point in time. If possible, The backup files and snapshots should be stored on a volumes with some form of redundancy.
+In all deployment scenarios, data of high business value will be captured and there is little to no tolerance for data loss. Accordingly, the application must have a way to facilitate the implementation of a robust data-backup strategy. Capturing numerous snapshots of the application (and database) is ideal since doing so provides redundancy as well as the ability to revert to a specific point in time. If possible, the backup files and snapshots should be stored on a volumes with some form of redundancy.
 
-### Customizable Protocols
+## Customizable protocols
 
 The flexibility of project leads to design, modify and report on their sampling protocol without depending on developers is very important. The application should allow users to provide a variety of detailed information based on their particular sampling protocols, without the need to change the application source code. Similarly, different protocols utilize different code conventions for the identification of biological catches. The application should offer the flexibility of users to utilize their preferred system of catch codes.
 
-### Quality Control
+## Quality control
 
 The implementation of quality control checks in a data entry application is of paramount importance. At a minimum, the following quality control checks should be leveraged:
 
@@ -44,31 +45,17 @@ The implementation of quality control checks in a data entry application is of p
 \item[Observations]{Individual observations are characterized by an observation type. Observation types should have predefined data types such as integer, float, string or categorical. The application should ensure that inputted observation values should never be left null and that they respect the data type of the corresponding observation type. In the case where an observation type (e.g., sex) has a set of defined categories (e.g., male, female, unknown), the application should ensure that any entered values fall within the set of available options.}
 \end{description}
 
-### User Interface
+## User interface
 
-The user interface of the application can have a significant impact on user experience and onboarding. By ensuring the application has a modern and intuitive interface, the barriers related to onboarding new users are significantly reduced. Furthermore, an intuitive interface will reduce the need for extensive help documentation. Wherever extra annotation is required, documentation should be inserted directly in the application in the form of tool tips and help bubbles. By appealing to the end users' intuitions and by providing in-situ help documentation, we reduce the likelihood fields and features being used incorrectly.
+The user interface of the application can have a significant impact on user experience and on-boarding. By ensuring the application has a modern and intuitive interface, the barriers related to on-boarding new users are significantly reduced. Furthermore, an intuitive interface will reduce the need for extensive help documentation. Wherever extra annotation is required, documentation should be inserted directly in the application in the form of tool tips and help bubbles. By appealing to the end users' intuitions and by providing in-situ help documentation, we reduce the likelihood fields and features being used incorrectly.
 
-### Reactivity
+## Reactivity
 
 In the context of being on a research vessel survey, data entry happens at a very fast rate and on numerous devices; often with multiple transactions per second. Accordingly, it is imperative that the application does not create a bottleneck for data entry and is able to keep pace with experienced technicians. The usage of a reactive javascript library in conjunction with an \gls{api} would allow data entry to occur without webpages having to constantly refresh.
 
-### Multilingualism
+## Multilingualism
 
 The ability for users to choose the language of their choice in the application is of considerable importance to this project. Previous tools that have been used were unilingual, and this by itself would have limited the scope of their use in a national context.
 
 
-## Usage cases
 
-A modularized application design would promote efficiency by allow multiple use-cases to leverage a core features and infrastructure such as authentication and authorization and many of the design elements listed above. The three major use cases that motivated this project are as follows.
-
-### Ecosystem survey data entry
-
-To be used as the main data entry system for ecosystem survey operations. This module should allow the capture of all the information required by the sampling protocols of the survey (e.g. @hurlbut-clay-1990). This entails the capture of all information related to fishing activities, including ancillary variables such as weather, sea state, water temperature. Catch contents are sorted and identified during scientific surveys, so the data capture application needs to support users in obtaining catch weights and abundance by taxon, individual observation of a specimen's length, weight, maturity status, etc. The module should also flag to the users when specimens are to be collected, or when additional sampling requirements are present (e.g. collecting fish otoliths).
-
-### Oceanographic metadata collection
-
-To be used to track and capture data and metadata from oceanographic operations such as \gls{ctd}s and zooplankton nets. These operations can be conducted on stand-alone oceanographic missions or may be collected as complementary data during biological surveys. In the case of the former, the coordination of oceanographic data with the associated biological data is a burdensome logistical challenge. Historically, the different types of data were captured and recorded using separate systems that operated in complete isolation from one another. Ideally, this module could streamline the capture of oceanographic data and simplify its association with the corresponding biological data.
-
-### Commercial port sampling
-
-To be used to support data collection during commercial port sampling activities [@Benoit-Daigle-2007]. This module is meant to be deployed on field tablets for scientific staff that collect data related to commercial fishing activities. A typical usage case is to obtain length frequency samples from commercial landings, and to also obtain length-stratified hard parts used for age estimation, and also the collection of whole individuals for later processing in the laboratory. It is not expected that there would be any interaction between this module and the ones listed above.
