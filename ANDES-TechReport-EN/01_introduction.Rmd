@@ -31,9 +31,6 @@ The later versions of those data entry systems were built with \gls{vba} and rel
 While the status quo was meeting the immediate data capture needs of scientists, a proactive stance towards addressing the above spurred the development of \gls{andes}.
 This project effectively began in the summer of 2018 as an application to be deployed on field tablets to support port sampling data collection, and later evolved into an application with a wider range of uses. The first field deployment of \gls{andes} took place in the fall of 2019 during the southern Gulf of St. Lawrence September ecosystem survey. In its pilot year, \gls{andes} was used in parallel to the \gls{ese} on board the CCGS *Teleost*.
 
-<!-- Andes suffers from this. Lindsay: I removed the following paragraph as I feel it would better fit the discussion, where
-potential drawbacks of Andes are discussed.-->
-
 This report documents the design principles that guided the development of \gls{andes}, provides technical details about its implementation and details the usage cases encountered thus far.
 It provides guidelines for assessing the suitability of \gls{andes} for novel applications (e.g., other field activities and sampling programs) and discusses the ways in which the application could gain further adoption in supporting a diverse range of data collection activities within \gls{dfo}.
 
