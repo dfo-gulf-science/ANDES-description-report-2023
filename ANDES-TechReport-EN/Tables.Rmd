@@ -1,6 +1,6 @@
 # Tables
 
-\begin{table}
+\begin{table}[h] 
 \caption{Example of sampling requirements for five species that are regularly captured in the annual southern Gulf of St. Lawrence September survey.}\label{tab:sampling}
 \begin{tabular}{p{3.5cm}p{12cm}}
 Species & Example of sampling requirement\\
