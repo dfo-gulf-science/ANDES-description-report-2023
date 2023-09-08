@@ -10,11 +10,12 @@ author: |
   Brian Boivin^3^,
   Jamie Emberley^4^,
   Ryan Martin^4^,
-  Jenni McDermid^1^
-  Nicolas Rolland^1^
-  David Sean-Fortin^3^ and 
-  Pablo Vergara^1^,
-author_list: "Ricard, D., Fishman, D., Beazley, L., Boivin, B., Emberley, J., Martin, R., McDermid, J., Rolland, N., Sean-Fortin, D.  and Vergara, P."
+  Jenni McDermid^1^,
+  Nicolas Rolland^1^,
+  David Sean-Fortin^3^,
+  Quentin Stoyel^1^ and 
+  Pablo Vergara^1^
+author_list: "Ricard, D., Fishman, D., Beazley, L., Boivin, B., Emberley, J., Martin, R., McDermid, J., Rolland, N., Sean-Fortin, D., Stoyel, Q. and Vergara, P."
 region: Gulf Region
 french_region: Région du Golfe
 isbn: "XXX"
