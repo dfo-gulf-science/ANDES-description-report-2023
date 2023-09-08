@@ -32,6 +32,7 @@ While the status quo was meeting the immediate data capture needs of scientists,
 This project effectively began in the summer of 2018 as an application to be deployed on field tablets to support port sampling data collection, and later evolved into an application with a wider range of uses. The first field deployment of \gls{andes} took place in the fall of 2019 during the southern Gulf of St. Lawrence September survey. In its pilot year, \gls{andes} was used in parallel to the \gls{ese} on board *CCGS Teleost*.
 
 <!-- Andes suffers from this -->
+<!-- I would move this to the governance section in the discussion (BB) -->
 A growing user-base that wish to add functional requirements can lead to a bad system design.
 This is especially true when affecting software components having different maturity levels.
 Development patterns such as contractual work specifically focused on adding a niche feature can easily lead to the accumulation of technical depth.
