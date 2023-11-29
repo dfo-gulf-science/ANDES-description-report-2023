@@ -194,3 +194,18 @@ Shrimp data is collected by the Quebec region in the course of its yearly ecosys
 The shrimp application is integrated into \gls{andes} at several levels: the main page of the shrimps application can be accessed via the ecosystem survey application when a shrimp catch is declared, it uses a subset of species flagged as shrimp, a shrimp report can be produced on the Reports page and in the case of *Pandalus borealis*, the lengths and weights can be visualized in the Charts application.
 
 
+
+
+<<<<<<< main
+<!-- Andes suffers from this. Lindsay: I removed the following paragraph as I feel it would better fit the discussion, where
+potential drawbacks of Andes are discussed.-->
+=======
+<!-- Andes suffers from this -->
+<!-- I would move this to the governance section in the discussion (BB) -->
+A growing user-base that wish to add functional requirements can lead to a bad system design.
+This is especially true when affecting software components having different maturity levels.
+Development patterns such as contractual work specifically focused on adding a niche feature can easily lead to the accumulation of technical depth.
+>>>>>>> main
+
+
+Specimen lengths and length-to-weight ratios are validated against the parameters entered in the sampling requirements for that catch. Acceptable length-to-weight are assessed by comparing the actual weight to the estimated weight, as described in the section above. Length and weight data can further be validated via the Charts application. This application allows the user to visualize length and weight data per set and per species and to quickly and easily identify any outliers (as shown in Figure \@ref(fig:screenshot-charts-application)).Additionally, \gls{andes} will flag when there is a mismatch between fish maturity and somatic length. Project leads can specify mature length thresholds for males, females or unspecified individuals in the sampling requirement of a given species (as shown in Figure \@ref(fig:screenshot-mature-length-form)).
