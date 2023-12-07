@@ -12,8 +12,7 @@ If a vessel is located within range of cellular phone signals, it is possible to
 
 When present, the client-server separation lends itself nicely to be adaptable to new requirements. One can potentially expand upon the *system* with minimal changes to \gls{andes} by interacting directly with its exposed \gls{REST-API}. For example, an imaging system can be aware of current GPS coordinates or current \gls{Set}/\gls{Station}. Photos or videos acquired by such an imaging system could automatically append these as metadata, or even add media identifiers directly to the database as they are captured.
 
-Most modern vessels will already provide the minimum necessary networking infrastructure necessary for system deployment where connectivity between a dry laboratory, a wet laboratory and the ship's wheelhouse are necessary. In the case where static networking options are not available, this requirement can be met relatively easily using inexpensive consumer-grade, portable networking equipment (wireless router, switch, etc.). However, as installing an ad-hoc network for scientific needs in a vessel may lead to code violations, we urge \gls{andes} users to collaborate with vessel management body like the \gls{CCG} or chartering authority.
-Most modern vessels will already provide the minimum necessary networking infrastructure necessary for system deployment where connectivity between a dry laboratory, a wet laboratory and the ship's wheelhouse are necessary. In the case where it doesn't, this requirement can be met relatively easily using inexpensive consumer-grade networking equipment (wireless router, switch, etc.). However, installing as ad-hoc network for scientific needs in a vessel may lead to code violations there we urge \gls{andes} users to collaborate with vessel management body like the \gls{CCG} or chartering authority.
+Most modern vessels will already provide the minimum networking infrastructure necessary for system deployment where connectivity between a dry laboratory, a wet laboratory and the ship's wheelhouse is necessary. In the case where static networking options are not available, this requirement can be met using inexpensive consumer-grade, portable networking equipment (wireless router, switch, etc.). However, as installing an ad-hoc network for scientific needs in a vessel may lead to code violations, we urge \gls{andes} users to collaborate with vessel management body like the \gls{CCG} or chartering authority.
 
 The addition of allow-lists and restrict-lists was an important addition to \gls{andes} that came out of a Regionalization workshop that took place in December 2022 at the Gulf Fisheries Center. While these features will help improve the quality of data collected, it is important that if implemented, they should be detailed explicitly in the survey sampling programme. For example, if project leads add certain catch items to the restrict-list, this should be mirrored in the survey sampling programme.
 
@@ -23,11 +22,11 @@ While there is always an effort to make the user interface intuitive and self-ex
 
 ## Integration of Andes with Existing Data Repositories
 
-\gls{andes} is a standalone application with an underlying relational database management system, and the data collected during research activities must be extracted from the application and integrated into existing databases. This step has proven to be challenging but has also led to close inter-regional collaboration since the challenges associated with integration were shared by the different groups involved.
+\gls{andes} is a standalone application with an underlying relational database management system, and the data collected during research activities must be extracted from the application and integrated into existing databases. This step has proven to be challenging but has also encouraged close inter-regional collaboration since the challenges associated with integration were shared by the different groups involved.
 
 ## Future Directions
 
-Onboarding efforts for coastal surveys (scallop, sea-cucumber, whelk) is underway. 
+Onboarding efforts for additional coastal surveys (scallop, sea-cucumber, whelk) and regions is an ongoing process driven by Andes' success.  
 
 
 ### Atlantic Zone (Offshelf) Monitoring Program (AZMP/AZOMP) oceanographic surveys
@@ -48,7 +47,7 @@ ELOG allows users to create various 'logbooks' that allow for custom recording o
 
 ## Governance
 
-\gls{andes} does not currently have a well-defined governing body. This makes it, as well as any project without governance, vulnerable. To alleviate this situation, we ask that this technical document as well as the developer's guide be considered when outsourcing development efforts towards \gls{andes}. This will ensure that the core vision is maintained and that software sustainability principles are upheld.
+\gls{andes} does not currently have a well-defined governing body which makes the project vulnerable. To alleviate this situation, we ask that this technical document, as well as the developer's guide, be considered when outsourcing development efforts towards \gls{andes}. This will ensure that the core vision is maintained and that software sustainability principles are upheld.
 
 <!-- it has boundaries -->
 \gls{andes} reached a critical point in its lifecycle. It has been used as the main data entry strategy for numerous missions over the span of a few years. Although new features can always be added, its core functional requirements can now be locked-in. The boundaries are now well-defined and described in this report.
