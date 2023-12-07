@@ -26,7 +26,7 @@ While there is always an effort to make the user interface intuitive and self-ex
 
 ## Future Directions
 
-Onboarding efforts for addition coastal surveys (scallop, sea-cucumber, whelk) and regions is an ongoing process driven by Andes' success.  
+Onboarding efforts for additional coastal surveys (scallop, sea-cucumber, whelk) and regions is an ongoing process driven by Andes' success.  
 
 
 ### Atlantic Zone (Offshelf) Monitoring Program (AZMP/AZOMP) oceanographic surveys
