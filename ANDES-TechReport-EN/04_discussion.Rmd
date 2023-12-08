@@ -1,8 +1,6 @@
 # Discussion
 
-Since its initial deployment during the 2019 September ecosystem survey in the southern Gulf of St. Lawrence, the capabilities and performance of \gls{andes} have significantly improved. The software has also been fully adopted as the main logging software used during the winter and summer ecosystem surveys in the Maritimes Region, and is also utilized by the Quebec Region.
-
-The current capabilities of \gls{andes} have evolved over the last three years where the system has been used to support field activities in the Gulf, Maritimes and Quebec regions.
+Since its initial deployment during the 2019 September ecosystem survey in the southern Gulf of St. Lawrence, the capabilities and performance of \gls{andes} have significantly improved. The software has also been adopted as the main logging software used during ecosystem surveys conducted by DFO Gulf, Maritimes and Québec Regions. The current capabilities of \gls{andes} have evolved over the last five years where the system has been used to support many field activities. 
 
 The forecasting tool and progress map presented in this report were not in the original deployment of the application and were added during the cruise based on the needs of scientific and \gls{CCG} personnel. The reporting facilities provided by \gls{andes} were developed to support the many users of the data collected during scientific activities. Two types of reports are available for \gls{andes}: 1) reports meant to be used during field activities and 2) reports meant to be used after field activities are completed. 
 
@@ -26,7 +24,7 @@ While there is always an effort to make the user interface intuitive and self-ex
 
 ## Future Directions
 
-Onboarding efforts for additional coastal surveys (scallop, sea-cucumber, whelk) and regions is an ongoing process driven by Andes' success.  
+Onboarding efforts for additional coastal surveys (scallop, sea-cucumber, whelk) and regions is an ongoing process driven by Andes' success.
 
 
 ### Atlantic Zone (Offshelf) Monitoring Program (AZMP/AZOMP) oceanographic surveys
@@ -39,18 +37,14 @@ ELOG allows users to create various 'logbooks' that allow for custom recording o
 
 \gls{andes} shows great promise for enhanced data recording and oceanographic sample tracking relative to ELOG. Future modifications of \gls{andes} could incorporate information on water budget requirement for each CTD cast, and could allow for the tracking of laboratory post-processing. However, making changes to \gls{andes} on the fly would not be possible on local installations (i.e., not on the custom servers permanently installed on the ecosystem survey vessels) of \gls{andes} without on-board developer support. With this, \gls{andes} could be adopted as the full-time event metadata logger on AZMP and AZOMP's oceanographic surveys in the future.
 
-
-
-- use for ecosystem surveys by multiple DFO regions
-- use of barcodes and/or QR codes for identifying and tracking down samples (e.g. otoliths, tissue samples, ...)
-- imaging system 
+Andes has been successfully used by a number of DFO regions and has proved to be a useful data entry application that fulfills its intended design goals. The infrastructure used in the development of the application also means that novel modules and functionalities can be implemented to support new users requirements. For example, adding functionality to add barcodes and QR codes to physical samples such as otoliths and tissue samples, or the addition of imaging capabilities to link digital images to specimens would be possible.
 
 ## Governance
 
-\gls{andes} does not currently have a well-defined governing body which makes the project vulnerable. To alleviate this situation, we ask that this technical document, as well as the developer's guide, be considered when outsourcing development efforts towards \gls{andes}. This will ensure that the core vision is maintained and that software sustainability principles are upheld.
+\gls{andes} does not currently have a well-defined governing body which makes the project vulnerable. To alleviate this situation, we ask that this technical document, as well as the developer's guide, be considered when outsourcing development efforts towards \gls{andes}. This will ensure that the core vision is maintained and that software sustainability principles are upheld. We also hope that this report can stimulate the establishment of a governance structure for the development of the application, one that ensures regional participation and that facilitates collaborative efforts.
 
 <!-- it has boundaries -->
-\gls{andes} reached a critical point in its lifecycle. It has been used as the main data entry strategy for numerous missions over the span of a few years. Although new features can always be added, its core functional requirements can now be locked-in. The boundaries are now well-defined and described in this report.
+\gls{andes} reached a critical point in its lifecycle. It has been used as the main data entry strategy for numerous missions over the span of a few years. Although new features can always be added, its core functional requirements can now be locked-in. These boundaries are now well-defined and described in this report.
 
 # Acknowledgments
 We thank all DFO personnel who were involved in the early testing and deployment of \gls{andes} prior to and during the 2020 southern Gulf of St. Lawrence ecosystem survey. We thank the Gulf Region publications coordinator for his/her assistance with getting this document published.

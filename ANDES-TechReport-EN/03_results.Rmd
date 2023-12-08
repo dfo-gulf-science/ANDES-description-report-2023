@@ -20,12 +20,12 @@ The main index page of the \gls{andes} user interface (Figure \@ref(fig:screensh
 
 While \gls{andes} has been implemented using a modular design, there is a core set of components that are used across modules. This is true at the level of the database, where in addition to a number of shared tables, sub-modules will have tables that are specific to a given use case. For example, while the Mission table is used across several modules, the Specimen sub-module is specific to the Ecosystem Survey module. 
 
-Similarly, \gls{andes} has modules that are used across multiple user scenarios; in particular, the Bridge module (Figure \@ref(fig:screenshot-bridge-console)) and the Cruise Dashboard (Figure \@ref(fig:screenshot-dashboard)). These modules display high-level information to end users such as queued stations, vessel speed, position and heading and various summaries of Science activities that are underway or that have already taken place. All core pages of the application can be toggled to night mode, as desired.
+Similarly, \gls{andes} has modules that are used across multiple user scenarios; in particular, the Bridge module (Figure \@ref(fig:screenshot-bridge-console)) and the Cruise Dashboard (Figure \@ref(fig:screenshot-dashboard)). These modules display high-level information to end users such as queued stations, vessel speed, position and heading and various summaries of science activities that are underway or that have already taken place. All core pages of the application can be toggled to night mode, as desired.
 
 
 ### Bridge
 
-The Bridge module (Figure \@ref(fig:screenshot-bridge-console)) is used by navigation officers in the wheelhouse (usually set up on a tablet) to input fishing set metadata. The data entry occurs in two ways: 1) by directly editing the set form (a.k.a. the set card); and/or 2) via the Fishing Console, which is displayed in Figure \@ref(fig:screenshot-fishing-console). The Fishing Console can capture a number of different events that take place during fishing as well as information coming from sonar and trawl mensuration system sensors (e.g., Scanmar system).
+The Bridge module (Figure \@ref(fig:screenshot-bridge-console)) is used by navigation and fishing officers in the wheelhouse (usually deployed on a tablet) to input fishing set metadata. The data entry occurs in two ways: 1) by directly editing the set form (a.k.a. the set card); and/or 2) via the Fishing Console, which is displayed in Figure \@ref(fig:screenshot-fishing-console). The Fishing Console can capture a number of different events that take place during fishing as well as information coming from the sonar and trawl mensuration system sensors (e.g., Scanmar system).
 
 ### Set manager
 
@@ -35,17 +35,18 @@ The Set manager module is used to manage upcoming sets and review completed set 
 
 The \gls{Ecosystem Survey} module is the main entry point that technicians will use to input survey data. A depiction of the main tables involved in the Ecosystem Survey module, and their relationships are displayed in Figure \@ref(fig:erd-ecosystem-survey). This component of \gls{andes} replicates the capabilities of the \gls{ese} for capturing detailed information on length, weight, ageing material, maturity, etc. about fish and invertebrate specimens. This module, typically accessed from the wet laboratory of a survey vessel, is used for all entry of data related to measurements and observations of marine organisms. New catches are first entered into the Active Set page, as portrayed in Figure \@ref(fig:screenshot-wetlab-active-set). The Active Set page accepts regional catch codes as a way to input new catches into a set. If a code is not known, a search feature is available. Next, baskets and their corresponding weights and statuses (e.g., sampled vs. not sampled) are then entered into the Catch Card page (Figure \@ref(fig:screenshot-wetlab-catch-card)). Finally, specimens are entered into the Data Entry page (Figure \@ref(fig:screenshot-wetlab-data-entry)). As the data entry progresses, users are dynamically prompted with observation fields that follow the catch-specific sampling protocol. An overview of the sampling protocol is displayed on the right-hand side of the Data Entry page.
 
-### Shrimps
+### Shrimp ecosystem survey app
+The Shrimp Ecosystem Survey ("Shrimps") module resulted from an early adoption of \gls{andes} in the Québec Region. The niche workflow requirements of shrimp survey operations justified the creation of its own \gls{andes} module which operates as an extension of the ecosystem survey module.
 
-The Shrimp Ecosystem Survey ("Shrimps") module resulted from an early adoption of \gls{andes} in the Québec Region. The niche workflow requirements of shrimp survey operations justified the creation of its own \gls{andes} module which operates as an extension of the ecosystem survey module..
+Shrimp data is collected by the Quebec region in the course of its yearly ecosystem survey in the estuary and northern gulf of the Saint-Lawrence as well as during other occasional surveys. These data are collected for the stock assessment of the northern shrimp (*Pandalus borealis*) as well as to assess the biodiversity and abundance of shrimp species. In the case of the Quebec region, the biological measures related to shrimps are done onboard in contrast to other regions where shrimps subsamples are frozen and biological data is collected in the laboratory after the end of the mission. The shrimps application was developed to allow the entry of shrimps data as it follows a different workflow compared to the ecosystem survey application. At every set, a subsample of between 2 and 3 kilograms is first collected from the total catch. This sample is then separated by species, then by maturity stage and only then are the biological data (cephalothorax length for all species and occasionally weight for *Pandalus borealis*) taken.
 
 ### Oceanography
 
-The Oceanography module is a component of the \gls{andes} application that is capable of being deployed independently of the Ecosystem Survey module. This module is used to track and record the deployment of CTD/Rosette systems and plankton nets (Figure \@ref(fig:screenshot-oceanography-sample)). Basic metadata, such as the location and date/time of deployment, 'on bottom' and recovery of gear can be collected. Additionally, the Oceanography module allows for users to enter which water samples/parameters were collected from pre-determined depths after CTD/Rosette deployment (Figure \@ref(fig:screenshot-oceanography-activity)). The simplified \gls{ERD} of the Oceanography module of \gls{andes} is presented in Figure \@ref(fig:erd-oceanography). Upon conclusion of a survey, \gls{andes} is designed to provide a series of oceanographic summary reports that summarize aspects of the data collected: 
+The Oceanography module is a component of the \gls{andes} application that is capable of being deployed independently of the Ecosystem Survey module. This module is used to track and record the deployment of CTD/Rosette systems and plankton nets (Figure \@ref(fig:screenshot-oceanography-sample)). Basic metadata, such as the location and date/time of deployment, 'on bottom' and recovery of gear can be collected. Additionally, the Oceanography module allows for users to enter which water samples/parameters were collected from pre-determined depths after CTD/Rosette deployment (Figure \@ref(fig:screenshot-oceanography-activity)). The simplified \gls{ERD} of the Oceanography module of \gls{andes} is presented in Figure \@ref(fig:erd-oceanography). Upon completion of a survey, \gls{andes} is designed to provide a series of oceanographic summary reports that summarize aspects of the data collected: 
 
 \begin{description}
 \item[Mission instrument report]{Provides a summary of the oceanographic equipment used on the survey, including component type, model and serial number, and date of last calibration (for CTD sensors).}
-\item[CTD metadata report]{for each fishing set and station where the CTD/Rosette system was deployed, the date, time, position, sounding, and bottle sample IDs are provided.}
+\item[CTD metadata report]{For each fishing set and station where the CTD/Rosette system was deployed, the date, time, position, sounding, and bottle sample IDs are provided.}
 \item[Hydrolog report]{For each fishing set and station number, a summary of the CTD/Rosette and ring net deployments are provided, including the event numbers corresponding to each gear deployment, comments entered into \gls{andes} regarding each gear deployment, and summary information related to each set and station, including surface temperature, sounding, day of year, and date/time.}
 \item[Plankton report]{This report provides a summary of the plankton net deployments conducted in relation to each fishing set and stratum. The wire out and wire angle, as well as flow meter start and end are provided.}
 \item[Bottle report]{This report provides a detailed summary of each CTD/Rosette operation (e.g., altimeter height, bottle height and depth, max. CTD depth), the water samples/parameters collected, and also includes the results of the Winkler titrations for dissolved oxygen samples, if entered into the Oceanographic Activity detail page.}
@@ -53,50 +54,28 @@ The Oceanography module is a component of the \gls{andes} application that is ca
 \item[ELOG report]{This report emulates the .log summary report produced by ELOG. This report is required in order to upload the survey data into the Microsoft Access template used by AZMP to load data to BioChem, DFOs national repository for discrete and plankton data.}
 \end{description}
 
-These reports facilitate the post-processing of the data and its distribution and upload to various open source platforms.
+These reports facilitate the post-processing of the data, its integration into existing databases and its distribution and upload to various open data platforms.
 
 
 
 ### Forecasting utility modules
-There are a number of task-specific modules designed to assist in mission forecasting and planning:
+There are a number of task-specific modules designed to assist in mission forecasting and planning. These modules are designed to provide timely information to scientific staff participating in a research cruise, and to also assist the chief scientist and watch leaders in the planning and execution of a mission. 
 
 #### Cruise dashboard {.unlisted .unnumbered}
 The cruise dashboard module is used to provide an overview of the current status of a mission to all \gls{andes} users (Figure \@ref(fig:screenshot-dashboard)). It provides a range of real-time statistics that are used for planning purposes, including current status (e.g., fishing, steaming, deploying/retrieving net), the list of upcoming stations, and data from the latest trawl.
 
 #### Forecasting {.unlisted .unnumbered}
-The forecasting tool is designed to provide real-time prognostics of survey completion targets based on assumed transit speeds and time spent fishing and processing the trawl catches (Figure \@ref(fig:screenshot-forecast)). This feature provides a useful tool for the chief scientist to evaluate different sampling objectives and survey route. As the conditions change regularly during a survey, this tool links with the set manager to provide an estimate of the amount of time required to complete planned stations. This tool can be used for short-term planning (i.e. a day's worth of sampling) or longer-term planning (i.e. a mission's worth of sampling).
+The forecasting tool is designed to provide real-time prognostics of survey completion targets based on assumed transit speeds and time spent fishing and processing the trawl catches (Figure \@ref(fig:screenshot-forecast)). This feature provides a useful tool for the chief scientist to evaluate different sampling objectives and to compare different survey route options. As the conditions change regularly during a survey, this tool links with the set manager to provide an estimate of the amount of time required to complete planned stations. This tool can be used for short-term planning (i.e. a day's worth of sampling) or longer-term planning (i.e. a mission's worth of sampling).
 
 #### Progress Map {.unlisted .unnumbered}
-Another task-specific utility is the progress map which shows what strata have been completed based on target and minimum number of sets per stratum. This map provides the chief scientist with a clear visual depiction of what has been accomplished, and what remains to be accomplished, during the survey. The number of sets conducted in each stratum is compared to the minimum and target number of sets per stratum to determine the colour that each stratum will appear in the progress map (Figure \@ref(fig:screenshot-progress)).
+Another task-specific utility is the progress map which shows what strata have been completed based on target and minimum number of sets per stratum. This map provides the chief scientist with a clear visual depiction of what has been accomplished and what remains to be accomplished during the survey. The number of sets conducted in each stratum is compared to the minimum and target number of sets per stratum to determine the colour that each stratum will appear in the progress map (Figure \@ref(fig:screenshot-progress)).
 
 
 ### Port sampling
 
 \gls{andes} was adapted from a previous port sampling module to support activities where technicians obtain length frequency samples from commercial fishing activities.  The port sampling module of \gls{andes} is fully stand-alone and is primarily used independently of all other modules. The protocols used in the Port Sampling module are much simpler than those belonging to the Ecosystem Survey module. Through the protocols, users are able to control collection quotas (e.g., "keep two specimens per bin"), the flow of data entry (e.g., which field should be displayed in the sample form) and the layout of the data entry page (e.g., length bins organized in a vertical or horizontal configuration) (see Figure \@ref(fig:screenshot-port-data-entry)). Typically, production instances of this module are deployed on ruggedized field tablets that are suitable for use in wet environments. 
 
-The design of the user interface is simple and intuitive, where each length bin is a large button on the display. As specimens are tallied, the corresponding buttons on the touchscreen are pushed. A screenshot of the data entry page is presented in Figure \@ref(fig:screenshot-port-data-entry). The various tables of the Port Sampling module and how they relate to one another is shown in Figure \@ref(fig:erd-port).
-
-
-## Usage cases
-The \gls{andes} Django project contains multiple apps that loosely correspond to the different use cases defined in the above methods section. The different modules can be clearly observed in the index page of the site (Figure \@ref(fig:screenshot-index)). As noted above, the access to different apps is determined by a system of authentication and authorization. Accordingly, the index page will appear different to users depending on the permissions they have been granted based on their particular usage case.
-
-
-Similarly, \gls{andes} has apps that are used across multiple user scenarios; in particular, the Bridge Console (Figure \@ref(fig:screenshot-bridge-console)) and the Cruise Dashboard (Figure \@ref(fig:screenshot-dashboard)). These apps display high-level information to end users such as queued stations, vessel speed, position and heading and various summaries of Science activities that are underway or that have already taken place. All core pages of the application can be toggled to night mode, as desired.
-
-### Ecosystem survey data entry
-
-The \gls{Ecosystem Survey} app is the main entry point that technicians will use to input survey data. A depiction of the main tables involved in the Ecosystem data entry application, and their relationships are displayed in Figure \@ref(fig:erd-ecosystem-survey). This component of \gls{andes} replicates the capabilities of the \gls{ese} for capturing detailed information on length, weight, ageing material, maturity, etc. about fish and invertebrate specimens. This app, typically accessed from the wet laboratory of a survey vessel, is used for all entry of data related to measurements and observations of marine organisms. 
-
-#### Shrimp ecosystem survey app
-
-Shrimp data is collected by the Quebec region in the course of its yearly ecosystem survey in the estuary and northern gulf of the Saint-Lawrence as well as during other occasional surveys. These data are collected for the stock assessment of the northern shrimp (*Pandalus borealis*) as well as to assess the biodiversity and abundance of shrimp species. In the case of the Quebec region, the biological measures related to shrimps are done onboard in contrast to other regions where shrimps subsamples are frozen and biological data is collected in the laboratory after the end of the mission. The shrimps application was developed to allow the entry of shrimps data as it follows a different workflow compared to the ecosystem survey application. At every set, a subsample of between 2 and 3 kilograms is first collected from the total catch. This sample is then separated by species, then by maturity stage and only then are the biological data (cephalothorax length for all species and occasionally weight for *Pandalus borealis*) taken.
-
-
-### Oceanographic metadata collection
-
-
-### Commercial port sampling
-
+The design of the user interface is simple and intuitive, where each length bin is a large button on the display. As specimens are tallied, the corresponding buttons on the touchscreen are pushed. A screenshot of the data entry page is presented in Figure \@ref(fig:screenshot-port-data-entry). Data export abilites from the field tablets to existing database for port sampling data is also part of the module. The various tables of the Port Sampling module and how they relate to one another is shown in Figure \@ref(fig:erd-port).
 
 
 
@@ -117,7 +96,7 @@ The \gls{andes} application has the capability to perform manual and automatic b
 
 ### Customizable protocols
 
-\gls{andes} provides project leads the ability to create and modify sampling protocol through the user interface. By doing so, project leads are able to shape the flow and control the behaviour of the application during data entry. This including deciding which fields to display in a form (e.g., set cards), importing stations and other geographical features (e.g., sampling strata, NAFO areas, \gls{mpa}s, etc.) and the quotas and observation fields associated with different catch items. Examples of catch-specific sampling requirements that can be programmed by project leads can be found in Table \ref{tab:sampling}.
+\gls{andes} provides project leads the ability to create and modify sampling protocol through the user interface. By doing so, project leads are able to shape the flow and control the behaviour of the application during data entry. This including deciding which fields to display in a form (e.g., set cards), importing stations and other geographical features (e.g., sampling strata, \gls{nafo} areas, \gls{mpa}s, etc.) and the quotas and observation fields associated with different catch items. Examples of catch-specific sampling requirements that can be programmed by project leads can be found in Table \ref{tab:sampling}.
 
 \gls{andes} also allows users to specify a preferred system of catch codes by attaching the code collection to a sampling protocol. When a given protocol is active, all catch items are referenced by their corresponding entry in the attached catch collection list, an essential feature for making \gls{andes} usable in multiple regions.
 
@@ -129,7 +108,7 @@ The \gls{andes} application has the capability to perform manual and automatic b
 
 The \gls{andes} provides clear feedback regarding the completeness status of a given set. Flags are raised if a set's start and/or end coordinates are outside the expected sampling stratum. Additionally, an alarm is sounded in the bridge console module when deviating from the desired stratum in real-time. The bridge console also provides personnel with fishing timers and tow distance displays (see Figure \@ref(fig:screenshot-fishing-console)).
 
-\gls{andes} will flag when the tow distance as calculated by the cruise track, differs from the tow distance as calculated by a straight line between the start and end coordinates by more than 5%. \gls{andes} will flag when the start or stop coordinates of a set are not within the expected NAFO area (if applicable).
+\gls{andes} will flag when the tow distance as calculated by the cruise track, differs from the tow distance as calculated by a straight line between the start and end coordinates by more than 5%. \gls{andes} will flag when the start or stop coordinates of a set are not within the expected \gls{nafo} area (if applicable).
 
 **Catches**
 
@@ -158,7 +137,3 @@ The [Django REST framework](https://www.django-rest-framework.org/) was used to 
 ### Multilingualism
 
 The Django framework has excellent support for internationalization and localization, including the translation of text and the formatting of dates, times and numbers. It achieves this using a system of 'hooks' used by developers to indicate which parts of the code should be localized. See [Django - Internationalization and localization](https://docs.djangoproject.com/en/4.1/topics/i18n/) for more details on this process. In our application, an end-user can toggle between English and French by simply clicking on a button. In this way, each client can view the application in the language of their choice.
-
-
-
-
