@@ -1,3 +1,19 @@
+## Usage cases
+The \gls{andes} Django project contains multiple apps that loosely correspond to the different use cases defined in the above methods section. The different modules can be clearly observed in the index page of the site (Figure \@ref(fig:screenshot-index)). As noted above, the access to different apps is determined by a system of authentication and authorization. Accordingly, the index page will appear different to users depending on the permissions they have been granted based on their particular usage case.
+
+
+Similarly, \gls{andes} has apps that are used across multiple user scenarios; in particular, the Bridge Console (Figure \@ref(fig:screenshot-bridge-console)) and the Cruise Dashboard (Figure \@ref(fig:screenshot-dashboard)). These apps display high-level information to end users such as queued stations, vessel speed, position and heading and various summaries of Science activities that are underway or that have already taken place. All core pages of the application can be toggled to night mode, as desired.
+
+
+### Oceanographic metadata collection
+
+
+### Commercial port sampling
+
+
+
+
+
 <!-- Québec situation -->
 The Québec Region follows a similar timeline. Many survey teams use a deprecated Visual Basic Application that connects to a mission-specific Microsoft Access database.
 Their technicians often have to resort to pen and paper to perform activities unsupported by the application.

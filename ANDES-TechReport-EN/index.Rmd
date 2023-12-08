@@ -1,5 +1,5 @@
 ---
-title: "Design goals, technical implementation and practical use of ANother Data Entry System (ANDES)"
+title: "Design goals, technical implementation and practical use of Another data entry system (Andes)"
 french_title: "Objectifs de conception, mise en œuvre technique et utilisation pratique de Another data entry system (Andes)"
 year: 2023
 report_number: nnn
@@ -32,7 +32,7 @@ french_address: |
 phone: "(555) 555-5555"
 author_footnote: "Email: Daniel.Ricard@dfo-mpo.gc.ca | telephone: (506) 377-9527"
 abstract: |
-  An event logger and data entry system to facilitate the capture of information collected during scientific field work conducted by DFO Gulf Region was recently developed. The application, called "ANother Data Entry System" (Andes) was implemented as a browser-based environment that facilitates its deployment in a variety of data capture scenarios. Here, we describe the design goals and implementation details of Andes, and present a number of usage cases. Although the system is tailored primarily for use on fishery-related ecosystem surveys, the flexibility of the application in terms of adapting to new gear types and deployment options promotes its use in a wide variety of applications. To promote transparency, longevity, endorsement and use of Andes by other scientific groups, the application utilizes Open Source software and a shared code development platform. 
+  An event logger and data entry system to facilitate the capture of information collected during scientific field work conducted by DFO Gulf Region was developed. The application, called "Another data entry system" (Andes) was implemented as a browser-based environment that facilitates its deployment in a variety of data capture scenarios. Here, we describe the design goals and implementation details of Andes, and present a number of usage cases. Although the system is tailored primarily for use on fishery-related ecosystem surveys, the flexibility of the application in terms of adapting to new gear types and deployment options promotes its use in a wide variety of applications. To promote transparency, longevity, endorsement and use of Andes by other scientific groups, the application utilizes Open Source software and a shared code development platform. 
 french_abstract: |
   Un système d'entrée de données pour faciliter la saisie des informations recueillies lors des activités scientifiques menées par la Région du Golfe du MPO a été développé. L'application, qui s'appelle "Another data entry system" (Andes), a été mise en œuvre en tant qu'environnement basé sur un fureteur, ce qui facilite son déploiement dans une variété de scénarios de saisie de données. Les objectifs de conception et les détails de mise en œuvre d'Andes sont décrits, et un certain nombre de cas d'utilisation sont présentés. Pour promouvoir l'utilisation d'Andes par d'autres groupes scientifiques et assurer la pérennité du projet, l'application s'appuie sur des logiciels code source ouvert et utilise une plate-forme de développement de code partagé.
 output:
