@@ -6,7 +6,7 @@ After that, all subsequent sections will be turned into appendices. -->
 `r if(!knitr:::is_latex_output()) '# (APPENDIX) Appendix {-}'`
 
 # Tasks for administrative user
-Prior to a survey, a number of configurations must be done for \gls{Andes} to function as intended. At a minimum, the following information must be provided and ingested by Andes in order for a mission to take place:
+Prior to a survey, a number of configurations must be done for \gls{andes} to function as intended. At a minimum, the following information must be provided and ingested by Andes in order for a mission to take place:
 
 \begin{description}
 \item[Strata polygons]{}
