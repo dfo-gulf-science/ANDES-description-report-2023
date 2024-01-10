@@ -29,7 +29,7 @@ The later versions of those data entry systems were built with \gls{vba} and rel
 - The lack of a true server-side application (e.g. web application) means that agile development is effectively impossible; especially in the context of a scientific mission that is underway.
 
 While the status quo was meeting the immediate data capture needs of \gls{dfo} scientists, a proactive stance towards addressing the above spurred the development of \gls{andes}.
-This project effectively began in the summer of 2018 as an application to be deployed on field tablets to support port sampling data collection, and later evolved into an application with a wider range of uses. 
+This project effectively began in the summer of 2018 and coincided with a need to provide application support for port sampling data collection.
 The first field deployment of \gls{andes} for an at-sea scientific mission took place in the fall of 2019 during the southern Gulf of St. Lawrence September ecosystem survey. 
 In its pilot year, \gls{andes} was used in parallel to the \gls{ese} on board CCGS *Teleost* and was tested and modified to ensure that it performed as intended in supporting data entry during scientific activities.
 
