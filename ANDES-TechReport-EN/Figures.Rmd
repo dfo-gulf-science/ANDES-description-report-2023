@@ -67,7 +67,14 @@ knitr::include_graphics("./figures/erd_oceanography.png")
 ```
 \clearpage
 
-(ref:screenshot-port-data-entry-caption) A screenshot displaying the Port Sampling module protocol form. The selections made in this form will affect the behaviour of the module during data entry.
+
+(ref:screenshot-port-protocol-caption) A screenshot displaying the Port Sampling module protocol form. The selections made in this form will affect the behaviour of the module during data entry.
+```{r screenshot-port-protocol, fig.cap="(ref:screenshot-port-protocol)", out.width='1.0\\linewidth'}
+knitr::include_graphics("./figures/screenshot_port_protocol.png")
+```
+\clearpage
+
+(ref:screenshot-port-data-entry-caption) A screenshot displaying the Port Sampling data entry page. A button is presented for each length bin, as defined in the protocol. The number in the black circle on the right-hand side of the button is the current count for that length bin. Button colors change from blue to green as the collection protocol for that bin is satisfied.
 ```{r screenshot-port-data-entry, fig.cap="(ref:screenshot-port-data-entry-caption)", out.width='1.0\\linewidth'}
 knitr::include_graphics("./figures/screenshot_port_data_entry.png")
 ```
