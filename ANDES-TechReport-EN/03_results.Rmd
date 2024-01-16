@@ -41,7 +41,9 @@ The Shrimps module is an extension of the ecosystem survey module focused exclus
 
 ### Charts
 
-The Charts module (Figure \@ref(fig:screenshot-charts)) leverages the Bokeh Python library to visualize both length-weight relationships and length frequencies in an interactive way. It allows the creation of charts for various combinations of sets, species, and variables in order to easily identify outliers that may go unnoticed during data entry despite the implemented quality controls. Users can also access specimen data in a data-entry edit mode to conveniently modify information for any specimen.
+The Charts module (Figure \@ref(fig:screenshot-charts)) leverages the Bokeh Python library @[Bokeh2018] to generate data visualization of arbitrary length and weight observation variables that were attributed to specimens. The module provides an interactive scatter plot of length _vs_ weight as well as a length histogram. The data can be filtered by species, set and sex (when available). This visual presentation of the data is meant as a supplemental validation aid in identifying outliers that may have escaped the quality controls. Should outlier points need further manual inspection/intervention, a direct link to access/edit the specimen data is conveniently made available.
+
+The user is also presented with option to include an empirical growth model having the form $y=ax^b$ together with weight _vs_ length scatter data. This option, which only applies for ``official'' length and weight observation types, can be useful for tuning tolerance band used for quality control.
 
 ### Oceanography
 
