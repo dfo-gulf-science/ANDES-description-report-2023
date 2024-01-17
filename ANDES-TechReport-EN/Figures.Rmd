@@ -92,7 +92,7 @@ knitr::include_graphics("./figures/screenshot_progress.png")
 \clearpage
 
 (ref:screenshot-port-protocol-caption) A screenshot displaying the Port Sampling module protocol form. The selections made in this form will affect the behaviour of the module during data entry.
-```{r screenshot-port-protocol, fig.cap="(ref:screenshot-port-protocol)", out.width='1.0\\linewidth'}
+```{r screenshot-port-protocol, fig.cap="(ref:screenshot-port-protocol-caption)", out.width='1.0\\linewidth'}
 knitr::include_graphics("./figures/screenshot_port_protocol.png")
 ```
 \clearpage
