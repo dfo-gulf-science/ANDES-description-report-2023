@@ -25,6 +25,12 @@ knitr::include_graphics("./figures/screenshot_dashboard.png")
 ```
 \clearpage
 
+(ref:screenshot-fishing-console-caption) A screenshot of Andes Fishing Console withing the Bridge module. This screenshot shows some quality control validation features including: the fishing timer, the distance display and an alarm message for when the vessel is travelling outside the target stratum. On the bottom left of the screenshot, output from the net monitoring system is displayed. The large buttons in the center of the display are used to trigger fishing events.
+```{r screenshot-fishing-console, fig.cap="(ref:screenshot-fishing-console-caption)", out.width='1.0\\linewidth'}
+knitr::include_graphics("./figures/screenshot_fishing_console.png")
+```
+\clearpage
+
 (ref:erd-ecosystem-survey-caption) A simplified entity relationship diagram of the data model used by the Ecosystem Survey module of \gls{andes}.
 ```{r erd-ecosystem-survey, fig.cap="(ref:erd-ecosystem-survey-caption)", out.width='1.0\\linewidth'}
 knitr::include_graphics("./figures/erd_ecosystem_survey.png")
@@ -73,6 +79,17 @@ knitr::include_graphics("./figures/erd_oceanography.png")
 ```
 \clearpage
 
+(ref:screenshot-forecast-caption) A screenshot of the Track Forecast tool.
+```{r screenshot-forecast, fig.cap="(ref:screenshot-forecast-caption)", out.width='1.0\\linewidth'}
+knitr::include_graphics("./figures/screenshot_forecast.png")
+```
+\clearpage
+
+(ref:screenshot-progress-caption) A screenshot of the Andes Progress map. The map colors strata by the status of their set quotas. The green strata are those which have met their specified targets of set conducted; those in yellow have not met the target but have surpassed the minimum; and those in red have not conducted the minimum specified number of sets.
+```{r screenshot-progress, fig.cap="(ref:screenshot-progress-caption)", out.width='1.0\\linewidth'}
+knitr::include_graphics("./figures/screenshot_progress.png")
+```
+\clearpage
 
 (ref:screenshot-port-protocol-caption) A screenshot displaying the Port Sampling module protocol form. The selections made in this form will affect the behaviour of the module during data entry.
 ```{r screenshot-port-protocol, fig.cap="(ref:screenshot-port-protocol)", out.width='1.0\\linewidth'}
@@ -89,24 +106,6 @@ knitr::include_graphics("./figures/screenshot_port_data_entry.png")
 (ref:erd-port-caption) A simplified entity relationship diagram of the data model used by the Port Sampling module of \gls{andes}.
 ```{r erd-port, fig.cap="(ref:erd-port-caption)", out.width='1.0\\linewidth'}
 knitr::include_graphics("./figures/erd_port.png")
-```
-\clearpage
-
-(ref:screenshot-fishing-console-caption) A screenshot of Andes Fishing Console withing the Bridge module. This screenshot shows some quality control validation features including: the fishing timer, the distance display and an alarm message for when the vessel is travelling outside the target stratum. On the bottom left of the screenshot, output from the net monitoring system is displayed. The large buttons in the center of the display are used to trigger fishing events.
-```{r screenshot-fishing-console, fig.cap="(ref:screenshot-fishing-console-caption)", out.width='1.0\\linewidth'}
-knitr::include_graphics("./figures/screenshot_fishing_console.png")
-```
-\clearpage
-
-(ref:screenshot-forecast-caption) A screenshot of the Track Forecast tool.
-```{r screenshot-forecast, fig.cap="(ref:screenshot-forecast-caption)", out.width='1.0\\linewidth'}
-knitr::include_graphics("./figures/screenshot_forecast.png")
-```
-\clearpage
-
-(ref:screenshot-progress-caption) A screenshot of the Andes Progress map. The map colors strata by the status of their set quotas. The green strata are those which have met their specified targets of set conducted; those in yellow have not met the target but have surpassed the minimum; and those in red have not conducted the minimum specified number of sets.
-```{r screenshot-progress, fig.cap="(ref:screenshot-progress-caption)", out.width='1.0\\linewidth'}
-knitr::include_graphics("./figures/screenshot_progress.png")
 ```
 \clearpage
 
