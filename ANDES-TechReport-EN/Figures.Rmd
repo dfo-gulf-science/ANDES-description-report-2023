@@ -49,7 +49,7 @@ knitr::include_graphics("./figures/screenshot_wetlab_data_entry.png")
 ```
 \clearpage
 
-(ref:screenshot-charts-caption) A screenshot of the Charts module showing the weight _vs_ length scatter plot on top of its growth curve model.
+(ref:screenshot-charts-caption) A screenshot of the Charts module showing the weight vs length scatter plot on top of its growth curve model.
 ```{r screenshot-charts, fig.cap="(ref:screenshot-charts-caption)", out.width='1.0\\linewidth'}
 knitr::include_graphics("./figures/screenshot_charts.png")
 ```
