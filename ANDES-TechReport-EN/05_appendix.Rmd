@@ -15,15 +15,15 @@ Prior to a survey, a number of configurations must be done for \gls{andes} to fu
 \item[Sampling requirements]{}
 \end{description}
 
-
 # Further resources about Andes
 
 The main git repository supporting the development of the application is hosted by \gls{imts}. The following resources can be found there:
 
 - deployment checklist
-- species lists for Gulf, Maritimes and Quebec
+- species lists for Gulf, Maritimes and Québec regions
 - strata polygons 
 - sampling requirements from previous surveys
+
 
 <!-- At the end of your appendices add: -->
 `r if(knitr:::is_latex_output()) '% end csasdown appendix'`
