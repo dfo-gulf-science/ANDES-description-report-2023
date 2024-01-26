@@ -47,7 +47,7 @@ The implementation of quality control checks in a data entry application is of p
 \begin{description}
 \item[Fishing sets]{The application should ensure all the required information about a fishing location have been filled in. Users should be warned if the fishing station start and/or end coordinates fall outside the expected sampling stratum (if applicable).}
 \item[Catches]{The application should verify the validity of catches that do not have any specimen-level data entry associated with them. This validation is important to help identify catches that might have been entered accidentally.}
-\item[Specimens]{The application should flag specimens whose length falls outside an acceptable range. Similarly, a validation of the specimen's length-to-weight ratio should be performed to warn users if a recorded measurement falls outside the expected range.}
+\item[Specimens]{The application should flag specimens whose length falls outside an acceptable range and should not allow blank values. Similarly, a validation of the specimen's length-to-weight ratio should be performed to warn users if a recorded measurement falls outside the expected range.}
 \item[Observations]{Individual observations are characterized by an observation type. Observation types should have predefined data types such as integer, float, string or categorical. The application should ensure that inputted observation values respect the data type of the corresponding observation type, and falls within an allowable redefined range. In the case where an observation type (e.g., sex) has a set of defined categories (e.g., male, female, unknown), the application should ensure that any entered values fall within the set of available options.}
 \end{description}
 
