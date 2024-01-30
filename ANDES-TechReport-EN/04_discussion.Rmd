@@ -38,8 +38,10 @@ ELOG allows users to create various 'logbooks' that allow for custom recording o
 
 \gls{andes} shows great promise for enhanced data recording and oceanographic sample tracking relative to ELOG. Future modifications of \gls{andes} could incorporate information on water budget requirement for each CTD cast, and could allow for the tracking of laboratory post-processing. However, making changes to \gls{andes} on the fly would not be possible on local installations (i.e., not on the custom servers permanently installed on the ecosystem survey vessels) of \gls{andes} without on-board developer support. With this, \gls{andes} could be adopted as the full-time event metadata logger on \gls{azmp} and \gls{azomp}'s oceanographic surveys in the future.
 
-Andes has been successfully used by a number of DFO regions and has proved to be a useful data entry application that fulfills its intended design goals. The infrastructure used in the development of the application also means that novel modules and functionalities can be implemented to support new user requirements. For example, adding functionality to add barcodes and QR codes to physical samples such as otoliths and tissue samples, or the addition of imaging capabilities to link digital images to specimens would be possible.
+Andes has been successfully used by a number of DFO regions and has proved to be a useful data entry application that fulfills its intended design goals. The infrastructure used in the development of the application also means that novel modules and functionalities can be implemented to support new user requirements. For example, adding functionality to add barcodes and QR codes to physical samples such as otoliths and tissue samples.
 
+<!-- , or the addition of imaging capabilities to link digital images to specimens would be possible.
+-->
 
 ## Governance
 
