@@ -43,7 +43,7 @@ The Shrimps module is an extension of the ecosystem survey module focused exclus
 
 The Charts module (Figure \@ref(fig:screenshot-charts)) leverages the [Bokeh](https://bokeh.pydata.org) Python library to generate data visualization of arbitrary length and weight observation variables that were attributed to specimens. The module provides an interactive scatter plot of length vs weight as well as a length histogram. The data can be filtered by species, set and sex (when available). This visual presentation of the data is meant as a supplemental validation aid in identifying outliers that may have escaped the quality controls. Should outlier points need further manual inspection/intervention, a direct link to access/edit the specimen data is conveniently made available.
 
-The user is also presented with option to include an empirical growth model together with weight vs length scatter data. This option, which only applies for ``official'' length and weight observation types, can be useful for tuning the tolerance band used for quality control (see Quality Control section below). 
+The user is also presented with option to include an empirical growth model together with weight vs length scatter data. This option, which only applies for "official" length and weight observation types, can be useful for tuning the tolerance band used for quality control (see Quality Control section below). 
 
 ### Oceanography
 
@@ -88,7 +88,7 @@ The design of the user interface is simple and intuitive, where each length bin 
 When the collection quota of a given length bin has been met, the color of the button changes from blue to green.
 A screenshot of the data entry page is presented in Figure \@ref(fig:screenshot-port-data-entry).
 Data export reports which allow the data from the field tablets to be imported into external production / archival databases are also available.
-The various tables of the Port Sampling module and how they relate to one another is shown in Figure \@ref(fig:erd-port).
+The various tables of the Port Sampling module and how they relate to one another are shown in Figure \@ref(fig:erd-port).
 
 
 
