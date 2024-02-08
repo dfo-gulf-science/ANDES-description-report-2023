@@ -33,5 +33,5 @@ This project effectively began in the summer of 2018 and coincided with a need t
 The first field deployment of \gls{andes} for an at-sea scientific mission took place in the fall of 2019 during the southern Gulf of St. Lawrence September ecosystem survey. 
 In its pilot year, \gls{andes} was used in parallel to the \gls{ese} on board CCGS *Teleost* and was tested and modified to ensure that it performed as intended in supporting data entry during scientific activities.
 
-This report documents the design principles that guided the development of \gls{andes}, provides technical details about its implementation and details the usage cases encountered thus far.
+This report documents the design principles that guided the development of \gls{andes}, provides technical details about its implementation and examines the usage cases encountered thus far.
 It provides guidelines for assessing the suitability of \gls{andes} for novel applications (e.g., other field activities and sampling programs) and discusses the ways in which the application could gain further adoption in supporting a diverse range of data collection activities within \gls{dfo}.

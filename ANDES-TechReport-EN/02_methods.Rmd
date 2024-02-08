@@ -2,7 +2,7 @@
 
 The overall goals for the redevelopment of the data acquisition system used in the \gls{dfo} Gulf Region were to utilize a contemporary software development environment, facilitate transparency through use of a shared code development environment, have the ability to support multiple languages, and to support flexible deployments. 
 The envisioned application would be modularized into different consoles to allow for a diverse range of uses, while leveraging the same core features and infrastructure that the existing application were built on. 
-As the starting point of \gls{andes} was the \gls{ese} which was used during the annual September survey conducted by the \gls{dfo} Gulf Region, the replacement data entry software had to first replicate all the proven functional capabilities of the \gls{ese}. Early versions of \gls{andes} achieved those goals and the system was further developed over its usage by scientists in the Gulf Region.
+As the starting point of \gls{andes} was the \gls{ese} which was used during the annual September survey conducted by the \gls{dfo} Gulf Region, the replacement data entry software had to first replicate all the proven functional capabilities of the \gls{ese}. Early versions of \gls{andes} achieved those goals and the system was further developed throughout its usage by scientists in the Gulf Region.
 
 The development of \gls{andes} coincided with the desire to revamp data collection procedures relating to commercial port sampling activities [@Benoit-Daigle-2007].
 To provide an alternative to the paper-based forms, an application that could be deployed on field tablets for scientific staff was required.
