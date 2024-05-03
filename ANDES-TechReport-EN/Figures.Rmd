@@ -1,6 +1,6 @@
 # Figures
 
-(ref:arch-caption) The generalized system architecture diagram of the Andes application and its associated services.
+(ref:arch-caption) The generalized system architecture diagram of the Andes application and its associated services. The terms \gls{udp} and \gls{cups} are defined in the Glossary section.
 ```{r arch, fig.cap="(ref:arch-caption)", out.width='1.0\\linewidth'}
 knitr::include_graphics("./figures/architecture.png")
 ```
