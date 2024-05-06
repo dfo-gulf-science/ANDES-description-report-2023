@@ -25,7 +25,7 @@ Similarly, \gls{andes} has modules that are used across multiple user scenarios;
 
 ### Bridge
 
-The Bridge module (Figure \@ref(fig:screenshot-bridge-console)) is used by navigation and fishing officers in the wheelhouse (usually on a tablet) to input fishing set metadata. The data entry occurs in two ways: 1) by directly editing the set form (a.k.a. the set card); and/or 2) via the Fishing Console, which is displayed in Figure \@ref(fig:screenshot-fishing-console). The Fishing Console can capture a number of different events that take place during fishing as well as information coming from the sonar and trawl mensuration system sensors (e.g., Scanmar system).
+The Bridge module (Figure \@ref(fig:screenshot-bridge-console)) is used by navigation and fishing officers in the wheelhouse (usually on a tablet) to input fishing set metadata. The data entry occurs in two ways: 1) by manually editing the set form (a.k.a. the set card); and/or 2) via the Fishing Console, which is displayed in Figure \@ref(fig:screenshot-fishing-console). The Fishing Console can directly capture a GPS feed to record the time and location of a number of different events that take place during fishing. These events can also trigger the capture of data from the sonar and trawl mensuration system sensors (e.g., Scanmar system).
 
 ### Set manager
 
@@ -37,7 +37,7 @@ The \gls{Ecosystem Survey} module is the main entry point that technicians will 
 
 ### Shrimps
 
-The Shrimps module is an extension of the ecosystem survey module focused exclusively on shrimps as it has different workflow requirements. This module allows the user to subsample a total catch of shrimp into different species and maturity stages before collecting biological data (cephalothorax length for all species and occasionally weight for *Pandalus borealis*).
+The Shrimps module is an extension of the ecosystem survey module focused exclusively on shrimps as it has different workflow requirements. This module provides a special case of ANDES' subsampling functionality,  and allows the user to subsample a total catch of shrimp into different species and maturity stages before collecting biological data (cephalothorax length for all species and occasionally weight for *Pandalus borealis*).
 
 ### Charts
 
