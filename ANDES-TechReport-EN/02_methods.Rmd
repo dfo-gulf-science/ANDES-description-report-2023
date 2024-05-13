@@ -25,8 +25,8 @@ A CTD/Rosette system is deployed at a subset of fishing stations where vertical 
 Water samples (e.g., nutrients, dissolved oxygen, salinity) are collected at predetermined depths using the Rosette system and attached Niskin bottles, and plankton samples are also collected via vertical ring net tows.
 These data support annual "state of the ocean" reporting conducted by the [AZMP](https://www.dfo-mpo.gc.ca/science/data-donnees/azmp-pmza/index-eng.html), and are also used in various stock assessments and ecosystem research projects to provide additional ancillary variables for interpreting the captures data.
 
-Historically, the event metadata associated with the deployment of oceanographic equipment on the ecosystem surveys was recorded using the Electronic Logbook ([ELOG](https://elog.psi.ch/elog/)) system, a browser-based logging system developed by the Paul Scherrer Institute, Switzerland.
-However, ELOG was installed and operated in complete isolation from logging systems used for the biological data, making it difficult to merge the two datasets upon completion of a survey.
+Historically, the event metadata associated with the deployment of oceanographic equipment on the ecosystem surveys was recorded using the \gls{elog} system, a browser-based logging system developed by the Paul Scherrer Institute, Switzerland.
+However, \gls{elog} was installed and operated in complete isolation from logging systems used for the biological data, making it difficult to merge the two datasets upon completion of a survey.
 Ideally, the new application would streamline the capture of oceanographic data and simplify its association with the corresponding biological data.
 
 The following section outlines additional user requirements and design principles that also played a role in decision-making during the development of \gls{andes}. 
