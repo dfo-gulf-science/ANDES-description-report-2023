@@ -1,0 +1,13 @@
+- [x] Active Set -> Active Catches
+- [x] Strip Regional Catch Codes from Andes
+- [ ] updated schemas for V3
+- [ ] review all screenshots for deprecation
+- [ ] shrimps screenshot
+- [x] add ELOG to glossary and replace non-referenced instances in text
+- [ ] fig:screenshot-oceanography-activity -> fig:screenshot-oceanography-event-ctd
+- [ ] fig:screenshot-oceanography-activity -> fig:screenshot-oceanography-event-zooptow
+- [ ] update bridge screenshot
+- [ ] provide screenshot for trawl validation console -> fig:screenshot-trawl-validation
+- [ ] fig:screenshot-oceanography-instrument-type-configuration in discussion
+- [x] look at SH comments
+- [ ] update email to pub coords to explain about version 3 additions
