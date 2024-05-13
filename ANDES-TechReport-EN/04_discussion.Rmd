@@ -65,15 +65,15 @@ The Oceanography module can now be used in complete independence from of the Eco
 A mission can be configured to be in "oceanography mode" which, in effect, strips away any aspects of the Ecosystem Survey module from the end-user's experience.}
 
 \item[Terminology]{Activities carried out at a given station are no longer grouped under a "set number" but instead under an entity called an "oceanographic sample".
-Also, the module refers to the deployments of instruments as "events" in order to be consistent with the conventions used in the \gls{elog}}
+Also, the module refers to the deployments of instruments as "events" in order to be consistent with the terminology used in the \gls{elog}}
 
 \item[Customization]{Users can decide what types of observations are collected at both the sample and event levels.
-In the mission configuration, users can specify which observations and action types are should be collected for different instrument types.
-Instrument types and action types are now completely user-defined.
-Due to these changes, the flow of data collection for each instrument type can be managed independently.
+Additionally, within the mission configuration, users can specify which observations and action types are should be collected for different instrument types.
+Observation types, instrument types and action types are now completely defined by the user.
+Due to these changes, the flow of data collection for each instrument type can now be customized and managed independently.
 (see Figure \@ref(fig:screenshot-oceanography-instrument-type-configuration))}
 
-\item[Flexibility]{The order of events within an oceanographic sample can be readily shifted.}
+\item[Flexibility]{The order of events within an oceanographic sample can be shifted in a quick and convenient manner.}
 
 \end{description}
 
