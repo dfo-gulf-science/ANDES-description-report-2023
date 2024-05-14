@@ -16,10 +16,16 @@ Les activités scientifiques menées par les régions atlantiques du \gls{mpo} c
 
 The scientific activities conducted by the Atlantic regions of \gls{dfo} include ecosystem surveys, oceanographic monitoring surveys, sentinel fisheries programs, coastal surveys, port sampling and many others where field data are collected. 
 These monitoring programs require the collection of a wide variety of information on the marine environment and ecosystems, and are used to inform science-based decision-making. 
-To support the collection of data and metadata during those surveys, paper-based systems were initially used during field work on research vessels, fishing vessels or at commercial ports. 
-With the advent of computing capabilities, paper data sheets were digitized and the resulting data were stored for subsequent analyses. In the 1980s and early 2000s, a number of computer-based data entry systems were developed, in particular to support the activities of scientific ecosystem cruises where a variety of instruments are used to collect data. For scientific trawl surveys, this meant a tool that could support the activities associated with processing the catches from the net, and that could also be used to manage other survey activities while at sea. In the Maritimes and Gulf regions of \gls{dfo}, the \gls{gse} and later the \gls{ese} were deployed on workstations in the wet laboratory of research ships. These applications supported the capture of data on individual specimens, including the collection of length frequencies and more detailed sampling based on the survey goals and associated protocols. In the Québec Region of \gls{dfo}, a similar tool called the \gls{mrr} was developed and used to directly enter data in digital format on the research vessel.
+To support the collection of data and metadata during those surveys, paper-based systems were initially used during field work on research vessels, fishing vessels or at commercial ports.
+With the advent of computing capabilities, paper data sheets were digitized and the resulting data were stored for subsequent analyses.
+In the 1980s and early 2000s, a number of computer-based data entry systems were developed, in particular to support the activities of scientific ecosystem cruises where a variety of instruments are used to collect data.
+For scientific trawl surveys, this meant a tool that could support the activities associated with processing the catches from the net, and that could also be used to manage other survey activities while at sea.
+In the Maritimes and Gulf regions of \gls{dfo}, the \gls{gse} and later the \gls{ese} were deployed on workstations in the wet laboratory of research ships.
+These applications supported the capture of data on individual specimens, including the collection of length frequencies and more detailed sampling based on the survey goals and associated protocols.
+In the Québec Region of \gls{dfo}, a similar tool called the \gls{mrr} was developed and used to directly enter data in digital format on the research vessel.
 
-The later versions of those data entry systems were built with \gls{vba} and relied on Microsoft Access databases. While highly functional, both the \gls{ese} and the \gls{mrr} have important limitations:
+The later versions of those data entry systems were built with \gls{vba} and relied on Microsoft Access databases.
+While highly functional, both the \gls{ese} and the \gls{mrr} have important limitations:
 
 - Despite being used over a \gls{lan}, these tools are not designed to work in a networked configuration.
 - These tools are unilingual (French or English depending on the DFO region) and their infrastructure does not readily support multiple languages in their user interface.
@@ -30,7 +36,7 @@ The later versions of those data entry systems were built with \gls{vba} and rel
 
 While the status quo was meeting the immediate data capture needs of \gls{dfo} scientists, a proactive stance towards addressing the above spurred the development of \gls{andes}.
 This project effectively began in the summer of 2018 and coincided with a need to provide application support for port sampling data collection.
-The first field deployment of \gls{andes} for an at-sea scientific mission took place in the fall of 2019 during the southern Gulf of St. Lawrence September ecosystem survey. 
+The first field deployment of \gls{andes} for an at-sea scientific mission took place in the fall of 2019 during the southern Gulf of St. Lawrence September ecosystem survey.
 In its pilot year, \gls{andes} was used in parallel to the \gls{ese} on board CCGS *Teleost* and was tested and modified to ensure that it performed as intended in supporting data entry during scientific activities.
 
 This report documents the design principles that guided the development of \gls{andes}, provides technical details about its implementation and examines the usage cases encountered thus far.
