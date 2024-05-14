@@ -65,7 +65,7 @@ Also, the module refers to the deployments of instruments as "events" in order t
 Additionally, within the mission configuration, users can specify which observations and action types are should be collected for different instrument types.
 Observation types, instrument types and action types are now completely defined by the user.
 Due to these changes, the flow of data collection for each instrument type can now be customized and managed independently.
-(see Figure \@ref(fig:screenshot-oceanography-instrument-type-configuration))}
+(see Figure \ref{fig:screenshot-oceanography-instrument-type-configuration})}
 
 \item[Flexibility]{The order of events within an oceanographic sample can be shifted in a quick and convenient manner.}
 

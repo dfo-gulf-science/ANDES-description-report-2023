@@ -75,13 +75,6 @@ knitr::include_graphics("./figures/screenshot_charts.png")
 \clearpage
 
 
-(ref:screenshot-oceanography-instrument-type-configuration-caption) A screenshot portraying how the configuration of "oceanographic events" associated with a certain type of instrument can be customized. In this example, the configuration for plankton nets are being displayed. The box on above contains a list of user-defined "actions types" that will be associated with the event. Action types can be set to optional or mandatory. The lower box displays the list of user-defined fields that will be collected for all plankton nets. Fields can be set to be optional or mandatory and default values can be specified.
-```{r screenshot-oceanography-instrument-type-configuration, fig.cap="(ref:screenshot-oceanography-instrument-type-configuration-caption)", out.width='1.0\\linewidth'}
-knitr::include_graphics("./figures/screenshot_oceanography_instrument_type_config.png")
-```
-\clearpage
-
-
 
 
 (ref:screenshot-oceanography-sample-caption) A screenshot of the Oceanographic Sample detail page from the Andes Oceanography module. The top-most box contains high-level information about the sample, such as the sequential sample number, station name and meteorological information collected at the time of sampling. These fields are user-defined and can be customized in the mission configuration. The middle box contains a list of events that are associated with the sample. The event number, event status, reminders and available actions are displayed for each row of the event. Actions can be triggered either manually or by clicking on the button associated with that action. The event table also contains convenient buttons (left-hand side) for quickly adjusting the order of an event.
@@ -147,6 +140,13 @@ knitr::include_graphics("./figures/screenshot_qc_ab_form.png")
 (ref:mature-length-form-caption) A screenshot of the "Mature Length" section of the sampling requirement form. Andes offers the option to specify mature length thresholds for males, females or unspecified individuals to be used in quality control.
 ```{r screenshot-mature-length-form, fig.cap="(ref:mature-length-form-caption)", out.width='1.0\\linewidth'}
 knitr::include_graphics("./figures/screenshot_qc_mature_length_form.png")
+```
+\clearpage
+
+
+(ref:screenshot-oceanography-instrument-type-configuration-caption) A screenshot portraying how the configuration of "oceanographic events" associated with a certain type of instrument can be customized. In this example, the configuration for plankton nets are being displayed. The box on above contains a list of user-defined "actions types" that will be associated with the event. Action types can be set to optional or mandatory. The lower box displays the list of user-defined fields that will be collected for all plankton nets. Fields can be set to be optional or mandatory and default values can be specified.
+```{r screenshot-oceanography-instrument-type-configuration, fig.cap="(ref:screenshot-oceanography-instrument-type-configuration-caption)", out.width='1.0\\linewidth'}
+knitr::include_graphics("./figures/screenshot_oceanography_instrument_type_config.png")
 ```
 \clearpage
 
