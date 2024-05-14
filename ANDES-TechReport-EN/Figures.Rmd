@@ -68,7 +68,7 @@ knitr::include_graphics("./figures/screenshot_charts.png")
 \clearpage
 
 
-(ref:oceanography-instrument-type-configuration) A screenshot portraying how the configuration of "oceanographic events" associated with a certain type of instrument can be customized. In this example, the configuration for plankton nets are being displayed. The box on above contains a list of user-defined "actions types" that will be associated with the event. Action types can be set to optional or mandatory. The lower box displays the list of user-defined fields that will be collected for all plankton nets. Fields can be set to be optional or mandatory and default values can be specified.
+(ref:oceanography-instrument-type-configuration-caption) A screenshot portraying how the configuration of "oceanographic events" associated with a certain type of instrument can be customized. In this example, the configuration for plankton nets are being displayed. The box on above contains a list of user-defined "actions types" that will be associated with the event. Action types can be set to optional or mandatory. The lower box displays the list of user-defined fields that will be collected for all plankton nets. Fields can be set to be optional or mandatory and default values can be specified.
 ```{r oceanography-instrument-type-configuration, fig.cap="(ref:oceanography-instrument-type-configuration-caption)", out.width='1.0\\linewidth'}
 knitr::include_graphics("./figures/screenshot_oceanography_instrument_type_config.png")
 ```
@@ -89,7 +89,7 @@ knitr::include_graphics("./figures/screenshot_oceanography_event_ctd.png")
 ```
 \clearpage
 
-(ref:screenshot-oceanography-event-zooptow) A screenshot from the Andes Oceanography module of the event detail page for a plankton net. The event being portrayed has the event number 006 and the name of the instrument being used is "Plankton Net (202µm)". The top-most box contains high-level information associated with the event that is specific to the instrument type (i.e., plankton net). These fields are user-defined and can be customized in the mission configuration. Below this is a table of collected zooplankton samples associated with this event. The unique identifier, net mesh size and depth interval are displayed for each row of the table. Further down the page, is a table listing all the actions logged from this event.
+(ref:screenshot-oceanography-event-zooptow-caption) A screenshot from the Andes Oceanography module of the event detail page for a plankton net. The event being portrayed has the event number 006 and the name of the instrument being used is "Plankton Net (202µm)". The top-most box contains high-level information associated with the event that is specific to the instrument type (i.e., plankton net). These fields are user-defined and can be customized in the mission configuration. Below this is a table of collected zooplankton samples associated with this event. The unique identifier, net mesh size and depth interval are displayed for each row of the table. Further down the page, is a table listing all the actions logged from this event.
 ```{r screenshot-oceanography-event-zooptow, fig.cap="(ref:screenshot-oceanography-event-zooptow-caption)", out.width='1.0\\linewidth'}
 knitr::include_graphics("./figures/screenshot_oceanography_event_zooptow.png")
 ```
@@ -144,7 +144,7 @@ knitr::include_graphics("./figures/screenshot_qc_mature_length_form.png")
 \clearpage
 
 
-(ref:screenshot-shrimps) A screenshot displaying the Shrimps module user interface. This is the page where baskets of shrimps are entered and subsequently detailed according to their various protocols.
+(ref:screenshot-shrimps-caption) A screenshot displaying the Shrimps module user interface. This is the page where baskets of shrimps are entered and subsequently detailed according to their various protocols.
 ```{r screenshot-shrimps, fig.cap="(ref:screenshot-shrimps-caption)", out.width='1.0\\linewidth'}
 knitr::include_graphics("./figures/screenshot_shrimps.png")
 ```
