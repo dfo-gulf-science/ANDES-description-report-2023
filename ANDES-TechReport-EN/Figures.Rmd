@@ -31,6 +31,12 @@ knitr::include_graphics("./figures/screenshot_fishing_console.png")
 ```
 \clearpage
 
+(ref:screenshot-trawl-validation) A screenshot of Andes Net Sensor Validation Console within the Bridge module. This screenshot shows the collected inputs from all the defined sensors over the course of a fishing set or sample. In each graph, the input values are plotted over time and vertical lines represent triggered events (e.g., net deployed, winches locked, etc.). This console is a valuable tool for fishing personnel, allow them to verify the adherence to protocols and ensure tow validity.
+```{r screenshot-trawl-validation, fig.cap="(ref:screenshot-trawl-validation)", out.width='1.0\\linewidth'}
+knitr::include_graphics("./figures/screenshot_trawl_validation.png")
+```
+\clearpage
+
 (ref:erd-ecosystem-survey-caption) A simplified entity relationship diagram of the data model used by the Ecosystem Survey module of \gls{andes}.
 ```{r erd-ecosystem-survey, fig.cap="(ref:erd-ecosystem-survey-caption)", out.width='1.0\\linewidth'}
 knitr::include_graphics("./figures/erd_ecosystem_survey.png")
@@ -61,15 +67,31 @@ knitr::include_graphics("./figures/screenshot_charts.png")
 ```
 \clearpage
 
-(ref:screenshot-oceanography-sample-caption) A screenshot of the Oceanographic Sample detail page from the Andes Oceanography module.
+
+(ref:oceanography-instrument-type-configuration) A screenshot portraying how the configuration of "oceanographic events" associated with a certain type of instrument can be customized. In this example, the configuration for plankton nets are being displayed. The box on above contains a list of user-defined "actions types" that will be associated with the event. Action types can be set to optional or mandatory. The lower box displays the list of user-defined fields that will be collected for all plankton nets. Fields can be set to be optional or mandatory and default values can be specified.
+```{r oceanography-instrument-type-configuration, fig.cap="(ref:oceanography-instrument-type-configuration-caption)", out.width='1.0\\linewidth'}
+knitr::include_graphics("./figures/screenshot_oceanography_instrument_type_config.png")
+```
+\clearpage
+
+
+
+
+(ref:screenshot-oceanography-sample-caption) A screenshot of the Oceanographic Sample detail page from the Andes Oceanography module. The top-most box contains high-level information about the sample, such as the sequential sample number, station name and meteorological information collected at the time of sampling. These fields are user-defined and can be customized in the mission configuration. The middle box contains a list of events that are associated with the sample. The event number, event status, reminders and available actions are displayed for each row of the event. Actions can be triggered either manually or by clicking on the button associated with that action. The event table also contains convenient buttons (left-hand side) for quickly adjusting the order of an event.
 ```{r screenshot-oceanography-sample, fig.cap="(ref:screenshot-oceanography-sample-caption)", out.width='1.0\\linewidth'}
 knitr::include_graphics("./figures/screenshot_oceanography_sample.png")
 ```
 \clearpage
 
-(ref:screenshot-oceanography-activity-caption) A screenshot of the Oceanographic Activity detail page from the Andes Oceanography module. Note that "Yellow Belly" refers to the colloquial name of the CTD/Rosette system.
-```{r screenshot-oceanography-activity, fig.cap="(ref:screenshot-oceanography-activity-caption)", out.width='1.0\\linewidth'}
-knitr::include_graphics("./figures/screenshot_oceanography_activity.png")
+(ref:screenshot-oceanography-event-ctd-caption) A screenshot from the Andes Oceanography module of the event detail page for a CTD/Rosette system. The event being portrayed has the event number 016 and the name of the instrument being used is "CTD AZOMP 2024". The top-most box contains high-level information associated with the event that is specific to the instrument type (i.e., CTD). These fields are user-defined and can be customized in the mission configuration. Below this is a table of water samples (i.e., "bottles") associated with this event. The unique identifier, depth and which variables were measured are displayed for each row of the table. Lower down on this page (not displayed) is a table of the actions that were logged from this event.
+```{r screenshot-oceanography-event-ctd, fig.cap="(ref:screenshot-oceanography-event-ctd-caption)", out.width='1.0\\linewidth'}
+knitr::include_graphics("./figures/screenshot_oceanography_event_ctd.png")
+```
+\clearpage
+
+(ref:screenshot-oceanography-event-zooptow) A screenshot from the Andes Oceanography module of the event detail page for a plankton net. The event being portrayed has the event number 006 and the name of the instrument being used is "Plankton Net (202µm)". The top-most box contains high-level information associated with the event that is specific to the instrument type (i.e., plankton net). These fields are user-defined and can be customized in the mission configuration. Below this is a table of collected zooplankton samples associated with this event. The unique identifier, net mesh size and depth interval are displayed for each row of the table. Further down the page, is a table listing all the actions logged from this event.
+```{r screenshot-oceanography-event-zooptow, fig.cap="(ref:screenshot-oceanography-event-zooptow-caption)", out.width='1.0\\linewidth'}
+knitr::include_graphics("./figures/screenshot_oceanography_event_zooptow.png")
 ```
 \clearpage
 
@@ -121,4 +143,10 @@ knitr::include_graphics("./figures/screenshot_qc_mature_length_form.png")
 ```
 \clearpage
 
+
+(ref:screenshot-shrimps) A screenshot displaying the Shrimps module user interface. This is the page where baskets of shrimps are entered and subsequently detailed according to their various protocols.
+```{r screenshot-shrimps, fig.cap="(ref:screenshot-shrimps-caption)", out.width='1.0\\linewidth'}
+knitr::include_graphics("./figures/screenshot_shrimps.png")
+```
+\clearpage
 
