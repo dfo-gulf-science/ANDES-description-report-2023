@@ -41,13 +41,7 @@ The \gls{andes} docs are maintained through GitHub Pages and are publicly availa
 The data collected during research activities must be extracted from the application and integrated into existing databases.
 This step has proven to be challenging but has also encouraged close inter-regional collaboration since the challenges associated with integration were shared by the different groups involved.
 
-## Future Direction
-
-Onboarding efforts for additional coastal surveys (scallop, sea-cucumber, whelk) and regions is an ongoing process driven by \gls{andes}' success.
-A major, short-term developmental priority for \gls{andes} is the implementation of bottom trawl survey validation protocols as defined by the Northeast Fisheries Science Center [@politis-et-al-2014].
-
-
-### Atlantic Zone (Offshelf) Monitoring Program (AZMP/AZOMP) oceanographic surveys
+## Atlantic Zone (Offshelf) Monitoring Program (AZMP/AZOMP) oceanographic surveys
 
 \gls{andes} was first trialed in parallel to \gls{elog} on a dedicated oceanographic survey led by the Maritimes Region \gls{azmp} in spring 2022, and was recently used as the sole event logger during the 2023 \gls{azomp} survey.
 During its initial trial on the 2022 spring \gls{azmp} survey, a number of limitations were noted.
@@ -105,6 +99,11 @@ We also hope that this report can stimulate the establishment of a governance st
 It has been used as the main data entry strategy for numerous missions over the span of a few years.
 Although new features can always be added, its core functional requirements can now be locked-in.
 These boundaries are now well-defined and described in this report.
+
+## Future Direction
+
+Onboarding efforts for additional coastal surveys (scallop, sea-cucumber, whelk) and regions is an ongoing process driven by \gls{andes}' success.
+A major, short-term developmental priority for \gls{andes} is the implementation of bottom trawl survey validation protocols as defined by the Northeast Fisheries Science Center [@politis-et-al-2014].
 
 # Acknowledgments
 We thank all DFO and \gls{CCG} personnel who were involved in the early testing and deployment of \gls{andes} prior to and during the 2019 southern Gulf of St. Lawrence ecosystem survey.
