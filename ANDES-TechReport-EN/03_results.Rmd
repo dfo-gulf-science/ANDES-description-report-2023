@@ -27,7 +27,7 @@ The Bootstrap library also provides palatable styles for displaying help text in
 
 While web applications are most often used over a network, the Django library comes with a development web-server that permits users to serve and use the application locally.
 In this scenario, a single computer acts simultaneously as server and client.
-While there are important limitations to the use of the Django development web-server in a full-scale production environment, the option to run and use \gls{andes} on a single device is an advantage for stand-alone, non-networked usage cases (e.g. field tablet used for port sampling).
+While there are important limitations to the use of the Django development web-server in a full-scale production environment, the option to run and use \gls{andes} on a single device is an advantage for stand-alone, non-networked usage cases (e.g., field tablet used for port sampling).
 
 The architecture used by \gls{andes} creates networking requirements that were not previously present in the \gls{ese} and \gls{mrr} (i.e., under scenarios where they are not the same device).
 The server and the client devices must be connected to the same network.
@@ -45,6 +45,7 @@ For example, while the chief scientist is able to modify sampling requirements f
 The main index page of the \gls{andes} user interface (Figure \@ref(fig:screenshot-index)) allows users to access several different modules that loosely correspond to the main use cases defined in the above Methods section.
 Access to the different modules is determined by a system of authentication and authorization.
 Consequently, the index page will appear different to users depending on the permissions they have been granted.
+<<<<<<< HEAD
 
 While \gls{andes} has been implemented using a modular design, there is a core set of components that are used across modules.
 This is true at the level of the database, where in addition to a number of shared tables, sub-modules will have tables that are specific to a given use case.
@@ -57,22 +58,45 @@ All core pages of the application can be toggled to night mode, as desired.
 Within the application's configuration settings, modules can be enabled and disabled at both the user-level and the mission-level.
 For example, on an ecosystem survey that is also conducting oceanography data collection, the oceanographic technician will have access to the Oceanography app while technician in the wetlab  will not.
 On single-purpose missions, modules can be toggled on or off for all users, thereby essentially stripping unneeded components from the user interface.
+=======
+
+While \gls{andes} has been implemented using a modular design, there is a core set of components that are used across modules.
+This is true at the level of the database, where in addition to a number of shared tables, sub-modules will have tables that are specific to a given use case.
+For example, while the Mission table is used across several modules, the Specimen table is specific to the Ecosystem Survey module.
+
+Similarly, \gls{andes} has modules that are used across multiple user scenarios; in particular, the Bridge module (Figure \@ref(fig:screenshot-bridge-console)) and the Cruise Dashboard (Figure \@ref(fig:screenshot-dashboard)).
+These modules display high-level information to end users such as queued stations, vessel speed, position, heading and various summaries of science activities that are underway or that have already taken place.
+All core pages of the application can be toggled to night mode, as desired.
+>>>>>>> d3b07c5c180fd841e7ae62baacbc4d4c828e96ec
 
 
 ### Bridge
 
 The Bridge module (Figure \@ref(fig:screenshot-bridge-console)) is used by navigation and fishing officers in the wheelhouse (usually on a tablet) to input fishing set metadata.
 The data entry occurs in two ways: 1) by manually editing the set form (a.k.a. the set card); and/or 2) via the Fishing Console, which is displayed in Figure \@ref(fig:screenshot-fishing-console).
+<<<<<<< HEAD
 The Fishing Console can directly capture a GPS feed to record the time and location of a number of different user-defined events that take place during fishing.
 Through the application settings, these events can be configured to trigger downstream actions, such as the starting/ending the capture of data from the sonar and trawl mensuration system sensors (e.g., Scanmar system).
 The Bridge console also links directly to the Trawl Validation console which provide realtime feedback and validation of trawl mensuration system sensors \@ref(fig:screenshot-trawl-validation).
+=======
+The Fishing Console can directly capture a GPS feed to record the time and location of a number of different events that take place during fishing.
+These events can also trigger the capture of data from the sonar and trawl mensuration system sensors (e.g., Scanmar system).
+>>>>>>> d3b07c5c180fd841e7ae62baacbc4d4c828e96ec
 
 ### Set Manager
 
+<<<<<<< HEAD
 The Set Manager module is used to manage upcoming sets and review completed set cards.
 Typically accessed by the chief scientist and team leads, it provides the ability to select upcoming sampling locations and initialize the corresponding set cards.
 The Set Manager module is where sets can be activated and deactivated.
 Additionally, this module is where any quality assurance flags associated with a set and its catches can be reviewed and accepted.
+=======
+The Set manager module is used to manage upcoming sets and review completed set cards.
+Typically accessed by the chief scientist, it provides the ability to select upcoming sampling locations and initialize the corresponding set cards.
+The Set manager module is where sets can be activated and deactivated.
+ Additionally, this module is where any quality assurance flags associated with a set and its catches can be reviewed and accepted.
+
+>>>>>>> d3b07c5c180fd841e7ae62baacbc4d4c828e96ec
 
 ### Ecosystem Survey
 
@@ -80,8 +104,13 @@ The \gls{Ecosystem Survey} module is the main entry point that technicians will 
 A depiction of the main tables involved in the Ecosystem Survey module, and their relationships are displayed in Figure \@ref(fig:erd-ecosystem-survey).
 This component of \gls{andes} replicates the capabilities of the \gls{ese} for capturing detailed information on length, weight, ageing material, maturity, etc. about fish and invertebrate specimens.
 This module, typically accessed from the wet laboratory of a survey vessel, is used for all entry of data related to measurements and observations of marine organisms.
+<<<<<<< HEAD
 New catches are first entered into the Active Catches page, as portrayed in Figure \@ref(fig:screenshot-wetlab-active-set).
 The Active Catches page accepts user-defined catch codes as a way to input new catches into a set.
+=======
+New catches are first entered into the Active Set page, as portrayed in Figure \@ref(fig:screenshot-wetlab-active-set).
+The Active Set page accepts regional catch codes as a way to input new catches into a set.
+>>>>>>> d3b07c5c180fd841e7ae62baacbc4d4c828e96ec
 If a code is not known by the user, a search feature is available.
 Next, baskets and their corresponding weights and statuses (e.g., sampled vs. not sampled) are then entered into the Catch Card page (Figure \@ref(fig:screenshot-wetlab-catch-card)).
 Finally, specimens are entered into the Data Entry page (Figure \@ref(fig:screenshot-wetlab-data-entry)).
@@ -90,10 +119,15 @@ An overview of the sampling protocol is displayed on the right-hand side of the 
 
 ### Shrimps
 
+<<<<<<< HEAD
 The Shrimps module is an extension of the ecosystem survey module focused exclusively on shrimps as it has different workflow requirements (Figure \@ref(fig:screenshot-shrimps)).
 This module provides a special case of \gls{andes}\' subsampling functionality, and allows the user to subsample a total catch of shrimp into different species and maturity stages before collecting biological data (cephalothorax length for all species and occasionally weight for *Pandalus borealis*).
 Additional mission and protocol-level configurations are needed prior to this module being used.
 
+=======
+The Shrimps module is an extension of the ecosystem survey module focused exclusively on shrimps as it has different workflow requirements.
+This module provides a special case of ANDES' subsampling functionality,  and allows the user to subsample a total catch of shrimp into different species and maturity stages before collecting biological data (cephalothorax length for all species and occasionally weight for *Pandalus borealis*).
+>>>>>>> d3b07c5c180fd841e7ae62baacbc4d4c828e96ec
 
 ### Charts
 
@@ -102,6 +136,7 @@ The module provides an interactive scatter plot of length vs weight as well as a
 The data can be filtered by species, set and sex (when available).
 This visual presentation of the data is meant as a supplemental validation aid in identifying outliers that may have escaped the quality controls.
 Should outlier points need further manual inspection/intervention, a direct link to access/edit the specimen data is conveniently made available.
+<<<<<<< HEAD
 
 The user is also presented with options to include an empirical growth model together with weight vs length scatter data.
 This option, which only applies for "official" length and weight observation types, can be useful for tuning the tolerance band used for quality control (see Quality Control section below).
@@ -125,16 +160,36 @@ Certain parameters, such as eDNA and dissolved oxygen, allow additional observat
 For plankton tows, details pertaining to sample identification, mesh size, start depth and end depth can be recorded (Figure \@ref(fig:screenshot-oceanography-event-zooptow)).
 The simplified \gls{ERD} of the Oceanography module of \gls{andes} is presented in Figure \@ref(fig:erd-oceanography).
 
+=======
+
+The user is also presented with options to include an empirical growth model together with weight vs length scatter data.
+This option, which only applies for "official" length and weight observation types, can be useful for tuning the tolerance band used for quality control (see Quality Control section below).
+
+
+### Oceanography
+
+The Oceanography module is a component of the \gls{andes} application that is capable of being deployed independently of the Ecosystem Survey module.
+This module is used to track and record the deployment of CTD/Rosette systems and plankton nets (Figure \@ref(fig:screenshot-oceanography-sample)).
+Basic metadata, such as the location and date/time of deployment, 'on bottom' and gear recovery events can be collected.
+Additionally, the Oceanography module allows for users to enter which water samples/parameters were collected from pre-determined depths after CTD/Rosette deployment (Figure \@ref(fig:screenshot-oceanography-activity)).
+The simplified \gls{ERD} of the Oceanography module of \gls{andes} is presented in Figure \@ref(fig:erd-oceanography).
+>>>>>>> d3b07c5c180fd841e7ae62baacbc4d4c828e96ec
 Upon completion of a survey, \gls{andes} is designed to provide a series of oceanographic summary reports that summarize aspects of the data collected:
 
 \begin{description}
 \item[Mission instrument report]{Provides a summary of the oceanographic equipment used on the survey, including component type, model, serial number, and date of last calibration (for CTD sensors).}
 \item[CTD metadata report]{For each fishing set and station where the CTD/Rosette system was deployed, the date, time, position, sounding, and bottle sample IDs are provided.}
 \item[Hydrolog report]{For each fishing set and station number, a summary of the CTD/Rosette and ring net deployments are provided, including the event numbers corresponding to each gear deployment, comments entered into \gls{andes} regarding each gear deployment, summary information related to each set and station, including surface temperature, sounding, day of year, and date/time.}
-\item[Plankton report]{This report provides a summary of the plankton net deployments conducted in relation to each fishing set and stratum. The wire out and wire angle, as well as flow meter start and end are provided.}
+\item[Plankton report]{This report provides a summary of the plankton net deployments conducted in relation to each fishing set and stratum.
+The wire out and wire angle, as well as flow meter start and end are provided.}
 \item[Bottle report]{This report provides a detailed summary of each CTD/Rosette operation (e.g., altimeter height, bottle height and depth, max. CTD depth), the water samples/parameters collected, and also includes the results of the Winkler titrations for dissolved oxygen samples, if entered into the Oceanographic Activity detail page.}
 \item[TS report]{This report provides a summary of the surface and bottom temperature and salinity data from each CTD cast in relation to each set, station, and stratum.}
+<<<<<<< HEAD
 \item[ELOG report]{This report emulates the .log summary report produced by \gls{elog}. This report is required in order to upload the survey data into the Microsoft Access template used by AZMP to load data to BioChem, DFOs national repository for discrete and plankton data.}
+=======
+\item[ELOG report]{This report emulates the .log summary report produced by ELOG.
+This report is required in order to upload the survey data into the Microsoft Access template used by AZMP to load data to BioChem, DFOs national repository for discrete and plankton data.}
+>>>>>>> d3b07c5c180fd841e7ae62baacbc4d4c828e96ec
 \end{description}
 
 These reports facilitate the post-processing of the data, its integration into existing data repositories and its distribution and upload to various open data platforms.
@@ -143,6 +198,10 @@ These reports facilitate the post-processing of the data, its integration into e
 ### Forecasting utility modules
 There are a number of task-specific modules designed to assist in mission forecasting and planning.
 These modules are designed to provide timely information to scientific staff participating in a research cruise, and to also assist the chief scientist and watch leaders in the planning and execution of a mission.
+<<<<<<< HEAD
+=======
+
+>>>>>>> d3b07c5c180fd841e7ae62baacbc4d4c828e96ec
 
 #### Cruise dashboard {.unlisted .unnumbered}
 The cruise dashboard module is used to provide an overview of the current status of a mission to all \gls{andes} users (Figure \@ref(fig:screenshot-dashboard)).
@@ -152,7 +211,11 @@ It provides a range of real-time statistics that are used for planning purposes,
 The forecasting tool is designed to provide real-time prognostics of survey completion targets based on assumed transit speeds and time spent fishing and processing the trawl catches (Figure \@ref(fig:screenshot-forecast)).
 This feature provides a useful tool for the chief scientist to evaluate different sampling objectives and to compare different survey route options.
 As the conditions change regularly during a survey, this tool links with the set manager to provide an estimate of the amount of time required to complete planned stations.
+<<<<<<< HEAD
 This tool can be used for short-term planning (i.e. a day's worth of sampling) or longer-term planning (i.e. a mission's worth of sampling).
+=======
+This tool can be used for short-term planning (i.e., a day's worth of sampling) or longer-term planning (i.e., a mission's worth of sampling).
+>>>>>>> d3b07c5c180fd841e7ae62baacbc4d4c828e96ec
 
 #### Progress Map {.unlisted .unnumbered}
 Another task-specific utility is the progress map which shows what strata have been completed based on target and minimum number of sets per stratum.
@@ -162,20 +225,35 @@ The number of sets conducted in each stratum is compared to the minimum and targ
 
 ### Images
 The images module is a component of the Andes application designed to streamline image management during surveys.
+<<<<<<< HEAD
 The module enables images to be captured and stored directly from the application using a smartphone, tablet or webcam.
 Doing so allows images to be directly linked to the set, catch, or specimen that they represent, eliminating the need to manually create this link from a filename after data collection is complete.
 Images are queued during data collection based on various triggers (user request, rare catch, sampling protocols, etc. ).
 The queued images are listed in the app allowing users to capture them on a camera-enabled device which can be separate from the one being used for data entry.
+=======
+ The module enables images to be captured and stored directly from the application using a smart phone, tablet or webcam.
+ Doing so allows images to be directly linked to the set, catch, or specimen that they represent, eliminating the need to manually create this link from a filename after data collection is complete.
+ Images are queued during data collection based on various triggers (user request, rare catch, sampling protocols, etc. ).
+ The queued images are listed in the app allowing users to capture them on a camera-enabled device which can be separate from the one being used for data entry.
+
+>>>>>>> d3b07c5c180fd841e7ae62baacbc4d4c828e96ec
 
 
 ### Port sampling
 
 \gls{andes} was adapted from a previous port sampling module to support activities where technicians obtain length frequency samples from commercial fishing activities.
+<<<<<<< HEAD
 The port sampling module of \gls{andes} is stand-alone and is typically used independently of other modules.
 Similar to the Ecosystem Survey module, sampling protocols can be defined an implemented for specific catches, however in its current state,
 the protocols used in the Port Sampling module are less intricate.
 Through these protocols, users are able to control collection quotas (e.g., "keep two specimens per bin"), the flow of data entry (e.g., which field should be displayed in the sample form) and the layout of the data entry page (e.g., length bins organized in a vertical or horizontal configuration) (see Figure \@ref(fig:screenshot-port-protocol)).
 Typically, production instances of this module are deployed on ruggedized field tablets that are suitable for use in wet environments.
+=======
+The port sampling module of \gls{andes} is fully stand-alone and is primarily used independently of all other modules.
+The protocols used in the Port Sampling module are much simpler than those belonging to the Ecosystem Survey module.
+Through these protocols, users are able to control collection quotas (e.g., "keep two specimens per bin"), the flow of data entry (e.g., which field should be displayed in the sample form) and the layout of the data entry page (e.g., length bins organized in a vertical or horizontal configuration) (see Figure \@ref(fig:screenshot-port-protocol)).
+Typically, production instances of this module are deployed on rugged field tablets that are suitable for use in wet environments.
+>>>>>>> d3b07c5c180fd841e7ae62baacbc4d4c828e96ec
 
 The design of the user interface is simple and intuitive, where each length bin is a large button on the display.
 As specimens are tallied, the corresponding buttons on the touchscreen are pushed.
@@ -211,9 +289,12 @@ Accordingly, in order to re-instantiate a particular data snapshot, it is critic
 This combination of data export and git version number, gives users the perpetual ability to recreate the exact application environment from the time of the snapshot, no matter how much the application has changed in the interim.
 In the application, backups are automatically created upon closing sets.
 Moreover, users also have the ability to manually trigger a backup at anytime.
+<<<<<<< HEAD
 
 The backup strategy for mediafiles (i.e., sample and specimen images) are slightly different.
 When images are captured, copies are automatically synced to the server's backup location, which is typically a mounted share folder pointing to a file server with a /gls{raid} configuration.
+=======
+>>>>>>> d3b07c5c180fd841e7ae62baacbc4d4c828e96ec
 
 ### Customizable protocols
 
@@ -261,7 +342,11 @@ This is useful when project leads want to limit the usage of certain taxa during
 
 **Specimens**
 
+<<<<<<< HEAD
 Specimen lengths and length-to-weight ratios are validated against the parameters entered into the sampling requirements for that catch.
+=======
+Specimen lengths and length-to-weight ratios are validated against the parameters entered in the sampling requirements for that catch.
+>>>>>>> d3b07c5c180fd841e7ae62baacbc4d4c828e96ec
 Acceptable length-to-weight ratios are assessed by comparing the actual weight to the estimated weight, as described by Equation \@ref(eq:growth-model) in the section above.
 Additionally, \gls{andes} will flag when there is a mismatch between fish maturity and somatic length.
 Project leads can specify mature length thresholds for males, females or unspecified individuals in the sampling requirement of a given species (as shown in Figure \@ref(fig:screenshot-mature-length-form)).
@@ -271,7 +356,11 @@ Project leads can specify mature length thresholds for males, females or unspeci
 When entering observations, \gls{andes} enforces the data type of the corresponding observation type; invalid entries are not accepted.
 When entering an observation for a categorical observation type, \gls{andes} will display the list of options to the end user and inhibit users from entering invalid selections.
 \gls{andes} will also ensure observation types are not left blank.
+<<<<<<< HEAD
 However, NaN entries are permitted when a particular observation is meant to be skipped.
+=======
+However NaN entries are permitted when a particular observation is meant to be skipped.
+>>>>>>> d3b07c5c180fd841e7ae62baacbc4d4c828e96ec
 Certain observation types are meant to be unique, e.g., unique tag number.
 If this is flagged at the level of the observation type, end users will be notified if there is a violation of this structure.
 
