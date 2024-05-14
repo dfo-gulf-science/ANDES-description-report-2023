@@ -2,7 +2,12 @@
 
 ## Architecture
 The architecture of \gls{andes} differs significantly from that of its predecessor (see Figure \@ref(fig:arch)).
-The application and its associated services are centralized on one or several servers and include: 1) a web-service for handling HTTP requests and responses; 2) a database service for storing data associated with the application; 3) a file-sharing service for handling the storage of backups and related files; 4) a printing service used for printing out specimen labels; and 5) a message-brokering service for handling asynchronous tasks.
+The application and its associated services are centralized on one or several servers and include: 
+1) a web-service for handling HTTP requests and responses; 
+2) a database service for storing data associated with the application; 
+3) a file-sharing service for handling the storage of backups and related files; 
+4) a printing service used for printing out specimen labels; and 
+5) a message-brokering service for handling asynchronous tasks.
 Client devices, such as data-entry workstations, no longer require the installation of anything more than a modern web browser; i.e., one that is capable of supporting HTML5 and ECMAScript 2016 (Javascript).
 Accordingly, this increases the range of devices and operating systems that may be used for accessing the application.
 For instance, the switch to using \gls{andes} has allowed for the integration of mobile phones, tablets and linux workstations into the data entry workflow.
