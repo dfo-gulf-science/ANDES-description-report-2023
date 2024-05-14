@@ -294,11 +294,15 @@ see=[Glossary:]{azmpg}}
 %%% define the acronym and use the see= option
 \newglossaryentry{andes}{type=\acronymtype, name={Andes}, description={Another data entry system}, first={\emph{An}other \emph{d}ata \emph{e}ntry \emph{s}ystem (Andes)\glsadd{andesg}}, see=[Glossary:]{andesg}}
 
+%%% The glossary entry the acronym links to
+\newglossaryentry{elogg}{name={ELOG},
+    description={Electronic Logbook (ELOG) is part of a family of applications known as weblogs. (see website \url{https://elog.psi.ch/elog/})}}
 %%% define the acronym and use the see= option
 \newglossaryentry{elog}{
 type=\acronymtype, name={ELOG}, description={Electronic Logbook},
-first={Electronic Logbook ([ELOG](https://elog.psi.ch/elog/)) }
+first={Electronic Logbook (ELOG)\glsadd{elogg}}, see=[Glossary:]{elogg}
 }
+
 
 %%% define the acronym and use the see= option
 \newglossaryentry{raid}{type=\acronymtype, name={RAID}, description={redundant array of inexpensive disks}}

@@ -61,6 +61,13 @@ knitr::include_graphics("./figures/screenshot_wetlab_data_entry.png")
 ```
 \clearpage
 
+(ref:screenshot-shrimps-caption) A screenshot displaying the Shrimps module user interface. This is the page where baskets of shrimps are entered and subsequently detailed according to their various protocols.
+```{r screenshot-shrimps, fig.cap="(ref:screenshot-shrimps-caption)", out.width='1.0\\linewidth'}
+knitr::include_graphics("./figures/screenshot_shrimps.png")
+```
+\clearpage
+
+
 (ref:screenshot-charts-caption) A screenshot of the Charts module showing the weight vs length scatter plot on top of its growth curve model.
 ```{r screenshot-charts, fig.cap="(ref:screenshot-charts-caption)", out.width='1.0\\linewidth'}
 knitr::include_graphics("./figures/screenshot_charts.png")
@@ -143,10 +150,4 @@ knitr::include_graphics("./figures/screenshot_qc_mature_length_form.png")
 ```
 \clearpage
 
-
-(ref:screenshot-shrimps-caption) A screenshot displaying the Shrimps module user interface. This is the page where baskets of shrimps are entered and subsequently detailed according to their various protocols.
-```{r screenshot-shrimps, fig.cap="(ref:screenshot-shrimps-caption)", out.width='1.0\\linewidth'}
-knitr::include_graphics("./figures/screenshot_shrimps.png")
-```
-\clearpage
 

@@ -63,8 +63,8 @@ On single-purpose missions, modules can be toggled on or off for all users, ther
 The Bridge module (Figure \@ref(fig:screenshot-bridge-console)) is used by navigation and fishing officers in the wheelhouse (usually on a tablet) to input fishing set metadata.
 The data entry occurs in two ways: 1) by manually editing the set form (a.k.a. the set card); and/or 2) via the Fishing Console, which is displayed in Figure \@ref(fig:screenshot-fishing-console).
 The Fishing Console can directly capture a GPS feed to record the time and location of a number of different user-defined events that take place during fishing.
-Through the application settings, these events can be configured to trigger downstream actions, such as the starting/ending the capture of data from the sonar and trawl mensuration system sensors (e.g., Scanmar system).
-The Bridge console also links directly to the Trawl Validation console which provide realtime feedback and validation of trawl mensuration system sensors \@ref(fig:screenshot-trawl-validation).
+Through the application settings, these events can be configured to trigger downstream actions, such as the starting/ending the capture of data from the sonar and trawl measurement system sensors (e.g., Scanmar system).
+The Bridge console also links directly to the Trawl Validation console which provide realtime feedback and validation of trawl measurement system sensors (Figure \@ref(fig:screenshot-trawl-validation)).
 
 ### Set Manager
 
