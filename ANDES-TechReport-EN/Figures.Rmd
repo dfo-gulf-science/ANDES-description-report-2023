@@ -75,8 +75,8 @@ knitr::include_graphics("./figures/screenshot_charts.png")
 \clearpage
 
 
-(ref:oceanography-instrument-type-configuration-caption) A screenshot portraying how the configuration of "oceanographic events" associated with a certain type of instrument can be customized. In this example, the configuration for plankton nets are being displayed. The box on above contains a list of user-defined "actions types" that will be associated with the event. Action types can be set to optional or mandatory. The lower box displays the list of user-defined fields that will be collected for all plankton nets. Fields can be set to be optional or mandatory and default values can be specified.
-```{r oceanography-instrument-type-configuration, fig.cap="(ref:oceanography-instrument-type-configuration-caption)", out.width='1.0\\linewidth'}
+(ref:screenshot-oceanography-instrument-type-configuration-caption) A screenshot portraying how the configuration of "oceanographic events" associated with a certain type of instrument can be customized. In this example, the configuration for plankton nets are being displayed. The box on above contains a list of user-defined "actions types" that will be associated with the event. Action types can be set to optional or mandatory. The lower box displays the list of user-defined fields that will be collected for all plankton nets. Fields can be set to be optional or mandatory and default values can be specified.
+```{r screenshot-oceanography-instrument-type-configuration, fig.cap="(ref:screenshot-oceanography-instrument-type-configuration-caption)", out.width='1.0\\linewidth'}
 knitr::include_graphics("./figures/screenshot_oceanography_instrument_type_config.png")
 ```
 \clearpage
