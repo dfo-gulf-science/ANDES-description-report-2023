@@ -8,7 +8,6 @@ The forecasting tool and progress map presented in this report were not in the o
 The reporting facilities provided by \gls{andes} were developed to support the many consumers of the data collected during scientific activities.
 Two types of reports are available for \gls{andes}: 1) reports meant to be used during ongoing field activities and 2) reports meant to be used after field activities are completed.
 
-
 If a vessel is located within range of cellular phone signals, it is possible to make \gls{andes} accessible via the internet.
 While this has some important advantages, exposing an IP to the internet comes with security risks that have to be mitigated.
 
@@ -36,38 +35,47 @@ Such peripherals, which often masquerade as keyboard input, are typically config
 While there is always an effort to make the user interface intuitive and self-explanatory, there is still the need to maintain documentation for the project.
 The \gls{andes} docs are maintained through GitHub Pages and are publicly available here: [https://dfo-gulf-science.github.io/andes/](https://dfo-gulf-science.github.io/andes/)
 
-## Integration of Andes with Existing Data Repositories
+## Integration of \gls{andes} with Existing Data Repositories
 
 \gls{andes} is a standalone application with an underlying relational database management system.
 The data collected during research activities must be extracted from the application and integrated into existing databases.
 This step has proven to be challenging but has also encouraged close inter-regional collaboration since the challenges associated with integration were shared by the different groups involved.
 
-## Future Direction
+## Atlantic Zone (Offshelf) Monitoring Program (AZMP/AZOMP) oceanographic surveys
 
-Onboarding efforts for additional coastal surveys (scallop, sea-cucumber, whelk) and regions is an ongoing process driven by Andes' success.
-A major, short-term developmental priority for \gls{andes} is the implementation of bottom trawl survey validation protocols as defined by the Northeast Fisheries Science Center [@politis-et-al-2014].
-
-
-### Atlantic Zone (Offshelf) Monitoring Program (AZMP/AZOMP) oceanographic surveys
-
-\gls{andes} was first trialed in parallel to ELOG on a dedicated oceanographic survey led by the Maritimes Region \gls{azmp} in spring 2022, and was recently used as the sole event logger during the 2023 \gls{azomp} survey.
+\gls{andes} was first trialed in parallel to \gls{elog} on a dedicated oceanographic survey led by the Maritimes Region \gls{azmp} in spring 2022, and was recently used as the sole event logger during the 2023 \gls{azomp} survey.
 During its initial trial on the 2022 spring \gls{azmp} survey, a number of limitations were noted.
-ELOG assigns each gear deployment a sequential 3-digit 'event' number.
-In contrast, \gls{andes} groups all gear deployments in relation to a \gls{Set} number, which is a primarily fisheries-related term that is not applicable to oceanographic survey data collection.
-However, \gls{andes} could easily be adapted to the \gls{azmp}'s normal metadata naming convention by renaming \gls{Set} to 'station', given that multiple sampling events normally occur at the same \gls{azmp} station.
+\gls{elog} assigns each gear deployment a sequential 3-digit 'event' number.
+In contrast, early versions of \gls{andes} grouped all gear deployments in relation to a \gls{Set} number, which is a primarily fisheries-related term that is not applicable to oceanographic survey data collection.
+Another limitation in the initial version of \gls{andes} was that it was designed to primarily support two types of instruments: CTD/Rosette and ring net deployments.
+However, during \gls{azmp} and \gls{azomp} surveys, a wider variety of gear types such as Argo floats, oceanographic buoys, moorings, multinet and secchi disks are routinely deployed.
+Furthermore, deployment sequences and workflows associated with each type of instrument must have flexibility; something which was not present in earlier versions of the module.
 
-The initial version of \gls{andes} included only two oceanographic gear options: CTD/Rosette and ring net deployments.
-However, Argo floats, oceanographic buoys, moorings, multinet, and other gear are routinely deployed during \gls{azmp} and \gls{azomp} surveys, and the order of operations must be flexible.
-In previous versions of \gls{andes}, the order of operations under each \gls{Set} could not be modified between stations.
-With developer support, \gls{andes} was modified to allow for the inclusion of additional gear options and the ability to toggle and select between gear types should the order of operations change between stations.
+In a recent version release of \gls{andes}, the above limitations were addressed in the following ways:
+\begin{description}
 
+\item[Autonomy]{
+The Oceanography module can now be used in complete independence from of the Ecosystem Survey module.
+A mission can be configured to be in "oceanography mode" which, in effect, strips away any aspects of the Ecosystem Survey module from the end-user's experience.}
 
-ELOG allows users to create various 'logbooks' that allow for custom recording of metadata.
-On \gls{azmp} surveys, a custom ELOG logbook was created to capture metadata related to samples collected from underway or flow-through thermosalinograph (TSG) systems used on these surveys.
-A sub-module could be developed in the future to allow for a similar level of data capture using \gls{andes}.
+\item[Terminology]{Activities carried out at a given station are no longer grouped under a "set number" but instead under an entity called an "oceanographic sample".
+Also, the module refers to the deployments of instruments as "events" in order to be consistent with the terminology used in the \gls{elog}}
 
+\item[Customization]{Users can decide what types of observations are collected at both the sample and event levels.
+Additionally, within the mission configuration, users can specify which observations and action types are should be collected for different instrument types.
+Observation types, instrument types and action types are now completely defined by the user.
+Due to these changes, the flow of data collection for each instrument type can now be customized and managed independently.
+(see Figure \@ref(fig:screenshot-oceanography-instrument-type-configuration))}
 
-\gls{andes} shows great promise for enhanced data recording and oceanographic sample tracking relative to ELOG.
+\item[Flexibility]{The order of events within an oceanographic sample can be shifted in a quick and convenient manner.}
+
+\end{description}
+
+\gls{elog} allows users to create various 'logbooks' that allow for custom recording of metadata.
+On \gls{azmp} surveys, a custom \gls{elog} logbook was created to capture metadata related to samples collected from underway or flow-through thermosalinograph (TSG) systems used on these surveys.
+A submodule could be developed in the future to allow for a similar level of data capture using \gls{andes}.
+
+\gls{andes} shows great promise for enhanced data recording and oceanographic sample tracking relative to \gls{elog}.
 Future modifications of \gls{andes} could incorporate information on water budget requirement for each CTD cast, and could allow for the tracking of laboratory post-processing.
 However, making changes to \gls{andes} on the fly would not be possible on local installations (i.e., not on the custom servers permanently installed on the ecosystem survey vessels) of \gls{andes} without on-board developer support.
 With this, \gls{andes} could be adopted as the full-time event metadata logger on \gls{azmp} and \gls{azomp}'s oceanographic surveys in the future.
@@ -92,9 +100,13 @@ It has been used as the main data entry strategy for numerous missions over the 
 Although new features can always be added, its core functional requirements can now be locked-in.
 These boundaries are now well-defined and described in this report.
 
+## Future Direction
+
+Onboarding efforts for additional coastal surveys (scallop, sea-cucumber, whelk) and regions is an ongoing process driven by \gls{andes}' success.
+A major, short-term developmental priority for \gls{andes} is the implementation of bottom trawl survey validation protocols as defined by the Northeast Fisheries Science Center [@politis-et-al-2014].
+
 # Acknowledgments
-We thank all DFO and \gls{CCG} personnel who were involved in the early testing and deployment of \gls{andes} prior to and during the 2019 southern Gulf of St.
-Lawrence ecosystem survey.
+We thank all DFO and \gls{CCG} personnel who were involved in the early testing and deployment of \gls{andes} prior to and during the 2019 southern Gulf of St. Lawrence ecosystem survey.
 Any success and momentum encountered by this project would not have been realized without the patience, open-mindedness and critical feedback from its user community, including management, lab technicians, chief scientists and \gls{CCG} personnel.
 We thank the Gulf Region publications coordinator for his/her assistance with getting this document published.
 

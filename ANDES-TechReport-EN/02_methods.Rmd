@@ -1,7 +1,7 @@
 # Methods
 
 The overall goals for the redevelopment of the data acquisition system used in the \gls{dfo} Gulf Region were to utilize a contemporary software development environment, facilitate transparency through use of a shared code development environment, have the ability to support multiple languages, and to support flexible deployments. 
-The envisioned application would be modularized into different consoles to allow for a diverse range of uses, while leveraging the same core features and infrastructure that the existing application was built on. 
+The envisioned application would be modularized into different consoles to allow for a diverse range of uses, while leveraging the same core features and infrastructure that the existing application was built on.
 As the starting point of \gls{andes} was the \gls{ese} which was used during the annual September survey conducted by the \gls{dfo} Gulf Region, the replacement data entry software had to first replicate all the proven functional capabilities of the \gls{ese}.
 Early versions of \gls{andes} achieved those goals and the system was further developed throughout its usage by scientists in the Gulf Region.
 
@@ -12,9 +12,9 @@ Sampling protocols often include additional requirements such as length-stratifi
 The data structure, protocol flexibility, and deployment requirements of this initial port sampling application provided many of the foundational components for other usage cases.
 
 \gls{andes} was designed with 3 main uses in mind:
-A) as the main data entry system for ecosystem survey observations;
-B) to track and capture data and metadata from oceanographic observations; and
-C) for commercial port sampling activities.
+1) as the main data entry system for ecosystem survey observations;
+2) to track and capture data and metadata from oceanographic observations; and
+3) for commercial port sampling activities.
 For use on the ecosystem surveys, the application must allow for the capture of all information and parameters detailed in the sampling protocols of the survey (e.g. @hurlbut-clay-1990).
 This entails the capture of all information related to fishing activities, plus ancillary variables such as weather, sea state, and water temperature.
 As catch contents are sorted and identified during the ecosystem surveys, the data entry application must support users in obtaining catch weights and abundance by taxon, individual observations of a specimen's length, weight, maturity status, etc.
@@ -25,8 +25,8 @@ A CTD/Rosette system is deployed at a subset of fishing stations where vertical 
 Water samples (e.g., nutrients, dissolved oxygen, salinity) are collected at predetermined depths using the Rosette system and attached Niskin bottles, and plankton samples are also collected via vertical ring net tows.
 These data support annual "state of the ocean" reporting conducted by the [AZMP](https://www.dfo-mpo.gc.ca/science/data-donnees/azmp-pmza/index-eng.html), and are also used in various stock assessments and ecosystem research projects to provide additional ancillary variables for interpreting the captures data.
 
-Historically, the event metadata associated with the deployment of oceanographic equipment on the ecosystem surveys was recorded using the Electronic Logbook ([ELOG](https://elog.psi.ch/elog/)) system, a browser-based logging system developed by the Paul Scherrer Institute, Switzerland.
-However, ELOG was installed and operated in complete isolation from logging systems used for the biological data, making it difficult to merge the two datasets upon completion of a survey.
+Historically, the event metadata associated with the deployment of oceanographic equipment on the ecosystem surveys was recorded using the \gls{elog} system, a browser-based logging system developed by the Paul Scherrer Institute, Switzerland.
+However, \gls{elog} was installed and operated in complete isolation from logging systems used for the biological data, making it difficult to merge the two datasets upon completion of a survey.
 Ideally, the new application would streamline the capture of oceanographic data and simplify its association with the corresponding biological data.
 
 The following section outlines additional user requirements and design principles that also played a role in decision-making during the development of \gls{andes}. 
