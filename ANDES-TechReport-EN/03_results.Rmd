@@ -161,7 +161,7 @@ The number of sets conducted in each stratum is compared to the minimum and targ
 
 
 ### Images
-The images module is a component of the Andes application designed to streamline image management during surveys.
+The images module is a component of the \gls{andes} application designed to streamline image management during surveys.
 The module enables images to be captured and stored directly from the application using a smartphone, tablet or webcam.
 Doing so allows images to be directly linked to the set, catch, or specimen that they represent, eliminating the need to manually create this link from a filename after data collection is complete.
 Images are queued during data collection based on various triggers (user request, rare catch, sampling protocols, etc. ).
@@ -229,7 +229,7 @@ All quality control flags that are raised during data entry are appended to a re
 
 **Sets**
 
-The \gls{andes} provides clear feedback regarding the completeness status of a given set.
+\gls{andes} provides clear feedback regarding the completeness status of a given set.
 Flags are raised if a set's start and/or end coordinates are outside the expected sampling stratum.
 Additionally, an alarm is sounded in the bridge console module when deviating from the desired stratum in real-time.
 The bridge console also provides personnel with fishing timers and tow distance displays (see Figure \@ref(fig:screenshot-fishing-console)).

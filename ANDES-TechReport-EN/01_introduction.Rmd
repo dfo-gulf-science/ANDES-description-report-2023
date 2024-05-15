@@ -18,7 +18,7 @@ The scientific activities conducted by the Atlantic regions of \gls{dfo} include
 These monitoring programs require the collection of a wide variety of information on the marine environment and ecosystems, and are used to inform science-based decision-making. 
 To support the collection of data and metadata during those surveys, paper-based systems were initially used during field work on research vessels, fishing vessels or at commercial ports.
 With the advent of computing capabilities, paper data sheets were digitized and the resulting data were stored for subsequent analyses.
-In the 1980s and early 2000s, a number of computer-based data entry systems were developed, in particular to support the activities of scientific ecosystem cruises where a variety of instruments are used to collect data.
+In the 1990s and early 2000s, a number of computer-based data entry systems were developed, in particular to support the activities of scientific ecosystem cruises where a variety of instruments are used to collect data.
 For scientific trawl surveys, this meant a tool that could support the activities associated with processing the catches from the net, and that could also be used to manage other survey activities while at sea.
 In the Maritimes and Gulf regions of \gls{dfo}, the \gls{gse} and later the \gls{ese} were deployed on workstations in the wet laboratory of research ships.
 These applications supported the capture of data on individual specimens, including the collection of length frequencies and more detailed sampling based on the survey goals and associated protocols.
