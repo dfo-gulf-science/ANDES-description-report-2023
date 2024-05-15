@@ -51,7 +51,7 @@ Another limitation in the initial version of \gls{andes} was that it was designe
 However, during \gls{azmp} and \gls{azomp} surveys, a wider variety of gear types such as Argo floats, oceanographic buoys, moorings, multinet and secchi disks are routinely deployed.
 Furthermore, deployment sequences and workflows associated with each type of instrument must have flexibility; something which was not present in earlier versions of the module.
 
-In a recent version release of \gls{andes}, the above limitations were addressed in the following ways:
+In a recent version release of \gls{andes} (version 3), the above limitations were addressed in the following ways:
 \begin{description}
 
 \item[Autonomy]{
