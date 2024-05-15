@@ -55,7 +55,7 @@ In a recent version release of \gls{andes} (version 3), the above limitations we
 \begin{description}
 
 \item[Autonomy]{
-The Oceanography module can now be used in complete independence from of the Ecosystem Survey module.
+The Oceanography module can now be used in complete independence of the Ecosystem Survey module.
 A mission can be configured to be in "oceanography mode" which, in effect, strips away any aspects of the Ecosystem Survey module from the end-user's experience.}
 
 \item[Terminology]{Activities carried out at a given station are no longer grouped under a "set number" but instead under an entity called an "oceanographic sample".

@@ -112,7 +112,7 @@ A collection of events carried out at a point in time and space is referred to a
 The Oceanography module is a component of the \gls{andes} application that is capable of being deployed independently of the Ecosystem Survey module.
 
 The module's primary purpose is to capture metadata pertaining to oceanographic samples and events.
-In the mission configuration, user-defined "actions" can be programmed in associated with each instrument type.
+In the mission configuration, user-defined "actions" can be programmed and associated with each instrument type.
 Typical actions collected for CTDs and plankton tows are "deployed", "on bottom", "recovered" and "abort".
 When an action button associated with an event is clicked or "fired", the date/time and location of the occurrence is logged.
 Oceanographic actions are analogous to the fishing events described above however instead of being logged at the set / sample level, they are logged at the oceanographic event level.
@@ -134,7 +134,7 @@ The wire out and wire angle, as well as flow meter start and end are provided.}
 \item[Bottle report]{This report provides a detailed summary of each CTD/Rosette operation (e.g., altimeter height, bottle height and depth, max. CTD depth), the water samples/parameters collected, and also includes the results of the Winkler titrations for dissolved oxygen samples, if entered into the Oceanographic Activity detail page.}
 \item[TS report]{This report provides a summary of the surface and bottom temperature and salinity data from each CTD cast in relation to each set, station, and stratum.}
 \item[ELOG report]{This report emulates the .log summary report produced by \gls{elog}.
-This report is required in order to upload the survey data into the Microsoft Access template used by AZMP to load data to BioChem, DFOs national repository for discrete and plankton data.}
+This report is required in order to upload the survey data into the Microsoft Access template currently used by AZMP to load data to BioChem, DFOs national repository for discrete and plankton data.}
 \end{description}
 
 These reports facilitate the post-processing of the data, its integration into existing data repositories and its distribution and upload to various open data platforms.
