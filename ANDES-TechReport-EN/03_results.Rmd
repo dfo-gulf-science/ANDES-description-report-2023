@@ -55,7 +55,7 @@ These modules display high-level information to end users such as queued station
 All core pages of the application can be toggled to night mode, as desired.
 
 Within the application's configuration settings, modules can be enabled and disabled at both the user-level and the mission-level.
-For example, on an ecosystem survey that is also conducting oceanography data collection, the oceanographic technician will have access to the Oceanography app while technician in the wetlab  will not.
+For example, on an ecosystem survey that is also conducting oceanography data collection, the oceanographic technician will have access to the Oceanography module while technician in the wetlab  will not.
 On single-purpose missions, modules can be toggled on or off for all users, thereby essentially stripping unneeded components from the user interface.
 
 ### Bridge
@@ -165,7 +165,7 @@ The images module is a component of the \gls{andes} application designed to stre
 The module enables images to be captured and stored directly from the application using a smartphone, tablet or webcam.
 Doing so allows images to be directly linked to the set, catch, or specimen that they represent, eliminating the need to manually create this link from a filename after data collection is complete.
 Images are queued during data collection based on various triggers (user request, rare catch, sampling protocols, etc. ).
-The queued images are listed in the app allowing users to capture them on a camera-enabled device which can be separate from the one being used for data entry.
+The queued images are listed in the application allowing users to capture them on a camera-enabled device which can be separate from the one being used for data entry.
 
 
 ### Port sampling
