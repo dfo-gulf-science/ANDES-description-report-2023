@@ -6,7 +6,7 @@ knitr::include_graphics("./figures/architecture.png")
 ```
 \clearpage
 
-(ref:screenshot-index-caption) A screenshot of the main index page of Another data entry system (Andes) showing the principal modules of the application. What is displayed on the index page will depend both on the user's permissions and profile.
+(ref:screenshot-index-caption) A screenshot of the main index page of Andes showing the principal modules of the application. What is displayed on the index page will depend both on the user's permissions and profile.
 ```{r screenshot-index, fig.cap="(ref:screenshot-index-caption)", out.width='1.0\\linewidth'}
 knitr::include_graphics("./figures/screenshot_index.png")
 ```
@@ -68,7 +68,7 @@ knitr::include_graphics("./figures/screenshot_shrimps.png")
 \clearpage
 
 
-(ref:screenshot-charts-caption) A screenshot of the Charts module showing the weight vs length scatter plot on top of its growth curve model.
+(ref:screenshot-charts-caption) A screenshot of the Charts module showing the weight vs. length scatter plot on top of its growth curve model.
 ```{r screenshot-charts, fig.cap="(ref:screenshot-charts-caption)", out.width='1.0\\linewidth'}
 knitr::include_graphics("./figures/screenshot_charts.png")
 ```
