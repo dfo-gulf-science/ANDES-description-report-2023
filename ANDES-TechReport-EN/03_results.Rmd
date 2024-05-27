@@ -6,11 +6,11 @@ The application and its associated services are centralized on one or several se
 1) a web-service for handling HTTP requests and responses;
 2) a database service for storing data associated with the application;
 3) a file-sharing service for handling the storage of backups and related files;
-4) a printing service used for printing out specimen labels; and
+4) a printing service used for printing out specimen, catch and set labels; and
 5) a message-brokering service for handling asynchronous tasks.
 Client devices, such as data-entry workstations, no longer require the installation of anything more than a modern web browser; i.e., one that is capable of supporting HTML5 and ECMAScript 2016 (Javascript).
 Accordingly, this increases the range of devices and operating systems that may be used for accessing the application.
-For instance, the switch to using \gls{andes} has allowed for the integration of mobile phones, tablets and linux workstations into the data entry workflow.
+For instance, the switch to using \gls{andes} has allowed for the integration of mobile phones, tablets and Linux workstations into the data entry workflow. Previously, only Windows personal computers could be used because both the \gls{ese} and \gls{mrr} relied on Microsoft software.
 Finally, the new configuration means multiple stations can simultaneously receive and enter data into the same \gls{andes} instance.
 
 The [Django Web Framework](https://www.djangoproject.com/) was selected for the backend of this application due to its modularized nature; virtually all aspects of the programming framework can be decoupled.
@@ -29,11 +29,12 @@ While web applications are most often used over a network, the Django library co
 In this scenario, a single computer acts simultaneously as server and client.
 While there are important limitations to the use of the Django development web-server in a full-scale production environment, the option to run and use \gls{andes} on a single device is an advantage for stand-alone, non-networked usage cases (e.g., field tablet used for port sampling).
 
-The architecture used by \gls{andes} creates networking requirements that were not previously present in the \gls{ese} and \gls{mrr} (i.e., under scenarios where they are not the same device).
-The server and the client devices must be connected to the same network.
+
+The architecture used by \gls{andes} creates networking requirements that were not previously present in the \gls{ese} and \gls{mrr}, where the data entry system was essentially running on a single device.
+This is because the server and the client devices must be connected to the same network. 
 The network does not need to have access to the \gls{wan} (i.e., the internet) connection.
-As long as they are connected to the same \gls{lan}, they can be configured to work together.
-This suits the networking environment on board remote vessels that can have sporadic connection failures with the outside world.
+As long as they are connected to the same \gls{lan}, the server and the client can be configured to work together.
+This suits the networking environment on board remote vessels that have either sporadic connection failures, or no connection with the internet at all.
 
 The \gls{andes} application provides access to its various components based on an internal system of authentication and authorization.
 The credentials of a given user will affect what action they are able to do.
@@ -56,19 +57,19 @@ All core pages of the application can be toggled to night mode, as desired.
 
 Within the application's configuration settings, modules can be enabled and disabled at both the user-level and the mission-level.
 For example, on an ecosystem survey that is also conducting oceanography data collection, the oceanographic technician will have access to the Oceanography module while technician in the wetlab  will not.
-On single-purpose missions, modules can be toggled on or off for all users, thereby essentially stripping unneeded components from the user interface.
+On single-purpose missions, modules can be toggled on or off for all users, thereby focusing the user interface on the needed component only.
 
 ### Bridge
 
 The Bridge module (Figure \@ref(fig:screenshot-bridge-console)) is used by navigation and fishing officers in the wheelhouse (usually on a tablet) to input fishing set metadata.
 The data entry occurs in two ways: 1) by manually editing the set form (a.k.a. the set card); and/or 2) via the Fishing Console, which is displayed in Figure \@ref(fig:screenshot-fishing-console).
-The Fishing Console can directly capture a GPS feed to record the time and location of a number of different user-defined events that take place during fishing.
+The Fishing Console can directly capture a \gls{gps} feed to record the time and location of a number of different user-defined events that take place during fishing.
 Through the application settings, these events can be configured to trigger downstream actions, such as the starting/ending the capture of data from the sonar and trawl measurement system sensors (e.g., Scanmar system).
 The Bridge console also links directly to the Trawl Validation console which provide realtime feedback and validation of trawl measurement system sensors (Figure \@ref(fig:screenshot-trawl-validation)).
 
 ### Set Manager
 
-The Set Manager module is used to manage upcoming sets and review completed set cards.
+The Set Manager module is used to manage upcoming fishing sets and review completed set cards.
 Typically accessed by the chief scientist and team leads, it provides the ability to select upcoming sampling locations and initialize the corresponding set cards.
 The Set Manager module is where sets can be activated and deactivated.
 Additionally, this module is where any quality assurance flags associated with a set and its catches can be reviewed and accepted.
@@ -82,10 +83,10 @@ This module, typically accessed from the wet laboratory of a survey vessel, is u
 New catches are first entered into the Active Catches page, as portrayed in Figure \@ref(fig:screenshot-wetlab-active-set).
 The Active Catches page accepts user-defined catch codes as a way to input new catches into a set.
 If a code is not known by the user, a search feature is available.
-Next, baskets and their corresponding weights and statuses (e.g., sampled vs. not sampled) are then entered into the Catch Card page (Figure \@ref(fig:screenshot-wetlab-catch-card)).
+Next, baskets and their corresponding weights and statuses (e.g., sampled vs. not sampled, number of specimens measured) are then entered into the Catch Card page (Figure \@ref(fig:screenshot-wetlab-catch-card)).
 Finally, specimens are entered into the Data Entry page (Figure \@ref(fig:screenshot-wetlab-data-entry)).
 As the data entry progresses, users are dynamically prompted with observation fields that follow the catch-specific sampling protocol.
-An overview of the sampling protocol is displayed on the right-hand side of the Data Entry page.
+An overview of the sampling protocol for the current taxon (American Plaice, \emph{Hippoglossoides platessoides}, in Figure \@ref(fig:screenshot-wetlab-data-entry)) is displayed on the right-hand side of the Data Entry page.
 
 ### Shrimps
 
@@ -96,46 +97,58 @@ Additional mission and protocol-level configurations are needed prior to this mo
 ### Charts
 
 The Charts module (Figure \@ref(fig:screenshot-charts)) leverages the [Bokeh](https://bokeh.pydata.org) Python library to generate data visualization of arbitrary length and weight observation variables that were attributed to specimens.
-The module provides an interactive scatter plot of length vs weight as well as a length histogram.
+The module provides an interactive scatter plot of length vs. weight as well as a length histogram.
 The data can be filtered by species, set and sex (when available).
 This visual presentation of the data is meant as a supplemental validation aid in identifying outliers that may have escaped the quality controls.
 Should outlier points need further manual inspection/intervention, a direct link to access/edit the specimen data is conveniently made available.
 
-The user is also presented with options to include an empirical growth model together with weight vs length scatter data.
+The user is also presented with options to include an empirical growth model together with weight vs. length scatter data.
 This option, which only applies for "official" length and weight observation types, can be useful for tuning the tolerance band used for quality control (see Quality Control section below).
 
 ### Oceanography
 
-This module is used to track and record the deployment of oceanographic instruments such as CTD/Rosette systems, plankton nets and Argo floats (Figure \@ref(fig:screenshot-oceanography-sample)).
+This module is used to track and record the deployment of oceanographic instruments such as \gls{ctd} systems, plankton nets and Argo floats (Figure \@ref(fig:screenshot-oceanography-sample)).
 Following the conventions established by \gls{elog}, the deployment of a given instrument is referred to as an "event".
 A collection of events carried out at a point in time and space is referred to as an "oceanographic sample".
 The Oceanography module is a component of the \gls{andes} application that is capable of being deployed independently of the Ecosystem Survey module.
 
 The module's primary purpose is to capture metadata pertaining to oceanographic samples and events.
 In the mission configuration, user-defined "actions" can be programmed and associated with each instrument type.
-Typical actions collected for CTDs and plankton tows are "deployed", "on bottom", "recovered" and "abort".
+Typical actions collected for \gls{ctd} and plankton tows are "deployed", "on bottom", "recovered" and "abort".
 When an action button associated with an event is clicked or "fired", the date/time and location of the occurrence is logged.
 Oceanographic actions are analogous to the fishing events described above however instead of being logged at the set / sample level, they are logged at the oceanographic event level.
 
 Instrument-specific metadata is also collected.
-For CTD/Rosette deployments, details pertaining to what water samples/parameters were collected from what depths can be recorded (Figure \@ref(fig:screenshot-oceanography-event-ctd)).
+For \gls{ctd} deployments, details pertaining to what water samples/parameters were collected from what depths can be recorded (Figure \@ref(fig:screenshot-oceanography-event-ctd)).
 Certain parameters, such as eDNA and dissolved oxygen, allow additional observations to be captured in supplementary tables.
 For plankton tows, details pertaining to sample identification, mesh size, start depth and end depth can be recorded (Figure \@ref(fig:screenshot-oceanography-event-zooptow)).
 The simplified \gls{ERD} of the Oceanography module of \gls{andes} is presented in Figure \@ref(fig:erd-oceanography).
 
 Upon completion of a survey, \gls{andes} is designed to provide a series of oceanographic summary reports that summarize aspects of the data collected:
 
-\begin{description}
-\item[Mission instrument report]{Provides a summary of the oceanographic equipment used on the survey, including component type, model, serial number, and date of last calibration (for CTD sensors).}
-\item[CTD metadata report]{For each fishing set and station where the CTD/Rosette system was deployed, the date, time, position, sounding, and bottle sample IDs are provided.}
-\item[Hydrolog report]{For each fishing set and station number, a summary of the CTD/Rosette and ring net deployments are provided, including the event numbers corresponding to each gear deployment, comments entered into \gls{andes} regarding each gear deployment, summary information related to each set and station, including surface temperature, sounding, day of year, and date/time.}
-\item[Plankton report]{This report provides a summary of the plankton net deployments conducted in relation to each fishing set and stratum.
-The wire out and wire angle, as well as flow meter start and end are provided.}
-\item[Bottle report]{This report provides a detailed summary of each CTD/Rosette operation (e.g., altimeter height, bottle height and depth, max. CTD depth), the water samples/parameters collected, and also includes the results of the Winkler titrations for dissolved oxygen samples, if entered into the Oceanographic Activity detail page.}
-\item[TS report]{This report provides a summary of the surface and bottom temperature and salinity data from each CTD cast in relation to each set, station, and stratum.}
-\item[ELOG report]{This report emulates the .log summary report produced by \gls{elog}.
-This report is required in order to upload the survey data into the Microsoft Access template currently used by AZMP to load data to BioChem, DFOs national repository for discrete and plankton data.}
-\end{description}
+**Mission instrument report**
+: Provides a summary of the oceanographic equipment used on the survey, including component type, model, serial number, and date of last calibration (for CTD sensors)
+
+**CTD metadata report**
+: For each fishing set and station where the CTD/Rosette system was deployed, the date, time, position, sounding, and bottle sample IDs are provided.
+
+**Hydrolog report**
+: For each fishing set and station number, a summary of the CTD/Rosette and ring net deployments are provided, including the event numbers corresponding to each gear deployment, comments entered into \gls{andes} regarding each gear deployment, summary information related to each set and station, including surface temperature, sounding, day of year, and date/time.
+
+**Plankton report**
+: This report provides a summary of the plankton net deployments conducted in relation to each fishing set and stratum.
+The wire out and wire angle, as well as flow meter start and end are provided.
+
+**Bottle report**
+: This report provides a detailed summary of each CTD/Rosette operation (e.g., altimeter height, bottle height and depth, max. CTD depth), the water samples/parameters collected, and also includes the results of the Winkler titrations for dissolved oxygen samples, if entered into the Oceanographic Activity detail page.
+
+**TS report**
+: This report provides a summary of the surface and bottom temperature and salinity data from each CTD cast in relation to each set, station, and stratum.
+
+**ELOG report**
+: This report emulates the .log summary report produced by \gls{elog}.
+This report is required in order to upload the survey data into the Microsoft Access template currently used by \gls{azmp} to load data to BioChem, DFOs national repository for discrete and plankton data [@Devine-etal-2014].
+
 
 These reports facilitate the post-processing of the data, its integration into existing data repositories and its distribution and upload to various open data platforms.
 
@@ -146,7 +159,7 @@ These modules are designed to provide timely information to scientific staff par
 
 #### Cruise dashboard {.unlisted .unnumbered}
 The cruise dashboard module is used to provide an overview of the current status of a mission to all \gls{andes} users (Figure \@ref(fig:screenshot-dashboard)).
-It provides a range of real-time statistics that are used for planning purposes, including current status (e.g., fishing, steaming, deploying/retrieving net), the list of upcoming stations, and data from the latest trawl.
+It provides a range of real-time statistics that are used for planning purposes, including current status (e.g., fishing, steaming, deploying/retrieving net), the list of upcoming stations, and data from the latest trawl set.
 
 #### Forecasting {.unlisted .unnumbered}
 The forecasting tool is designed to provide real-time prognostics of survey completion targets based on assumed transit speeds and time spent fishing and processing the trawl catches (Figure \@ref(fig:screenshot-forecast)).
@@ -212,8 +225,8 @@ This combination of data export and git version number, gives users the perpetua
 In the application, backups are automatically created upon closing sets.
 Moreover, users also have the ability to manually trigger a backup at anytime.
 
-The backup strategy for mediafiles (i.e., sample and specimen images) are slightly different.
-When images are captured, copies are automatically synced to the server's backup location, which is typically a mounted share folder pointing to a file server with a /gls{raid} configuration.
+The backup strategy for media files (i.e., sample and specimen images) is slightly different.
+When images are captured, copies are automatically synced to the server's backup location, which is typically a mounted share folder pointing to a file server with a \gls{raid} configuration.
 
 ### Customizable protocols
 
@@ -262,7 +275,7 @@ This is useful when project leads want to limit the usage of certain taxa during
 **Specimens**
 
 Specimen lengths and length-to-weight ratios are validated against the parameters entered into the sampling requirements for that catch.
-Acceptable length-to-weight ratios are assessed by comparing the actual weight to the estimated weight, as described by Equation \@ref(eq:growth-model) in the section above.
+Acceptable length-to-weight ratios are assessed by comparing the actual weight to the weight predicted by Equation \@ref(eq:growth-model) in the section above.
 Additionally, \gls{andes} will flag when there is a mismatch between fish maturity and somatic length.
 Project leads can specify mature length thresholds for males, females or unspecified individuals in the sampling requirement of a given species (as shown in Figure \@ref(fig:screenshot-mature-length-form)).
 
@@ -278,9 +291,10 @@ If this is flagged at the level of the observation type, end users will be notif
 ### Reactivity
 
 The [Django REST framework](https://www.django-rest-framework.org/) was used to construct the \gls{REST-API} component of the application.
-The project takes a hybrid approach, combining the use of standard Django views and \gls{vuejs} frontend applications embedded in the templates.
+To best address the data entry requirements encountered during scientific surveys, the project takes a hybrid approach, combining the use of standard Django views and \gls{vuejs} frontend applications embedded in the templates.
 The latter, which offloads some code execution directly on client devices, was used to avoid the need for constantly reloading webpages and to optimize the flow of traffic across the network.
-Reactive javascript frontend applications also provide a better experience from the point of view of an end-user.
+Reactive javascript frontend applications also provide a better experience from the point of view of an end-user, by making the application behave less like a web browser and more like a stand-alone computer application.
+
 
 ### Multilingualism
 

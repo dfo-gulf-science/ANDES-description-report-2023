@@ -1,15 +1,19 @@
 # Discussion
 
 Since its initial deployment during the 2019 September ecosystem survey in the southern Gulf of St. Lawrence, the capabilities and performance of \gls{andes} have significantly improved.
-The software has also been adopted as the main logging software used during ecosystem surveys conducted by DFO Gulf, Maritimes and Québec Regions.
+The software has been adopted as the main logging software used during ecosystem surveys conducted by DFO Gulf, Maritimes and Québec Regions.
 The current capabilities of \gls{andes} have evolved over the course of the last five years as the system has been used to support diverse field activities.
 
 The forecasting tool and progress map presented in this report were not in the original deployment of the application and were added during a cruise based on the needs of scientific and \gls{CCG} personnel.
 The reporting facilities provided by \gls{andes} were developed to support the many consumers of the data collected during scientific activities.
-Two types of reports are available for \gls{andes}: 1) reports meant to be used during ongoing field activities and 2) reports meant to be used after field activities are completed.
+Two types of reports are available for \gls{andes}: 1) reports meant to be used during ongoing field activities and 2) reports meant to be used after field activities are completed. Both types of reports have fulfilled the needs of personnel conducting the sampling activities. 
+First, by providing timely summary of recent observations (e.g., how much Atlantic Herring have we caught so far, what was its length distribution and what physical samples were collected for that taxon?) and, second, by allowing for tailored reporting to get the collected data out of Andes and into existing systems. 
 
 If a vessel is located within range of cellular phone signals, it is possible to make \gls{andes} accessible via the internet.
-While this has some important advantages, exposing an IP to the internet comes with security risks that have to be mitigated.
+The benefits of having Andes accessible on the internet is that remote users can access the system, and users connected to the network used by Andes can also access the internet.
+However, exposing an IP to the internet comes with security risks that have to be mitigated. 
+This often means restricting remote access to Andes so only specific \gls{ip} addresses of identifiable source are allowed to connect with the system.
+Additionally, the internet link uses cellphone services that come with associated costs based the amount of traffic incurred.
 
 \gls{andes} is designed so that data backups are immune to the potential pitfalls of relying on earlier versions of required packages.
 Having backups that are associated with a specific git version, which includes a comprehensive list of all dependencies and an exact match of the application data model, allows users to readily bring back \gls{andes} to where it was at the time of the backup.
@@ -17,29 +21,32 @@ Users can then access the reporting features that will allow them to create a ve
 
 When present, the client-server separation lends itself nicely to be adaptable to new requirements.
 One can potentially expand upon the *system* with minimal changes to \gls{andes} by interacting directly with its exposed \gls{REST-API}.
-For example, an imaging system can be aware of current GPS coordinates or current \gls{Set}/\gls{Station}.
+For example, an imaging system can be aware of current \gls{gps} coordinates or current \gls{Set}/\gls{Station}.
 Photos or videos acquired by such an imaging system could automatically append these as metadata, or even add media identifiers directly to the database as they are captured.
 
 Most modern vessels will already provide the minimum networking infrastructure necessary for system deployment where connectivity between a dry laboratory, a wet laboratory and the ship's wheelhouse is necessary.
 In the case where static networking options are not available, this requirement can be met using inexpensive consumer-grade, portable networking equipment (wireless router, switch, etc.).
-However, as installing an ad-hoc network for scientific needs in a vessel may lead to code violations, we urge \gls{andes} users to collaborate with vessel management bodies like the \gls{CCG} or chartering authority.
+However, we urge \gls{andes} users to always collaborate with vessel management bodies like the \gls{CCG} or chartering authority to ensure that installing an ad-hoc network for scientific purposes is compliant with a vessel's information technology security policies.
 
 The addition of allow-lists and restrict-lists was an important addition to \gls{andes} that came out of a Regionalization workshop that took place in December 2022 at the Gulf Fisheries Center.
-While these features will help improve the quality of data collected, it is important that if utilized, they should be detailed explicitly in the survey sampling programme.
-For example, if project leads add certain catch items to the restrict-list, this should be mirrored in the survey sampling programme.
+While these features will help improve the quality of data collected, it is important that, if utilized, they should be detailed explicitly in the survey sampling program.
+For example, if project leads add certain catch items to the restrict-list, this should be mirrored with appropriate explanations in the survey sampling program.
 
 Andes also supports the use of various electronic tools such as calipers, electronic measuring boards and scales.
-Drivers for the measuring boards and scale were developed by the Gulf and Quebec regions and are available on Github.
+Drivers for the measuring boards and scale were developed by the Gulf and Quebec regions and are available on GitHub.
 Such peripherals, which often masquerade as keyboard input, are typically configured on host clients and as such don't need special attention to work with Andes.
 
 While there is always an effort to make the user interface intuitive and self-explanatory, there is still the need to maintain documentation for the project.
 The \gls{andes} docs are maintained through GitHub Pages and are publicly available here: [https://dfo-gulf-science.github.io/andes/](https://dfo-gulf-science.github.io/andes/)
 
-## Integration of \gls{andes} with Existing Data Repositories
+## Integration of Andes with Existing Data Repositories
 
 \gls{andes} is a standalone application with an underlying relational database management system.
 The data collected during research activities must be extracted from the application and integrated into existing databases.
 This step has proven to be challenging but has also encouraged close inter-regional collaboration since the challenges associated with integration were shared by the different groups involved.
+The ability to develop tailored reports to get information out of Andes and into the hands of users has been a valuable component in improving integration with existing databases.
+Reports coming from Andes have repeatable and consistent formatting, so that data managers can make use of reusable scripts to perform the transfer of information into their existing databases. 
+
 
 ## Atlantic Zone (Offshelf) Monitoring Program (AZMP/AZOMP) oceanographic surveys
 
@@ -47,7 +54,7 @@ This step has proven to be challenging but has also encouraged close inter-regio
 During its initial trial on the 2022 spring \gls{azmp} survey, a number of limitations were noted.
 \gls{elog} assigns each gear deployment a sequential 3-digit 'event' number.
 In contrast, early versions of \gls{andes} grouped all gear deployments in relation to a \gls{Set} number, which is a primarily fisheries-related term that is not applicable to oceanographic survey data collection.
-Another limitation in the initial version of \gls{andes} was that it was designed to primarily support two types of instruments: CTD/Rosette and ring net deployments.
+Another limitation in the initial version of \gls{andes} was that it was designed to primarily support two types of instruments: \gls{ctd} and ring net deployments.
 However, during \gls{azmp} and \gls{azomp} surveys, a wider variety of gear types such as Argo floats, oceanographic buoys, moorings, multinet and secchi disks are routinely deployed.
 Furthermore, deployment sequences and workflows associated with each type of instrument must have flexibility; something which was not present in earlier versions of the module.
 
@@ -62,7 +69,7 @@ A mission can be configured to be in "oceanography mode" which, in effect, strip
 Also, the module refers to the deployments of instruments as "events" in order to be consistent with the terminology used in the \gls{elog}}
 
 \item[Customization]{Users can decide what types of observations are collected at both the sample and event levels.
-Additionally, within the mission configuration, users can specify which observations and action types are should be collected for different instrument types.
+Additionally, within the mission configuration, users can specify which observations and action types should be collected for different instrument types.
 Observation types, instrument types and action types are now completely defined by the user.
 Due to these changes, the flow of data collection for each instrument type can now be customized and managed independently.
 (see Figure \ref{fig:screenshot-oceanography-instrument-type-configuration})}
@@ -76,13 +83,9 @@ On \gls{azmp} surveys, a custom \gls{elog} logbook was created to capture metada
 A submodule could be developed in the future to allow for a similar level of data capture using \gls{andes}.
 
 \gls{andes} shows great promise for enhanced data recording and oceanographic sample tracking relative to \gls{elog}.
-Future modifications of \gls{andes} could incorporate information on water budget requirement for each CTD cast, and could allow for the tracking of laboratory post-processing.
+Future modifications of \gls{andes} could incorporate information on water budget requirement for each \gls{ctd} cast, and could allow for the tracking of laboratory post-processing.
 However, making changes to \gls{andes} on the fly would not be possible on local installations (i.e., not on the custom servers permanently installed on the ecosystem survey vessels) of \gls{andes} without on-board developer support.
 With this, \gls{andes} could be adopted as the full-time event metadata logger on \gls{azmp} and \gls{azomp}'s oceanographic surveys in the future.
-
-Andes has been successfully used by a number of DFO regions and has proved to be a useful data entry application that fulfills its intended design goals.
-The infrastructure used in the development of the application also means that novel modules and functionalities can be implemented to support new user requirements.
-For example, adding functionality to add barcodes and QR codes to physical samples such as otoliths and tissue samples.
 
 <!-- , or the addition of imaging capabilities to link digital images to specimens would be possible.
 -->
@@ -102,12 +105,16 @@ These boundaries are now well-defined and described in this report.
 
 ## Future Direction
 
+Andes has been successfully used by a number of DFO regions and has proven to be a useful data entry application that fulfills its intended design goals.
+The infrastructure used in the development of the application also means that novel modules and functionalities can be implemented to support new user requirements.
+For example, adding functionality to add barcodes and QR codes to physical samples such as otoliths and tissue samples.
 Onboarding efforts for additional coastal surveys (scallop, sea-cucumber, whelk) and regions is an ongoing process driven by \gls{andes}' success.
 A major, short-term developmental priority for \gls{andes} is the implementation of bottom trawl survey validation protocols as defined by the Northeast Fisheries Science Center [@politis-et-al-2014].
 
 # Acknowledgments
 We thank all DFO and \gls{CCG} personnel who were involved in the early testing and deployment of \gls{andes} prior to and during the 2019 southern Gulf of St. Lawrence ecosystem survey.
-Any success and momentum encountered by this project would not have been realized without the patience, open-mindedness and critical feedback from its user community, including management, lab technicians, chief scientists and \gls{CCG} personnel.
-We thank the Gulf Region publications coordinator for his/her assistance with getting this document published.
+Any success and momentum encountered by this project would not have been realized without the patience, open-mindedness and critical feedback from its user community, including management, lab technicians, chief scientists and \gls{CCG} personnel. 
+Our sincere thanks to reviewers Kevin Hedges (DFO Ontario and Prairie Region) and Shelee Hamilton (DFO Pacific Region) whose constructive criticism and suggestions led to an improved document.
+We thank the Gulf Region publications coordinator, Dr. Jacob Burbank, for his assistance with getting this document published.
 
 \clearpage

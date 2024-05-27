@@ -286,13 +286,27 @@ see=[Glossary:]{azmpg}}
 \newglossaryentry{nafo}{type=\acronymtype, name={NAFO}, description={Northwest Atlantic Fisheries Organisation}, first={Northwest Atlantic Fisheries Organisation\glsadd{nafog}}, see=[Glossary:]{nafog}}
 
 
-
 %%% The glossary entry the acronym links to
 \newglossaryentry{andesg}{name={Andes},
-    description={Another data entry system is an application developed by Fisheries and Oceans Canada to support data collection for a variety of scientific programs}}
-
+    description={Another data entry system (Andes) is an application collaboratively developed by the Gulf, Maritimes and Québec regions of Fisheries and Oceans Canada to support data collection for a variety of scientific programs of DFO Science Branch}}
 %%% define the acronym and use the see= option
-\newglossaryentry{andes}{type=\acronymtype, name={Andes}, description={Another data entry system}, first={\emph{An}other \emph{d}ata \emph{e}ntry \emph{s}ystem (Andes)\glsadd{andesg}}, see=[Glossary:]{andesg}}
+\newglossaryentry{andes}{
+type=\acronymtype, name={Andes}, description={Another data entry system},
+first={\emph{An}other \emph{d}ata \emph{e}ntry \emph{s}ystem (Andes)\glsadd{andesg}}, see=[Glossary:]{andesg}
+}
+
+
+%%% The glossary entry the acronym links to
+\newglossaryentry{ctdg}{name={CTD/Rosette},
+    description={CTD stands for conductivity, temperature, and depth, and refers to a package of electronic instruments often mounted on a rosette and that measure these properties}}
+%%% define the acronym and use the see= option
+\newglossaryentry{ctd}{
+type=\acronymtype, name={CTD/Rosette}, description={Conductivity, temperature, and depth},
+first={conductivity, temperature, and depth (CTD/Rosette)\glsadd{ctdg}}, see=[Glossary:]{ctdg}
+}
+
+
+
 
 %%% The glossary entry the acronym links to
 \newglossaryentry{elogg}{name={ELOG},
@@ -305,7 +319,7 @@ first={Electronic Logbook (ELOG)\glsadd{elogg}}, see=[Glossary:]{elogg}
 
 
 %%% define the acronym and use the see= option
-\newglossaryentry{raid}{type=\acronymtype, name={RAID}, description={redundant array of inexpensive disks}}
+\newglossaryentry{raid}{type=\acronymtype, name={RAID}, description={Redundant Array of Inexpensive Disks}}
 
 %%% define the acronym
 \newglossaryentry{ERD}{type=\acronymtype, name={ERD}, description={Entity Relationship Diagram}, first={Entity Relationship Diagram}}
@@ -366,9 +380,6 @@ first={Electronic Logbook (ELOG)\glsadd{elogg}}, see=[Glossary:]{elogg}
 %%% define the acronym and use the see= option
 \newglossaryentry{wan}{type=\acronymtype, name={WAN}, description={Wide Area Network}, first={wide area network (WAN)\glsadd{wang}}, see=[Glossary:]{wang}}
 
-\newglossaryentry{ctd}{name={CTD},
-    description={Conductivity, temperature and depth}}
-
 \newglossaryentry{vuejs}{name={Vue.js},
     description={A JavaScript framework for building reactive user interfaces. https://vuejs.org/}}
 
@@ -395,6 +406,10 @@ first={Electronic Logbook (ELOG)\glsadd{elogg}}, see=[Glossary:]{elogg}
 \newglossaryentry{cups}{type=\acronymtype, name={CUPS},
     description={Common UNIX Printing System }, first={Common UNIX Printing System (CUPS)\glsadd{cupsg}}, see=[Glossary:]{cupsg}}
 
+
+\newglossaryentry{gps}{type=\acronymtype, name={GPS}, description={Geographic Positioning System}, first={Global Positioning System (GPS)}}
+
+\newglossaryentry{ip}{type=\acronymtype, name={IP}, description={Internet Protocol}, first={IP}}
 
 \glsaddall
 \glsaddallunused

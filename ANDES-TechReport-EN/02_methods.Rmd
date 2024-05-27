@@ -2,7 +2,7 @@
 
 The overall goals for the redevelopment of the data acquisition system used in the \gls{dfo} Gulf Region were to utilize a contemporary software development environment, facilitate transparency through use of a shared code development environment, have the ability to support multiple languages, and to support flexible deployments. 
 The envisioned application would be modularized into different consoles to allow for a diverse range of uses, while leveraging the same core features and infrastructure that the existing application was built on.
-As the starting point of \gls{andes} was the \gls{ese} which was used during the annual September survey conducted by the \gls{dfo} Gulf Region, the replacement data entry software had to first replicate all the proven functional capabilities of the \gls{ese}.
+As the starting point of \gls{andes} was the \gls{ese}, which was used during the annual September survey conducted by the \gls{dfo} Gulf Region, the replacement data entry software had to first replicate all the proven functional capabilities of the \gls{ese}.
 Early versions of \gls{andes} achieved those goals and the system was further developed throughout its usage by scientists in the Gulf Region.
 
 The development of \gls{andes} coincided with the desire to revamp data collection procedures relating to commercial port sampling activities [@Benoit-Daigle-2007].
@@ -15,17 +15,17 @@ The data structure, protocol flexibility, and deployment requirements of this in
 1) as the main data entry system for ecosystem survey observations;
 2) to track and capture data and metadata from oceanographic observations; and
 3) for commercial port sampling activities.
-For use on the ecosystem surveys, the application must allow for the capture of all information and parameters detailed in the sampling protocols of the survey (e.g. @hurlbut-clay-1990).
+For use on the ecosystem surveys, the application must allow for the capture of all information and parameters detailed in the sampling protocols of the survey (e.g., @hurlbut-clay-1990).
 This entails the capture of all information related to fishing activities, plus ancillary variables such as weather, sea state, and water temperature.
 As catch contents are sorted and identified during the ecosystem surveys, the data entry application must support users in obtaining catch weights and abundance by taxon, individual observations of a specimen's length, weight, maturity status, etc.
-The application should also be designed to flag users when specimens are to be collected, or when additional sampling requirements are present (e.g. collecting fish otoliths, gonad samples, fin clips, etc.).
+The application should also be designed to flag users when specimens are to be collected, or when additional sampling requirements are present (e.g., collecting fish otoliths, gonad samples, fin clips, etc.).
 
 A large component of the ecosystem surveys conducted by the Gulf, Québec, Maritimes, and Newfoundland and Labrador Regions includes the collection of physical, chemical, and biological oceanographic data in support of the \gls{azmp} [@Therriault-1998].
-A CTD/Rosette system is deployed at a subset of fishing stations where vertical profiles of conductivity (salinity), temperature, dissolved oxygen, chlorophyll and other parameters are collected.
-Water samples (e.g., nutrients, dissolved oxygen, salinity) are collected at predetermined depths using the Rosette system and attached Niskin bottles, and plankton samples are also collected via vertical ring net tows.
+A \gls{ctd} system is deployed at a subset of fishing stations where vertical profiles of conductivity (salinity), temperature, dissolved oxygen, chlorophyll and other parameters are collected.
+Water samples (e.g., nutrients, dissolved oxygen, salinity) are collected at predetermined depths using the Rosette system and attached Niskin bottles, and plankton samples are also collected via ring nets towed vertically.
 These data support annual "state of the ocean" reporting conducted by the [AZMP](https://www.dfo-mpo.gc.ca/science/data-donnees/azmp-pmza/index-eng.html), and are also used in various stock assessments and ecosystem research projects to provide additional ancillary variables for interpreting the catch data.
 
-Historically, the event metadata associated with the deployment of oceanographic equipment on the ecosystem surveys was recorded using the \gls{elog} system, a browser-based logging system developed by the Paul Scherrer Institute, Switzerland.
+Historically, the event metadata associated with the deployment of oceanographic equipment on the ecosystem surveys was recorded using an \gls{elog} system, a browser-based logging system [e.g., @elog].
 However, \gls{elog} was installed and operated in complete isolation from logging systems used for the biological data, making it difficult to merge the two datasets upon completion of a survey.
 Ideally, the new application would streamline the capture of oceanographic data and simplify its association with the corresponding biological data.
 
@@ -47,15 +47,15 @@ Version management is especially important in the context of having concurrent i
 Knowing the version of a production instance is necessary to resolve any issues that might arise.
 Similarly, databases and backup files are intimately linked to an application's version number.
 In order to successfully re-instantiate a backup file, the precise version under which it was produced must be known.
-The VCS will also provide an indispensable framework for the coordination, examination and integration of contributions from collaborators.
+The VCS also provides an indispensable framework for the coordination, examination and integration of contributions from collaborators.
 
 ## Unit Testing
 
 The application performance needs to be reliable, especially considering its potential to be deployed in remote field environments.
 The implementation of unit tests is a practical way to ensure the maintenance of core functionality over time.
 At one extreme, the addition of any code can be preceded by the creation of unit tests (i.e., test-driven development).
-This approach will maximize the stability of an application, but can hinder the momentum of a project, especially in its early stages.
-At the other extreme, application development in the complete absence of unit testing occurs at a relatively fast pace but will result in a project that is vulnerable to breaking in unexpected ways and one that is difficult to maintain and to on-board new development team-members.
+This approach maximizes the stability of an application, but can hinder the momentum of a project, especially in its early stages.
+At the other extreme, application development in the complete absence of unit testing occurs at a relatively fast pace but results in a project that is vulnerable to breaking in unexpected ways and one that is difficult to maintain and to on-board new development team-members.
 
 ## Backup strategy
 
@@ -66,7 +66,7 @@ If possible, the backup files and snapshots should be stored on storage volumes 
 
 ## Customizable protocols
 
-The flexibility of scientific project leads to design, modify and report on their sampling protocols, without depending on developers, is very important.
+The ability for users to design, modify and report on their sampling protocols, without depending on developers, is very important.
 The application should allow users to provide a variety of detailed information based on their particular sampling protocols, without the need to change the application source code.
 Similarly, different protocols utilize different code conventions for the identification of biological catches.
 The application should offer the flexibility of users to utilize their preferred system of catch codes.
@@ -85,7 +85,7 @@ This validation is important to help identify catches that might have been enter
 Similarly, a validation of the specimen's length-to-weight ratio should be performed to warn users if a recorded measurement falls outside the expected range.}
 \item[Observations]{Individual observations are characterized by an observation type.
 Observation types should have predefined data types such as integer, float, string or categorical.
-The application should ensure that inputted observation values respect the data type of the corresponding observation type, and falls within an allowable redefined range.
+The application should ensure that observation values as they are input respect the data type of the corresponding observation type, and falls within an allowable redefined range.
 In the case where an observation type (e.g., sex) has a set of defined categories (e.g., male, female, unknown), the application should ensure that any entered values fall within the set of available options.}
 \end{description}
 
@@ -99,7 +99,7 @@ By appealing to the end users' intuitions and by providing in-situ help document
 
 ## Reactivity
 
-In the context of being on a research vessel survey, data entry happens at a very high rate and on numerous devices; often with multiple transactions per second.
+In the context of being on a research vessel survey, data entry happens at a very fast rate and on numerous devices; often with multiple transactions per second.
 Accordingly, it is imperative that the application does not create a bottleneck for data entry and is able to keep pace with experienced technicians.
 The usage of a reactive Javascript library (code execution on client devices) in conjunction with an \gls{api} (code execution on the server) would allow data entry to occur without webpages having to constantly refresh.
 
