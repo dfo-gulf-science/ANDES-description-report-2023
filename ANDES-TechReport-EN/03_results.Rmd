@@ -270,7 +270,8 @@ An additional optional layer of quality control allows project leads to assign a
 In this way, the validity of each catch entered into a set can be assessed.
 For example, if a catch being recorded is *not* on the that set's associated allow-lists, the end user will be notified that this is an unusual observation and will be prompted to collect documentation.
 Similarly, if a project lead adds a catch to the mission's restrict-list, users who enter this catch will receive a warning message, asking them to double-check the assignment.
-This is useful when project leads want to limit the usage of certain taxa during data entry, e.g., *Alosa* sp. is preferred over the use of *Alosa pseudoharengus*.
+This is useful when project leads want to limit the usage of certain taxa during data entry.
+For example, it is nearly impossible to distinguish between the two species of Redfish *Sebastes mantella* and *Sebastes fasciatus*, so catches for these species should captured at the *Sebastes* genus level.
 
 **Specimens**
 
