@@ -1,43 +1,61 @@
-I'd like to talk about Another data entry system, Andes, an application that is used to digitally capture data during field activities. 
+Hello, I'm Dan, I am a biologist in the Marine Fish and Mammals section.
+
+Today I'd like to talk about Another data entry system, Andes, an application used to digitally capture data during field activities. 
 Our technical report titled "Design goals, technical implementation and practical use of another data entry system (Andes)" was published by the DFO Library earlier this year so I encourage you to read our report if you are interested in more details than what I will be covering here today.
 
-I would like to acknowledge my co-authors who were all instrumental in turning ideas into actions and results, and make Andes the great tool that it is.
+I would like to acknowledge my co-authors who were all instrumental in turning ideas into actions and results with this project, and make Andes the great tool that it now is. 
 
-Nicolas Rolland was the survey biologist that initiated the project, with the goal to improve upon the existing data entry system that we wqere using. 
-David Fishman, Quentin Stoyel and Pablo Vergara are our incredible developers here at GFC, our colleagues Jaime Emberly and Ryan from SABS, Lindsay Beazley from BIO and Brian Boivin and David Sean-Fortin from IML.
+Nicolas Rolland was the survey biologist that initiated the project, with the goal to improve upon the existing data entry system that we were using. 
+David Fishman, pause, Quentin Stoyel and Pablo Vergara are our incredible developers here at GFC, 
+our colleagues Jaime Emberly and Ryan Martin from SABS in Saint Andrews, 
+Lindsay Beazley from BIO in Halifax/Dartmouth
+and Brian Boivin and David Sean-Fortin from IML in Rimouski
 
-While the application has been applied to a number of field applications, today I will concentrate on how Andes has supported our annual Spetember trawl survey in the southern Gulf of St. Lawrence. 
-We also have a poster about this year's survey, so are clearly happy to disucss related topics.
+While Andes has been used in a number of field applications, today I will concentrate on how Andes has supported our annual September ecosystem survey in the southern Gulf of St. Lawrence. 
+We also have a poster about this year's survey, so, happy to discuss related topics. 
 
-Waterproof deck sheets were initially used during the September survey. There was a "set card" that detailed the information about each fishing set. 
-Another sheets was a "catch card" that tallied the weight of the catches for each taxon identified. 
+Our goal with this report was to provide a citable source for Andes, and provide potential collaborators and users with a short introduction to the tool.
+
+
+Waterproof deck sheets were initially used during the September survey. 
+There was a "set card" that detailed the information about each fishing set. 
+Another sheet was the "catch card", that tallied the weight of the catches for each taxon identified. 
 Length frequency measurements were tallied on "length cards", where fish were measured and counted for each length interval. 
 
-The paper sheets were then digitized by filling text files with the information recorded.
+The paper sheets were then digitized by filling text files with the information recorded. 
+The sheets were then marked as "punched", and stamped accordingly with the "P" stamp.
 
 Starting in the late 1990s, computer-based data entry system were deployed and have remained the central data capture tools during the September survey. 
+The GSE and ESE tools developed by Maritimes region were used until 2019. 
 Andes is the third iteration of a computer-based data entry system for the survey. 
 
+These tools are used to capture the total catch as well as the detailed sampling done during the September survey.
+The survey protocols that we follow are well established and the important parts to mention are length stratification, where certain characteristics are recorded for a subset of the individuals sampled. 
+An example of this is how we collect "two otoliths per sex per cm bin" for American Plaice. 
+
+We maintain a dry lab where an "always on" server captures and backs up the incoming data.
+
+So you can imagine our anticipation with making the switch to Andes on the 2020 survey. Having David on board was instrumental in expanding the tool out of the wetlab and drylab, and into the bridge and the vessel at large through the installation of our own wireless network. 
 
 Andes is a browser-based application that was designed to support data entry requirements. 
 It has since grown into a more complex suiste of uses and integrated into a single application that is collaboratively developed with colleagues from other regions.
 
 The application consists of a number of tiles that each serve a different purpose. 
 
-In the wet lab, we run three stations and each is equipped with a laptop with a keyboard and a touchscreen.
+In the wet lab, we have three sampling stations, and each is equipped with a laptop with a keyboard and a touchscreen.
 
-We are also using webcams mounted on flexible arms and use them to obtain taxon-level pictures of the catches.
+We are also using tablets and webcams mounted on flexible arms, and use them to obtain taxon-level pictures of the catches.
 
 In the wheelhouse, the "Coast Guard console" runs on a tablet and is used by the navigation officer to enter set details.
 Trawl sensors and other navigation data are captured in Andes and used in the validation console
 
-The oceanography module runs in the ocean lab and supports data entry from the series of instruments used for oceanography
+The oceanography module runs in the ocean lab and supports data entry from the series of instruments used for oceanography.
 
-There are other tools related to cruise planning and logistics
+There are other tools related to cruise planning and logistics.
 
 For example, the set manager and the set queue provide the chief scientist and watch leaders with the ability to manage upcoming activities and to have a list of fishing locations to visit for the hours and days to come.
 
-The track forecast 
+The track forecast provides the expected dates and times of completion based on pre-determined sailing speed and set processing time.
 
 We also have a dashboard that is accessible to anyone on the vessel and that provides a summary of activities. 
 This dashboard has been a great way to share our work with the Coast Guard crew, they can access information about the scientific program that would've been inaccessible to them previously.
@@ -72,7 +90,10 @@ The image capture part of Andes was deployed last year when Quentin was the pm o
 The important topics of stewardship and governance are now on the table for Andes. 
 Our Technical Report documents how the application was created, and we are now at a stage where wider onboarding of Andes, and collaboration in its development could be facilitated by a governing body like a steering committee or a more formal mechanism. 
 
-In summary, Andes is a tool that has improved our data collection, the integration of ancillary infromation collected during our survey and that has facilitated integration in other tools used for data processing.
+In summary, Andes is a tool that has improved our data collection, the integration of ancillary information collected during our survey and that has facilitated integration with other tools used for data processing (Herman and DFO Dots for example). 
+
+
 
 Thank you for your attention.
+
 
